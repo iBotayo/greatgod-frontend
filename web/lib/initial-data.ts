@@ -75,7 +75,35 @@ export const initialDbState: DatabaseState = {
     }
   ],
   comments: [],
-  donations: [],
+  donations: [
+    {
+      id: 'don_1',
+      userId: 'user_author',
+      amount: 100,
+      frequency: 'MONTHLY',
+      status: 'ACTIVE',
+      date: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(),
+      purpose: 'General Fund',
+    },
+    {
+      id: 'don_2',
+      userId: 'user_author',
+      amount: 50,
+      frequency: 'ONETIME',
+      status: 'COMPLETED',
+      date: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000).toISOString(),
+      purpose: 'Missions',
+    },
+    {
+      id: 'don_3',
+      userId: 'user_author',
+      amount: 200,
+      frequency: 'ONETIME',
+      status: 'COMPLETED',
+      date: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString(),
+      purpose: 'Building Fund',
+    }
+  ],
   notifications: [
     {
       id: 'notif_1',

@@ -19,11 +19,17 @@ export function TopAppBar() {
       </Link>
       
       <div className="flex items-center gap-2">
+        <Link href="/give" title="Give" className="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors p-2 rounded-full flex items-center justify-center">
+          <span aria-hidden="true" className="material-symbols-outlined">volunteer_activism</span>
+        </Link>
         <button className="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors p-2 rounded-full flex items-center justify-center">
           <span aria-hidden="true" className="material-symbols-outlined">search</span>
         </button>
         {isAuthReady && currentUser ? (
           <div className="flex items-center gap-1">
+            <Link href="/give/manage" title="Manage Stewardship" className="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
+               <span aria-hidden="true" className="material-symbols-outlined">receipt_long</span>
+            </Link>
             <NotificationBadge />
             <Link href="/reader" className="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
                <span aria-hidden="true" className="material-symbols-outlined">account_circle</span>

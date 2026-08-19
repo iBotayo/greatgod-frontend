@@ -41,7 +41,7 @@ export interface Donation {
   id: string;
   userId: string;
   amount: number;
-  frequency: 'ONETIME' | 'MONTHLY';
+  frequency: 'ONETIME' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY' | 'ANNUALLY';
   status: 'PROCESSING' | 'COMPLETED' | 'FAILED' | 'ACTIVE' | 'PAUSED' | 'CANCELLED';
   date: string;
   purpose: string;
