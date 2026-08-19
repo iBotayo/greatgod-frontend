@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useDb } from '../../components/provider/db-provider';
+import { NewsletterForm } from '../../components/newsletter/newsletter-form';
 
 export default function HomePage() {
   const { db } = useDb();
@@ -150,23 +151,7 @@ export default function HomePage() {
             <p className="font-body-md text-sm text-on-surface-variant mb-4">
               A curated digest of essays, liturgy, and art for your weekend reading.
             </p>
-            <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <label className="sr-only" htmlFor="email">Email address</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  placeholder="Your email address" 
-                  className="w-full bg-surface-container-lowest border border-outline text-on-surface font-body-md text-sm rounded-DEFAULT focus:ring-2 focus:ring-primary-container focus:border-primary-container p-2" 
-                />
-              </div>
-              <button 
-                type="submit" 
-                className="w-full py-2 bg-on-surface text-surface font-label-sm text-label-sm rounded-DEFAULT hover:bg-inverse-surface transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
+            <NewsletterForm layout="vertical" />
           </div>
         </div>
       </div>

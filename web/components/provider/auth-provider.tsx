@@ -9,6 +9,7 @@ interface AuthContextType {
   setCurrentUser: (user: User | null) => void;
   switchUser: (userId: string | null) => void;
   hasRole: (role: Role) => boolean;
+  isAuthReady: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -16,19 +17,21 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const { db } = useDb();
   const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [isAuthReady, setIsAuthReady] = useState(false);
 
-  const [mounted, setMounted] = useState(false);
-
-  if (!mounted && typeof window !== 'undefined') {
-    setMounted(true);
-    const savedUserId = localStorage.getItem('greatgod_mock_user_id');
-    if (savedUserId) {
-      const user = db.users.find(u => u.id === savedUserId);
-      if (user) {
-        setCurrentUser(user);
+  useEffect(() => {
+    const initAuth = () => {
+      const savedUserId = localStorage.getItem('greatgod_mock_user_id');
+      if (savedUserId) {
+        const user = db.users.find(u => u.id === savedUserId);
+        if (user) {
+          setCurrentUser(user);
+        }
       }
-    }
-  }
+      setIsAuthReady(true);
+    };
+    initAuth();
+  }, [db.users]);
 
   const switchUser = (userId: string | null) => {
     if (!userId) {
@@ -49,7 +52,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ currentUser, setCurrentUser, switchUser, hasRole }}>
+    <AuthContext.Provider value={{ currentUser, setCurrentUser, switchUser, hasRole, isAuthReady }}>
       {children}
     </AuthContext.Provider>
   );

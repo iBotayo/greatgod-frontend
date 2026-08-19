@@ -8,7 +8,7 @@ import { useDb } from '../../../../components/provider/db-provider';
 export default function EditorialReviewPage() {
   const { id } = useParams();
   const router = useRouter();
-  const { db } = useDb();
+  const { db, setDb } = useDb();
   
   const [rationale, setRationale] = useState('');
 
@@ -25,8 +25,36 @@ export default function EditorialReviewPage() {
   }
 
   const handleAction = (actionType: 'reject' | 'changes' | 'approve') => {
-    // Mock action
-    console.log(`Action: ${actionType}`, { articleId: id, rationale });
+    setDb(prev => {
+      const newStatus = actionType === 'approve' ? 'APPROVED' 
+                      : actionType === 'changes' ? 'CHANGES_REQUESTED' 
+                      : 'ARCHIVED';
+      
+      const updatedArticles = prev.articles.map(a => 
+        a.id === id ? { ...a, status: newStatus as typeof a.status } : a
+      );
+
+      const notificationMessage = actionType === 'approve' ? `Article Approved: ${article?.title} has been approved.`
+                                : actionType === 'changes' ? `Changes Requested: Revisions requested for ${article?.title}.`
+                                : `Article Rejected: ${article?.title} has been rejected.`;
+
+      const newNotification = {
+        id: `notif_${Date.now()}`,
+        userId: article?.authorId || '',
+        type: 'system',
+        message: notificationMessage,
+        read: false,
+        createdAt: new Date().toISOString(),
+        link: `/author` // Just link to author dashboard for now
+      };
+
+      return {
+        ...prev,
+        articles: updatedArticles,
+        notifications: [newNotification, ...prev.notifications]
+      };
+    });
+
     alert(`Mock: ${actionType} recorded for article ${id}`);
     router.push('/editor/queue');
   };

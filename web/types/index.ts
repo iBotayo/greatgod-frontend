@@ -57,6 +57,37 @@ export interface Notification {
   link?: string;
 }
 
+export interface NewsletterSubscriber {
+  id: string;
+  email: string;
+  status: 'ACTIVE' | 'UNSUBSCRIBED';
+  subscribedAt: string;
+}
+
+export interface AuditLog {
+  id: string;
+  actorId: string;
+  action: string;
+  targetType: string;
+  targetId: string;
+  timestamp: string;
+  description: string;
+}
+
+export interface MediaItem {
+  id: string;
+  url: string;
+  altText: string;
+  uploadedAt: string;
+  uploaderId: string;
+}
+
+export interface TaxonomyItem {
+  id: string;
+  name: string;
+  type: 'category' | 'tag';
+}
+
 export interface DatabaseState {
   users: User[];
   articles: Article[];
@@ -65,4 +96,8 @@ export interface DatabaseState {
   notifications: Notification[];
   bookmarks: { userId: string; articleId: string }[];
   readingHistory: { userId: string; articleId: string; lastReadAt: string; progress: number }[];
+  subscribers: NewsletterSubscriber[];
+  auditLogs: AuditLog[];
+  media: MediaItem[];
+  taxonomy: TaxonomyItem[];
 }

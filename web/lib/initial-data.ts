@@ -76,7 +76,106 @@ export const initialDbState: DatabaseState = {
   ],
   comments: [],
   donations: [],
-  notifications: [],
+  notifications: [
+    {
+      id: 'notif_1',
+      userId: 'user_admin',
+      type: 'devotional',
+      message: 'New Devotional: The Sovereignty of Hope. In times of uncertainty, looking back at historical foundations provides a steady anchor. Today\'s reading explores the enduring nature of hope.',
+      read: false,
+      createdAt: new Date().toISOString(),
+      link: '/devotional/the-sovereignty-of-hope'
+    },
+    {
+      id: 'notif_2',
+      userId: 'user_admin',
+      type: 'reading_plan',
+      message: 'Reading Plan Reminder: 30 Days of Psalms. You are on Day 14. Continue your journey through the Psalms today with a focus on gratitude and reverence.',
+      read: false,
+      createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+      link: '/reader/plans'
+    },
+    {
+      id: 'notif_3',
+      userId: 'user_admin',
+      type: 'security',
+      message: 'Account Security: New Login Detected. A new login was detected from a Safari browser in New York, NY. If this was you, no action is needed.',
+      read: true,
+      createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
+      link: '/account/security'
+    },
+    {
+      id: 'notif_4',
+      userId: 'user_admin',
+      type: 'donation',
+      message: 'Stewardship: Monthly Contribution Received. Thank you for your faithful support. Your receipt for this month\'s contribution is now available in your history.',
+      read: true,
+      createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(),
+      link: '/history'
+    },
+    {
+      id: 'notif_5',
+      userId: 'user_author',
+      type: 'system',
+      message: 'Article Approved: The Beauty of Grace in Everyday Trials has been published.',
+      read: false,
+      createdAt: new Date(Date.now() - 1 * 60 * 60 * 1000).toISOString(),
+      link: '/article/the-beauty-of-grace'
+    }
+  ],
   bookmarks: [],
   readingHistory: [],
+  subscribers: [],
+  auditLogs: [
+    {
+      id: 'audit_1',
+      actorId: 'user_admin',
+      action: 'ARTICLE_PUBLISHED',
+      targetType: 'ARTICLE',
+      targetId: 'art_1',
+      timestamp: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
+      description: 'Published article "The Beauty of Grace in Everyday Trials"'
+    },
+    {
+      id: 'audit_2',
+      actorId: 'user_editor',
+      action: 'ARTICLE_APPROVED',
+      targetType: 'ARTICLE',
+      targetId: 'art_2',
+      timestamp: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
+      description: 'Approved manuscript "Understanding the Early Church Fathers"'
+    },
+    {
+      id: 'audit_3',
+      actorId: 'user_admin',
+      action: 'ROLE_UPDATED',
+      targetType: 'USER',
+      targetId: 'user_author',
+      timestamp: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),
+      description: 'Updated roles for Grace Adeyemi to [AUTHOR, READER]'
+    }
+  ],
+  media: [
+    {
+      id: 'media_1',
+      url: 'https://images.unsplash.com/photo-1544640808-32cb4f5f5bce?auto=format&fit=crop&q=80',
+      altText: 'Antique Bible open on a wooden desk',
+      uploadedAt: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString(),
+      uploaderId: 'user_admin'
+    },
+    {
+      id: 'media_2',
+      url: 'https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&q=80',
+      altText: 'Stained glass window in cathedral',
+      uploadedAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(),
+      uploaderId: 'user_editor'
+    }
+  ],
+  taxonomy: [
+    { id: 'tax_1', name: 'Theology', type: 'category' },
+    { id: 'tax_2', name: 'Christian Living', type: 'category' },
+    { id: 'tax_3', name: 'History', type: 'category' },
+    { id: 'tax_4', name: 'Grace', type: 'tag' },
+    { id: 'tax_5', name: 'Prayer', type: 'tag' }
+  ]
 };

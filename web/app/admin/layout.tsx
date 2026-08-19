@@ -2,10 +2,12 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useAuth } from '../../components/provider/auth-provider';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const { currentUser } = useAuth();
+  const pathname = usePathname();
 
   const isAdmin = currentUser?.roles.includes('ADMIN');
 
@@ -37,36 +39,32 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </div>
 
         <nav className="flex flex-col gap-1 flex-1 px-2">
-          <Link href="/admin" className="text-primary font-bold border-r-2 border-primary opacity-80 duration-150 flex items-center gap-3 px-3 py-2 -mx-4 ml-0 pl-4 bg-surface-container">
-            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>dashboard</span>
+          <Link href="/admin" className={`${pathname === '/admin' ? 'text-primary font-bold border-r-2 border-primary bg-surface-container -mx-4 ml-0 pl-4 opacity-80' : 'text-secondary hover:bg-surface-container px-3 rounded-lg'} duration-150 flex items-center gap-3 py-2 transition-colors`}>
+            <span className="material-symbols-outlined" style={pathname === '/admin' ? { fontVariationSettings: "'FILL' 1" } : {}}>dashboard</span>
             <span className="font-label-sm text-label-sm">Dashboard</span>
           </Link>
-          <Link href="#" className="text-secondary hover:bg-surface-container transition-colors flex items-center gap-3 px-3 py-2 rounded-lg">
-            <span className="material-symbols-outlined">auto_stories</span>
-            <span className="font-label-sm text-label-sm">Content Manager</span>
-          </Link>
-          <Link href="#" className="text-secondary hover:bg-surface-container transition-colors flex items-center gap-3 px-3 py-2 rounded-lg">
-            <span className="material-symbols-outlined">perm_media</span>
-            <span className="font-label-sm text-label-sm">Media Library</span>
-          </Link>
-          <Link href="#" className="text-secondary hover:bg-surface-container transition-colors flex items-center gap-3 px-3 py-2 rounded-lg">
-            <span className="material-symbols-outlined">group</span>
+          <Link href="/admin/users" className={`${pathname === '/admin/users' ? 'text-primary font-bold border-r-2 border-primary bg-surface-container -mx-4 ml-0 pl-4 opacity-80' : 'text-secondary hover:bg-surface-container px-3 rounded-lg'} duration-150 flex items-center gap-3 py-2 transition-colors`}>
+            <span className="material-symbols-outlined" style={pathname === '/admin/users' ? { fontVariationSettings: "'FILL' 1" } : {}}>group</span>
             <span className="font-label-sm text-label-sm">User Management</span>
           </Link>
-          <Link href="#" className="text-secondary hover:bg-surface-container transition-colors flex items-center gap-3 px-3 py-2 rounded-lg">
-            <span className="material-symbols-outlined">settings</span>
-            <span className="font-label-sm text-label-sm">Settings</span>
-          </Link>
-          <Link href="#" className="text-secondary hover:bg-surface-container transition-colors flex items-center gap-3 px-3 py-2 rounded-lg">
-            <span className="material-symbols-outlined">manage_accounts</span>
+          <Link href="/admin/roles" className={`${pathname === '/admin/roles' ? 'text-primary font-bold border-r-2 border-primary bg-surface-container -mx-4 ml-0 pl-4 opacity-80' : 'text-secondary hover:bg-surface-container px-3 rounded-lg'} duration-150 flex items-center gap-3 py-2 transition-colors`}>
+            <span className="material-symbols-outlined" style={pathname === '/admin/roles' ? { fontVariationSettings: "'FILL' 1" } : {}}>manage_accounts</span>
             <span className="font-label-sm text-label-sm">Role Management</span>
           </Link>
-          <Link href="#" className="text-secondary hover:bg-surface-container transition-colors flex items-center gap-3 px-3 py-2 rounded-lg">
-            <span className="material-symbols-outlined">payments</span>
-            <span className="font-label-sm text-label-sm">Donation Reports</span>
+          <Link href="/admin/content" className={`${pathname === '/admin/content' ? 'text-primary font-bold border-r-2 border-primary bg-surface-container -mx-4 ml-0 pl-4 opacity-80' : 'text-secondary hover:bg-surface-container px-3 rounded-lg'} duration-150 flex items-center gap-3 py-2 transition-colors`}>
+            <span className="material-symbols-outlined" style={pathname === '/admin/content' ? { fontVariationSettings: "'FILL' 1" } : {}}>auto_stories</span>
+            <span className="font-label-sm text-label-sm">Content Manager</span>
           </Link>
-          <Link href="#" className="text-secondary hover:bg-surface-container transition-colors flex items-center gap-3 px-3 py-2 rounded-lg">
-            <span className="material-symbols-outlined">receipt_long</span>
+          <Link href="/admin/media" className={`${pathname === '/admin/media' ? 'text-primary font-bold border-r-2 border-primary bg-surface-container -mx-4 ml-0 pl-4 opacity-80' : 'text-secondary hover:bg-surface-container px-3 rounded-lg'} duration-150 flex items-center gap-3 py-2 transition-colors`}>
+            <span className="material-symbols-outlined" style={pathname === '/admin/media' ? { fontVariationSettings: "'FILL' 1" } : {}}>perm_media</span>
+            <span className="font-label-sm text-label-sm">Media Library</span>
+          </Link>
+          <Link href="/admin/taxonomy" className={`${pathname === '/admin/taxonomy' ? 'text-primary font-bold border-r-2 border-primary bg-surface-container -mx-4 ml-0 pl-4 opacity-80' : 'text-secondary hover:bg-surface-container px-3 rounded-lg'} duration-150 flex items-center gap-3 py-2 transition-colors`}>
+            <span className="material-symbols-outlined" style={pathname === '/admin/taxonomy' ? { fontVariationSettings: "'FILL' 1" } : {}}>label</span>
+            <span className="font-label-sm text-label-sm">Taxonomy</span>
+          </Link>
+          <Link href="/admin/audit" className={`${pathname === '/admin/audit' ? 'text-primary font-bold border-r-2 border-primary bg-surface-container -mx-4 ml-0 pl-4 opacity-80' : 'text-secondary hover:bg-surface-container px-3 rounded-lg'} duration-150 flex items-center gap-3 py-2 transition-colors`}>
+            <span className="material-symbols-outlined" style={pathname === '/admin/audit' ? { fontVariationSettings: "'FILL' 1" } : {}}>receipt_long</span>
             <span className="font-label-sm text-label-sm">Audit Log</span>
           </Link>
         </nav>

@@ -2,8 +2,34 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useDb } from '../../components/provider/db-provider';
 
 export default function AdminDashboardPage() {
+  const { db } = useDb();
+
+  const awaitingReviewCount = db.articles.filter(a => a.status === 'IN_REVIEW').length;
+  const activeContributorsCount = db.users.filter(u => u.roles.includes('AUTHOR')).length;
+  const recentAuditLogs = [...db.auditLogs].sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()).slice(0, 5);
+
+  const resolveActor = (actorId: string) => db.users.find(u => u.id === actorId) || { name: 'Unknown User', id: actorId };
+  
+  const getActorInitials = (name: string) => {
+    const parts = name.split(' ');
+    if (parts.length >= 2) return `${parts[0][0]}${parts[1][0]}`.toUpperCase();
+    return name.slice(0, 2).toUpperCase();
+  };
+
+  const resolveTargetName = (targetType: string, targetId: string) => {
+    if (targetType === 'ARTICLE') {
+      const article = db.articles.find(a => a.id === targetId);
+      return article ? `"${article.title}"` : 'Deleted Article';
+    }
+    if (targetType === 'USER') {
+      const user = db.users.find(u => u.id === targetId);
+      return user ? user.name : 'Deleted User';
+    }
+    return targetId;
+  };
   return (
     <div className="flex flex-col gap-stack-md w-full pb-stack-lg">
       
@@ -29,8 +55,8 @@ export default function AdminDashboardPage() {
             <span className="material-symbols-outlined text-primary-container">pending_actions</span>
           </div>
           <div className="relative z-10">
-            <p className="font-display-lg text-display-lg text-on-surface font-medium leading-none">42</p>
-            <p className="font-label-sm text-label-sm text-primary mt-2">▲ 12 from last week</p>
+            <p className="font-display-lg text-display-lg text-on-surface font-medium leading-none">{awaitingReviewCount}</p>
+            <p className="font-label-sm text-label-sm text-primary mt-2">Dynamic real-time metric</p>
           </div>
         </div>
 
@@ -53,8 +79,8 @@ export default function AdminDashboardPage() {
             <span className="material-symbols-outlined text-primary-container">groups</span>
           </div>
           <div className="relative z-10">
-            <p className="font-display-lg text-display-lg text-on-surface font-medium leading-none">156</p>
-            <p className="font-label-sm text-label-sm text-primary mt-2">▲ 3 new this month</p>
+            <p className="font-display-lg text-display-lg text-on-surface font-medium leading-none">{activeContributorsCount}</p>
+            <p className="font-label-sm text-label-sm text-primary mt-2">Authors on platform</p>
           </div>
         </div>
 
@@ -80,42 +106,34 @@ export default function AdminDashboardPage() {
                 </tr>
               </thead>
               <tbody className="font-body-md text-body-md divide-y divide-outline-variant">
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary-fixed flex items-center justify-center font-label-sm font-bold">AN</div>
-                    <span className="text-on-surface font-medium">Amara Nwosu</span>
-                  </td>
-                  <td className="p-4 text-on-surface-variant">Submitted draft</td>
-                  <td className="p-4 text-primary hover:underline cursor-pointer italic">&quot;The Architecture of Grace&quot;</td>
-                  <td className="p-4 text-secondary text-right font-label-sm text-label-sm">10 min ago</td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-sm font-bold">RH</div>
-                    <span className="text-on-surface font-medium">Rebecca Hall</span>
-                  </td>
-                  <td className="p-4 text-on-surface-variant">Approved reflection</td>
-                  <td className="p-4 text-primary hover:underline cursor-pointer italic">&quot;Morning Liturgy Vol. 4&quot;</td>
-                  <td className="p-4 text-secondary text-right font-label-sm text-label-sm">1 hr ago</td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-surface-variant text-on-surface flex items-center justify-center font-label-sm font-bold">JS</div>
-                    <span className="text-on-surface font-medium">John Smith</span>
-                  </td>
-                  <td className="p-4 text-on-surface-variant">Updated metadata</td>
-                  <td className="p-4 text-primary hover:underline cursor-pointer italic">&quot;Sermon Archive 2023&quot;</td>
-                  <td className="p-4 text-secondary text-right font-label-sm text-label-sm">3 hrs ago</td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm font-bold">SYS</div>
-                    <span className="text-on-surface font-medium">System Automated</span>
-                  </td>
-                  <td className="p-4 text-on-surface-variant">Published batch</td>
-                  <td className="p-4 text-on-surface">Weekly Newsletter</td>
-                  <td className="p-4 text-secondary text-right font-label-sm text-label-sm">Yesterday</td>
-                </tr>
+                {recentAuditLogs.length === 0 ? (
+                  <tr>
+                    <td colSpan={4} className="p-8 text-center text-secondary">
+                      No recent administrative activity found.
+                    </td>
+                  </tr>
+                ) : (
+                  recentAuditLogs.map(log => {
+                    const actor = resolveActor(log.actorId);
+                    return (
+                      <tr key={log.id} className="hover:bg-surface-container transition-colors">
+                        <td className="p-4 flex items-center gap-3">
+                          <div className="w-8 h-8 rounded-full bg-surface-variant text-on-surface flex items-center justify-center font-label-sm font-bold">
+                            {getActorInitials(actor.name)}
+                          </div>
+                          <span className="text-on-surface font-medium">{actor.name}</span>
+                        </td>
+                        <td className="p-4 text-on-surface-variant">{log.action.replace(/_/g, ' ')}</td>
+                        <td className="p-4 text-primary hover:underline cursor-pointer italic">
+                          {resolveTargetName(log.targetType, log.targetId)}
+                        </td>
+                        <td className="p-4 text-secondary text-right font-label-sm text-label-sm">
+                          {new Date(log.timestamp).toLocaleDateString()}
+                        </td>
+                      </tr>
+                    );
+                  })
+                )}
               </tbody>
             </table>
           </div>
