@@ -7,6 +7,14 @@ import { useDb } from '../../../components/provider/db-provider';
 import { useAuth } from '../../../components/provider/auth-provider';
 import { getPrimaryDashboardUrl } from '../../../lib/auth-utils';
 
+const demoAccounts = [
+  { label: 'Reader', email: 'reader@example.com' },
+  { label: 'Author', email: 'grace@greatgod.com' },
+  { label: 'Editor', email: 'editor@greatgod.com' },
+  { label: 'Moderator', email: 'mod@greatgod.com' },
+  { label: 'Admin', email: 'admin@greatgod.com' },
+];
+
 export default function SignInPage() {
   const router = useRouter();
   const { db } = useDb();
@@ -57,6 +65,12 @@ export default function SignInPage() {
       // Redirect
       router.push(getPrimaryDashboardUrl(user));
     }, 600);
+  };
+
+  const fillDemoAccount = (demoEmail: string) => {
+    setEmail(demoEmail);
+    setPassword('password123');
+    setError(null);
   };
 
   return (
@@ -127,9 +141,38 @@ export default function SignInPage() {
           </button>
         </form>
 
+        <section className="mt-8 border-t border-outline-variant pt-6" aria-labelledby="demo-accounts-heading">
+          <div className="mb-4">
+            <h2 id="demo-accounts-heading" className="font-label-lg text-primary">Demo Accounts</h2>
+            <p className="text-sm text-on-surface-variant">Populate the sign-in form with a prototype account.</p>
+          </div>
+          <div className="flex flex-col gap-2">
+            {demoAccounts.map(account => {
+              const userExists = db.users.some(user => user.email.toLowerCase() === account.email);
+              if (!userExists) return null;
+
+              return (
+                <div key={account.email} className="flex items-center justify-between gap-3 rounded-md bg-surface-container-low px-3 py-2">
+                  <div className="min-w-0">
+                    <p className="font-label-sm text-on-surface">{account.label}</p>
+                    <p className="truncate text-sm text-on-surface-variant">{account.email}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => fillDemoAccount(account.email)}
+                    className="shrink-0 text-primary font-label-sm hover:underline"
+                  >
+                    Use {account.label} Account
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
         <div className="mt-8 text-center border-t border-outline-variant pt-6">
           <p className="font-body-md text-on-surface-variant">
-            Don't have an account? <Link href="/register" className="text-primary font-bold hover:underline">Sign up</Link>
+            Don&apos;t have an account? <Link href="/register" className="text-primary font-bold hover:underline">Sign up</Link>
           </p>
         </div>
       </div>

@@ -15,23 +15,37 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const { db } = useDb();
+  const { db, isDbReady } = useDb();
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [isAuthReady, setIsAuthReady] = useState(false);
 
   useEffect(() => {
+    if (!isDbReady) return;
+
     const initAuth = () => {
       const savedUserId = localStorage.getItem('greatgod_mock_user_id');
       if (savedUserId) {
         const user = db.users.find(u => u.id === savedUserId);
         if (user) {
           setCurrentUser(user);
+        } else {
+          localStorage.removeItem('greatgod_mock_user_id');
+          setCurrentUser(null);
         }
       }
       setIsAuthReady(true);
     };
     initAuth();
-  }, [db.users]);
+  }, [db.users, isDbReady]);
+
+  const persistUser = (user: User | null) => {
+    setCurrentUser(user);
+    if (user) {
+      localStorage.setItem('greatgod_mock_user_id', user.id);
+    } else {
+      localStorage.removeItem('greatgod_mock_user_id');
+    }
+  };
 
   const switchUser = (userId: string | null) => {
     if (!userId) {
@@ -41,8 +55,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
     const user = db.users.find(u => u.id === userId);
     if (user) {
-      setCurrentUser(user);
-      localStorage.setItem('greatgod_mock_user_id', user.id);
+      persistUser(user);
     }
   };
 
@@ -52,7 +65,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ currentUser, setCurrentUser, switchUser, hasRole, isAuthReady }}>
+    <AuthContext.Provider value={{ currentUser, setCurrentUser: persistUser, switchUser, hasRole, isAuthReady }}>
       {children}
     </AuthContext.Provider>
   );

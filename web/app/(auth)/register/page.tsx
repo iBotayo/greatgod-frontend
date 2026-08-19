@@ -10,7 +10,7 @@ import { User } from '../../../types';
 export default function RegisterPage() {
   const router = useRouter();
   const { db, setDb } = useDb();
-  const { switchUser, isAuthReady, currentUser } = useAuth();
+  const { setCurrentUser, isAuthReady, currentUser } = useAuth();
   
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -75,7 +75,7 @@ export default function RegisterPage() {
       }));
 
       // Successful mock registration and login
-      switchUser(newUserId);
+      setCurrentUser(newUser);
       
       // Redirect new users to /reader
       router.push('/reader');

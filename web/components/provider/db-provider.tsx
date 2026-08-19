@@ -7,6 +7,7 @@ import { initialDbState } from '../../lib/initial-data';
 interface DbContextType {
   db: DatabaseState;
   setDb: React.Dispatch<React.SetStateAction<DatabaseState>>;
+  isDbReady: boolean;
 }
 
 const DbContext = createContext<DbContextType | undefined>(undefined);
@@ -52,7 +53,7 @@ export function DbProvider({ children }: { children: React.ReactNode }) {
   }, [db, isDbReady]);
 
   return (
-    <DbContext.Provider value={{ db, setDb }}>
+    <DbContext.Provider value={{ db, setDb, isDbReady }}>
       {children}
     </DbContext.Provider>
   );

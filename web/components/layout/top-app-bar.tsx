@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useAuth } from '../provider/auth-provider';
 import { NotificationBadge } from '../notifications/notification-badge';
 import { NavigationMenu } from './navigation-menu';
-import { getPrimaryDashboardUrl } from '../../lib/auth-utils';
 
 export function TopAppBar() {
   const { currentUser, isAuthReady } = useAuth();
@@ -40,7 +39,7 @@ export function TopAppBar() {
                  <span aria-hidden="true" className="material-symbols-outlined">receipt_long</span>
               </Link>
               <NotificationBadge />
-              <Link href={getPrimaryDashboardUrl(currentUser)} title="My Profile" className="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
+              <Link href="/profile" title="My Profile" aria-label="My Profile" className="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
                  <span aria-hidden="true" className="material-symbols-outlined">account_circle</span>
               </Link>
             </div>

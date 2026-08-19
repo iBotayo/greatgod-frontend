@@ -3,7 +3,6 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { useAuth } from '../provider/auth-provider';
-import { getPrimaryDashboardUrl } from '../../lib/auth-utils';
 
 interface NavigationMenuProps {
   isOpen: boolean;
@@ -117,7 +116,7 @@ export function NavigationMenu({ isOpen, onClose }: NavigationMenuProps) {
       
       {/* Drawer */}
       <div 
-        className={`fixed top-0 left-0 h-full w-[280px] bg-surface-paper border-r border-outline-variant shadow-xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed top-0 left-0 h-full w-[280px] bg-surface border-r border-outline-variant shadow-xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
         role="dialog"
         aria-modal="true"
         aria-label="Navigation Menu"
@@ -149,7 +148,7 @@ export function NavigationMenu({ isOpen, onClose }: NavigationMenuProps) {
               </div>
             </div>
             <div className="flex flex-col gap-1">
-              <Link href={getPrimaryDashboardUrl(currentUser)} onClick={onClose} className="px-3 py-2 text-sm text-on-surface hover:bg-surface-container rounded-md transition-colors flex items-center gap-2">
+              <Link href="/profile" onClick={onClose} className="px-3 py-2 text-sm text-on-surface hover:bg-surface-container rounded-md transition-colors flex items-center gap-2">
                 <span className="material-symbols-outlined text-[18px]">account_circle</span> My Profile
               </Link>
               <button onClick={handleLogout} className="px-3 py-2 text-sm text-error hover:bg-error-container hover:text-on-error-container rounded-md transition-colors flex items-center gap-2 text-left w-full">

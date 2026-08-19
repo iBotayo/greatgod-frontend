@@ -28,7 +28,7 @@ export default function PasswordResetPage() {
       <div className="bg-surface-paper border border-outline-variant rounded-xl p-[32px] sm:p-[48px] shadow-sm">
         <div className="text-center mb-[32px]">
           <h1 className="font-headline-lg text-primary mb-2">Reset Password</h1>
-          <p className="text-on-surface-variant font-body-md">Enter your email and we'll send you instructions.</p>
+          <p className="text-on-surface-variant font-body-md">Enter your email and we&apos;ll send you instructions.</p>
         </div>
 
         {status === 'success' ? (

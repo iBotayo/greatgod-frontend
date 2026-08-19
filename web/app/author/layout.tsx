@@ -1,21 +1,21 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { useAuth } from '../../components/provider/auth-provider';
+import { getPrimaryDashboardUrl } from '../../lib/auth-utils';
 
 export default function AuthorLayout({ children }: { children: React.ReactNode }) {
-  const { currentUser } = useAuth();
+  const { currentUser, isAuthReady } = useAuth();
+  const router = useRouter();
+  const canAccess = currentUser?.roles.includes('AUTHOR') || currentUser?.roles.includes('ADMIN');
 
-  if (!currentUser) {
-    return (
-      <div className="min-h-[calc(100vh-200px)] flex flex-col items-center justify-center p-stack-lg mt-16 text-center">
-        <h1 className="font-headline-lg text-primary mb-4">Authentication Required</h1>
-        <p className="font-body-md text-on-surface-variant max-w-md mx-auto mb-8">
-          Please use the Persona Switcher at the bottom right to select an Author or Contributor role to view the author tools.
-        </p>
-      </div>
-    );
-  }
+  useEffect(() => {
+    if (isAuthReady && !currentUser) router.replace('/sign-in');
+    else if (isAuthReady && currentUser && !canAccess) router.replace(getPrimaryDashboardUrl(currentUser));
+  }, [canAccess, currentUser, isAuthReady, router]);
+
+  if (!isAuthReady || !currentUser || !canAccess) return null;
 
   return <>{children}</>;
 }

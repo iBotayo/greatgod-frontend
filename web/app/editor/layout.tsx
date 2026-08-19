@@ -1,24 +1,23 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useAuth } from '../../components/provider/auth-provider';
+import { getPrimaryDashboardUrl } from '../../lib/auth-utils';
 
 export default function EditorLayout({ children }: { children: React.ReactNode }) {
-  const { currentUser } = useAuth();
+  const { currentUser, isAuthReady } = useAuth();
+  const router = useRouter();
 
   const isEditor = currentUser?.roles.includes('EDITOR') || currentUser?.roles.includes('ADMIN');
 
-  if (!isEditor) {
-    return (
-      <div className="min-h-[calc(100vh-200px)] flex flex-col items-center justify-center p-stack-lg mt-16 text-center">
-        <h1 className="font-headline-lg text-primary mb-4">Editorial Access Required</h1>
-        <p className="font-body-md text-on-surface-variant max-w-md mx-auto mb-8">
-          Please use the Persona Switcher at the bottom right to select an Editor or Admin role to view the editorial tools.
-        </p>
-      </div>
-    );
-  }
+  useEffect(() => {
+    if (isAuthReady && !currentUser) router.replace('/sign-in');
+    else if (isAuthReady && currentUser && !isEditor) router.replace(getPrimaryDashboardUrl(currentUser));
+  }, [currentUser, isAuthReady, isEditor, router]);
+
+  if (!isAuthReady || !currentUser || !isEditor) return null;
 
   return (
     <div className="flex flex-1 overflow-hidden pt-16 bg-background text-on-background min-h-screen">
