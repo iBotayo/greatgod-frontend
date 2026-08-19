@@ -1,132 +1,133 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useDb } from '../../../components/provider/db-provider';
 
-export default function SearchPage() {
+function SearchResults() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
   const { db } = useDb();
-  const [query, setQuery] = useState('');
-  const [filter, setFilter] = useState('All');
+  const initialQuery = searchParams.get('q') || '';
+  const [query, setQuery] = useState(initialQuery);
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
+  const handleSearch = (event: React.FormEvent) => {
+    event.preventDefault();
+    const trimmedQuery = query.trim();
+    router.push(trimmedQuery ? `/search?q=${encodeURIComponent(trimmedQuery)}` : '/search');
   };
 
-  const results = db.articles.filter(article => {
-    if (!query) return false;
-    const q = query.toLowerCase();
-    return article.title.toLowerCase().includes(q) || article.excerpt.toLowerCase().includes(q);
+  const clearSearch = () => {
+    setQuery('');
+    router.push('/search');
+  };
+
+  const normalizedQuery = initialQuery.toLowerCase().trim();
+  const articles = db.articles.filter(article => {
+    if (!normalizedQuery) return false;
+    return (
+      article.title.toLowerCase().includes(normalizedQuery) ||
+      article.excerpt.toLowerCase().includes(normalizedQuery) ||
+      article.tags.some(tag => tag.toLowerCase().includes(normalizedQuery))
+    );
   });
+  const taxonomy = db.taxonomy.filter(item => item.name.toLowerCase().includes(normalizedQuery));
+  const isSearching = normalizedQuery.length > 0;
+  const hasResults = articles.length > 0 || taxonomy.length > 0;
 
   return (
-    <div className="w-full max-w-container-max px-margin-mobile md:px-gutter mx-auto flex-grow flex flex-col gap-stack-lg py-stack-lg min-h-[calc(100vh-200px)]">
-      
-      {!query ? (
-        <>
-          <header className="w-full flex flex-col gap-stack-sm items-center text-center mt-12">
-            <h1 className="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">Search GreatGod</h1>
-            <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl">Search by keyword, author, or Scripture reference.</p>
-            <div className="relative w-full max-w-3xl mt-unit">
-              <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
-              <input 
-                value={query}
-                onChange={handleSearch}
-                className="w-full bg-surface-container-lowest border-2 border-outline-variant rounded-xl py-4 pl-12 pr-4 font-body-md text-body-md text-on-surface placeholder:text-outline-variant focus:border-primary-container focus:ring-0 focus:outline-none transition-colors" 
-                placeholder="Search articles, scripture, and media..." 
-                type="text"
-                autoFocus
-              />
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-unit mt-stack-sm">
-              <button className="bg-surface-container-low border border-outline-variant rounded-full px-4 py-2 font-label-sm text-label-sm text-on-surface-variant hover:bg-secondary-container transition-colors">Articles</button>
-              <button className="bg-surface-container-low border border-outline-variant rounded-full px-4 py-2 font-label-sm text-label-sm text-on-surface-variant hover:bg-secondary-container transition-colors">Audio</button>
-              <button className="bg-surface-container-low border border-outline-variant rounded-full px-4 py-2 font-label-sm text-label-sm text-on-surface-variant hover:bg-secondary-container transition-colors">Video</button>
-              <button className="bg-surface-container-low border border-outline-variant rounded-full px-4 py-2 font-label-sm text-label-sm text-on-surface-variant hover:bg-secondary-container transition-colors">Scripture</button>
-            </div>
-          </header>
-          
-          <div className="w-full h-px bg-outline-variant max-w-3xl mx-auto"></div>
-          
-          <section className="w-full max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter">
-            <div className="flex flex-col gap-stack-sm">
-              <h2 className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Recent Searches</h2>
-              <ul className="flex flex-col gap-unit">
-                {['Romans 8 commentary', 'Sermon on the Mount', 'Meaning of repentance'].map(term => (
-                  <li key={term} className="flex items-center gap-3 py-2 border-b border-outline-variant border-opacity-50 last:border-0 group cursor-pointer" onClick={() => setQuery(term)}>
-                    <span className="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-sm">history</span>
-                    <span className="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">{term}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex flex-col gap-stack-sm">
-              <h2 className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Trending Topics</h2>
+    <div className="flex-grow w-full max-w-[800px] mx-auto px-[20px] py-[48px] flex flex-col gap-[32px]">
+      <div className="border-b border-outline-variant pb-[24px]">
+        <h1 className="font-headline-lg text-primary mb-6">Search</h1>
+        <form onSubmit={handleSearch} className="relative">
+          <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[24px]">search</span>
+          <input
+            type="text"
+            value={query}
+            onChange={event => setQuery(event.target.value)}
+            placeholder="Search articles, devotionals, categories..."
+            className="w-full pl-12 pr-12 py-4 bg-surface-bright border border-stone-outline rounded-lg font-body-lg text-on-surface focus:ring-primary focus:border-primary shadow-sm"
+          />
+          {query && (
+            <button type="button" onClick={clearSearch} className="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface p-1 rounded-full transition-colors flex items-center justify-center" aria-label="Clear search">
+              <span className="material-symbols-outlined text-[20px]">close</span>
+            </button>
+          )}
+        </form>
+      </div>
+
+      {!isSearching && (
+        <div className="py-[64px] text-center flex flex-col items-center gap-[16px] text-on-surface-variant">
+          <span className="material-symbols-outlined text-[48px] text-outline opacity-50">travel_explore</span>
+          <h3 className="font-headline-sm">What are you looking for?</h3>
+          <p className="font-body-md max-w-md">Search our extensive library of articles, devotionals, podcasts, and sermons.</p>
+        </div>
+      )}
+
+      {isSearching && !hasResults && (
+        <div className="py-[64px] text-center flex flex-col items-center gap-[16px] text-on-surface-variant">
+          <span className="material-symbols-outlined text-[48px] text-outline opacity-50">search_off</span>
+          <h3 className="font-headline-sm text-primary">No results found for &quot;{initialQuery}&quot;</h3>
+          <p className="font-body-md max-w-md">Try checking your spelling or using more general keywords.</p>
+        </div>
+      )}
+
+      {isSearching && hasResults && (
+        <div className="flex flex-col gap-8">
+          <p className="font-label-sm uppercase tracking-wider text-outline">Showing results for <span className="text-on-surface font-bold">&quot;{initialQuery}&quot;</span></p>
+          {taxonomy.length > 0 && (
+            <div className="flex flex-col gap-4">
+              <h2 className="font-headline-md text-primary">Topics &amp; Tags</h2>
               <div className="flex flex-wrap gap-2">
-                {['Grace', 'Faith', 'Biblical Justice', 'Parenting', 'Prayer', 'Psalms', 'Theology'].map(topic => (
-                  <span key={topic} onClick={() => setQuery(topic)} className="bg-surface-container rounded-lg px-3 py-1 font-body-md text-sm text-on-surface cursor-pointer hover:bg-secondary-container hover:text-primary transition-colors">
-                    {topic}
-                  </span>
+                {taxonomy.map(item => (
+                  <div key={item.id} className="bg-surface-container-low border border-outline-variant px-4 py-2 rounded-full font-label-md text-on-surface flex items-center gap-2 hover:bg-surface-container transition-colors">
+                    <span className="material-symbols-outlined text-[18px] text-primary">{item.type === 'category' ? 'category' : 'tag'}</span>
+                    {item.name}
+                  </div>
                 ))}
               </div>
             </div>
-          </section>
-        </>
-      ) : (
-        <div className="w-full max-w-[720px] mx-auto mt-8">
-          <div className="mb-stack-md">
-            <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-stack-sm">Search Results</h1>
-            <div className="relative w-full">
-              <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-xl">search</span>
-              <input 
-                value={query}
-                onChange={handleSearch}
-                className="w-full bg-surface-container-lowest border border-outline-variant rounded-full py-4 pl-12 pr-4 font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent transition-all shadow-sm" 
-                placeholder="Search GreatGod..." 
-                type="text" 
-              />
-            </div>
-          </div>
-          
-          <div className="flex overflow-x-auto gap-unit mb-stack-sm py-2">
-            {['All', 'Articles', 'Audio', 'Video', 'Scripture'].map(f => (
-              <button 
-                key={f}
-                onClick={() => setFilter(f)}
-                className={`whitespace-nowrap px-4 py-2 rounded-full font-label-sm text-label-sm shadow-sm transition-colors ${filter === f ? 'bg-primary-container text-on-primary' : 'border border-outline-variant text-on-surface hover:bg-surface-container-low'}`}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
-          
-          <div className="mb-stack-md font-label-sm text-label-sm text-secondary opacity-70">
-            {results.length} results for &quot;{query}&quot;
-          </div>
-          
-          <div className="flex flex-col">
-            {results.map(article => (
-              <article key={article.id} className="py-stack-sm border-b border-outline-variant last:border-0 flex flex-col justify-center group cursor-pointer">
-                <Link href={`/article/${article.id}`}>
-                  <div className="font-label-sm text-label-sm text-secondary opacity-70 mb-2 flex items-center gap-2">
-                    <span>{article.tags?.[0] || 'Article'}</span>
-                    <span>·</span>
-                    <span>{article.readTime} min read</span>
-                  </div>
-                  <h3 className="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-surface-tint transition-colors">{article.title}</h3>
-                  <p className="font-body-md text-body-md text-on-surface-variant">by {db.users.find(u => u.id === article.authorId)?.name}</p>
-                </Link>
-              </article>
-            ))}
-            {results.length === 0 && (
-              <div className="py-stack-lg text-center text-on-surface-variant">
-                No results found matching your query.
+          )}
+          {articles.length > 0 && (
+            <div className="flex flex-col gap-4">
+              <h2 className="font-headline-md text-primary">Content</h2>
+              <div className="flex flex-col gap-4">
+                {articles.map(article => (
+                  <Link href={`/reader/article/${article.id}`} key={article.id} className="group">
+                    <div className="bg-surface-paper border border-outline-variant p-4 md:p-6 rounded-xl hover:shadow-md transition-shadow flex flex-col md:flex-row gap-4">
+                      {article.coverImage ? (
+                        <div className="w-full md:w-[200px] h-[140px] flex-shrink-0 bg-surface-variant rounded-lg overflow-hidden">
+                          <img src={article.coverImage} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        </div>
+                      ) : (
+                        <div className="w-full md:w-[200px] h-[140px] flex-shrink-0 bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center">
+                          <span className="material-symbols-outlined text-[48px] text-outline opacity-50">menu_book</span>
+                        </div>
+                      )}
+                      <div className="flex flex-col gap-2 flex-grow">
+                        <div className="flex items-center gap-2"><span className="bg-surface-bright border border-stone-outline px-2 py-1 rounded text-xs font-label-sm uppercase text-on-surface">Article</span><span className="text-xs text-outline">{new Date(article.createdAt).toLocaleDateString()}</span></div>
+                        <h3 className="font-headline-sm text-primary group-hover:text-primary-fixed-variant transition-colors">{article.title}</h3>
+                        <p className="font-body-md text-on-surface-variant line-clamp-2">{article.excerpt}</p>
+                        {article.tags.length > 0 && <div className="flex items-center gap-2 mt-auto pt-2">{article.tags.map(tag => <span key={tag} className="text-xs text-primary bg-primary-container/20 px-2 py-1 rounded-sm">{tag}</span>)}</div>}
+                      </div>
+                    </div>
+                  </Link>
+                ))}
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       )}
     </div>
   );
+}
+
+export default function SearchPage() {
+  return <Suspense fallback={<div className="flex justify-center p-12"><span className="w-8 h-8 border-4 border-outline-variant border-t-primary rounded-full animate-spin"></span></div>}><SearchPageContent /></Suspense>;
+}
+
+function SearchPageContent() {
+  const searchParams = useSearchParams();
+  return <SearchResults key={searchParams.toString()} />;
 }
