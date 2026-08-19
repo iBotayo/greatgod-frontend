@@ -5,7 +5,6 @@ import { DbProvider } from "../components/provider/db-provider";
 import { AuthProvider } from "../components/provider/auth-provider";
 import { TopAppBar } from "../components/layout/top-app-bar";
 import { Footer } from "../components/layout/footer";
-import { PersonaSwitcher } from "../components/persona-switcher";
 
 const ebGaramond = EB_Garamond({
   variable: "--font-eb-garamond",
@@ -45,7 +44,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {children}
             </main>
             <Footer />
-            <PersonaSwitcher />
           </AuthProvider>
         </DbProvider>
       </body>
