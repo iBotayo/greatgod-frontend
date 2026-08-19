@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resubmission - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&amp;family=Hanken+Grotesk:wght@400;600&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#ffb3ad",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dbdad5",
+                        "background": "#fbf9f4",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#410004",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "inverse-on-surface": "#f2f1ec",
+                        "inverse-surface": "#30312e",
+                        "secondary-container": "#d8e2dd",
+                        "surface-container-high": "#eae8e3",
+                        "tertiary-fixed": "#ffe088",
+                        "outline": "#887270",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#4e3d00",
+                        "error": "#ba1a1a",
+                        "tertiary": "#735c00",
+                        "on-secondary-container": "#5b6561",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "secondary": "#57605d",
+                        "on-surface": "#1b1c19",
+                        "surface-container-low": "#f5f3ee",
+                        "on-tertiary-fixed": "#241a00",
+                        "primary-fixed": "#ffdad7",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-container": "#f0eee9",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "on-secondary-fixed": "#141d1a",
+                        "surface": "#fbf9f4",
+                        "surface-tint": "#9c413d",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-fixed": "#dbe5e0",
+                        "on-surface-variant": "#554240",
+                        "on-background": "#1b1c19",
+                        "primary-container": "#5d1212",
+                        "surface-bright": "#fbf9f4",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "surface-variant": "#e4e2dd",
+                        "tertiary-container": "#cca72f",
+                        "primary": "#3e0003",
+                        "on-primary-container": "#e27770",
+                        "outline-variant": "#dbc0be"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "stack-md": "32px",
+                        "gutter": "32px",
+                        "container-max": "1120px",
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["\"Source Serif 4\""],
+                        "headline-md": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- Header Content Canvas Navigation omitted as this is a transactional page -->
+<header class="w-full flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 border-b border-outline-variant">
+<div class="flex items-center gap-2 text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 ease-in-out p-2 rounded cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+<span class="font-label-sm text-label-sm">Back to Dashboard</span>
+</div>
+<div class="font-display-lg text-headline-lg-mobile text-primary tracking-tight">
+            GreatGod
+        </div>
+<div class="w-24"></div> <!-- Spacer for flex centering -->
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-lg">
+<div class="max-w-[720px] mx-auto">
+<div class="text-center mb-stack-lg">
+<span class="font-label-sm text-label-sm text-secondary opacity-70 uppercase tracking-widest block mb-2">Manuscript Revision</span>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-stack-sm">Submit Revised Draft</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Review the addressed editorial comments and confirm your final manuscript upload before submitting.</p>
+</div>
+<!-- Bento Layout for Resubmission Steps -->
+<div class="grid grid-cols-1 gap-stack-sm mb-stack-lg">
+<!-- Addressed Comments Card -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-stack-sm shadow-sm relative overflow-hidden group hover:bg-surface-container transition-colors duration-300">
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-surface-container-highest opacity-0 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none"></div>
+<div class="flex items-center justify-between mb-4 border-b border-outline-variant pb-2">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">fact_check</span>
+                            Addressed Comments
+                        </h2>
+<span class="font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-2 py-1 rounded-full">3 / 3 Resolved</span>
+</div>
+<div class="space-y-4">
+<label class="flex items-start gap-3 cursor-pointer group/item">
+<input checked="" class="mt-1 w-5 h-5 rounded border-outline text-primary-container focus:ring-primary focus:ring-offset-surface bg-surface-bright checked:bg-primary-container" disabled="" type="checkbox"/>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface block mb-1">Editor: Restructure opening paragraph</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Revised to introduce the central thesis earlier, as suggested by Dr. Smith.</p>
+</div>
+</label>
+<label class="flex items-start gap-3 cursor-pointer group/item">
+<input checked="" class="mt-1 w-5 h-5 rounded border-outline text-primary-container focus:ring-primary focus:ring-offset-surface bg-surface-bright checked:bg-primary-container" disabled="" type="checkbox"/>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface block mb-1">Editor: Clarify citation on page 14</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Updated footnote reference to correctly point to the 2018 edition of the text.</p>
+</div>
+</label>
+<label class="flex items-start gap-3 cursor-pointer group/item">
+<input checked="" class="mt-1 w-5 h-5 rounded border-outline text-primary-container focus:ring-primary focus:ring-offset-surface bg-surface-bright checked:bg-primary-container" disabled="" type="checkbox"/>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface block mb-1">Reviewer 2: Expand on concluding thoughts</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Added an additional paragraph to summarize the theological implications more robustly.</p>
+</div>
+</label>
+</div>
+</div>
+<!-- File Upload Confirmation -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-stack-sm shadow-sm relative overflow-hidden group hover:bg-surface-container transition-colors duration-300">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2 mb-4 border-b border-outline-variant pb-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">upload_file</span>
+                        Revised Manuscript
+                    </h2>
+<div class="flex items-center justify-between bg-surface border border-outline-variant p-4 rounded mb-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 0;">description</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface">Theological_Reflections_v2_final.docx</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs">Uploaded today at 10:42 AM • 2.4 MB</p>
+</div>
+</div>
+<button aria-label="Replace file" class="text-primary hover:text-primary-container transition-colors p-2 rounded hover:bg-surface-container-high">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">swap_horiz</span>
+</button>
+</div>
+<div class="mt-4">
+<label class="block font-label-sm text-label-sm text-on-surface mb-2" for="author-notes">Optional Note to Editor</label>
+<textarea class="w-full bg-surface-bright border border-outline-variant rounded p-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary focus:border-primary focus:outline-none transition-shadow" id="author-notes" placeholder="Any final thoughts or clarifications regarding the revisions..." rows="3"></textarea>
+</div>
+</div>
+</div>
+<!-- Final Action -->
+<div class="flex flex-col sm:flex-row gap-4 justify-end mt-stack-md pt-stack-sm border-t border-outline-variant">
+<button class="px-6 py-3 border border-outline text-on-surface font-label-sm text-label-sm rounded hover:bg-surface-container-high transition-colors">
+                    Save as Draft
+                </button>
+<button class="px-6 py-3 bg-primary-container text-on-primary font-label-sm text-label-sm rounded hover:bg-primary transition-colors flex items-center justify-center gap-2 shadow-sm">
+                    Submit Revised Draft
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">send</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer omitted for transactional page focus -->
+</body></html>

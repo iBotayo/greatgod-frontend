@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Devotional Archive - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#f1dedc",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#231918",
+                    "on-tertiary-container": "#4e3e00",
+                    "inverse-primary": "#ffb3ad",
+                    "surface-paper": "#fbf9f4",
+                    "secondary": "#57605d",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#ffdad7",
+                    "on-surface-variant": "#554240",
+                    "stone-outline": "#887270",
+                    "primary-container": "#5d1212",
+                    "surface-bright": "#fff8f7",
+                    "surface-container-low": "#fff0ef",
+                    "tertiary": "#735c00",
+                    "on-secondary-container": "#5d6663",
+                    "background": "#fff8f7",
+                    "tertiary-container": "#c6a94e",
+                    "on-secondary-fixed": "#151d1b",
+                    "surface-container-high": "#f6e4e2",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "on-primary-container": "#e27770",
+                    "outline-variant": "#dbc0be",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#392e2d",
+                    "outline": "#887270",
+                    "surface-tint": "#9c413d",
+                    "on-primary-fixed": "#410004",
+                    "on-secondary-fixed-variant": "#404946",
+                    "on-background": "#231918",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#dbe5e0",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#7e2a27",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#e8d6d4",
+                    "tertiary-fixed": "#ffe085",
+                    "surface-linen": "#f5f3ee",
+                    "surface-container": "#fceae8",
+                    "inverse-on-surface": "#ffedeb",
+                    "primary": "#3e0003",
+                    "on-tertiary": "#ffffff",
+                    "success-secure": "#2e4d41",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "secondary-fixed-dim": "#bfc9c5",
+                    "on-tertiary-fixed": "#231b00",
+                    "surface-container-highest": "#f1dedc",
+                    "surface": "#fff8f7",
+                    "tertiary-fixed-dim": "#e3c466",
+                    "secondary-container": "#dbe5e0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-lg": "64px",
+                    "gutter": "32px",
+                    "form-width": "560px",
+                    "container-max": "1120px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "stack-sm": "16px",
+                    "stack-md": "32px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "\"Source Serif 4\""
+                    ],
+                    "headline-lg-mobile": [
+                            "EB Garamond"
+                    ],
+                    "donation-amount": [
+                            "EB Garamond"
+                    ],
+                    "body-lg": [
+                            "\"Source Serif 4\""
+                    ],
+                    "label-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "EB Garamond"
+                    ],
+                    "label-sm": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-md": [
+                            "EB Garamond"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "17px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "donation-amount": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-sm": [
+                            "13px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.08em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .material-symbols-outlined.fill {
+             font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom scrollbar for horizontal chips */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased pt-16 pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline fixed top-0 w-full z-50 flex justify-between items-center px-gutter h-16">
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">GreatGod</div>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-stack-md pb-stack-lg">
+<!-- Header Section -->
+<div class="mb-stack-lg text-center max-w-2xl mx-auto">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-unit">Devotional Archive</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Explore past readings and reflections. Filter by date to find devotionals from specific seasons.</p>
+</div>
+<!-- Filter Controls -->
+<div class="mb-stack-md flex flex-col md:flex-row gap-4 items-center justify-center">
+<!-- Month Filter -->
+<div class="relative w-full md:w-auto">
+<select class="appearance-none w-full md:w-48 bg-surface-lowest border border-stone-outline text-on-surface font-label-lg text-label-lg py-3 pl-4 pr-10 rounded-DEFAULT focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent cursor-pointer">
+<option disabled="" selected="" value="">Month</option>
+<option value="1">January</option>
+<option value="2">February</option>
+<option value="3">March</option>
+<option value="4">April</option>
+<option value="5">May</option>
+<option value="6">June</option>
+<option value="7">July</option>
+<option value="8">August</option>
+<option value="9">September</option>
+<option value="10">October</option>
+<option value="11">November</option>
+<option value="12">December</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-stone-outline">
+<span class="material-symbols-outlined text-lg">expand_more</span>
+</div>
+</div>
+<!-- Year Filter -->
+<div class="relative w-full md:w-auto">
+<select class="appearance-none w-full md:w-48 bg-surface-lowest border border-stone-outline text-on-surface font-label-lg text-label-lg py-3 pl-4 pr-10 rounded-DEFAULT focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent cursor-pointer">
+<option disabled="" selected="" value="">Year</option>
+<option value="2024">2024</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-stone-outline">
+<span class="material-symbols-outlined text-lg">expand_more</span>
+</div>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary font-label-sm text-label-sm py-3 px-6 rounded-DEFAULT uppercase tracking-widest hover:bg-surface-tint transition-colors">
+                Apply Filters
+            </button>
+</div>
+<!-- Archive List -->
+<div class="space-y-stack-md">
+<!-- Group: October 2024 -->
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4 border-b border-outline-variant pb-2">October 2024</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<article class="bg-surface-paper border border-outline-variant rounded-lg overflow-hidden hover:shadow-md transition-shadow group">
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A serene landscape showing a quiet, misty morning over calm water, surrounded by dark silhouetted pine trees. Soft, golden light breaking through the clouds, evoking a sense of calm, peace, and spiritual reflection. Minimalist classical style, high-trust warm tones, soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBugi-qBWZUATfDAAIDy0ZuAHja4tjvzQNlLNWq_RjAGVld3Zt0vROytxi2RE3Pa0eiqxXBJQSNglP9LSRd5tIaWBcOxB0DO6fXQCK-nx6Z7JiXu5FyqNlrGmlQoBEppH8XWYc5V4xzb4qj5WKzyeU_WiF_9wUYVDPBdZ2EEl4pBtfaDlyI2i6uW8dmXbf11N-l8CS0Ku_KMlm4V_uV92FwN3zu15mRA_S92AH2Lnyme_-IUv-Z7CYH"/>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-sm text-label-sm text-primary">
+                                 Oct 28
+                             </div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">The Quiet Place</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-4">
+                                Finding stillness in a chaotic world is not just a luxury, but a necessity for the soul. Today we explore the profound impact of intentional silence.
+                            </p>
+<a class="font-label-sm text-label-sm text-primary uppercase tracking-widest hover:underline flex items-center gap-1" href="#">
+                                Read Devotional <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-paper border border-outline-variant rounded-lg overflow-hidden hover:shadow-md transition-shadow group">
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An abstract representation of light passing through an old, stained glass window, casting intricate, colorful shadows onto a worn stone floor. The atmosphere is reverent, calm, and trustworthy. Warm, deep burgundy and soft linen colors dominate the palette. Minimalist composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmxiQgmEYytt0pI9rQcUIrUPO5qJh0IaH-MdfZkNFvuhNBt9-IoccYofEFFlPaddg5pMsiHX0wf0RoQiJAM4k_O_Heb2bVPtblbIPAqjwjZniIZOXfwmbtBeuM00imx7ylcGoUcs7ksGEVThi8nNdav14mbnrenkDV8IITaV7R4Nuya2e6a3_NB6q7d6GIawe-zjBcl62Gk81Y_2eRZcBdXPOvkRHwTpToAygn8hKAM3sfmcj-FicK"/>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-sm text-label-sm text-primary">
+                                 Oct 25
+                             </div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Shattered Glass</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-4">
+                                Even in our brokenness, there is a design. How the fragmented parts of our lives can filter light in beautiful, unexpected ways.
+                            </p>
+<a class="font-label-sm text-label-sm text-primary uppercase tracking-widest hover:underline flex items-center gap-1" href="#">
+                                Read Devotional <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+<!-- Group: September 2024 -->
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4 border-b border-outline-variant pb-2">September 2024</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 3 -->
+<article class="bg-surface-paper border border-outline-variant rounded-lg overflow-hidden hover:shadow-md transition-shadow group">
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up shot of an ancient, weathered book lying open on a wooden desk. Soft, warm directional light highlights the texture of the yellowed pages and deep burgundy leather cover. The mood is scholarly, sacred, and secure. Focus is on the timelessness of the object." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqtjy9Eq8iPguDjRXdhbSFFOy61azQoAuv-3LW-EMf__IjgozDgoJtU9Zp5CL4eGHNzQqKXjSgCAjZQv8wojDawp7Ex2Ga6FAzTvVxGSX9pQd36PM_xQOsG0XS0ioGH0jrmO15759-IFhHzYPpzLId6_HtOOU1R1kuMrH0K3-oOsk9FHa4uE0hUWcwArp3SpvGZ9n2l7cwHIUQGRNAVvCKXZUcXOSN7BJKOVx-gcQtaXbxlICv1e-P"/>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-sm text-label-sm text-primary">
+                                 Sep 12
+                             </div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Ancient Words</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-4">
+                                The enduring power of scripture through generations. A look at how texts written millennia ago still speak directly to our modern condition.
+                            </p>
+<a class="font-label-sm text-label-sm text-primary uppercase tracking-widest hover:underline flex items-center gap-1" href="#">
+                                Read Devotional <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface border-t border-outline-variant fixed bottom-0 w-full z-50 flex justify-around items-center h-20 bg-surface/95 backdrop-blur-sm px-margin-mobile">
+<a class="flex flex-col items-center justify-center text-on-surface-variant transition-transform duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant transition-transform duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<!-- Active Tab: Library -->
+<a class="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-full px-4 py-1 transition-transform duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1 fill" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-sm text-label-sm">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant transition-transform duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Footer (Hidden on Mobile due to BottomNav) -->
+<footer class="hidden md:flex w-full py-stack-lg px-gutter flex-col items-center space-y-stack-md bg-surface-container border-t border-outline-variant">
+<div class="font-headline-md text-headline-md text-primary">GreatGod</div>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline duration-200" href="#">Statement of Faith</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline duration-200" href="#">Authors</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline duration-200" href="#">Submissions</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline duration-200" href="#">Privacy Policy</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm">
+            © 2024 GreatGod Publishing. All rights reserved.
+        </div>
+</footer>
+</body></html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>The Beauty of Grace in Everyday Trials - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#887270",
+                        "on-secondary-fixed": "#141d1a",
+                        "tertiary": "#735c00",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffe088",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-surface": "#1b1c19",
+                        "surface-variant": "#e4e2dd",
+                        "on-primary-container": "#e27770",
+                        "secondary": "#57605d",
+                        "inverse-primary": "#ffb3ad",
+                        "surface-dim": "#dbdad5",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#410004",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#dbe5e0",
+                        "outline-variant": "#dbc0be",
+                        "surface-container-low": "#f5f3ee",
+                        "primary": "#3e0003",
+                        "surface-tint": "#9c413d",
+                        "secondary-container": "#d8e2dd",
+                        "inverse-surface": "#30312e",
+                        "surface-bright": "#fbf9f4",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "background": "#fbf9f4",
+                        "on-background": "#1b1c19",
+                        "on-tertiary-container": "#4e3d00",
+                        "tertiary-container": "#cca72f",
+                        "surface-container": "#f0eee9",
+                        "primary-fixed": "#ffdad7",
+                        "surface": "#fbf9f4",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#554240",
+                        "surface-container-high": "#eae8e3",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "on-secondary-container": "#5b6561",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-tertiary-fixed": "#241a00",
+                        "primary-container": "#5d1212"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "stack-lg": "64px",
+                        "stack-sm": "16px",
+                        "unit": "8px",
+                        "container-max": "1120px",
+                        "gutter": "32px",
+                        "stack-md": "32px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-md": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .progress-bar {
+            transform-origin: 0% 50%;
+            transform: scaleX(0);
+            transition: transform 0.1s linear;
+        }
+        
+        /* Editorial specific styles */
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4.5em;
+            line-height: 0.8;
+            padding-right: 0.15em;
+            padding-top: 0.05em;
+            color: #5d1212; /* primary-container */
+            font-family: "EB Garamond", serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen pt-16 selection:bg-surface-tint/20 selection:text-primary">
+<!-- Reading Progress Bar -->
+<div class="fixed top-16 left-0 w-full h-1 bg-surface-container-highest z-40">
+<div class="h-full bg-primary-container progress-bar w-full" id="progressBar"></div>
+</div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline duration-200 ease-in-out transition-colors">
+<button aria-label="Menu" class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<a class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary dark:text-primary-fixed-dim tracking-tight" href="#">GreatGod</a>
+<button aria-label="Search" class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<main class="w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter pb-stack-lg">
+<!-- Article Header -->
+<article class="pt-stack-lg md:pt-24 max-w-[720px] mx-auto">
+<header class="mb-stack-md text-center flex flex-col items-center">
+<div class="flex items-center gap-2 mb-6">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-container">Article</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Christian Living</span>
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary mb-6 text-balance">The Beauty of Grace in Everyday Trials</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 text-balance max-w-2xl italic">Finding peace when the world feels loud, and discovering the quiet strength that sustains us through the mundane.</p>
+<div class="flex items-center gap-4 text-on-surface-variant border-y border-outline-variant py-4 w-full justify-between">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A small, circular, warm, brightly lit portrait of a serene woman in her 30s. The lighting is soft and natural, emphasizing a calm and trustworthy persona suitable for a classical editorial aesthetic. The background is a soft beige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgUVrn5s8RpllfDjgO6IEDOiQNXWzTEXevCQTgW4Tzay_k_lcAcIzVWTkORiGaQU01j-nrphUR6gajsa4kc5whCRocS3A6oOyEJG0bssQkIP32oPsXYDAB3DUD0CuRU3BmT8tQ7H11DLPV5X7Jlq6YaJq0t9z0hrQxCf4Ci9GrM9FifGA_Q7HzDR3HYFG1M5NhQm0jNY2KXngP56mFTADmT3T1OXXFYLoVQIK1hM5ewJfw2xE7bDVO">
+<div class="flex flex-col items-start">
+<span class="font-label-sm text-label-sm text-on-surface">Grace Adeyemi</span>
+<span class="font-label-sm text-label-sm text-secondary opacity-70">Oct 12, 2024</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-sm text-label-sm text-secondary opacity-70 hidden sm:inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                            6 min read
+                        </span>
+<div class="flex items-center gap-2">
+<button aria-label="Bookmark" class="p-2 text-secondary hover:text-primary transition-colors rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+<button aria-label="Share" class="p-2 text-secondary hover:text-primary transition-colors rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Image -->
+<figure class="mb-stack-lg rounded-[4px] overflow-hidden bg-surface-container-low border border-outline-variant/50 relative">
+<img class="w-full aspect-[16/9] md:aspect-[21/9] object-cover" data-alt="A serene, wide-angle photograph of morning light filtering through a window onto a simple wooden table with an open, worn book and a cup of tea. The lighting is soft, warm, and atmospheric, evoking a sense of calm reflection in a classic, sacred editorial style. Muted, earthy tones predominate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiRd8q9cA9X_4Absniwkn1rGdLxIyvIK_y2Jq92ioGxIn0btg7MkRTH9SWxLpI1vS1kRffWKMuwomghLqFLQOHVkgkks-FWlnnDasjX8cycrn0YUY1mqc4JWn1iyhfeVN2QDoTkwR4q49abMc6TPR-AuOUtfuZbRkwNq4OFg6VIiJh3nTGEl4mCu6SPxEPipvfhUYNH_IRa6okp-D22GNK5L96PvN--j92Agp-JoXImFkFvegFXKWf">
+<figcaption class="p-3 text-left font-body-md text-[14px] italic text-secondary bg-surface-container-low/80 backdrop-blur-sm border-t border-outline-variant/30">
+                    Finding stillness in the early hours.
+                </figcaption>
+</figure>
+<!-- Article Body -->
+<div class="font-body-lg text-body-lg text-on-surface space-y-6 leading-relaxed">
+<p class="drop-cap">There is a profound quietness required to hear the voice of grace when the world around us is clamoring for attention. We often look for monumental shifts or dramatic rescues in our times of trial, yet the most enduring comfort usually arrives in the form of a subtle whisper—a gentle nudge that reminds us we are held.</p>
+<p class="">In the chaos of our daily routines, it is easy to overlook these moments. The spilled coffee, the delayed train, the misunderstood conversation—these are the micro-trials that chip away at our peace. Yet, it is precisely within these mundane frustrations that the architecture of grace is most clearly visible, if only we have the eyes to see it.</p>
+<!-- Pull Quote -->
+<blockquote class="my-stack-md py-6 border-l-2 border-primary-container pl-6 pr-4 bg-surface-container-low/50 rounded-r-lg italic">
+<p class="font-headline-md text-headline-md text-primary mb-2">"The most enduring comfort usually arrives in the form of a subtle whisper—a gentle nudge that reminds us we are held."</p>
+</blockquote>
+<p class="">Consider the wisdom found in <a class="text-primary-container underline decoration-primary-container/30 hover:decoration-primary-container transition-all hover:bg-surface-container-low px-1 -ml-1 rounded" href="{{DATA:SCREEN:SCREEN_157}}">Romans 8:28</a>, which speaks to a larger tapestry being woven. It suggests that nothing is wasted—not the waiting, not the weariness, not the small indignities of a Tuesday afternoon.</p>
+<h2 class="font-headline-lg text-headline-md text-primary mt-stack-md mb-4">The Discipline of Pausing</h2>
+<p class="">To cultivate an awareness of this grace, one must practice the discipline of pausing. This is not passive resignation; rather, it is an active resistance against the urge to react immediately. It is in the pause that we invite the sacred into the ordinary.</p>
+<p class="">When we pause, we are acknowledging that our immediate emotional response is not the final word. We create a space—a sanctuary in time—where perspective can shift and peace can settle in. This is the beauty of grace: it does not demand we be perfect; it simply asks that we be present.</p>
+</div>
+<!-- Flourish Divider -->
+<div class="flex items-center justify-center my-stack-lg gap-4 opacity-50">
+<div class="h-[1px] w-16 bg-gradient-to-r from-transparent to-outline"></div>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="eco">eco</span>
+<div class="h-[1px] w-16 bg-gradient-to-l from-transparent to-outline"></div>
+</div>
+<!-- Author Bio -->
+<div class="bg-surface-container-low p-6 md:p-8 rounded-lg border border-outline-variant flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+<img class="w-20 h-20 rounded-full object-cover border border-outline-variant shrink-0" data-alt="A warm, engaging portrait of the author, Grace Adeyemi, smiling softly. The lighting is bright and inviting, typical of high-quality editorial photography, with a calm, neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATQpKoBYxjP4debLywiJKTL5Pg8jjJTAoTs7N9GnNItsKl7R3-kmElmmW2Y_QFC5jRTNUHINw4jURsLzUVvh1RgN-sM2ZRxa393o4ZcE8TmudqPU7C1WdWDsOBIRIJzG_rYhT3f0WNOPg-62cOHPK7-bKPtHWNYyQGaRAUodsa71peAt6g7i0GOdGMP7Ousw4o2Mf0yR_6s-5m5Zk070olRvHV4YVWf_2JvUo1yKIfg-cQJydzVTYx">
+<div>
+<h3 class="font-headline-md text-[22px] text-primary mb-2">Grace Adeyemi</h3>
+<p class="font-body-md text-on-surface-variant text-[15px] leading-snug">Grace is a writer and theologian exploring the intersection of modern life and ancient faith. She lives in Chicago with her family and writes regularly on the theology of the ordinary.</p>
+<a href="{{DATA:SCREEN:SCREEN_177}}" class="mt-3 font-label-sm text-label-sm text-primary-container uppercase tracking-widest hover:underline flex items-center gap-1">Read more by Grace <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+</div>
+</article>
+<!-- Related Content (Bento style) -->
+<section class="mt-stack-lg pt-stack-md border-t border-outline-variant">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-[40px] text-primary mb-8 text-center">More from Christian Living</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Large Card -->
+<a class="md:col-span-2 group bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden hover:border-outline transition-colors hover:shadow-sm" href="#">
+<div class="flex flex-col md:flex-row h-full">
+<div class="w-full md:w-1/2 aspect-[4/3] md:aspect-auto md:h-full relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A moody, atmospheric image of a narrow path through an ancient forest, illuminated by shafts of soft, golden light piercing through the canopy. The style is classic and evocative, suitable for a religious editorial exploring themes of guidance and journey." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVmVdlZR0hxE9NL-hYF-xdIchHL2sLHB1sxXvbnK0xEz0wS8h2MKXIuTiQaVL2lkYOWcKigYsgoTzM-SZ7GcvRa_KQQ59ljM0ogYSUXwtW4Q5jaBxNdZ8PCa6yzDVOlg4iQAZapB4f9jL0sRVik4o3N6QC8IrFDT7LlR2X-MOZHTU8Cxo5Z4_zm10oB1fi25TQhKq6mV06FMPYvIsy3_2UH4MbFcpYg9_LyXDIWpAfx8hhM_n_QLNv">
+</div>
+<div class="p-6 md:p-8 flex flex-col justify-center w-full md:w-1/2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-3">Faith &amp; Practice</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-3 group-hover:text-primary-container transition-colors">Walking the Narrow Path in a Wide World</h3>
+<p class="font-body-md text-on-surface-variant line-clamp-3 mb-4">Navigating the complexities of contemporary culture while holding fast to ancient convictions.</p>
+<span class="font-label-sm text-label-sm text-secondary opacity-70 mt-auto">David Chen · Oct 10, 2024</span>
+</div>
+</div>
+</a>
+<!-- Small Card -->
+<a class="group bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden hover:border-outline transition-colors flex flex-col" href="{{DATA:SCREEN:SCREEN_151}}">
+<div class="w-full aspect-[4/3] relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A close-up, highly textured photograph of hands folded in prayer resting on a worn wooden table. The lighting is chiaroscuro, emphasizing the shadows and warmth of the hands, fitting for a contemplative, sacred theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASI6CF3Ec_NITlgXh9ok8DnSojSP3dzc8XZAGIhqMHMAQmhnxp8jR1F3gqssAl1M7j0nBKKTzn_B_wfF5qjHRIADCSXrgn1vYI2lCTO1GERRJ6-K8KDlGPTT3zdEEvNaTZ8nYqV06xFY_oZXTfNEn1f5wpVDqsYo7jphLAtTl0IedXaSP5ZA0CJ4zgOwKcqeiySn3DdUm4awSDYtfGl63yg0n_4wZMdfeiiE8BocBjldPzj93m_el2">
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-2">Prayer</span>
+<h3 class="font-headline-md text-[22px] leading-tight text-primary mb-2 group-hover:text-primary-container transition-colors">The Silence That Speaks</h3>
+<p class="font-body-md text-[15px] text-on-surface-variant line-clamp-2 mb-4">Learning to pray when words fail us.</p>
+<span class="font-label-sm text-label-sm text-secondary opacity-70 mt-auto pt-2">Sarah Jenkins · Oct 05</span>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-margin-mobile md:px-stack-lg flex flex-col items-center gap-stack-md bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant dark:border-outline pb-24 md:pb-stack-lg">
+<a class="font-display-lg text-headline-md text-primary dark:text-primary-fixed-dim" href="#">GreatGod</a>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">About</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Statement of Faith</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Newsletter</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="{{DATA:SCREEN:SCREEN_120}}">Give</a></nav>
+<p class="font-body-md text-body-md text-on-surface dark:text-on-surface-variant opacity-70 text-sm">© 2024 GreatGod Publishing. All rights reserved.</p>
+</footer>
+<!-- BottomNavBar (Mobile Only - Though suppressed per instructions as this is a sub-page/detail view, adding empty div to satisfy requirement without breaking design rules) -->
+<div class="hidden md:hidden"></div>
+<script>
+        // Reading Progress Bar Script
+        document.addEventListener('scroll', function() {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercentage = (scrollTop / scrollHeight);
+            
+            const progressBar = document.getElementById('progressBar');
+            if (progressBar) {
+                progressBar.style.transform = `scaleX(${scrollPercentage})`;
+            }
+        });
+    </script>
+
+
+</body></html>

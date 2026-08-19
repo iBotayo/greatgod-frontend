@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fund/Purpose Selection - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600&amp;family=EB+Garamond:wght@500&amp;family=Source+Serif+4:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#735c00",
+                        "outline": "#887270",
+                        "surface-bright": "#fff8f7",
+                        "primary-container": "#5d1212",
+                        "surface-paper": "#fbf9f4",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#231b00",
+                        "on-primary": "#ffffff",
+                        "surface-linen": "#f5f3ee",
+                        "secondary-fixed": "#dbe5e0",
+                        "surface-container-low": "#fff0ef",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#f1dedc",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "secondary": "#57605d",
+                        "on-surface-variant": "#554240",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#dbe5e0",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "inverse-primary": "#ffb3ad",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface": "#fff8f7",
+                        "on-secondary-fixed": "#151d1b",
+                        "on-primary-fixed": "#410004",
+                        "on-primary-container": "#e27770",
+                        "success-secure": "#2e4d41",
+                        "inverse-on-surface": "#ffedeb",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-error": "#ffffff",
+                        "primary": "#3e0003",
+                        "surface-container-highest": "#f1dedc",
+                        "primary-fixed": "#ffdad7",
+                        "on-secondary-fixed-variant": "#404946",
+                        "on-tertiary-container": "#4e3e00",
+                        "tertiary-container": "#c6a94e",
+                        "background": "#fff8f7",
+                        "on-surface": "#231918",
+                        "tertiary-fixed": "#ffe085",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#231918",
+                        "outline-variant": "#dbc0be",
+                        "stone-outline": "#887270",
+                        "surface-tint": "#9c413d",
+                        "inverse-surface": "#392e2d",
+                        "surface-container": "#fceae8",
+                        "on-secondary-container": "#5d6663",
+                        "surface-container-high": "#f6e4e2",
+                        "surface-dim": "#e8d6d4",
+                        "tertiary-fixed-dim": "#e3c466"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "form-width": "560px",
+                        "container-max": "1120px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "stack-md": "32px",
+                        "stack-sm": "16px",
+                        "stack-lg": "64px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Hanken Grotesk"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "donation-amount": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""]
+                    },
+                    "fontSize": {
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fff8f7; /* background */
+            color: #231918; /* on-background */
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .vessel-shadow {
+            box-shadow: 0 4px 24px -4px rgba(62, 0, 3, 0.05); /* very subtle primary shadow for depth */
+        }
+        
+        /* Custom Radio Button Styling */
+        input[type="radio"].fund-radio {
+            appearance: none;
+            background-color: #ffffff;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.25em;
+            height: 1.25em;
+            border: 1px solid #887270; /* stone-outline */
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+            transition: all 0.2s ease-in-out;
+        }
+
+        input[type="radio"].fund-radio::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em #3e0003; /* primary */
+        }
+
+        input[type="radio"].fund-radio:checked::before {
+            transform: scale(1);
+        }
+        
+        input[type="radio"].fund-radio:checked {
+            border-color: #3e0003; /* primary */
+            border-width: 2px;
+        }
+
+        /* Hover and Focus for labels holding the radio */
+        .fund-option-label:hover {
+            border-color: #dbc0be; /* outline-variant */
+            background-color: #fbf9f4; /* surface-paper */
+        }
+        
+        .fund-option-label:has(input[type="radio"]:checked) {
+            border-color: #3e0003; /* primary */
+            border-width: 2px;
+            background-color: #fbf9f4; /* surface-paper */
+        }
+        
+        /* Progress line */
+        .progress-line-bg {
+            background-color: #887270; /* stone-outline */
+            height: 1px;
+            width: 100%;
+        }
+        .progress-line-active {
+            background-color: #3e0003; /* primary */
+            height: 2px;
+            width: 75%; /* Step 4/4 visually */
+            margin-top: -1px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline flex justify-between items-center w-full px-margin-mobile h-16 max-w-container-max mx-auto md:flex hidden">
+<button aria-label="Go back" class="text-primary dark:text-primary-fixed hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full p-2">
+<span aria-hidden="true" class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight">
+            GreatGod
+        </div>
+<button aria-label="Close" class="text-primary dark:text-primary-fixed hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full p-2">
+<span aria-hidden="true" class="material-symbols-outlined">close</span>
+</button>
+</header>
+<!-- Mobile Top Nav (Simplified for focused flow) -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile h-16 bg-surface border-b border-outline-variant">
+<button aria-label="Go back" class="text-primary p-2">
+<span aria-hidden="true" class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md text-primary tracking-tight">
+            GreatGod
+        </div>
+<button aria-hidden="true" class="text-primary p-2 opacity-0 cursor-default" tabindex="-1">
+<span class="material-symbols-outlined">close</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-start pt-stack-md pb-stack-lg px-margin-mobile md:px-0">
+<!-- Sacred Appeal Text -->
+<div class="max-w-[720px] text-center mb-stack-lg mt-stack-md">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-stack-sm">
+                Direct Your Devotion
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Where would you like your gift to have the most impact? You may designate a specific purpose, or allow us to apply it where the need is greatest.
+            </p>
+</div>
+<!-- Giving Vessel (Form Container) -->
+<div class="w-full max-w-form-width bg-surface-linen rounded-DEFAULT vessel-shadow relative overflow-hidden">
+<!-- Progress Tracker -->
+<div class="w-full relative top-0 left-0">
+<div class="progress-line-bg"></div>
+<div class="progress-line-active"></div>
+</div>
+<!-- Step Indicators -->
+<div class="flex justify-between px-stack-sm py-unit border-b border-outline-variant bg-surface-paper">
+<span class="font-label-sm text-label-sm text-outline">01 Amount</span>
+<span class="font-label-sm text-label-sm text-outline">02 Details</span>
+<span class="font-label-sm text-label-sm text-outline">03 Payment</span>
+<span class="font-label-sm text-label-sm text-primary">04 Purpose</span>
+</div>
+<!-- Form Content -->
+<div class="p-stack-md">
+<form action="#" class="flex flex-col gap-stack-sm" method="POST">
+<fieldset class="flex flex-col gap-unit">
+<legend class="sr-only">Select a Fund Designation</legend>
+<!-- Option: General Fund -->
+<label class="fund-option-label relative flex items-start p-stack-sm border border-stone-outline rounded-DEFAULT bg-white cursor-pointer transition-all duration-200">
+<div class="flex items-center h-6">
+<input checked="" class="fund-radio" name="fund_designation" type="radio" value="general"/>
+</div>
+<div class="ml-stack-sm flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">General Fund (Where Needed Most)</span>
+<span class="font-body-md text-body-md text-on-surface-variant mt-unit">Supports the foundational operations and most urgent ministry needs across all regions.</span>
+</div>
+</label>
+<!-- Option: Bible Translation -->
+<label class="fund-option-label relative flex items-start p-stack-sm border border-stone-outline rounded-DEFAULT bg-white cursor-pointer transition-all duration-200">
+<div class="flex items-center h-6">
+<input class="fund-radio" name="fund_designation" type="radio" value="translation"/>
+</div>
+<div class="ml-stack-sm flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Bible Translation</span>
+<span class="font-body-md text-body-md text-on-surface-variant mt-unit">Funds linguists and local scholars working to translate scriptures into unreached dialects.</span>
+</div>
+</label>
+<!-- Option: Media Production -->
+<label class="fund-option-label relative flex items-start p-stack-sm border border-stone-outline rounded-DEFAULT bg-white cursor-pointer transition-all duration-200">
+<div class="flex items-center h-6">
+<input class="fund-radio" name="fund_designation" type="radio" value="media"/>
+</div>
+<div class="ml-stack-sm flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Media Production</span>
+<span class="font-body-md text-body-md text-on-surface-variant mt-unit">Supports the creation of high-quality devotional audio, video, and print materials for global distribution.</span>
+</div>
+</label>
+<!-- Option: Scholar Support -->
+<label class="fund-option-label relative flex items-start p-stack-sm border border-stone-outline rounded-DEFAULT bg-white cursor-pointer transition-all duration-200">
+<div class="flex items-center h-6">
+<input class="fund-radio" name="fund_designation" type="radio" value="scholar"/>
+</div>
+<div class="ml-stack-sm flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Scholar Support</span>
+<span class="font-body-md text-body-md text-on-surface-variant mt-unit">Provides grants and essential living stipends for theological students and researchers in developing nations.</span>
+</div>
+</label>
+</fieldset>
+<!-- Optional Note Field -->
+<div class="mt-stack-sm">
+<label class="block font-label-sm text-label-sm text-on-surface mb-unit" for="donation_note">ADDITIONAL INSTRUCTIONS (OPTIONAL)</label>
+<textarea class="w-full bg-white border border-stone-outline rounded-DEFAULT p-3 font-body-md text-on-surface focus:outline-none focus:border-primary focus:border-2 transition-all resize-none" id="donation_note" name="donation_note" placeholder="Is there a specific project or person you wish to honor?" rows="3"></textarea>
+</div>
+<!-- Action Area -->
+<div class="mt-stack-md pt-stack-sm border-t border-outline-variant flex flex-col items-center">
+<button class="w-full bg-primary text-on-primary font-label-sm text-label-sm uppercase py-4 rounded-DEFAULT hover:opacity-90 transition-opacity flex justify-center items-center gap-2" type="submit">
+                            Complete Donation
+                            <span aria-hidden="true" class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Trust Footer Component embedded in Vessel -->
+<div class="bg-surface-paper border-t border-outline-variant p-stack-sm flex flex-col items-center justify-center gap-unit text-center">
+<div class="flex items-center gap-2 text-success-secure font-label-sm text-label-sm">
+<span aria-hidden="true" class="material-symbols-outlined" style="font-size: 16px; font-variation-settings: 'FILL' 1;">lock</span>
+                    SECURE SSL ENCRYPTED CONNECTION
+                </div>
+<p class="font-body-md text-body-md text-secondary italic text-sm">
+                    GreatGod Media is a registered 501(c)(3). All donations are tax-deductible.
+                </p>
+</div>
+</div>
+</main>
+<!-- Global Footer -->
+<footer class="w-full py-stack-md px-margin-mobile text-center flex flex-col items-center gap-unit bg-surface-paper dark:bg-surface-dim mt-stack-lg full-width">
+<div class="font-label-lg text-label-lg text-primary mb-stack-sm">
+            GreatGod
+        </div>
+<div class="flex flex-wrap justify-center gap-4 mb-stack-sm">
+<a class="font-label-sm text-label-sm text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Secure SSL Encrypted</a>
+<a class="font-label-sm text-label-sm text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Terms of Stewardship</a>
+</div>
+<div class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim text-sm">
+            © 2024 GreatGod Media. All donations are tax-deductible.
+        </div>
+</footer>
+</body></html>

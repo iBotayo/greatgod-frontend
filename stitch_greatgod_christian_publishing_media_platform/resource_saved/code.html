@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Saved Resource Confirmation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&amp;family=Hanken+Grotesk:wght@600&amp;family=Source+Serif+4:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#dbe5e0",
+                    "on-primary-container": "#e27770",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#fbf9f4",
+                    "inverse-on-surface": "#f2f1ec",
+                    "inverse-primary": "#ffb3ad",
+                    "surface-variant": "#e4e2dd",
+                    "surface-container-highest": "#e4e2dd",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#bfc9c4",
+                    "surface": "#fbf9f4",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1b1c19",
+                    "on-primary-fixed": "#410004",
+                    "surface-container-low": "#f5f3ee",
+                    "tertiary-container": "#cca72f",
+                    "surface-tint": "#9c413d",
+                    "inverse-surface": "#30312e",
+                    "surface-dim": "#dbdad5",
+                    "tertiary-fixed": "#ffe088",
+                    "on-primary-fixed-variant": "#7e2a27",
+                    "primary-fixed": "#ffdad7",
+                    "on-surface-variant": "#554240",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#1b1c19",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#dbc0be",
+                    "secondary": "#57605d",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#735c00",
+                    "on-tertiary-container": "#4e3d00",
+                    "primary-container": "#5d1212",
+                    "primary": "#3e0003",
+                    "surface-container-high": "#eae8e3",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "surface-container": "#f0eee9",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "on-secondary-container": "#5b6561",
+                    "on-secondary-fixed": "#141d1a",
+                    "background": "#fbf9f4",
+                    "secondary-container": "#d8e2dd",
+                    "on-secondary-fixed-variant": "#3f4945",
+                    "outline": "#887270"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1120px",
+                    "gutter": "32px",
+                    "stack-md": "32px",
+                    "margin-mobile": "20px",
+                    "stack-lg": "64px",
+                    "stack-sm": "16px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "label-sm": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "EB Garamond"
+                    ],
+                    "headline-md": [
+                            "EB Garamond"
+                    ],
+                    "body-lg": [
+                            "\"Source Serif 4\""
+                    ],
+                    "headline-lg-mobile": [
+                            "EB Garamond"
+                    ],
+                    "body-md": [
+                            "\"Source Serif 4\""
+                    ],
+                    "display-lg": [
+                            "EB Garamond"
+                    ]
+            },
+            "fontSize": {
+                    "label-sm": [
+                            "13px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.08em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "17px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Suppressed TopAppBar and BottomNavBar as this is a linear/transactional success screen -->
+<main class="flex-grow flex flex-col items-center justify-center p-gutter w-full max-w-container-max mx-auto h-screen">
+<div class="flex flex-col items-center max-w-[600px] w-full text-center fade-in">
+<!-- Icon / Graphic -->
+<div class="w-24 h-24 mb-stack-md flex items-center justify-center rounded-full bg-secondary-fixed text-on-secondary-fixed shadow-sm border border-outline-variant scale-in">
+<span class="material-symbols-outlined text-display-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Confirmation Text -->
+<h1 class="font-display-lg text-display-lg text-primary mb-stack-sm md:hidden">Saved</h1>
+<h1 class="font-display-lg text-display-lg text-primary mb-stack-sm hidden md:block">Resource Saved</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-md">
+                "The Sovereignty of Hope" has been successfully added to your 
+                <strong class="font-label-sm text-label-sm text-on-surface">Leader Resources</strong> folder.
+            </p>
+<!-- Card Preview (Optional Contextual Anchor) -->
+<div class="w-full max-w-sm bg-surface-container-low border border-outline-variant p-stack-sm flex items-start text-left mb-stack-lg">
+<div class="w-16 h-20 bg-surface-container border border-outline-variant mr-4 flex-shrink-0 flex items-center justify-center relative overflow-hidden" data-alt="A vintage, minimalist book cover for a theological text titled 'The Sovereignty of Hope'. The cover is designed in a muted beige and deep burgundy color palette, reflecting a classic, trustworthy editorial aesthetic. Subtle typographical elements and generous whitespace are present, illuminated by soft, natural studio lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBaxCrAWgjPmY0N3KV5eAPPpf2A8YbzXlwWce5nwjRYP2RhWo9wocF92SVDdySqCkRlLoeS2p4v_giyF523OR9tWF9_Z2exIvMsoCq8IWVBGVpMJ4c97uuhY2PXTdfU2AmSIEq5Giyga2iD1bOzjztPwNvT4A5Doe7VlSpM6fnjBDUjp0Jn4yQtjWvkT4JhImyIMgNXFZjlA7-WqAF66MnPNOTdfpSjJvpXX4UqSlSB4nQQqlCk2O0H')">
+<span class="material-symbols-outlined text-on-surface-variant opacity-50 absolute">auto_stories</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-1">ARTICLE</div>
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight mb-2">The Sovereignty of Hope</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-70">12 MIN READ · THEOLOGY</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-margin-mobile sm:px-0">
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 bg-primary-container text-on-primary-container font-label-sm text-label-sm hover:bg-primary hover:text-on-primary transition-colors duration-200 border border-transparent" href="#">
+                    View Library
+                </a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-secondary text-secondary font-label-sm text-label-sm hover:bg-surface-container hover:text-on-surface transition-colors duration-200" href="#">
+                    Continue Browsing
+                </a>
+</div>
+</div>
+</main>
+<!-- Footer intentionally suppressed for immersive transactional focus -->
+<style>
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .scale-in {
+            animation: scaleIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            transform: scale(0.8);
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</body></html>

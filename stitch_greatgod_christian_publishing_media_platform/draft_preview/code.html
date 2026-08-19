@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Author Preview - GreatGod</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: EB Garamond, Source Serif 4, Hanken Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#ffb3ad",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dbdad5",
+                        "background": "#fbf9f4",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#410004",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "inverse-on-surface": "#f2f1ec",
+                        "inverse-surface": "#30312e",
+                        "secondary-container": "#d8e2dd",
+                        "surface-container-high": "#eae8e3",
+                        "tertiary-fixed": "#ffe088",
+                        "outline": "#887270",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#4e3d00",
+                        "error": "#ba1a1a",
+                        "tertiary": "#735c00",
+                        "on-secondary-container": "#5b6561",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "secondary": "#57605d",
+                        "on-surface": "#1b1c19",
+                        "surface-container-low": "#f5f3ee",
+                        "on-tertiary-fixed": "#241a00",
+                        "primary-fixed": "#ffdad7",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-container": "#f0eee9",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "on-secondary-fixed": "#141d1a",
+                        "surface": "#fbf9f4",
+                        "surface-tint": "#9c413d",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-fixed": "#dbe5e0",
+                        "on-surface-variant": "#554240",
+                        "on-background": "#1b1c19",
+                        "primary-container": "#5d1212",
+                        "surface-bright": "#fbf9f4",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "surface-variant": "#e4e2dd",
+                        "tertiary-container": "#cca72f",
+                        "primary": "#3e0003",
+                        "on-primary-container": "#e27770",
+                        "outline-variant": "#dbc0be"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "stack-md": "32px",
+                        "gutter": "32px",
+                        "container-max": "1120px",
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["\"Source Serif 4\""],
+                        "headline-md": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Drop cap styling for the first paragraph */
+        .drop-cap::first-letter {
+            font-family: 'EB Garamond', serif;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            float: left;
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+            color: #5d1212; /* primary-container */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- Preview Action Bar (Suppresses standard nav due to transactional/focused intent) -->
+<header class="bg-surface-container-low border-b border-outline-variant h-16 sticky top-0 z-50 flex items-center justify-between px-margin-mobile md:px-stack-lg shadow-sm">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline rounded-full font-label-sm text-label-sm text-on-surface hover:bg-surface-variant transition-colors duration-200">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+            BACK TO EDITOR
+        </button>
+<div class="hidden md:flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Author Preview</span>
+<span class="font-body-md text-[11px] text-on-surface-variant italic">Links disabled in this view</span>
+</div>
+<button class="flex items-center gap-2 px-6 py-2 bg-primary-container text-on-primary-container rounded-full font-label-sm text-label-sm hover:opacity-90 transition-opacity duration-200 shadow-sm">
+            PROCEED TO CHECKLIST
+            <span class="material-symbols-outlined text-[18px]">checklist</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-lg">
+<!-- 12-Column Grid Wrapper -->
+<div class="md:grid md:grid-cols-12 md:gap-gutter">
+<!-- Center Column (720px equivalent roughly) -->
+<article class="md:col-start-3 md:col-span-8 lg:col-start-4 lg:col-span-6 flex flex-col">
+<!-- Article Header -->
+<header class="flex flex-col gap-unit mb-stack-md text-center md:text-left">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase mb-4">Theology &amp; Practice</span>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-2">
+                        The Quiet Liturgy of Ordinary Days
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic mb-stack-sm">
+                        Finding the sacred rhythm in the mundane tasks of daily life, and how silence shapes our understanding of grace.
+                    </p>
+<!-- Author Highlight (Bento/Card Style) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 mt-4 flex items-center gap-4 self-start max-w-md shadow-sm transition-colors hover:bg-surface-container-low duration-300">
+<img class="w-14 h-14 rounded-full object-cover border border-outline-variant/50" data-alt="A professional yet warm portrait photography of a female author in a quiet, sunlit study. The lighting is soft and natural, casting gentle shadows that emphasize a trustworthy and calm demeanor. The background features slightly out-of-focus wooden bookshelves, fitting a minimalist-classical publishing aesthetic. The overall color palette is composed of warm creams, soft browns, and slate grays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7ppdfWPBciwIYNY-hpvC_NadsI-iKKJ3aBt_lBODNeJQVLHJbfPDB-ddJXUc8qDOIRC6my3XNhKABSSXdI18ZVTwElyS2NxLSqYmBUfgt1-hXPuuUZPT4ZmUG3EtynnxXby7YpiZCn4y49sC0GmZb9VInLA5Mbac5hNABEWxH7gOFxQGdYq6rU8bT0lS32wHhp9uS092gcHNGsNVAiNwPdoSNGgyQZ_ds0LkpdeBuS9sXXXNpz7Rs"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">By Eleanor Vance</span>
+<span class="font-body-md text-[13px] text-on-surface-variant opacity-70">Published · 12 Min Read</span>
+</div>
+</div>
+</header>
+<!-- Hero Image (Captioned Frame) -->
+<figure class="w-full relative mb-stack-lg">
+<img class="w-full h-auto aspect-video object-cover rounded-sm border border-outline-variant" data-alt="A fine-art style photograph of an ancient, open journal resting on a rough-hewn stone table beside a ceramic cup of tea. Soft, warm directional light enters from a high window, illuminating the textured paper. The surrounding environment is bathed in deep, calm shadows, creating a sacred and contemplative atmosphere. The color palette emphasizes warm parchment tones, deep umber, and subtle slate highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu6AGJcCj-KX6KjP89pqoT6JKqxLv2eTwFLYIth0njMm9fBa8dQ_PoFa9FBhFnHvZs4sbXju0F_ZJZUcF1nEod_Y9isSe6WP5llkcutLIEMD-AI_jcZ3XugVAuB2aDjWQpXxu1WmxVazHtRJMzaVg8NfWQf2SUWZu0e8IOcVi5IwTiX_uGbnnOey7onzINVd3evszOsimQsGNK4dsI4jJu1b2j3717ocE0mjoKg3gyqDLMWYSzApcL"/>
+<figcaption class="font-body-md text-[14px] text-on-surface-variant italic mt-3 border-l-2 border-outline-variant pl-3">
+                        The morning light catching the edges of a worn journal, a testament to daily reflection.
+                    </figcaption>
+</figure>
+<!-- Article Body -->
+<div class="flex flex-col gap-6 font-body-md text-body-md text-on-surface leading-relaxed">
+<p class="drop-cap">
+                        There is a profound silence that settles over the house just before dawn. It is in these quiet, unmarked moments that the truest liturgy of our lives often begins. We are accustomed to seeking the sacred in grand cathedrals or soaring anthems, yet the architecture of grace is frequently built from much smaller stones.
+                    </p>
+<p>
+                        Consider the act of preparing a morning meal. The breaking of bread is, inherently, an act of sustenance and communion. When viewed through the lens of 
+                        <span class="text-primary-container border-b border-primary-container/30 cursor-not-allowed pb-[1px]" title="Scripture link disabled in preview">1 Corinthians 10:31</span>, 
+                        even the simplest tasks—whether eating or drinking—are elevated to acts of quiet devotion. The water boiling, the rhythmic chopping of vegetables; these become the metronome for a prayerful heart.
+                    </p>
+<blockquote class="border-l-[3px] border-primary-container pl-6 my-stack-sm py-2 bg-surface-container-low/50 rounded-r-lg">
+<p class="font-headline-md text-headline-md text-on-surface-variant italic">
+                            "The mundane is not the enemy of the holy; it is the very soil from which it grows. To ignore the ordinary is to miss the continuous whisper of providence."
+                        </p>
+</blockquote>
+<p>
+                        It requires intentional restraint to hear this whisper. In our modern context, noise is the default state. We fill every void with digital chatter, avoiding the very silence where reflection might occur. The Psalms frequently exhort us to stillness. 
+                        <span class="text-primary-container border-b border-primary-container/30 cursor-not-allowed pb-[1px]" title="Scripture link disabled in preview">Psalm 46:10</span> 
+                        is not merely a suggestion for times of crisis, but a foundational posture for a life oriented towards truth.
+                    </p>
+<!-- Flourish Divider -->
+<div class="flex items-center justify-center my-stack-sm">
+<div class="h-px w-16 bg-gradient-to-r from-transparent via-outline-variant to-transparent"></div>
+<span class="material-symbols-outlined text-outline-variant mx-4 text-[16px]">eco</span>
+<div class="h-px w-16 bg-gradient-to-r from-transparent via-outline-variant to-transparent"></div>
+</div>
+<p>
+                        As we transition from the active labor of the day to the rest of the evening, the liturgy shifts. The closing of doors, the extinguishing of lights—these too are symbolic gestures, acknowledging our limits and entrusting the night to a keeper who does not slumber. By reframing our daily routines as intentional, small liturgies, we cultivate a deeper, more resilient faith that does not rely solely on Sunday morning elevations, but sustains us through the long, quiet afternoons of ordinary time.
+                    </p>
+</div>
+</article>
+</div>
+</main>
+<!-- Minimal Footer for Preview context (Kept subtle so focus remains on article) -->
+<footer class="w-full py-stack-sm px-margin-mobile border-t border-outline-variant bg-surface-container-lowest mt-stack-lg flex justify-center">
+<span class="font-label-sm text-label-sm text-secondary opacity-60">GreatGod Publishing · Author Preview Rendering</span>
+</footer>
+</body></html>

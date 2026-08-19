@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pause Gift - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#ffedeb",
+                        "on-secondary-container": "#5d6663",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#e3c466",
+                        "surface-bright": "#fff8f7",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "stone-outline": "#887270",
+                        "surface-container-highest": "#f1dedc",
+                        "success-secure": "#2e4d41",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "secondary": "#57605d",
+                        "tertiary": "#735c00",
+                        "on-primary-fixed": "#410004",
+                        "on-surface-variant": "#554240",
+                        "on-background": "#231918",
+                        "secondary-container": "#dbe5e0",
+                        "surface": "#fff8f7",
+                        "on-error": "#ffffff",
+                        "primary": "#3e0003",
+                        "surface-dim": "#e8d6d4",
+                        "outline-variant": "#dbc0be",
+                        "on-secondary-fixed": "#151d1b",
+                        "tertiary-container": "#c6a94e",
+                        "on-tertiary-container": "#4e3e00",
+                        "on-primary-container": "#e27770",
+                        "surface-container-low": "#fff0ef",
+                        "on-secondary-fixed-variant": "#404946",
+                        "surface-tint": "#9c413d",
+                        "secondary-fixed": "#dbe5e0",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ffdad7",
+                        "inverse-surface": "#392e2d",
+                        "surface-paper": "#fbf9f4",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-variant": "#f1dedc",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fff8f7",
+                        "surface-container-high": "#f6e4e2",
+                        "primary-container": "#5d1212",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#231918",
+                        "surface-container": "#fceae8",
+                        "on-tertiary-fixed": "#231b00",
+                        "on-secondary": "#ffffff",
+                        "outline": "#887270",
+                        "tertiary-fixed": "#ffe085",
+                        "surface-linen": "#f5f3ee",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "inverse-primary": "#ffb3ad"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "stack-sm": "16px",
+                        "container-max": "1120px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "form-width": "560px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "label-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "donation-amount": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .custom-radio:checked + div {
+            background-color: theme('colors.surface-linen');
+            border-color: theme('colors.primary');
+            border-width: 2px;
+        }
+        .custom-radio:checked + div .radio-inner {
+            background-color: theme('colors.primary');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline docked full-width top-0 z-40 sticky">
+<div class="flex justify-between items-center w-full px-margin-mobile h-16 max-w-container-max mx-auto">
+<button aria-label="Go back" class="p-2 -ml-2 text-primary dark:text-primary-fixed hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight">GreatGod</h1>
+<button aria-label="Close" class="p-2 -mr-2 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex items-center justify-center py-stack-lg px-margin-mobile">
+<!-- The Vessel -->
+<div class="w-full max-w-form-width bg-surface-linen rounded-xl border border-outline-variant/30 p-8 md:p-12 relative overflow-hidden">
+<!-- Progress / Step Indicator (Minimalist) -->
+<div class="absolute top-0 left-0 w-full h-[2px] bg-stone-outline/20">
+<div class="h-full bg-primary w-2/3 transition-all duration-500"></div>
+</div>
+<div class="text-center mb-stack-md pt-4">
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-surface-container mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="pause_circle">pause_circle</span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Pause Your Gift</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">
+                    Michael, taking a pause will temporarily halt your recurring contributions. Your commitment remains honored, and you can resume at any time.
+                </p>
+</div>
+<form action="#" class="space-y-stack-sm" method="POST">
+<fieldset class="space-y-3">
+<legend class="font-label-lg text-label-lg text-primary mb-4 w-full text-center">Select Duration</legend>
+<label class="cursor-pointer block relative">
+<input class="custom-radio sr-only peer" name="pause_duration" type="radio" value="1_month"/>
+<div class="border border-stone-outline rounded-lg p-4 flex items-center transition-all duration-200 hover:border-primary/50 bg-white">
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant mr-4 flex items-center justify-center flex-shrink-0">
+<div class="radio-inner w-2.5 h-2.5 rounded-full bg-transparent transition-colors duration-200"></div>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">1 Month</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 font-normal mt-0.5 block">Resumes automatically next month</span>
+</div>
+</div>
+</label>
+<label class="cursor-pointer block relative">
+<input class="custom-radio sr-only peer" name="pause_duration" type="radio" value="3_months"/>
+<div class="border border-stone-outline rounded-lg p-4 flex items-center transition-all duration-200 hover:border-primary/50 bg-white">
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant mr-4 flex items-center justify-center flex-shrink-0">
+<div class="radio-inner w-2.5 h-2.5 rounded-full bg-transparent transition-colors duration-200"></div>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">3 Months</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 font-normal mt-0.5 block">Resumes automatically in a season</span>
+</div>
+</div>
+</label>
+<label class="cursor-pointer block relative">
+<input checked="" class="custom-radio sr-only peer" name="pause_duration" type="radio" value="indefinite"/>
+<div class="border-2 border-primary rounded-lg p-4 flex items-center transition-all duration-200 bg-surface-linen">
+<div class="w-5 h-5 rounded-full border-2 border-primary mr-4 flex items-center justify-center flex-shrink-0">
+<div class="radio-inner w-2.5 h-2.5 rounded-full bg-primary transition-colors duration-200"></div>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">Until I Resume</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 font-normal mt-0.5 block">We will await your return</span>
+</div>
+</div>
+</label>
+</fieldset>
+<div class="pt-stack-sm mt-stack-md border-t border-outline-variant/30">
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-4 rounded-lg uppercase tracking-[0.08em] hover:bg-primary/90 transition-colors duration-200 shadow-sm flex items-center justify-center gap-2" type="submit">
+                        Confirm Pause
+                    </button>
+<button class="w-full mt-3 bg-transparent text-primary font-label-sm text-label-sm py-3 rounded-lg hover:bg-surface-container-low transition-colors duration-200 text-center" type="button">
+                        Keep My Gift Active
+                    </button>
+</div>
+</form>
+</div>
+</main>
+<!-- Footer (Suppressed active navigation styling since this is a transactional flow, but keeping the component structure) -->
+<footer class="bg-surface-paper dark:bg-surface-dim full-width mt-stack-lg border-t border-surface-linen dark:border-surface-container">
+<div class="w-full py-stack-md px-margin-mobile text-center flex flex-col items-center gap-unit">
+<div class="flex items-center justify-center gap-2 mb-4 text-success-secure">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.08em]">Secure SSL Encrypted</span>
+</div>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim italic text-sm mb-4">
+                © 2024 GreatGod Media. All donations are tax-deductible.
+            </p>
+<div class="flex gap-4 font-label-sm text-label-sm text-outline">
+<a class="hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
+<span class="text-outline-variant">•</span>
+<a class="hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Terms of Stewardship</a>
+</div>
+</div>
+</footer>
+</body></html>

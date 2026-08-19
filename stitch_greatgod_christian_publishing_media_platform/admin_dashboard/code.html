@@ -1,0 +1,424 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dashboard - GreatGod CMS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#ffdad7",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface-bright": "#fbf9f4",
+                      "surface-variant": "#e4e2dd",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-background": "#1b1c19",
+                      "tertiary-container": "#cca72f",
+                      "secondary-container": "#d8e2dd",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-container": "#5b6561",
+                      "surface-container-high": "#eae8e3",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "surface-container-highest": "#e4e2dd",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#57605d",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#4e3d00",
+                      "surface": "#fbf9f4",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "tertiary-fixed": "#ffe088",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-surface": "#1b1c19",
+                      "on-surface-variant": "#554240",
+                      "outline": "#887270",
+                      "surface-dim": "#dbdad5",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "tertiary": "#735c00",
+                      "primary-container": "#5d1212",
+                      "surface-tint": "#9c413d",
+                      "on-primary-fixed": "#410004",
+                      "on-secondary-fixed": "#141d1a",
+                      "inverse-surface": "#30312e",
+                      "primary": "#3e0003",
+                      "inverse-primary": "#ffb3ad",
+                      "inverse-on-surface": "#f2f1ec",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "surface-container-low": "#f5f3ee",
+                      "background": "#fbf9f4",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "on-tertiary": "#ffffff",
+                      "outline-variant": "#dbc0be",
+                      "on-primary-container": "#e27770",
+                      "secondary-fixed": "#dbe5e0",
+                      "surface-container": "#f0eee9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "container-max": "1120px",
+                      "stack-lg": "64px",
+                      "stack-md": "32px",
+                      "gutter": "32px",
+                      "margin-mobile": "20px",
+                      "stack-sm": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body { font-family: 'Source Serif 4', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar Component -->
+<nav class="bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant dark:border-outline h-screen w-64 fixed left-0 top-0 flex flex-col h-full py-unit px-4 z-50">
+<!-- Brand / Header -->
+<div class="mb-stack-lg mt-unit">
+<h1 class="font-headline-md text-headline-md font-medium text-primary dark:text-primary-fixed-dim">GreatGod</h1>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mt-1">Editorial CMS</p>
+</div>
+<!-- CTA -->
+<a href="{{DATA:SCREEN:SCREEN_167}}" class="bg-primary-container text-on-primary font-label-sm text-label-sm w-full py-3 px-4 rounded hover:bg-surface-tint transition-colors mb-stack-md flex items-center justify-center gap-2"><span class="material-symbols-outlined text-[18px]">add</span>New Publication</a>
+<!-- Navigation Tabs -->
+<div class="flex-1 flex flex-col gap-2">
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-r-2 border-primary dark:border-primary-fixed-dim opacity-80 duration-150 flex items-center gap-3 px-3 py-2 -mx-4 ml-0 pl-4 bg-surface-container dark:bg-surface-container-highest" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors flex items-center gap-3 px-3 py-2 rounded-lg" href="{{DATA:SCREEN:SCREEN_38}}">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-sm text-label-sm">Content Manager</span>
+</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors flex items-center gap-3 px-3 py-2 rounded-lg" href="{{DATA:SCREEN:SCREEN_35}}"><span class="material-symbols-outlined">perm_media</span><span class="font-label-sm text-label-sm">Media Library</span></a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors flex items-center gap-3 px-3 py-2 rounded-lg" href="{{DATA:SCREEN:SCREEN_37}}"><span class="material-symbols-outlined">group</span><span class="font-label-sm text-label-sm">User Management</span></a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors flex items-center gap-3 px-3 py-2 rounded-lg" href="{{DATA:SCREEN:SCREEN_29}}">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors flex items-center gap-3 px-3 py-2 rounded-lg" href="{{DATA:SCREEN:SCREEN_36}}"><span class="material-symbols-outlined">manage_accounts</span><span class="font-label-sm text-label-sm">Role Management</span></a><a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors flex items-center gap-3 px-3 py-2 rounded-lg" href="{{DATA:SCREEN:SCREEN_34}}"><span class="material-symbols-outlined">payments</span><span class="font-label-sm text-label-sm">Donation Reports</span></a><a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors flex items-center gap-3 px-3 py-2 rounded-lg" href="{{DATA:SCREEN:SCREEN_33}}"><span class="material-symbols-outlined">receipt_long</span><span class="font-label-sm text-label-sm">Audit Log</span></a></div>
+<!-- Footer / Profile -->
+<div class="mt-auto pt-4 border-t border-outline-variant flex flex-col gap-2">
+<div class="flex items-center gap-3 px-2 py-2 mb-2">
+<img alt="GreatGod Admin Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A highly detailed close-up portrait of a professional administrator in a well-lit, scholarly office setting. Soft, natural lighting highlights a calm, trustworthy expression. The aesthetic is clean, warm, and corporate but inviting, utilizing light cream and deep mahogany tones in the background to match a high-end editorial CMS interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPb66hZOObHvc6WGr0-E6ZRoPukVloOwK7lUj0_y6KTAsmHKsTar3ScCYupO-AzXkPlPCsikHtGWtOcEQb7jnhxy7k0orhe2kzjCRK2Cwv9Hnytz4nVUBbw4-GdNsw9OXTQzYH7fjCA2TDO_YNC6aUxcF7ECVzK6UgW76KWHNNULvCl9PVWVh_S5Ez7R5GQDGsOOdiC61tAH5l-RA2x04x0O_KZEl4rmmF9UL5jdTahqKOdntRF0-N">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface">Admin User</p>
+</div>
+</div>
+<a class="text-secondary hover:text-primary transition-colors flex items-center gap-3 px-3 py-2 rounded-lg font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">help_outline</span> Support
+            </a>
+<a class="text-secondary hover:text-primary transition-colors flex items-center gap-3 px-3 py-2 rounded-lg font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">logout</span> Sign Out
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 flex flex-col h-screen overflow-hidden bg-background">
+<!-- TopNavBar Component -->
+<header class="bg-surface dark:bg-background docked full-width top-0 sticky z-40 border-b border-outline-variant dark:border-outline flex justify-between items-center w-full px-gutter h-16 max-w-[calc(100%-16rem)]">
+<!-- Navigation Links -->
+<nav class="flex items-center gap-6 hidden md:flex">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-all font-label-sm text-label-sm uppercase" href="#">Recent</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-all font-label-sm text-label-sm uppercase" href="#">Drafts</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-all font-label-sm text-label-sm uppercase" href="#">Published</a>
+</nav>
+<!-- Search Bar (on_left in JSON, but flex order puts it here visually in a standard layout, keeping simple for now) -->
+<div class="flex-1 max-w-md mx-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-full py-2 pl-10 pr-4 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent transition-all" placeholder="Search manuscripts, authors..." type="text">
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="text-secondary hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined">history</span>
+</button>
+<button class="bg-primary-container text-on-primary font-label-sm text-label-sm px-4 py-2 rounded hover:bg-surface-tint transition-colors">
+                    Publish Changes
+                </button>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 overflow-y-auto p-gutter custom-scrollbar">
+<div class="max-w-container-max mx-auto space-y-stack-md pb-stack-lg">
+<!-- Page Header -->
+<div class="flex justify-between items-end border-b border-outline-variant pb-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Platform Overview</h2>
+<p class="font-body-md text-body-md text-secondary mt-2">Strategic metrics and editorial activity for current period.</p>
+</div>
+<p class="font-label-sm text-label-sm text-secondary">Last updated: Today, 08:42 AM</p>
+</div>
+<!-- Bento Grid for KPIs -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- KPI 1 -->
+<div class="bg-surface-container-low border border-outline-variant p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-variant/20 to-transparent pointer-events-none"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<h3 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Awaiting Review</h3>
+<span class="material-symbols-outlined text-primary-container">pending_actions</span>
+</div>
+<div class="relative z-10">
+<p class="font-display-lg text-display-lg text-on-surface font-medium leading-none">42</p>
+<p class="font-label-sm text-label-sm text-primary mt-2">▲ 12 from last week</p>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-low border border-outline-variant p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4 relative z-10">
+<h3 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Scheduled Content</h3>
+<span class="material-symbols-outlined text-primary-container">calendar_month</span>
+</div>
+<div class="relative z-10">
+<p class="font-display-lg text-display-lg text-on-surface font-medium leading-none">12</p>
+<p class="font-label-sm text-label-sm text-secondary mt-2">Next release in 2 days</p>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-low border border-outline-variant p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4 relative z-10">
+<h3 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Active Contributors</h3>
+<span class="material-symbols-outlined text-primary-container">groups</span>
+</div>
+<div class="relative z-10">
+<p class="font-display-lg text-display-lg text-on-surface font-medium leading-none">156</p>
+<p class="font-label-sm text-label-sm text-primary mt-2">▲ 3 new this month</p>
+</div>
+</div>
+</div>
+<!-- Complex Layout: Activity & Charts -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Main Column: Activity Table -->
+<div class="lg:col-span-2 bg-surface border border-outline-variant rounded-lg overflow-hidden">
+<div class="p-4 border-b border-outline-variant bg-surface-container-lowest flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Activity</h3>
+<button class="font-label-sm text-label-sm text-primary hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="p-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">User</th>
+<th class="p-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Action</th>
+<th class="p-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Entity</th>
+<th class="p-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold text-right">Time</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="p-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary-fixed flex items-center justify-center font-label-sm font-bold">AN</div>
+<span class="text-on-surface font-medium">Amara Nwosu</span>
+</td>
+<td class="p-4 text-on-surface-variant">Submitted draft</td>
+<td class="p-4 text-primary hover:underline cursor-pointer italic">"The Architecture of Grace"</td>
+<td class="p-4 text-secondary text-right font-label-sm text-label-sm">10 min ago</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="p-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-sm font-bold">RH</div>
+<span class="text-on-surface font-medium">Rebecca Hall</span>
+</td>
+<td class="p-4 text-on-surface-variant">Approved reflection</td>
+<td class="p-4 text-primary hover:underline cursor-pointer italic">"Morning Liturgy Vol. 4"</td>
+<td class="p-4 text-secondary text-right font-label-sm text-label-sm">1 hr ago</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="p-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface flex items-center justify-center font-label-sm font-bold">JS</div>
+<span class="text-on-surface font-medium">John Smith</span>
+</td>
+<td class="p-4 text-on-surface-variant">Updated metadata</td>
+<td class="p-4 text-primary hover:underline cursor-pointer italic">"Sermon Archive 2023"</td>
+<td class="p-4 text-secondary text-right font-label-sm text-label-sm">3 hrs ago</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="p-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm font-bold">SYS</div>
+<span class="text-on-surface font-medium">System Automated</span>
+</td>
+<td class="p-4 text-on-surface-variant">Published batch</td>
+<td class="p-4 text-on-surface">Weekly Newsletter</td>
+<td class="p-4 text-secondary text-right font-label-sm text-label-sm">Yesterday</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Side Column: Widgets -->
+<div class="space-y-6">
+<!-- System Health Widget -->
+<div class="bg-surface-container-low border border-outline-variant p-6 rounded-lg">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary">monitor_heart</span>
+<h3 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">System Health</h3>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface">Server Load</span>
+<span class="text-secondary">24%</span>
+</div>
+<div class="h-1 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-1/4"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface">Storage Capacity</span>
+<span class="text-secondary">78%</span>
+</div>
+<div class="h-1 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container w-3/4"></div>
+</div>
+</div>
+<div class="pt-2 border-t border-outline-variant mt-4">
+<p class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span> All systems operational
+                                    </p>
+</div>
+</div>
+</div>
+<!-- Donation Pulse Chart (Placeholder Aesthetic) -->
+<div class="bg-surface-container-low border border-outline-variant p-6 rounded-lg relative overflow-hidden">
+<div class="flex justify-between items-start mb-6 relative z-10">
+<div>
+<h3 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Donation Pulse</h3>
+<p class="font-headline-md text-headline-md text-on-surface mt-1">$12,450</p>
+</div>
+<span class="material-symbols-outlined text-secondary">volunteer_activism</span>
+</div>
+<!-- Stylized CSS Chart Placeholder -->
+<div class="h-24 w-full flex items-end gap-1 relative z-10 opacity-70">
+<div class="w-full bg-primary-container rounded-t-sm h-[30%]"></div>
+<div class="w-full bg-primary-container rounded-t-sm h-[45%]"></div>
+<div class="w-full bg-primary-container rounded-t-sm h-[20%]"></div>
+<div class="w-full bg-primary-container rounded-t-sm h-[60%]"></div>
+<div class="w-full bg-primary-container rounded-t-sm h-[80%]"></div>
+<div class="w-full bg-primary-container rounded-t-sm h-[55%]"></div>
+<div class="w-full bg-tertiary-container rounded-t-sm h-[90%]"></div>
+</div>
+<div class="flex justify-between mt-2 font-label-sm text-label-sm text-secondary relative z-10">
+<span class="">Week 1</span>
+<span class="">Week 4</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<style>
+        /* Custom scrollbar for a cleaner look in the main canvas */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: theme('colors.surface-variant');
+            border-radius: 4px;
+        }
+        .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+            background-color: theme('colors.secondary');
+        }
+    </style>
+
+
+</body></html>

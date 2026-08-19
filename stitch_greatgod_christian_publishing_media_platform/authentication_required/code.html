@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign in to Bookmark - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&amp;family=Hanken+Grotesk:wght@600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#231b00",
+                        "surface": "#fff8f7",
+                        "surface-container-highest": "#f1dedc",
+                        "on-primary-fixed": "#410004",
+                        "inverse-primary": "#ffb3ad",
+                        "on-surface": "#231918",
+                        "secondary": "#57605d",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#ffedeb",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "primary-container": "#5d1212",
+                        "tertiary": "#735c00",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "surface-variant": "#f1dedc",
+                        "surface-linen": "#f5f3ee",
+                        "on-secondary-fixed-variant": "#404946",
+                        "surface-tint": "#9c413d",
+                        "stone-outline": "#887270",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "surface-container": "#fceae8",
+                        "outline": "#887270",
+                        "outline-variant": "#dbc0be",
+                        "on-primary-container": "#e27770",
+                        "on-secondary-container": "#5d6663",
+                        "on-secondary-fixed": "#151d1b",
+                        "secondary-fixed": "#dbe5e0",
+                        "success-secure": "#2e4d41",
+                        "surface-dim": "#e8d6d4",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#392e2d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#554240",
+                        "tertiary-fixed": "#ffe085",
+                        "tertiary-container": "#c6a94e",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "background": "#fff8f7",
+                        "surface-bright": "#fff8f7",
+                        "secondary-container": "#dbe5e0",
+                        "surface-paper": "#fbf9f4",
+                        "on-background": "#231918",
+                        "surface-container-low": "#fff0ef",
+                        "primary": "#3e0003",
+                        "surface-container-high": "#f6e4e2",
+                        "primary-fixed": "#ffdad7",
+                        "on-tertiary-container": "#4e3e00",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#e3c466"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "stack-md": "32px",
+                        "margin-mobile": "20px",
+                        "gutter": "32px",
+                        "form-width": "560px",
+                        "container-max": "1120px",
+                        "stack-lg": "64px",
+                        "stack-sm": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-md": ["EB Garamond"],
+                        "donation-amount": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "headline-lg": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-blur-overlay {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 248, 247, 0.85); /* surface color with opacity */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen relative overflow-hidden">
+<!-- Blurred Background Content (Simulated Article) -->
+<div class="absolute inset-0 z-0 select-none pointer-events-none opacity-40">
+<header class="h-16 border-b border-outline-variant flex items-center px-margin-mobile max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary tracking-tight">GreatGod</div>
+</header>
+<main class="max-w-[720px] mx-auto px-margin-mobile py-stack-lg">
+<h1 class="font-headline-lg text-headline-lg mb-stack-md">The Theology of Stewardship</h1>
+<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p class="mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="bg-cover bg-center w-full h-64 mb-4 rounded" data-alt="A serene landscape showing a quiet morning over a calm lake, soft warm sunlight piercing through light mist, evoking a sense of peaceful reflection and stewardship of nature. The color palette is muted and earthy, fitting a calm, trustworthy brand identity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCO5WxfoMaK1yBdY7kMR4QWB4nPSXDGFbqGQOzpVNppWs-l9wZqby3fz0SqcvwNjQxCqdXT6Lv3VJWlJrj_6dkKZuw3RRGe6H5WzQAI5z6j7ypIV1Kd-H4ae55x3eWu-nDSlTBX9xb3RK0vH3NXviyvMG56r9upW4viosHRPPiIzF_BxPu7oWSDFwlRg6vOUqBfGI-kcgQuABLBlNH5UtxMGW3XOCIoPq7bTDYb4-V2R1w6KNvtD7hx')"></div>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+</main>
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-margin-mobile bg-blur-overlay">
+<!-- The Vessel -->
+<div class="bg-surface-paper w-full max-w-form-width rounded-lg shadow-sm border border-outline-variant p-stack-md md:p-stack-lg flex flex-col items-center text-center relative overflow-hidden">
+<!-- Subtle top accent line -->
+<div class="absolute top-0 left-0 right-0 h-[1px] bg-outline-variant">
+<div class="h-full bg-primary w-1/3 mx-auto"></div>
+</div>
+<!-- Icon -->
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary mb-stack-sm border border-outline-variant">
+<span class="material-symbols-outlined text-3xl" data-icon="bookmark">bookmark</span>
+</div>
+<!-- Content -->
+<h2 class="font-headline-md text-headline-md text-on-surface mb-unit">Sign in to Bookmark</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md max-w-sm">
+                Join our community to save your favorite resources and participate in the conversation.
+            </p>
+<!-- Actions -->
+<div class="w-full flex flex-col gap-unit sm:flex-row sm:gap-gutter justify-center mb-stack-sm">
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-widest px-8 py-4 rounded transition-colors duration-200 w-full sm:w-auto">
+                    Sign In
+                </button>
+<button class="bg-transparent border border-outline hover:border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest px-8 py-4 rounded transition-colors duration-200 w-full sm:w-auto">
+                    Register
+                </button>
+</div>
+<!-- Secondary Link -->
+<button class="text-on-surface-variant hover:text-primary font-label-lg text-label-lg mt-unit transition-colors flex items-center gap-2 group">
+<span>No thanks, I'll keep reading</span>
+<span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

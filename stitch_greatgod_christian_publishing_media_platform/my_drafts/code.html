@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Drafts - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#ffb3ad",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dbdad5",
+                        "background": "#fbf9f4",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#410004",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "inverse-on-surface": "#f2f1ec",
+                        "inverse-surface": "#30312e",
+                        "secondary-container": "#d8e2dd",
+                        "surface-container-high": "#eae8e3",
+                        "tertiary-fixed": "#ffe088",
+                        "outline": "#887270",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#4e3d00",
+                        "error": "#ba1a1a",
+                        "tertiary": "#735c00",
+                        "on-secondary-container": "#5b6561",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "secondary": "#57605d",
+                        "on-surface": "#1b1c19",
+                        "surface-container-low": "#f5f3ee",
+                        "on-tertiary-fixed": "#241a00",
+                        "primary-fixed": "#ffdad7",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-container": "#f0eee9",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "on-secondary-fixed": "#141d1a",
+                        "surface": "#fbf9f4",
+                        "surface-tint": "#9c413d",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-fixed": "#dbe5e0",
+                        "on-surface-variant": "#554240",
+                        "on-background": "#1b1c19",
+                        "primary-container": "#5d1212",
+                        "surface-bright": "#fbf9f4",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "surface-variant": "#e4e2dd",
+                        "tertiary-container": "#cca72f",
+                        "primary": "#3e0003",
+                        "on-primary-container": "#e27770",
+                        "outline-variant": "#dbc0be"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "stack-md": "32px",
+                        "gutter": "32px",
+                        "container-max": "1120px",
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["\"Source Serif 4\""],
+                        "headline-md": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .sacred-border { border: 1px solid #E5E0D8; }
+        .sacred-divider { border-bottom: 1px solid #E5E0D8; }
+        .bg-level-2 { background-color: #F2EEE6; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flat no shadows">
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors p-2 rounded-full duration-200 ease-in-out flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-display-lg text-headline-lg-mobile text-primary dark:text-primary-fixed-dim tracking-tight hidden md:block font-bold">GreatGod</h1>
+<!-- Web Nav -->
+<nav class="hidden md:flex space-x-8 items-center h-full">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors duration-200 ease-in-out px-4 py-2 rounded-md" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors duration-200 ease-in-out px-4 py-2 rounded-md" href="#">Discover</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors duration-200 ease-in-out px-4 py-2 rounded-md" href="#">Library</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors duration-200 ease-in-out px-4 py-2 rounded-md" href="#">Profile</a>
+</nav>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors p-2 rounded-full duration-200 ease-in-out flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-32 px-margin-mobile md:px-stack-lg max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-stack-md gap-4">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">My Drafts</h2>
+<p class="text-on-surface-variant text-body-md font-body-md">Unpublished works in progress.</p>
+</div>
+<button class="bg-primary-container text-on-primary font-label-sm text-label-sm px-6 py-3 rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 18px;">edit</span>
+                NEW DRAFT
+            </button>
+</div>
+<!-- Search & Filter Controls -->
+<div class="flex flex-col md:flex-row gap-4 mb-stack-lg sacred-divider pb-6">
+<div class="relative flex-grow max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest sacred-border rounded-DEFAULT focus:ring-2 focus:ring-primary-container focus:border-transparent font-body-md text-on-surface outline-none transition-shadow" placeholder="Search drafts..." type="text"/>
+</div>
+<div class="flex gap-2">
+<select class="bg-surface-container-lowest sacred-border rounded-DEFAULT px-4 py-3 font-label-sm text-label-sm text-on-surface-variant outline-none focus:ring-2 focus:ring-primary-container">
+<option>All Types</option>
+<option>Article</option>
+<option>Devotional</option>
+<option>Essay</option>
+</select>
+<select class="bg-surface-container-lowest sacred-border rounded-DEFAULT px-4 py-3 font-label-sm text-label-sm text-on-surface-variant outline-none focus:ring-2 focus:ring-primary-container">
+<option>Last Modified</option>
+<option>Created Date</option>
+<option>A-Z</option>
+</select>
+</div>
+</div>
+<!-- Drafts Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Draft Card 1 -->
+<a class="block bg-level-2 sacred-border rounded-DEFAULT p-6 hover:bg-surface-container-low transition-colors group relative overflow-hidden h-full flex flex-col" href="#">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Devotional</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors line-clamp-2">The Silence Between the Notes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3 flex-grow">An exploration of waiting seasons and how divine presence is often most acutely felt in periods of apparent absence and silence...</p>
+<div class="flex items-center text-on-surface-variant opacity-70 font-label-sm text-label-sm mt-auto pt-4 border-t border-outline-variant/30">
+<span>Saved 2 hrs ago</span>
+<span class="mx-2">·</span>
+<span>1,240 words</span>
+</div>
+</a>
+<!-- Draft Card 2 -->
+<a class="block bg-level-2 sacred-border rounded-DEFAULT p-6 hover:bg-surface-container-low transition-colors group relative overflow-hidden h-full flex flex-col" href="#">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Article</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors line-clamp-2 italic text-on-surface-variant">Untitled Draft</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3 flex-grow">The early church fathers understood communion not merely as a symbol, but as an active participation in the reality of the incarnation...</p>
+<div class="flex items-center text-on-surface-variant opacity-70 font-label-sm text-label-sm mt-auto pt-4 border-t border-outline-variant/30">
+<span>Yesterday, 4:30 PM</span>
+<span class="mx-2">·</span>
+<span>850 words</span>
+</div>
+</a>
+<!-- Draft Card 3 -->
+<a class="block bg-level-2 sacred-border rounded-DEFAULT p-6 hover:bg-surface-container-low transition-colors group relative overflow-hidden h-full flex flex-col" href="#">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Essay</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors line-clamp-2">Architecture of the Sacred</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3 flex-grow">How physical spaces shape our spiritual posture, examining historical cathedrals versus modern auditorium-style gathering spaces...</p>
+<div class="flex items-center text-on-surface-variant opacity-70 font-label-sm text-label-sm mt-auto pt-4 border-t border-outline-variant/30">
+<span>Oct 12, 2023</span>
+<span class="mx-2">·</span>
+<span>3,100 words</span>
+</div>
+</a>
+<!-- Draft Card 4 -->
+<a class="block bg-level-2 sacred-border rounded-DEFAULT p-6 hover:bg-surface-container-low transition-colors group relative overflow-hidden h-full flex flex-col" href="#">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Devotional</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors line-clamp-2 italic text-on-surface-variant">Untitled Draft</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3 flex-grow">...</p>
+<div class="flex items-center text-on-surface-variant opacity-70 font-label-sm text-label-sm mt-auto pt-4 border-t border-outline-variant/30">
+<span>Sep 28, 2023</span>
+<span class="mx-2">·</span>
+<span>0 words</span>
+</div>
+</a>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-20 bg-surface dark:bg-surface-dim px-margin-mobile md:hidden border-t border-outline-variant dark:border-outline flat no shadows">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm mt-1">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-label-sm mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-secondary-container/30 rounded-full py-1 px-4 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

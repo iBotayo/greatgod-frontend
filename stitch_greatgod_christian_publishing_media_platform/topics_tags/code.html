@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Topic/Tag Selector</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-primary": "#ffb3ad",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#dbdad5",
+                      "background": "#fbf9f4",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#410004",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "inverse-on-surface": "#f2f1ec",
+                      "inverse-surface": "#30312e",
+                      "secondary-container": "#d8e2dd",
+                      "surface-container-high": "#eae8e3",
+                      "tertiary-fixed": "#ffe088",
+                      "outline": "#887270",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#4e3d00",
+                      "error": "#ba1a1a",
+                      "tertiary": "#735c00",
+                      "on-secondary-container": "#5b6561",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "secondary": "#57605d",
+                      "on-surface": "#1b1c19",
+                      "surface-container-low": "#f5f3ee",
+                      "on-tertiary-fixed": "#241a00",
+                      "primary-fixed": "#ffdad7",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "surface-container": "#f0eee9",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "on-secondary-fixed": "#141d1a",
+                      "surface": "#fbf9f4",
+                      "surface-tint": "#9c413d",
+                      "surface-container-highest": "#e4e2dd",
+                      "secondary-fixed": "#dbe5e0",
+                      "on-surface-variant": "#554240",
+                      "on-background": "#1b1c19",
+                      "primary-container": "#5d1212",
+                      "surface-bright": "#fbf9f4",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "surface-variant": "#e4e2dd",
+                      "tertiary-container": "#cca72f",
+                      "primary": "#3e0003",
+                      "on-primary-container": "#e27770",
+                      "outline-variant": "#dbc0be"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-sm": "16px",
+                      "stack-md": "32px",
+                      "gutter": "32px",
+                      "container-max": "1120px",
+                      "unit": "8px",
+                      "stack-lg": "64px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #dbc0be;
+            border-radius: 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim docked full-width top-0 border-b border-outline-variant dark:border-outline flat no shadows fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 duration-200 ease-in-out">
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<div class="font-display-lg text-headline-lg-mobile text-primary dark:text-primary-fixed-dim tracking-tight">
+            GreatGod
+        </div>
+<div class="flex items-center">
+<button class="font-label-sm text-label-sm text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors py-2 px-4 rounded-full font-bold uppercase tracking-widest">
+                Save
+            </button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow pt-[80px] pb-stack-lg px-margin-mobile md:px-stack-lg max-w-container-max mx-auto w-full flex flex-col gap-stack-md">
+<!-- Header Section -->
+<section class="mb-stack-sm md:mb-stack-md text-center max-w-[720px] mx-auto w-full">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-unit">Categorize Content</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Select a primary theological domain and append relevant conceptual tags to ensure editorial clarity.</p>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Primary Topic (Left Column on Desktop) -->
+<section class="md:col-span-5 flex flex-col gap-stack-sm bg-surface-container-low p-stack-sm md:p-stack-md rounded-xl border border-outline-variant/50">
+<div class="flex flex-col gap-unit">
+<h2 class="font-headline-md text-headline-md text-primary">Primary Topic</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-80 uppercase tracking-widest">Select One Core Domain</p>
+</div>
+<div class="flex flex-col gap-unit mt-stack-sm" role="radiogroup">
+<!-- Radio Option 1 -->
+<label class="flex items-center justify-between p-4 bg-surface rounded-lg border border-outline-variant cursor-pointer hover:bg-surface-container transition-colors group relative overflow-hidden">
+<div class="flex items-center gap-3 relative z-10">
+<div class="w-5 h-5 rounded-full border-2 border-primary flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Theology</span>
+</div>
+<div class="absolute inset-0 border border-primary rounded-lg opacity-100 pointer-events-none"></div>
+</label>
+<!-- Radio Option 2 -->
+<label class="flex items-center justify-between p-4 bg-surface rounded-lg border border-outline-variant cursor-pointer hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:border-primary transition-colors">
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Church History</span>
+</div>
+</label>
+<!-- Radio Option 3 -->
+<label class="flex items-center justify-between p-4 bg-surface rounded-lg border border-outline-variant cursor-pointer hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:border-primary transition-colors">
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Christian Living</span>
+</div>
+</label>
+<!-- Radio Option 4 -->
+<label class="flex items-center justify-between p-4 bg-surface rounded-lg border border-outline-variant cursor-pointer hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:border-primary transition-colors">
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Biblical Studies</span>
+</div>
+</label>
+<!-- Radio Option 5 -->
+<label class="flex items-center justify-between p-4 bg-surface rounded-lg border border-outline-variant cursor-pointer hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:border-primary transition-colors">
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Apologetics</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Tags (Right Column on Desktop) -->
+<section class="md:col-span-7 flex flex-col gap-stack-sm bg-surface-container-low p-stack-sm md:p-stack-md rounded-xl border border-outline-variant/50">
+<div class="flex flex-col gap-unit">
+<h2 class="font-headline-md text-headline-md text-primary">Theological Tags</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-80 uppercase tracking-widest">Select Multiple Nuances</p>
+</div>
+<!-- Search Input -->
+<div class="relative mt-stack-sm">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none" data-icon="search">search</span>
+<input class="w-full bg-surface border border-outline-variant rounded-full py-3 pl-12 pr-4 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow" placeholder="Search tags (e.g. Grace, Sovereignty)..." type="text"/>
+</div>
+<!-- Selected Tags Area -->
+<div class="flex flex-wrap gap-2 mt-4 min-h-[40px] items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-2">Selected:</span>
+<div class="inline-flex items-center gap-1 px-3 py-1 bg-primary-container text-on-primary-container rounded-full font-label-sm text-label-sm">
+                        Grace
+                        <button class="material-symbols-outlined text-[16px] hover:opacity-70 transition-opacity" data-icon="close">close</button>
+</div>
+<div class="inline-flex items-center gap-1 px-3 py-1 bg-primary-container text-on-primary-container rounded-full font-label-sm text-label-sm">
+                        Justification
+                        <button class="material-symbols-outlined text-[16px] hover:opacity-70 transition-opacity" data-icon="close">close</button>
+</div>
+</div>
+<!-- Tag Cloud -->
+<div class="mt-4 flex flex-wrap gap-3 max-h-[300px] overflow-y-auto custom-scrollbar pr-2">
+<!-- Active Tag visually hidden in this list to avoid duplication if desired, or styled as selected -->
+<button class="px-4 py-2 bg-primary text-on-primary border border-primary rounded-full font-label-sm text-label-sm transition-colors hover:bg-primary/90">Grace</button>
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant rounded-full font-label-sm text-label-sm transition-colors hover:border-primary hover:text-primary">Faith</button>
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant rounded-full font-label-sm text-label-sm transition-colors hover:border-primary hover:text-primary">Prayer</button>
+<button class="px-4 py-2 bg-primary text-on-primary border border-primary rounded-full font-label-sm text-label-sm transition-colors hover:bg-primary/90">Justification</button>
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant rounded-full font-label-sm text-label-sm transition-colors hover:border-primary hover:text-primary">Sanctification</button>
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant rounded-full font-label-sm text-label-sm transition-colors hover:border-primary hover:text-primary">Trinity</button>
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant rounded-full font-label-sm text-label-sm transition-colors hover:border-primary hover:text-primary">Christology</button>
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant rounded-full font-label-sm text-label-sm transition-colors hover:border-primary hover:text-primary">Eschatology</button>
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant rounded-full font-label-sm text-label-sm transition-colors hover:border-primary hover:text-primary">Sovereignty</button>
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant rounded-full font-label-sm text-label-sm transition-colors hover:border-primary hover:text-primary">Atonement</button>
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant rounded-full font-label-sm text-label-sm transition-colors hover:border-primary hover:text-primary">Covenant</button>
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant rounded-full font-label-sm text-label-sm transition-colors hover:border-primary hover:text-primary">Sacraments</button>
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant rounded-full font-label-sm text-label-sm transition-colors hover:border-primary hover:text-primary">Ecclesiology</button>
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant rounded-full font-label-sm text-label-sm transition-colors hover:border-primary hover:text-primary">Sin</button>
+</div>
+</section>
+</div>
+<!-- Decorative Divider -->
+<div class="w-full max-w-[200px] mx-auto h-[1px] bg-gradient-to-r from-transparent via-outline-variant to-transparent my-stack-md"></div>
+</main>
+</body></html>

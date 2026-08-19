@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scheduled Detail - Sacred Editorial</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts for Sacred Editorial Theme -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#f0eee9",
+                    "outline-variant": "#dbc0be",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#ffdad7",
+                    "background": "#fbf9f4",
+                    "on-primary-container": "#e27770",
+                    "inverse-on-surface": "#f2f1ec",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#5d1212",
+                    "primary": "#3e0003",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#bfc9c4",
+                    "secondary-container": "#d8e2dd",
+                    "on-surface-variant": "#554240",
+                    "surface": "#fbf9f4",
+                    "on-secondary-container": "#5b6561",
+                    "on-tertiary-container": "#4e3d00",
+                    "on-primary-fixed-variant": "#7e2a27",
+                    "inverse-primary": "#ffb3ad",
+                    "surface-dim": "#dbdad5",
+                    "on-secondary-fixed-variant": "#3f4945",
+                    "tertiary": "#735c00",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-primary-fixed": "#410004",
+                    "surface-bright": "#fbf9f4",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-surface": "#1b1c19",
+                    "surface-container-high": "#eae8e3",
+                    "surface-variant": "#e4e2dd",
+                    "secondary": "#57605d",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#30312e",
+                    "on-background": "#1b1c19",
+                    "surface-container-low": "#f5f3ee",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "outline": "#887270",
+                    "tertiary-container": "#cca72f",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#9c413d",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#141d1a",
+                    "tertiary-fixed": "#ffe088",
+                    "secondary-fixed": "#dbe5e0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "16px",
+                    "unit": "8px",
+                    "stack-md": "32px",
+                    "gutter": "32px",
+                    "margin-mobile": "20px",
+                    "stack-lg": "64px",
+                    "container-max": "1120px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "EB Garamond"
+                    ],
+                    "body-md": [
+                            "\"Source Serif 4\""
+                    ],
+                    "body-lg": [
+                            "\"Source Serif 4\""
+                    ],
+                    "headline-lg": [
+                            "EB Garamond"
+                    ],
+                    "headline-lg-mobile": [
+                            "EB Garamond"
+                    ],
+                    "label-sm": [
+                            "Hanken Grotesk"
+                    ],
+                    "display-lg": [
+                            "EB Garamond"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "17px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-sm": [
+                            "13px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.08em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[style*="FILL' 1"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky bg-background dark:bg-background border-b border-outline-variant dark:border-outline-variant z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-gutter h-16 w-full max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-headline-md text-primary dark:text-inverse-primary tracking-tight">Sacred Editorial</span>
+</div>
+<!-- Navigation Links (Hidden on Mobile) -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 text-label-sm font-label-sm" href="#">Dashboard</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 text-label-sm font-label-sm" href="#">Review Queue</a>
+<!-- Semantic Match: 'Scheduled Detail' fits under 'Calendar' -->
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 text-label-sm font-label-sm" href="#">Calendar</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 text-label-sm font-label-sm" href="#">Library</a>
+</nav>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-4 text-primary dark:text-inverse-primary">
+<button class="hover:text-primary-container transition-colors duration-200 flex items-center justify-center p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-background">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:text-primary-container transition-colors duration-200 flex items-center justify-center p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-background">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="Editor Profile" class="w-8 h-8 rounded-full border border-outline-variant object-cover ml-2" data-alt="A small, circular profile portrait of an editor in a light, warm setting. The lighting is soft and classical. The subject is thoughtfully looking slightly off-camera. The mood is calm and professional, fitting a high-end editorial team." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL6dXDKFqFEjnidlZBEN3ZiNhifuKq8c8_cOtwWaLNCsBpdo4lCgYcjUXv0jdRsfJQYP6duPobbRMo3l4A76GKRNf6CwST6iX6MOm-1RL9vkAu8yhG71jNAOh3yrJLpuMkpLZnoSbw_h2Pd_Ic546nn6D_ijssVQXCgPdmJ7gkem7gsG7YPbrl8FrPR2r0P2Hndd81Hr_rr748gj_Ath970kbEEStcJyErBQgcxERnGaWFb3hhe9_p"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-md flex flex-col md:flex-row gap-gutter">
+<!-- Left Column: Content Canvas -->
+<article class="flex-1 max-w-[720px] mx-auto md:mx-0 w-full flex flex-col gap-stack-md">
+<!-- Breadcrumbs / Meta Actions (Mobile) -->
+<div class="flex items-center justify-between md:hidden">
+<a class="text-secondary font-label-sm text-label-sm flex items-center gap-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_back">arrow_back</span>
+                    Calendar
+                </a>
+</div>
+<!-- Content Header -->
+<header class="flex flex-col gap-unit">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-sm font-label-sm border border-outline-variant">Theology &amp; Culture</span>
+<span class="text-secondary text-label-sm font-label-sm">·</span>
+<span class="text-secondary text-label-sm font-label-sm">7 min read</span>
+</div>
+<h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-on-surface">The Architecture of Silence</h1>
+<h2 class="text-body-lg font-body-lg text-on-surface-variant italic mt-2">Exploring the monastic tradition of quietude in an age of incessant digital noise and what it means for modern spirituality.</h2>
+<div class="flex items-center gap-3 mt-4 pt-4 border-t border-outline-variant/50">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A soft, classical portrait of a writer named Julian Vance. The background is a warm, slightly out-of-focus library setting. The lighting is serene and natural, emphasizing a trustworthy and calm personality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqQTwPUfQP5aU_tfWkmsE9rZaarhKYeWNJvb6Sh8mst_CsQjF49npL5iNbEZhD_aPUJxu0ujSDZnJx8nhH3cYwStB3A4Vs7WaHxmIUbN66L8nNpI5nHyc4ZKFYqzXixCOX5lXMtzwJrZRnzQm1ki09MbILYGu3ls-xvSPBRQYv-7F6_EMt898Zek-zeYAVJYt1SFShWKIo6ynwMm-zAGZFBNQNhybmJ1dihd1ajD3qJMI_g2TwtahT"/>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-on-surface">Julian Vance</span>
+<span class="text-label-sm font-label-sm text-secondary font-normal">Contributing Scholar</span>
+</div>
+</div>
+</header>
+<!-- Featured Image -->
+<figure class="w-full rounded-lg overflow-hidden border border-outline-variant/50 bg-surface-container-low shadow-sm relative group">
+<img class="w-full aspect-[16/9] object-cover transition-transform duration-700 group-hover:scale-[1.02]" data-alt="A breathtaking, minimalist architectural photograph of an ancient stone cloister. Sunlight streams through arched windows, casting long, sharp shadows on the worn stone floor. The atmosphere is profoundly calm, quiet, and sacred. High contrast between light and dark, monochromatic warm tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBblyXZmGXgipgTO5ISANBQ_XlXXF5oiX8Mr7QAhfRKtzTSgMt3l1m6dKya0zu--bj1HHmN36Pqm6Om1bKWjtG9-lhbQDGnnx84mfULVTIzP5CtGfrNDZ_C43tK_gdAwab34TtrRP840fU_1tf7xRa-0586QakHXH5ahF_iutIxyzLPlnXa92KzXHcuE-SYewOgUxOlbmR8HSZSMT1_maw4CnRCd1JVdcMgxvoywtc7N4tp-NAJe80E"/>
+<figcaption class="p-3 text-body-md font-body-md text-sm italic text-secondary bg-surface-container-low border-t border-outline-variant/30">
+                    The cloisters at Senanque Abbey. Photography by M. Dubois.
+                </figcaption>
+</figure>
+<!-- Article Body Preview -->
+<div class="prose prose-stone prose-lg max-w-none text-body-md font-body-md text-on-background leading-relaxed">
+<p class="first-letter:text-5xl first-letter:font-headline-lg first-letter:text-primary first-letter:float-left first-letter:mr-2 first-letter:mt-1">In the heart of the Vaucluse mountains, silence is not merely the absence of sound; it is a physical presence. When one crosses the threshold of the abbey, the modern world falls away, replaced by an acoustic architecture designed specifically to hold stillness.</p>
+<p>We live in an era where attention is currency, extracted through a relentless barrage of notifications, alerts, and feeds. To seek quietude today is almost an act of rebellion. The monastic traditions, historically seen as retreats from the world, now offer a critical lens through which we might examine our engagement with it.</p>
+<h3 class="text-headline-md font-headline-md mt-stack-md mb-stack-sm text-on-surface">The Physicality of Quiet</h3>
+<p>The architects of medieval monasteries understood that stone and space shape the mind. The high vaulted ceilings were not just aesthetic choices to glorify the divine; they were acoustic instruments meant to stretch sound, turning a simple chant into an enveloping atmosphere.</p>
+<div class="my-stack-md p-stack-sm border-l-2 border-primary-container bg-surface-container-low italic text-on-surface-variant">
+                    "Silence is the sleep that nourishes wisdom." — Francis Bacon
+                </div>
+<p>When we attempt to meditate or simply sit quietly in a modern apartment, the walls vibrate with the hum of refrigerators, the distant drone of traffic, and the invisible anxiety of proximity to thousands of others. The physical environment fights against our intent.</p>
+<p>To reclaim silence, we must perhaps begin by acknowledging its necessity as an infrastructure for thought, much like clean water or breathable air.</p>
+</div>
+<!-- End of Content Flourish -->
+<div class="w-full flex justify-center py-stack-md">
+<div class="w-24 h-px bg-gradient-to-r from-transparent via-outline-variant to-transparent"></div>
+</div>
+</article>
+<!-- Right Column: Sidebar Dashboard -->
+<aside class="w-full md:w-80 flex-shrink-0 flex flex-col gap-stack-sm relative">
+<div class="sticky top-24 flex flex-col gap-stack-sm">
+<!-- Status Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant p-stack-sm flex flex-col gap-4 shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2 text-primary-container">
+<span class="material-symbols-outlined" data-icon="schedule" data-weight="fill" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<span class="text-label-sm font-label-sm tracking-widest uppercase">Scheduled</span>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded text-xs font-bold font-label-sm">V.3 Final</span>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="text-headline-md font-headline-md text-on-surface">Oct 24, 2024</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">08:00 AM — EST</p>
+</div>
+<div class="w-full h-px bg-outline-variant/50 my-2"></div>
+<!-- Countdown Logic (Simulated) -->
+<div class="flex flex-col gap-2">
+<span class="text-label-sm font-label-sm text-secondary">Time to Publication</span>
+<div class="flex gap-2 text-on-surface">
+<div class="flex flex-col items-center bg-surface-container-high rounded p-2 flex-1 border border-outline-variant/30">
+<span class="text-headline-md font-headline-md leading-none">02</span>
+<span class="text-[10px] font-label-sm text-secondary uppercase mt-1">Days</span>
+</div>
+<div class="flex flex-col items-center bg-surface-container-high rounded p-2 flex-1 border border-outline-variant/30">
+<span class="text-headline-md font-headline-md leading-none">14</span>
+<span class="text-[10px] font-label-sm text-secondary uppercase mt-1">Hrs</span>
+</div>
+<div class="flex flex-col items-center bg-surface-container-high rounded p-2 flex-1 border border-outline-variant/30">
+<span class="text-headline-md font-headline-md leading-none">45</span>
+<span class="text-[10px] font-label-sm text-secondary uppercase mt-1">Min</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Controls -->
+<div class="flex flex-col gap-3">
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary text-label-sm font-label-sm py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-background">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit_calendar">edit_calendar</span>
+                        Edit Schedule
+                    </button>
+<button class="w-full bg-transparent hover:bg-surface-container border border-outline text-on-surface text-label-sm font-label-sm py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 focus:ring-2 focus:ring-outline focus:ring-offset-2 focus:ring-offset-background">
+<span class="material-symbols-outlined text-[18px]" data-icon="publish">publish</span>
+                        Publish Now
+                    </button>
+<div class="flex gap-3 mt-2">
+<button class="flex-1 bg-transparent hover:bg-error-container/20 border border-outline-variant text-error text-label-sm font-label-sm py-2 px-3 rounded-lg transition-colors flex items-center justify-center gap-1 focus:ring-2 focus:ring-error focus:ring-offset-2 focus:ring-offset-background">
+<span class="material-symbols-outlined text-[16px]" data-icon="cancel_schedule_send">cancel_schedule_send</span>
+                            Unpublish
+                        </button>
+<button class="flex-1 bg-transparent hover:bg-surface-container border border-outline-variant text-on-surface-variant text-label-sm font-label-sm py-2 px-3 rounded-lg transition-colors flex items-center justify-center gap-1 focus:ring-2 focus:ring-outline-variant focus:ring-offset-2 focus:ring-offset-background">
+<span class="material-symbols-outlined text-[16px]" data-icon="archive">archive</span>
+                            Archive
+                        </button>
+</div>
+</div>
+<!-- Taxonomy & Metadata -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-stack-sm flex flex-col gap-4 mt-stack-sm shadow-sm">
+<h3 class="text-label-sm font-label-sm text-on-surface uppercase tracking-widest border-b border-outline-variant pb-2">Taxonomy</h3>
+<div class="flex flex-col gap-3">
+<div>
+<span class="text-[11px] font-label-sm text-secondary uppercase block mb-1">Primary Category</span>
+<span class="text-body-md font-body-md text-on-surface">Theology &amp; Culture</span>
+</div>
+<div>
+<span class="text-[11px] font-label-sm text-secondary uppercase block mb-1">Tags</span>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container text-on-surface-variant px-2 py-1 rounded text-xs font-label-sm border border-outline-variant/50">Monasticism</span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-1 rounded text-xs font-label-sm border border-outline-variant/50">Digital Fasting</span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-1 rounded text-xs font-label-sm border border-outline-variant/50">Silence</span>
+</div>
+</div>
+<div>
+<span class="text-[11px] font-label-sm text-secondary uppercase block mb-1">Series</span>
+<a class="text-body-md font-body-md text-primary-container hover:underline decoration-1 underline-offset-2" href="#">Modern Asceticism (Part 3)</a>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface w-full py-stack-sm mt-auto border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-gutter w-full max-w-container-max mx-auto gap-4">
+<span class="text-label-sm font-label-sm font-bold text-primary">Sacred Editorial</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant">© 2024 Sacred Editorial Management. All rights reserved.</span>
+<div class="flex gap-4">
+<a class="text-secondary dark:text-secondary-fixed-dim opacity-70 hover:opacity-100 transition-opacity text-label-sm font-label-sm" href="#">Privacy Policy</a>
+<a class="text-secondary dark:text-secondary-fixed-dim opacity-70 hover:opacity-100 transition-opacity text-label-sm font-label-sm" href="#">Terms of Service</a>
+<a class="text-secondary dark:text-secondary-fixed-dim opacity-70 hover:opacity-100 transition-opacity text-label-sm font-label-sm" href="#">Ethical Standards</a>
+</div>
+</div>
+</footer>
+</body></html>

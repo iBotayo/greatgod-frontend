@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stream Interrupted - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffe085",
+                        "error": "#ba1a1a",
+                        "surface-paper": "#fbf9f4",
+                        "background": "#fff8f7",
+                        "surface-container-high": "#f6e4e2",
+                        "stone-outline": "#887270",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#e8d6d4",
+                        "on-secondary-fixed": "#151d1b",
+                        "on-primary-container": "#e27770",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-primary": "#ffffff",
+                        "surface-linen": "#f5f3ee",
+                        "surface-variant": "#f1dedc",
+                        "on-background": "#231918",
+                        "on-tertiary-container": "#4e3e00",
+                        "outline-variant": "#dbc0be",
+                        "tertiary-container": "#c6a94e",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#887270",
+                        "surface": "#fff8f7",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#fff0ef",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "inverse-primary": "#ffb3ad",
+                        "on-surface-variant": "#554240",
+                        "primary-container": "#5d1212",
+                        "primary-fixed": "#ffdad7",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "surface-container": "#fceae8",
+                        "secondary-fixed": "#dbe5e0",
+                        "secondary-container": "#dbe5e0",
+                        "on-surface": "#231918",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#410004",
+                        "primary": "#3e0003",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#57605d",
+                        "success-secure": "#2e4d41",
+                        "tertiary": "#735c00",
+                        "tertiary-fixed-dim": "#e3c466",
+                        "on-tertiary-fixed": "#231b00",
+                        "inverse-on-surface": "#ffedeb",
+                        "surface-tint": "#9c413d",
+                        "on-secondary-container": "#5d6663",
+                        "on-secondary-fixed-variant": "#404946",
+                        "inverse-surface": "#392e2d",
+                        "surface-container-highest": "#f1dedc",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff8f7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1120px",
+                        "form-width": "560px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "stack-sm": "16px",
+                        "stack-md": "32px"
+                    },
+                    "fontFamily": {
+                        "donation-amount": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .pulse-soft {
+            animation: pulse-soft 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .7; transform: scale(0.98); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center justify-center font-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<main class="w-full max-w-form-width px-margin-mobile flex flex-col items-center text-center">
+<!-- Decorative Error Icon/Graphic -->
+<div class="relative mb-stack-md flex items-center justify-center w-32 h-32 rounded-full bg-surface-container-low border border-outline-variant pulse-soft">
+<span class="material-symbols-outlined text-4xl text-stone-outline" style="font-variation-settings: 'FILL' 0, 'wght' 200;">
+                wifi_off
+            </span>
+<!-- Subtle ring effect -->
+<div class="absolute inset-0 rounded-full border border-stone-outline opacity-20 scale-110"></div>
+<div class="absolute inset-0 rounded-full border border-stone-outline opacity-10 scale-125"></div>
+</div>
+<!-- Messaging -->
+<h1 class="font-headline-md text-headline-md text-primary mb-stack-sm md:font-headline-lg md:text-headline-lg">
+            A brief interruption in the stream
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto mb-stack-lg leading-relaxed">
+            We are experiencing a temporary difficulty loading this media. Please take a moment and try again.
+        </p>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+<button class="w-full sm:w-auto px-8 py-3 bg-primary text-on-primary rounded font-label-lg text-label-lg uppercase tracking-widest hover:bg-on-primary-fixed-variant transition-colors duration-300 shadow-sm active:scale-95 flex items-center justify-center gap-2" onclick="window.location.reload()">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'wght' 300;">refresh</span>
+                Retry Connection
+            </button>
+<a class="w-full sm:w-auto px-8 py-3 bg-transparent border border-stone-outline text-primary rounded font-label-lg text-label-lg uppercase tracking-widest hover:bg-surface-container-low transition-colors duration-300 text-center active:scale-95" href="#">
+                Contact Support
+            </a>
+</div>
+<div class="mt-stack-lg text-center">
+<a class="font-label-sm text-label-sm text-stone-outline hover:text-primary transition-colors flex items-center justify-center gap-1 group" href="/">
+<span class="material-symbols-outlined text-[16px] group-hover:-translate-x-1 transition-transform">arrow_left_alt</span>
+                 Return to Library
+             </a>
+</div>
+</main>
+</body></html>

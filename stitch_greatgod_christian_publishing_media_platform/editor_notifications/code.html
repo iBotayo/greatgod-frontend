@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sacred Editorial - Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#e9c349",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#554240",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#141d1a",
+                        "background": "#fbf9f4",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-primary-container": "#e27770",
+                        "surface-container-high": "#eae8e3",
+                        "on-background": "#1b1c19",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-tertiary-container": "#4e3d00",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ffdad7",
+                        "tertiary": "#735c00",
+                        "on-surface": "#1b1c19",
+                        "primary-container": "#5d1212",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#3e0003",
+                        "inverse-surface": "#30312e",
+                        "surface-bright": "#fbf9f4",
+                        "surface-container-low": "#f5f3ee",
+                        "outline-variant": "#dbc0be",
+                        "secondary-fixed": "#dbe5e0",
+                        "on-primary-fixed": "#410004",
+                        "secondary-container": "#d8e2dd",
+                        "surface": "#fbf9f4",
+                        "on-primary": "#ffffff",
+                        "outline": "#887270",
+                        "surface-tint": "#9c413d",
+                        "surface-dim": "#dbdad5",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffe088",
+                        "surface-container": "#f0eee9",
+                        "on-secondary-container": "#5b6561",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#ffb3ad",
+                        "secondary": "#57605d",
+                        "tertiary-container": "#cca72f",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "surface-variant": "#e4e2dd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "64px",
+                        "gutter": "32px",
+                        "stack-md": "32px",
+                        "container-max": "1120px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "display-lg": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-md": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f4; /* bg-background */
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden text-on-surface font-body-md bg-background">
+<!-- SideNavBar -->
+<nav class="h-screen w-64 left-0 top-0 fixed bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant flex flex-col p-4 gap-2 z-50">
+<!-- Header -->
+<div class="flex items-center gap-3 mb-6 px-4 pt-2">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant shrink-0">
+<img alt="Organization Logo" class="w-full h-full object-cover" data-alt="A small, circular profile portrait of an elegant woman with short brown hair, wearing a dark turtleneck. The image has a calm, professional, and warm tone, fitting for an editorial managing editor. High quality, soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfHT2C1xzIgfaeEdlvthh5jWsCpn6BrgTiYN40RVQds8GiLi1b__UBXhMFKuhs77awqjc4gKGP5Mw6nd0YxhmIutNQp0GikD5AJ69cqV6fdnzJ0s0iRk0W_cDUKBA542zD7GV4GBm-RwmboRhMk_W02V6jQzzKAx6iFy6wFrI4sRnSGmRbLKhabfMRtuMb5K8SxoXH0Ga9R8S_rwgCfUAnxwtElioeIVUGjrnZAh4quAZMIFTfMBzm"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-primary dark:text-inverse-primary text-xl leading-tight">Sacred Editorial</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Managing Editor</span>
+</div>
+</div>
+<!-- CTA -->
+<button class="mb-4 bg-primary-container text-on-primary-container text-label-sm font-label-sm py-2 px-4 rounded hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            New Submission
+        </button>
+<!-- Main Navigation -->
+<div class="flex flex-col gap-1 flex-grow overflow-y-auto">
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform cursor-pointer active:opacity-70" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform cursor-pointer active:opacity-70" href="#">
+<span class="material-symbols-outlined">description</span>
+                Manuscripts
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform cursor-pointer active:opacity-70" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+                Editorial Calendar
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform cursor-pointer active:opacity-70" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+                Content Library
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform cursor-pointer active:opacity-70" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+                Taxonomy
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform cursor-pointer active:opacity-70" href="#">
+<span class="material-symbols-outlined">group</span>
+                Team
+            </a>
+</div>
+<!-- Footer Navigation -->
+<div class="mt-auto flex flex-col gap-1 border-t border-outline-variant pt-2">
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform cursor-pointer active:opacity-70" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                Archive
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform cursor-pointer active:opacity-70" href="#">
+<span class="material-symbols-outlined">help</span>
+                Help
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col h-screen overflow-hidden bg-background">
+<!-- Top App Bar equivalent for Notifications -->
+<header class="w-full flex justify-between items-end px-gutter pt-stack-md pb-4 border-b border-outline-variant bg-background shrink-0">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Notifications</h1>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">Activity requiring your attention.</p>
+</div>
+<!-- Category Filters -->
+<div class="flex gap-2">
+<button class="px-4 py-1.5 rounded-full border border-primary text-primary bg-primary-fixed-dim/20 text-label-sm font-label-sm transition-colors hover:bg-primary-fixed-dim/30">All</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant text-label-sm font-label-sm transition-colors hover:bg-surface-container-high">Submissions</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant text-label-sm font-label-sm transition-colors hover:bg-surface-container-high">Moderation</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant text-label-sm font-label-sm transition-colors hover:bg-surface-container-high">System</button>
+</div>
+</header>
+<!-- Notification List -->
+<div class="flex-1 overflow-y-auto px-gutter py-stack-sm">
+<div class="max-w-container-max mx-auto flex flex-col gap-4">
+<!-- Unread Date Group -->
+<h2 class="text-label-sm font-label-sm text-secondary uppercase tracking-widest mt-4 mb-2">Today</h2>
+<!-- Notification Item 1: Submission (Unread) -->
+<div class="group flex gap-4 p-4 bg-surface-container-lowest border border-[#E5E0D8] relative cursor-pointer hover:bg-surface-container-low transition-colors duration-200">
+<!-- Unread Indicator -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim/20 flex items-center justify-center shrink-0 text-primary-container">
+<span class="material-symbols-outlined icon-filled">description</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-wider">New Submission</span>
+<span class="text-label-sm font-label-sm text-secondary opacity-70">10:42 AM</span>
+</div>
+<h3 class="font-headline-md text-[20px] leading-snug text-on-surface font-semibold mb-1 truncate">The Nature of Grace</h3>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2">
+                            A new theological essay has been submitted by Dr. Aris Thorne for the upcoming quarterly issue. Requires initial editorial review before assignment.
+                        </p>
+<div class="mt-4 flex gap-3">
+<button class="text-label-sm font-label-sm text-white bg-primary-container px-4 py-2 hover:opacity-90 transition-opacity">Review Manuscript</button>
+<button class="text-label-sm font-label-sm text-on-surface border border-[#E5E0D8] px-4 py-2 hover:bg-surface-container-high transition-colors">Assign Editor</button>
+</div>
+</div>
+</div>
+<!-- Notification Item 2: Moderation (Unread) -->
+<div class="group flex gap-4 p-4 bg-surface-container-lowest border border-[#E5E0D8] relative cursor-pointer hover:bg-surface-container-low transition-colors duration-200">
+<!-- Unread Indicator -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+<div class="w-10 h-10 rounded-full bg-error-container/50 flex items-center justify-center shrink-0 text-error">
+<span class="material-symbols-outlined icon-filled">flag</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<span class="text-label-sm font-label-sm text-error uppercase tracking-wider">Moderation Alert</span>
+<span class="text-label-sm font-label-sm text-secondary opacity-70">08:15 AM</span>
+</div>
+<h3 class="font-headline-md text-[20px] leading-snug text-on-surface font-semibold mb-1 truncate">Flagged Comment on Article</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">
+                            Multiple users have flagged a comment on the article "Modern Liturgy" for violating community ethical standards.
+                        </p>
+<div class="mt-4 flex gap-3">
+<button class="text-label-sm font-label-sm text-error border border-error px-4 py-2 hover:bg-error-container/20 transition-colors">Review Comment</button>
+</div>
+</div>
+</div>
+<!-- Read Date Group -->
+<h2 class="text-label-sm font-label-sm text-secondary uppercase tracking-widest mt-8 mb-2">Yesterday</h2>
+<!-- Notification Item 3: System (Read) -->
+<div class="group flex gap-4 p-4 bg-surface-container-low border border-transparent opacity-80 cursor-pointer hover:opacity-100 transition-opacity duration-200">
+<div class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-wider">System Update</span>
+<span class="text-label-sm font-label-sm text-secondary opacity-70">Nov 12, 4:00 PM</span>
+</div>
+<h3 class="font-headline-md text-[20px] leading-snug text-on-surface mb-1 truncate">Scheduled Maintenance</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">
+                            The editorial platform will undergo brief maintenance on Sunday at 2:00 AM EST. Expected downtime is approximately 45 minutes.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

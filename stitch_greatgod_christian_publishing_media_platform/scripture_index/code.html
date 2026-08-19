@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scripture Index - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600&amp;family=EB+Garamond:wght@400;500;600;700;800&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#dbe5e0",
+                        "on-primary-container": "#e27770",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fbf9f4",
+                        "inverse-on-surface": "#f2f1ec",
+                        "inverse-primary": "#ffb3ad",
+                        "surface-variant": "#e4e2dd",
+                        "surface-container-highest": "#e4e2dd",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "surface": "#fbf9f4",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1b1c19",
+                        "on-primary-fixed": "#410004",
+                        "surface-container-low": "#f5f3ee",
+                        "tertiary-container": "#cca72f",
+                        "surface-tint": "#9c413d",
+                        "inverse-surface": "#30312e",
+                        "surface-dim": "#dbdad5",
+                        "tertiary-fixed": "#ffe088",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "primary-fixed": "#ffdad7",
+                        "on-surface-variant": "#554240",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1b1c19",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#dbc0be",
+                        "secondary": "#57605d",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#735c00",
+                        "on-tertiary-container": "#4e3d00",
+                        "primary-container": "#5d1212",
+                        "primary": "#3e0003",
+                        "surface-container-high": "#eae8e3",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "surface-container": "#f0eee9",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-secondary-container": "#5b6561",
+                        "on-secondary-fixed": "#141d1a",
+                        "background": "#fbf9f4",
+                        "secondary-container": "#d8e2dd",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "outline": "#887270"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1120px",
+                        "gutter": "32px",
+                        "stack-md": "32px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "64px",
+                        "stack-sm": "16px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "display-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased pt-16 pb-20 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface font-headline-md text-headline-md border-b border-outline-variant dark:border-outline docked full-width top-0 flat no shadows fixed top-0 w-full z-50 flex justify-between items-center px-gutter h-16">
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors Active: opacity-80 duration-200 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">GreatGod</div>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors Active: opacity-80 duration-200 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto py-stack-lg space-y-stack-lg">
+<!-- Header Section -->
+<section class="w-full text-center space-y-stack-sm max-w-3xl">
+<h1 class="font-display-lg text-display-lg text-primary md:hidden font-headline-lg-mobile text-headline-lg-mobile">Scripture Index</h1>
+<h1 class="font-display-lg text-display-lg text-primary hidden md:block">Scripture Index</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">A digital concordance for deep theological study and reflection.</p>
+</section>
+<!-- Search Bar Concordance Style -->
+<section class="w-full max-w-4xl bg-surface-container-lowest p-stack-md rounded-xl border border-outline-variant shadow-sm relative z-10">
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-unit uppercase tracking-widest" for="scripture-search">Search by Passage</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-outline" data-icon="menu_book">menu_book</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-bright border-2 border-surface-variant focus:border-primary-container focus:ring-0 rounded-lg font-body-lg text-body-lg text-on-surface placeholder-outline transition-colors outline-none shadow-inner" id="scripture-search" placeholder="e.g., Romans 8:28, Genesis 1, John 3:16" type="text"/>
+<button class="absolute right-2 bg-primary-container text-on-primary font-label-sm text-label-sm px-6 py-2 rounded-md hover:bg-primary transition-colors">Find</button>
+</div>
+<div class="mt-4 flex flex-wrap gap-4 justify-center">
+<span class="font-label-sm text-label-sm text-outline">Popular:</span>
+<a class="font-label-sm text-label-sm text-primary underline hover:text-primary-container transition-colors" href="#">Psalms</a>
+<span class="text-outline">·</span>
+<a class="font-label-sm text-label-sm text-primary underline hover:text-primary-container transition-colors" href="#">Proverbs</a>
+<span class="text-outline">·</span>
+<a class="font-label-sm text-label-sm text-primary underline hover:text-primary-container transition-colors" href="#">Isaiah</a>
+</div>
+</section>
+<!-- Scripture Grid: Old Testament -->
+<section class="w-full">
+<div class="flex items-center space-x-4 mb-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-primary-container md:hidden font-headline-lg-mobile text-headline-lg-mobile">Old Testament</h2>
+<h2 class="font-headline-lg text-headline-lg text-primary-container hidden md:block">Old Testament</h2>
+<div class="flex-grow h-px bg-outline-variant"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+<!-- Law -->
+<div class="col-span-2 md:col-span-4 lg:col-span-5">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-unit border-b border-surface-variant pb-1">The Law</h3>
+</div>
+<a class="bg-surface-container-low border border-surface-variant rounded-lg p-4 hover:bg-surface-container hover:border-outline-variant transition-colors flex flex-col items-center text-center group" href="#">
+<span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Genesis</span>
+<span class="font-label-sm text-label-sm text-outline mt-2">50 Chapters</span>
+</a>
+<a class="bg-surface-container-low border border-surface-variant rounded-lg p-4 hover:bg-surface-container hover:border-outline-variant transition-colors flex flex-col items-center text-center group" href="#">
+<span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Exodus</span>
+<span class="font-label-sm text-label-sm text-outline mt-2">40 Chapters</span>
+</a>
+<a class="bg-surface-container-low border border-surface-variant rounded-lg p-4 hover:bg-surface-container hover:border-outline-variant transition-colors flex flex-col items-center text-center group" href="#">
+<span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Leviticus</span>
+<span class="font-label-sm text-label-sm text-outline mt-2">27 Chapters</span>
+</a>
+</div>
+</section>
+<!-- Scripture Grid: New Testament -->
+<section class="w-full pt-stack-md">
+<div class="flex items-center space-x-4 mb-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-primary-container md:hidden font-headline-lg-mobile text-headline-lg-mobile">New Testament</h2>
+<h2 class="font-headline-lg text-headline-lg text-primary-container hidden md:block">New Testament</h2>
+<div class="flex-grow h-px bg-outline-variant"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+<!-- Gospels -->
+<div class="col-span-2 md:col-span-4 lg:col-span-5">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-unit border-b border-surface-variant pb-1">The Gospels</h3>
+</div>
+<a class="bg-surface-container-low border border-surface-variant rounded-lg p-4 hover:bg-surface-container hover:border-outline-variant transition-colors flex flex-col items-center text-center group" href="#">
+<span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Matthew</span>
+<span class="font-label-sm text-label-sm text-outline mt-2">28 Chapters</span>
+</a>
+<a class="bg-surface-container-low border border-surface-variant rounded-lg p-4 hover:bg-surface-container hover:border-outline-variant transition-colors flex flex-col items-center text-center group" href="#">
+<span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Mark</span>
+<span class="font-label-sm text-label-sm text-outline mt-2">16 Chapters</span>
+</a>
+<a class="bg-surface-container-low border border-surface-variant rounded-lg p-4 hover:bg-surface-container hover:border-outline-variant transition-colors flex flex-col items-center text-center group" href="#">
+<span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Luke</span>
+<span class="font-label-sm text-label-sm text-outline mt-2">24 Chapters</span>
+</a>
+<a class="bg-surface-container-low border border-surface-variant rounded-lg p-4 hover:bg-surface-container hover:border-outline-variant transition-colors flex flex-col items-center text-center group" href="#">
+<span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">John</span>
+<span class="font-label-sm text-label-sm text-outline mt-2">21 Chapters</span>
+</a>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface dark:bg-surface font-label-sm text-label-sm border-t border-outline-variant dark:border-outline docked full-width bottom-0 flat no shadows fixed bottom-0 w-full z-50 flex justify-around items-center h-20 bg-surface/95 backdrop-blur-sm px-margin-mobile">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-transform duration-200 active:scale-95 w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="text-[10px] uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-on-primary-container bg-primary-container/10 dark:bg-primary-container rounded-full px-4 py-1 transition-transform duration-200 active:scale-95 w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="text-[10px] uppercase tracking-wider font-bold">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-transform duration-200 active:scale-95 w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_stories">auto_stories</span>
+<span class="text-[10px] uppercase tracking-wider">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-transform duration-200 active:scale-95 w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="text-[10px] uppercase tracking-wider">Profile</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container font-body-md text-body-md border-t border-outline-variant dark:border-outline full-width flat no shadows w-full py-stack-lg px-gutter flex flex-col items-center space-y-stack-md mt-auto hidden md:flex">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">GreatGod</div>
+<div class="flex space-x-6">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors underline duration-200" href="#">Statement of Faith</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors underline duration-200" href="#">Authors</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors underline duration-200" href="#">Submissions</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors underline duration-200" href="#">Privacy Policy</a>
+</div>
+<div class="text-on-surface-variant text-sm opacity-70">© 2024 GreatGod Publishing. All rights reserved.</div>
+</footer>
+</body></html>

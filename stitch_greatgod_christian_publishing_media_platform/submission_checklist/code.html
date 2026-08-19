@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Pre-submission Checklist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#ffb3ad",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dbdad5",
+                        "background": "#fbf9f4",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#410004",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "inverse-on-surface": "#f2f1ec",
+                        "inverse-surface": "#30312e",
+                        "secondary-container": "#d8e2dd",
+                        "surface-container-high": "#eae8e3",
+                        "tertiary-fixed": "#ffe088",
+                        "outline": "#887270",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#4e3d00",
+                        "error": "#ba1a1a",
+                        "tertiary": "#735c00",
+                        "on-secondary-container": "#5b6561",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "secondary": "#57605d",
+                        "on-surface": "#1b1c19",
+                        "surface-container-low": "#f5f3ee",
+                        "on-tertiary-fixed": "#241a00",
+                        "primary-fixed": "#ffdad7",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-container": "#f0eee9",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "on-secondary-fixed": "#141d1a",
+                        "surface": "#fbf9f4",
+                        "surface-tint": "#9c413d",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-fixed": "#dbe5e0",
+                        "on-surface-variant": "#554240",
+                        "on-background": "#1b1c19",
+                        "primary-container": "#5d1212",
+                        "surface-bright": "#fbf9f4",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "surface-variant": "#e4e2dd",
+                        "tertiary-container": "#cca72f",
+                        "primary": "#3e0003",
+                        "on-primary-container": "#e27770",
+                        "outline-variant": "#dbc0be"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "stack-md": "32px",
+                        "gutter": "32px",
+                        "container-max": "1120px",
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": [
+                            "\"Source Serif 4\""
+                        ],
+                        "headline-md": [
+                            "EB Garamond"
+                        ],
+                        "headline-lg": [
+                            "EB Garamond"
+                        ],
+                        "body-lg": [
+                            "\"Source Serif 4\""
+                        ],
+                        "headline-lg-mobile": [
+                            "EB Garamond"
+                        ],
+                        "display-lg": [
+                            "EB Garamond"
+                        ],
+                        "label-sm": [
+                            "Hanken Grotesk"
+                        ]
+                    },
+                    "fontSize": {
+                        "body-md": [
+                            "17px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-md": [
+                            "28px",
+                            {
+                                "lineHeight": "36px",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "headline-lg": [
+                            "40px",
+                            {
+                                "lineHeight": "48px",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "body-lg": [
+                            "20px",
+                            {
+                                "lineHeight": "32px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg-mobile": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "display-lg": [
+                            "64px",
+                            {
+                                "lineHeight": "72px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "label-sm": [
+                            "13px",
+                            {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.08em",
+                                "fontWeight": "600"
+                            }
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f4; /* surface */
+            color: #1b1c19; /* on-surface */
+        }
+        
+        /* Subtle texture for the page background */
+        .page-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e4e2dd' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="page-bg antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline">
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors duration-200 ease-in-out p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-display-lg text-headline-lg-mobile text-primary dark:text-primary-fixed-dim tracking-tight">GreatGod</div>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors duration-200 ease-in-out p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[calc(64px+64px)] pb-stack-lg px-margin-mobile md:px-stack-lg flex justify-center w-full">
+<div class="max-w-[720px] w-full">
+<!-- Context Header -->
+<div class="mb-stack-md border-b border-outline-variant pb-stack-sm flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">Editorial Process</span>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Pre-submission Checklist</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 max-w-[500px]">
+                    Ensure all requirements are met before submitting your manuscript to the editorial review queue.
+                </p>
+</div>
+<!-- Checklist Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-unit mb-stack-lg">
+<!-- Main Status Card -->
+<div class="md:col-span-12 bg-surface-container-low border border-outline-variant rounded p-stack-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Submission Status</h2>
+<p class="font-label-sm text-label-sm text-secondary mt-1">Review required items below.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">error</span>
+                            Items Missing
+                        </span>
+<button class="bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm px-6 py-3 rounded opacity-50 cursor-not-allowed border border-outline-variant transition-colors" disabled="">
+                            Submit for Review
+                        </button>
+</div>
+</div>
+<!-- Content Requirements -->
+<div class="md:col-span-7 bg-surface-container-lowest border border-outline-variant rounded p-stack-sm flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface border-b border-outline-variant pb-2">Content Foundation</h3>
+<ul class="flex flex-col gap-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface leading-tight">Title Present</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">A compelling title is defined.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface leading-tight">Excerpt Present</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">A brief summary is provided for previews.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error mt-1" style="font-variation-settings: 'FILL' 1;">cancel</span>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface leading-tight">Author Assigned</p>
+<p class="font-label-sm text-label-sm text-error mt-1">Select an author before submission.</p>
+<button class="mt-2 text-primary underline font-label-sm text-label-sm hover:text-primary-container transition-colors">Assign Author</button>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface leading-tight">Topic Assigned</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">The primary theological theme is categorized.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Technical Requirements -->
+<div class="md:col-span-5 flex flex-col gap-unit">
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-stack-sm flex-grow flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface border-b border-outline-variant pb-2">Technical Validation</h3>
+<ul class="flex flex-col gap-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface leading-tight">Scripture References Valid</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">All citations match the authorized translation format.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error mt-1" style="font-variation-settings: 'FILL' 1;">cancel</span>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface leading-tight">Image Alt Text Present</p>
+<p class="font-label-sm text-label-sm text-error mt-1">Missing alt text on 2 images.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface leading-tight">Links Valid</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">No broken external or internal links detected.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Ambient Image related to editorial -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-2 hidden sm:block h-[120px]">
+<div class="bg-cover bg-center w-full h-full rounded-sm opacity-80 mix-blend-multiply" data-alt="A warm, inviting close-up shot of a classic wooden desk in a softly lit, cream-toned study room. An antique brass desk lamp casts a focused beam on a stack of textured, off-white parchment papers. A sleek, modern black fountain pen rests horizontally across the top sheet. The overall aesthetic is classical minimalism, emphasizing deep rich browns, soft creams, and a calm, scholarly atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVKxvQArGsv3G9ZAbgDN3SAWltlewP1YEqF2BwAmyQNRmNuD0cSmvZJYC41FDSqSdclb-8OFjxuFSNcuGBO5wfnueA7FOpA9JmPJmkA2xcoEv8wBBUYQDs5Dl9VT7HKGhin3ESHRjc0g-xBkEjlFdjYzHLOWSTwXHKlJjZvIpKIghBILzWbCS-9AZM-1waltoONkYXheYu8OTuy4u46SaGBIOfV5LaKDHp9phv0ERlwkIhoasdCu0x')"></div>
+</div>
+</div>
+</div>
+<!-- Flourish Divider -->
+<div class="w-full flex justify-center mb-stack-lg opacity-50">
+<div class="w-1/2 h-px bg-gradient-to-r from-transparent via-outline-variant to-transparent"></div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-margin-mobile md:px-stack-lg flex flex-col items-center gap-stack-md bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant dark:border-outline mt-auto">
+<div class="font-display-lg text-headline-md text-primary dark:text-primary-fixed-dim">GreatGod</div>
+<div class="flex flex-wrap justify-center gap-4 text-secondary dark:text-secondary-fixed-dim font-body-md text-body-md">
+<a class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">About</a>
+<a class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Statement of Faith</a>
+<a class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Privacy Policy</a>
+<a class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Terms of Service</a>
+<a class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Newsletter</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface dark:text-on-surface-variant text-center">
+            © 2024 GreatGod Publishing. All rights reserved.
+        </div>
+</footer>
+</body></html>

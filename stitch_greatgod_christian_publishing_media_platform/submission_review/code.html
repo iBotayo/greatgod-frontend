@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Submission Review</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "surface-container": "#f0eee9",
+                        "tertiary-container": "#cca72f",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-secondary-container": "#5b6561",
+                        "on-surface": "#1b1c19",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "secondary-fixed": "#dbe5e0",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "background": "#fbf9f4",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-background": "#1b1c19",
+                        "surface-dim": "#dbdad5",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-tint": "#9c413d",
+                        "secondary": "#57605d",
+                        "secondary-container": "#d8e2dd",
+                        "primary-container": "#5d1212",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#410004",
+                        "primary-fixed": "#ffdad7",
+                        "surface": "#fbf9f4",
+                        "on-tertiary-container": "#4e3d00",
+                        "tertiary-fixed": "#ffe088",
+                        "outline-variant": "#dbc0be",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#30312e",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#887270",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#141d1a",
+                        "tertiary": "#735c00",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-surface-variant": "#554240",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "inverse-primary": "#ffb3ad",
+                        "surface-bright": "#fbf9f4",
+                        "surface-container-high": "#eae8e3",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#3e0003",
+                        "surface-variant": "#e4e2dd",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-primary-container": "#e27770",
+                        "on-secondary-fixed-variant": "#3f4945"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "32px",
+                        "stack-lg": "64px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "16px",
+                        "container-max": "1120px",
+                        "unit": "8px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["\"Source Serif 4\""],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""]
+                    },
+                    "fontSize": {
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #dbc0be;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-16">
+<!-- TopAppBar (Transactional - Nav suppressed, Title only) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 bg-surface border-b border-outline-variant flat no shadows">
+<div class="flex items-center gap-4">
+<button aria-label="Back" class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<span class="font-display-lg text-headline-lg-mobile text-primary tracking-tight">GreatGod</span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">
+            Step 3 of 3
+        </div>
+</header>
+<main class="flex-grow flex justify-center w-full pb-stack-lg px-margin-mobile md:px-stack-lg">
+<div class="w-full max-w-container-max flex flex-col gap-stack-lg mt-stack-md">
+<!-- Page Header -->
+<div class="flex flex-col gap-unit items-center text-center">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Final Review</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Please review your submission details and formatted content before publishing. Ensure all metadata and theological references are accurate.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Metadata Bento Box -->
+<div class="md:col-span-4 flex flex-col gap-stack-sm">
+<div class="bg-surface-container-low border border-outline-variant rounded p-stack-sm flex flex-col gap-unit">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Title</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">The Theology of Rest</h2>
+</div>
+<div class="grid grid-cols-2 gap-stack-sm">
+<div class="bg-surface-container-low border border-outline-variant rounded p-stack-sm flex flex-col gap-unit">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">article</span> Type
+                            </span>
+<span class="font-body-md text-body-md text-on-surface">Article</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded p-stack-sm flex flex-col gap-unit">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">category</span> Topic
+                            </span>
+<span class="font-body-md text-body-md text-on-surface">Theology</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded p-stack-sm flex flex-col gap-unit">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person</span> Author
+                        </span>
+<span class="font-body-md text-body-md text-on-surface">Amara Nwosu</span>
+</div>
+<div class="bg-surface-container border border-outline-variant rounded p-stack-sm flex flex-col gap-unit shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">menu_book</span> Scripture References
+                        </span>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="bg-surface px-3 py-1 rounded-full border border-outline-variant font-label-sm text-label-sm text-on-surface">Romans 8:28</span>
+<span class="bg-surface px-3 py-1 rounded-full border border-outline-variant font-label-sm text-label-sm text-on-surface">Psalm 23</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-stack-sm">
+<div class="bg-surface-container-low border border-outline-variant rounded p-stack-sm flex flex-col gap-unit items-center text-center">
+<span class="font-headline-md text-headline-md text-on-surface">1,240</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Words</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded p-stack-sm flex flex-col gap-unit items-center text-center">
+<span class="font-headline-md text-headline-md text-on-surface">6m</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Read Time</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Content Preview -->
+<div class="md:col-span-8 flex flex-col gap-4 h-[600px] md:h-auto">
+<div class="flex justify-between items-center border-b border-outline-variant pb-2">
+<h3 class="font-headline-md text-headline-md text-on-background">Full Preview</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-3 py-1 rounded-full border border-outline-variant">Editorial View</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-md flex-grow overflow-y-auto custom-scrollbar shadow-inner relative">
+<!-- Simulated Article Content -->
+<div class="max-w-[720px] mx-auto flex flex-col gap-6">
+<!-- Hero Image Treatment -->
+<div class="relative w-full h-64 rounded bg-surface-container border border-outline-variant overflow-hidden mb-4">
+<div class="bg-cover bg-center w-full h-full opacity-90 mix-blend-multiply" data-alt="A serene landscape bathed in soft morning light, evoking a profound sense of peace and rest. Gentle mist rolling over rolling green hills, a solitary ancient oak tree standing firm. The color palette features muted greens, soft creams, and warm golden hour tones. The style is classic, editorial photography with a cinematic depth of field, conveying a sense of sacred quietude." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAS--zCAiyXTetzaZ43WE0XZAZjeJqQ8sSfnm7ls0ewl-X3MHWa5TsN45tAk0lN6GLUyZHg-rpK6NwCiQtbN-FNWdRJiJlTd_T2AfJMS9i0QCuBEZ0qUQsgP-vmv4012XN6gwEKonv99yc6gJBYdDE5pUv6D60JkYYX5HkUt0jqw-W-5bW6P7gITSBlw_4A90O4lhxWpvTc0yW73lDMqCXcIV3Xvic88PdC5M7ZW1MB5MbOZzIr0_9q')"></div>
+</div>
+<p class="font-body-md text-body-md text-on-surface drop-cap">
+<span class="float-left text-6xl leading-none font-headline-lg pr-2 text-primary">I</span>n the quiet spaces between our striving, there lies a profound theological truth often ignored by the modern cadence of productivity. Rest is not merely the cessation of work, but a deliberate posture of trust in the sovereign grace that holds the universe together. When we cease our frantic efforts, we acknowledge that the world continues to turn without our constant intervention.
+                            </p>
+<p class="font-body-md text-body-md text-on-surface">
+                                The psalmist understood this rhythm intricately. "He makes me lie down in green pastures, he leads me beside quiet waters, he refreshes my soul." (Psalm 23:2-3). Notice the active verbs attributed to the Divine: makes, leads, refreshes. Our role in this sacred exchange is often one of passive receptivity, a surrender that feels counterintuitive to our hyper-individualistic culture.
+                            </p>
+<blockquote class="border-l-2 border-primary-container pl-6 my-4 italic font-body-lg text-body-lg text-on-surface-variant">
+                                "To rest is to confess our finitude. It is to say, 'I am not God, and that is exceedingly good news.'"
+                            </blockquote>
+<p class="font-body-md text-body-md text-on-surface">
+                                Furthermore, when we examine Paul's assurance in Romans 8:28, that "in all things God works for the good of those who love him," we find the theological bedrock for true Sabbath. If the ultimate outcome of our narratives rests securely in the hands of a benevolent Creator, the anxious toil that characterizes much of contemporary life is revealed as not just exhausting, but theologically incongruous. Rest becomes an act of faith, a bodily declaration that we believe the promises we espouse.
+                            </p>
+<p class="font-body-md text-body-md text-on-surface">
+                                As we navigate the complexities of our vocations and responsibilities, incorporating rhythms of rest is an editorial choice in the story of our lives. We edit out the superfluous noise to make room for the profound silence where grace speaks loudest.
+                            </p>
+</div>
+<!-- Fade Out Overlay for visual effect in preview -->
+<div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-surface-container-lowest to-transparent pointer-events-none rounded-b-lg"></div>
+</div>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="border-t border-outline-variant pt-stack-sm flex justify-between items-center mt-auto">
+<button class="px-6 py-3 font-label-sm text-label-sm border border-outline text-secondary hover:bg-surface-container-low transition-colors rounded">
+                    Save as Draft
+                </button>
+<button class="px-8 py-3 font-label-sm text-label-sm bg-primary-container text-on-primary hover:bg-surface-tint transition-colors rounded shadow-sm flex items-center gap-2">
+                    Submit for Review <span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer (Suppressed for transactional flow as per guidelines) -->
+</body></html>

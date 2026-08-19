@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Search Overlay</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Hanken+Grotesk:wght@400;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#887270",
+                        "on-secondary-fixed": "#141d1a",
+                        "tertiary": "#735c00",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffe088",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-surface": "#1b1c19",
+                        "surface-variant": "#e4e2dd",
+                        "on-primary-container": "#e27770",
+                        "secondary": "#57605d",
+                        "inverse-primary": "#ffb3ad",
+                        "surface-dim": "#dbdad5",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#410004",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#dbe5e0",
+                        "outline-variant": "#dbc0be",
+                        "surface-container-low": "#f5f3ee",
+                        "primary": "#3e0003",
+                        "surface-tint": "#9c413d",
+                        "secondary-container": "#d8e2dd",
+                        "inverse-surface": "#30312e",
+                        "surface-bright": "#fbf9f4",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "background": "#fbf9f4",
+                        "on-background": "#1b1c19",
+                        "on-tertiary-container": "#4e3d00",
+                        "tertiary-container": "#cca72f",
+                        "surface-container": "#f0eee9",
+                        "primary-fixed": "#ffdad7",
+                        "surface": "#fbf9f4",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#554240",
+                        "surface-container-high": "#eae8e3",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "on-secondary-container": "#5b6561",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-tertiary-fixed": "#241a00",
+                        "primary-container": "#5d1212"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "stack-lg": "64px",
+                        "stack-sm": "16px",
+                        "unit": "8px",
+                        "container-max": "1120px",
+                        "gutter": "32px",
+                        "stack-md": "32px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-md": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col items-center justify-start pt-16">
+<!-- Search Overlay Container (Simulated full screen for this output) -->
+<main class="w-full max-w-container-max px-margin-mobile md:px-gutter mx-auto flex-grow flex flex-col gap-stack-lg py-stack-lg">
+<!-- Search Header -->
+<header class="w-full flex flex-col gap-stack-sm items-center text-center">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">Search GreatGod</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Search by keyword, author, or Scripture reference.</p>
+<div class="relative w-full max-w-3xl mt-unit">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border-2 border-outline-variant rounded-xl py-4 pl-12 pr-4 font-body-md text-body-md text-on-surface placeholder:text-outline-variant focus:border-primary-container focus:ring-0 focus:outline-none transition-colors" placeholder="Search articles, scripture, and media..." type="text"/>
+</div>
+<!-- Quick Filters -->
+<div class="flex flex-wrap justify-center gap-unit mt-stack-sm">
+<button class="bg-surface-container-low border border-outline-variant rounded-full px-4 py-2 font-label-sm text-label-sm text-on-surface-variant hover:bg-secondary-container transition-colors">Articles</button>
+<button class="bg-surface-container-low border border-outline-variant rounded-full px-4 py-2 font-label-sm text-label-sm text-on-surface-variant hover:bg-secondary-container transition-colors">Audio</button>
+<button class="bg-surface-container-low border border-outline-variant rounded-full px-4 py-2 font-label-sm text-label-sm text-on-surface-variant hover:bg-secondary-container transition-colors">Video</button>
+<button class="bg-surface-container-low border border-outline-variant rounded-full px-4 py-2 font-label-sm text-label-sm text-on-surface-variant hover:bg-secondary-container transition-colors">Scripture</button>
+</div>
+</header>
+<div class="w-full h-px bg-outline-variant max-w-3xl mx-auto"></div>
+<!-- Search Suggestions Content -->
+<section class="w-full max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Recent Searches -->
+<div class="flex flex-col gap-stack-sm">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Recent Searches</h2>
+<ul class="flex flex-col gap-unit">
+<li class="flex items-center gap-3 py-2 border-b border-outline-variant border-opacity-50 last:border-0 group cursor-pointer">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-sm" data-icon="history">history</span>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Romans 8 commentary</span>
+</li>
+<li class="flex items-center gap-3 py-2 border-b border-outline-variant border-opacity-50 last:border-0 group cursor-pointer">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-sm" data-icon="history">history</span>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Sermon on the Mount</span>
+</li>
+<li class="flex items-center gap-3 py-2 border-b border-outline-variant border-opacity-50 last:border-0 group cursor-pointer">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-sm" data-icon="history">history</span>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Meaning of repentance</span>
+</li>
+</ul>
+</div>
+<!-- Trending Topics (Tag Cloud) -->
+<div class="flex flex-col gap-stack-sm">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Trending Topics</h2>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container rounded-lg px-3 py-1 font-body-md text-sm text-on-surface cursor-pointer hover:bg-secondary-container hover:text-primary transition-colors">Grace</span>
+<span class="bg-surface-container rounded-lg px-3 py-1 font-body-md text-sm text-on-surface cursor-pointer hover:bg-secondary-container hover:text-primary transition-colors">Faith</span>
+<span class="bg-surface-container rounded-lg px-3 py-1 font-body-md text-sm text-on-surface cursor-pointer hover:bg-secondary-container hover:text-primary transition-colors">Biblical Justice</span>
+<span class="bg-surface-container rounded-lg px-3 py-1 font-body-md text-sm text-on-surface cursor-pointer hover:bg-secondary-container hover:text-primary transition-colors">Parenting</span>
+<span class="bg-surface-container rounded-lg px-3 py-1 font-body-md text-sm text-on-surface cursor-pointer hover:bg-secondary-container hover:text-primary transition-colors">Prayer</span>
+<span class="bg-surface-container rounded-lg px-3 py-1 font-body-md text-sm text-on-surface cursor-pointer hover:bg-secondary-container hover:text-primary transition-colors">Psalms</span>
+<span class="bg-surface-container rounded-lg px-3 py-1 font-body-md text-sm text-on-surface cursor-pointer hover:bg-secondary-container hover:text-primary transition-colors">Theology</span>
+</div>
+</div>
+</section>
+<!-- Curated Discovery (Optional Bento style highlight) -->
+<section class="w-full max-w-5xl mx-auto mt-stack-md flex flex-col gap-stack-sm">
+<h2 class="font-headline-md text-headline-md text-primary text-center">Curated Collections</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Bento Item 1 -->
+<div class="relative bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden group cursor-pointer aspect-square md:aspect-auto h-64 md:col-span-2 flex items-end">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A serene landscape with soft morning light hitting rolling hills, shot in a classical editorial style with muted warm colors and a calm atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0vNrOTaQWTC8WWaf3-K6xWaCddI8wE-Tw88gKnquLkGlrTxvoilpKjfLtQlU4XdOaqzng7T_p32ExfrnR7dvYbpFKgxSeNLbPYSHpQYOGWqrupuoz7fgjwzM5Aj-HScMHGpUHJOZi4t2HS8vYb0HBWi3UuFfRp0CJMH5jN-cGZnH0Hcsryn62VfVZOYxkoP1vt_3co9NZlAaZgFUxvWduEkbj-lCQbJA3GN0yQSz_JrdtvsWHJt1E')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90"></div>
+<div class="relative p-6 flex flex-col gap-2 z-10 w-full">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest bg-surface/80 self-start px-2 py-1 rounded">Collection</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">The Parables of Jesus</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A deep dive into the meaning and cultural context of Christ's most famous stories.</p>
+</div>
+</div>
+<!-- Bento Item 2 -->
+<div class="bg-surface-container-high rounded-xl border border-outline-variant p-6 flex flex-col gap-4 justify-between group cursor-pointer h-64">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="headphones">headphones</span>
+<span class="font-label-sm text-label-sm text-outline">Audio Series</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Daily Devotions</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Start your morning with guided scriptural reading and reflection.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

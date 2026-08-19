@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>GreatGod Article Editor - Guidance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#735c00",
+                      "primary-container": "#5d1212",
+                      "surface-tint": "#9c413d",
+                      "outline": "#887270",
+                      "outline-variant": "#dbc0be",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed": "#151d1b",
+                      "on-tertiary-fixed": "#231b00",
+                      "inverse-primary": "#ffb3ad",
+                      "secondary": "#57605d",
+                      "background": "#fff8f7",
+                      "secondary-fixed": "#dbe5e0",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "on-primary-fixed": "#410004",
+                      "inverse-on-surface": "#ffedeb",
+                      "surface-paper": "#fbf9f4",
+                      "secondary-fixed-dim": "#bfc9c5",
+                      "primary-fixed": "#ffdad7",
+                      "surface-bright": "#fff8f7",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "success-secure": "#2e4d41",
+                      "on-secondary": "#ffffff",
+                      "primary": "#3e0003",
+                      "tertiary-container": "#c6a94e",
+                      "on-secondary-container": "#5d6663",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#ffe085",
+                      "surface-variant": "#f1dedc",
+                      "on-error": "#ffffff",
+                      "stone-outline": "#887270",
+                      "surface-container-low": "#fff0ef",
+                      "surface-dim": "#e8d6d4",
+                      "secondary-container": "#dbe5e0",
+                      "on-background": "#231918",
+                      "on-primary-container": "#e27770",
+                      "on-secondary-fixed-variant": "#404946",
+                      "on-tertiary-container": "#4e3e00",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#554240",
+                      "surface-container-high": "#f6e4e2",
+                      "on-surface": "#231918",
+                      "surface-container-highest": "#f1dedc",
+                      "surface": "#fff8f7",
+                      "error-container": "#ffdad6",
+                      "inverse-surface": "#392e2d",
+                      "tertiary-fixed-dim": "#e3c466",
+                      "surface-container": "#fceae8",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "surface-linen": "#f5f3ee"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-md": "32px",
+                      "stack-sm": "16px",
+                      "unit": "8px",
+                      "container-max": "1120px",
+                      "stack-lg": "64px",
+                      "gutter": "32px",
+                      "form-width": "560px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "donation-amount": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "label-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "donation-amount": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased flex flex-col min-h-screen relative font-body-md overflow-hidden">
+<!-- Background Editor (Blurred out slightly via overlay) -->
+<div class="flex-1 flex flex-col pointer-events-none opacity-40 transition-opacity duration-300 relative z-0">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 max-w-container-max mx-auto bg-surface border-b border-outline-variant fixed top-0 z-10 w-full">
+<button class="text-primary p-2">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<div class="font-headline-md text-headline-md text-primary tracking-tight">GreatGod</div>
+<button class="text-primary font-label-lg text-label-lg px-4 py-2 rounded-full border border-stone-outline bg-surface-linen">
+                Preview
+            </button>
+</header>
+<main class="flex-1 pt-16 px-margin-mobile pb-stack-lg max-w-form-width mx-auto w-full">
+<div class="pt-stack-md space-y-stack-sm">
+<!-- Title -->
+<div class="relative border-b border-stone-outline pb-2">
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 font-headline-lg-mobile text-headline-lg-mobile text-on-surface placeholder-on-surface-variant" disabled="" placeholder="Article Title" type="text"/>
+</div>
+<!-- Body -->
+<div class="min-h-[300px]">
+<textarea class="w-full h-full bg-transparent border-none focus:ring-0 p-0 font-body-lg text-body-lg text-on-surface placeholder-on-surface-variant resize-none" disabled="" placeholder="Begin your reflection..."></textarea>
+</div>
+</div>
+</main>
+<!-- Editor Toolbar Fake -->
+<div class="fixed bottom-0 w-full bg-surface-container border-t border-outline-variant h-14 flex items-center px-margin-mobile gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">format_bold</span>
+<span class="material-symbols-outlined text-on-surface-variant">format_italic</span>
+<span class="material-symbols-outlined text-on-surface-variant">link</span>
+<span class="material-symbols-outlined text-on-surface-variant">image</span>
+<span class="material-symbols-outlined text-on-surface-variant ml-auto">more_vert</span>
+</div>
+</div>
+<!-- Guidance Overlay / Tooltips -->
+<div class="absolute inset-0 z-50 flex flex-col justify-end bg-inverse-surface/80 pb-6 sm:justify-center px-margin-mobile sm:px-0">
+<!-- Bento Style Guidance Card -->
+<div class="bg-surface-paper rounded-xl shadow-2xl max-w-form-width mx-auto w-full overflow-hidden flex flex-col border border-outline-variant animate-in slide-in-from-bottom-8 duration-500 fade-in">
+<div class="p-stack-md flex-1">
+<div class="font-headline-md text-headline-md text-primary mb-stack-sm text-center">Welcome to the Editor</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center mb-stack-md">A few brief tips to guide your sacred stewardship of words.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-unit">
+<!-- Tip 1 -->
+<div class="bg-surface p-stack-sm rounded-lg border border-surface-dim flex flex-col gap-2 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-surface-tint"></div>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" data-weight="fill">edit_document</span>
+<span class="font-label-lg text-label-lg">Title &amp; Body</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface text-sm">Write clearly. Tap anywhere above the line to set your title, and below to begin drafting your message.</p>
+</div>
+<!-- Tip 2 -->
+<div class="bg-surface p-stack-sm rounded-lg border border-surface-dim flex flex-col gap-2 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-surface-tint"></div>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" data-weight="fill">menu_book</span>
+<span class="font-label-lg text-label-lg">Scripture References</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface text-sm">Highlight any verse text and use the toolbar to link directly to standard scripture citations.</p>
+</div>
+<!-- Tip 3 -->
+<div class="bg-surface p-stack-sm rounded-lg border border-surface-dim flex flex-col gap-2 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-surface-tint"></div>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" data-weight="fill">label</span>
+<span class="font-label-lg text-label-lg">Topics &amp; Tags</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface text-sm">Tap the options menu <span class="material-symbols-outlined text-[16px] align-middle">more_vert</span> to categorize your article before publishing.</p>
+</div>
+<!-- Tip 4 -->
+<div class="bg-surface p-stack-sm rounded-lg border border-surface-dim flex flex-col gap-2 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-surface-tint"></div>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" data-weight="fill">publish</span>
+<span class="font-label-lg text-label-lg">Preview &amp; Submit</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface text-sm">Review your work anytime with the top-right button, then submit when you feel at peace.</p>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="bg-surface-linen p-stack-sm border-t border-outline-variant flex justify-center">
+<button class="bg-primary text-on-primary font-label-sm text-label-sm uppercase px-8 py-3 rounded-full hover:opacity-90 transition-opacity w-full sm:w-auto text-center" onclick="dismissGuidance()">
+                    Start Writing
+                </button>
+</div>
+</div>
+</div>
+<script>
+        function dismissGuidance() {
+            const overlay = document.querySelector('.bg-inverse-surface\\/80');
+            const editor = document.querySelector('.opacity-40');
+            
+            if(overlay) {
+                overlay.style.opacity = '0';
+                overlay.style.transition = 'opacity 0.3s ease';
+                setTimeout(() => overlay.remove(), 300);
+            }
+            if(editor) {
+                editor.classList.remove('opacity-40', 'pointer-events-none');
+                editor.classList.add('opacity-100');
+            }
+        }
+    </script>
+</body></html>

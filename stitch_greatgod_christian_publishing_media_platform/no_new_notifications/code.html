@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notifications - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#57605d",
+                        "on-background": "#261817",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#ffedeb",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "outline": "#887270",
+                        "on-secondary-container": "#5d6663",
+                        "secondary-container": "#dbe5e0",
+                        "surface-tint": "#9c413d",
+                        "on-tertiary-container": "#4e3e00",
+                        "surface-variant": "#f8dcda",
+                        "primary-fixed": "#ffdad7",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#404946",
+                        "background": "#fff8f7",
+                        "surface-container": "#ffe9e7",
+                        "tertiary-fixed": "#ffe085",
+                        "on-primary-fixed": "#410004",
+                        "outline-variant": "#dbc0be",
+                        "secondary-fixed": "#dbe5e0",
+                        "inverse-surface": "#3d2c2b",
+                        "primary": "#3e0003",
+                        "tertiary": "#735c00",
+                        "tertiary-container": "#c6a94e",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#151d1b",
+                        "on-surface-variant": "#554240",
+                        "tertiary-fixed-dim": "#e3c466",
+                        "surface": "#fff8f7",
+                        "primary-container": "#5d1212",
+                        "surface-paper": "#fbf9f4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#231b00",
+                        "surface-linen": "#f5f3ee",
+                        "inverse-primary": "#ffb3ad",
+                        "surface-dim": "#efd4d1",
+                        "surface-bright": "#fff8f7",
+                        "surface-container-low": "#fff0ef",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#fee2df",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#f8dcda",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "on-surface": "#261817",
+                        "on-primary-container": "#e27770",
+                        "success-secure": "#2e4d41"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "stack-sm": "16px",
+                        "form-width": "560px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "stack-md": "32px",
+                        "stack-lg": "64px",
+                        "container-max": "1120px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "donation-amount": ["EB Garamond"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-md": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-paper text-on-surface h-full flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 max-w-container-max mx-auto bg-surface border-b border-outline-variant docked full-width top-0 z-40">
+<button class="text-primary hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center opacity-80 transition-opacity duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">GreatGod</h1>
+<button class="text-primary hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">close</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile w-full max-w-form-width mx-auto pb-32 pt-stack-md">
+<!-- Empty State Illustration & Message -->
+<div class="flex flex-col items-center text-center space-y-stack-md w-full">
+<!-- Minimalist Spiritual Illustration Placeholder -->
+<div class="relative w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-surface-linen border border-outline flex items-center justify-center overflow-hidden shadow-sm">
+<img class="object-cover w-full h-full opacity-80" data-alt="A minimalist, line-art illustration of an olive branch overlapping an open book, rendered in a soft, monochromatic palette of deep burgundy and off-white. The style evokes classical heritage publishing and scholarly texts. The lines are delicate and precise, creating a sense of calm and spiritual stewardship. Soft, natural lighting gives a subtle warmth to the off-white paper texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNdJjeSTfA2HC-aZiCHNUWbCL2LsmZkTg89RrLMkEraupuqY_7Rbz2-0S8XaAaKWiIJoDNdfzP9fQwa9jrG7eAC3aa-L5xYipP7KvBxtIKk-JDEJrXoPLev6_MRJL7aW74SxiuQfYJ4KO3nNTjbRKZ2P8eGpIrl18nAimZVWPd0M4PqzsdvTtS5FO3hZTeCldV-1bE7NNz_B0aBgQPJBvwi1CxUPa8YUETYf5olbIGCDDnEiSCYNls"/>
+</div>
+<div class="space-y-unit max-w-sm">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">Peaceful Silence</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    You are entirely caught up on your stewardship notifications. Take a moment of quiet reflection, or review past records in your archive.
+                </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-stack-sm w-full sm:w-auto mt-stack-md">
+<button class="px-6 py-4 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-wider rounded border border-primary hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+                    View Archive
+                </button>
+<button class="px-6 py-4 bg-transparent text-primary font-label-sm text-label-sm uppercase tracking-wider rounded border border-outline hover:border-primary transition-colors">
+                    Manage Preferences
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on desktop, shown on mobile as per logic, highlighting 'History' as fallback for Archive/Records) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 bg-surface-container border-t border-outline-variant md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform">volunteer_activism</span>
+<span class="font-label-sm text-label-sm">Giving</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-2 scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1 fill">receipt_long</span>
+<span class="font-label-sm text-label-sm">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform">shield_lock</span>
+<span class="font-label-sm text-label-sm">Security</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</a>
+</nav>
+</body></html>

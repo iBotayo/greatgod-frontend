@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Schedule Publication - Sacred Editorial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#f0eee9",
+                        "outline-variant": "#dbc0be",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ffdad7",
+                        "background": "#fbf9f4",
+                        "on-primary-container": "#e27770",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#5d1212",
+                        "primary": "#3e0003",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "secondary-container": "#d8e2dd",
+                        "on-surface-variant": "#554240",
+                        "surface": "#fbf9f4",
+                        "on-secondary-container": "#5b6561",
+                        "on-tertiary-container": "#4e3d00",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "inverse-primary": "#ffb3ad",
+                        "surface-dim": "#dbdad5",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "tertiary": "#735c00",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-primary-fixed": "#410004",
+                        "surface-bright": "#fbf9f4",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-surface": "#1b1c19",
+                        "surface-container-high": "#eae8e3",
+                        "surface-variant": "#e4e2dd",
+                        "secondary": "#57605d",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#30312e",
+                        "on-background": "#1b1c19",
+                        "surface-container-low": "#f5f3ee",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "outline": "#887270",
+                        "tertiary-container": "#cca72f",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#9c413d",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#141d1a",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary-fixed": "#dbe5e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "unit": "8px",
+                        "stack-md": "32px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "64px",
+                        "container-max": "1120px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "display-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar -->
+<header class="bg-background dark:bg-background w-full top-0 sticky border-b border-outline-variant dark:border-outline-variant z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-gutter h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-6">
+<span class="text-headline-md font-headline-md text-primary dark:text-inverse-primary tracking-tight">Sacred Editorial</span>
+<nav aria-label="Main Navigation" class="hidden md:flex items-center gap-6">
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 transition-opacity text-label-sm font-label-sm" href="#">Dashboard</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 transition-opacity text-label-sm font-label-sm" href="#">Review Queue</a>
+<a aria-current="page" class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 cursor-pointer active:opacity-70 transition-opacity text-label-sm font-label-sm" href="#">Calendar</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 transition-opacity text-label-sm font-label-sm" href="#">Library</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<button aria-label="notifications" class="p-2 text-secondary hover:text-primary transition-colors cursor-pointer active:opacity-70 transition-opacity rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="settings" class="p-2 text-secondary hover:text-primary transition-colors cursor-pointer active:opacity-70 transition-opacity rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<img alt="Editor Profile" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="A small, circular avatar portrait of a mature individual with a calm expression, softly lit against a warm cream background. The portrait embodies a trustworthy and thoughtful editorial persona, fitting the refined 'Sacred Editorial' aesthetic. The colors are muted and natural." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCC0Hc6PlBktEDW6vNUlmQ_NkdwBgxXBUJmEk2p5p3mqoruV5qRLz5sO1yZBUy9DQVTywM197AfKnm6FA6IFM-JjvSOIj1nA4UFSfZj9Q7nx1w4UC-p-aMB1noZ1_d3-sC7dl-Q718sNP5gVL1Q8y9CK6Z3tWtjF2uYshIXdv2AVzJ8q2ScZO-w_1pSbhmwrfxOt2LdZfFTtkCc8vfcRuKlOpKj2GjUxnsTanRACFr9fD2ocCDwtZg"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col md:flex-row max-w-container-max mx-auto w-full px-margin-mobile md:px-gutter py-stack-md gap-gutter">
+<!-- Main Form Area -->
+<div class="w-full md:w-2/3 flex flex-col gap-stack-md">
+<div class="flex flex-col gap-unit">
+<h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary">Schedule Publication</h1>
+<p class="text-on-surface-variant text-body-md font-body-md">Configure when this manuscript will be released to the public.</p>
+</div>
+<hr class="border-t border-[#E5E0D8] w-full"/>
+<form class="flex flex-col gap-stack-md">
+<!-- Publication Mode Toggle -->
+<fieldset class="flex flex-col gap-stack-sm bg-[#F2EEE6] p-stack-sm border border-[#E5E0D8] rounded-lg">
+<legend class="sr-only">Publication Mode</legend>
+<div class="flex flex-col sm:flex-row gap-4">
+<label class="flex-1 cursor-pointer">
+<input class="peer sr-only" name="publish_mode" type="radio" value="now"/>
+<div class="h-full flex flex-col p-4 border border-[#E5E0D8] bg-surface-container-lowest rounded peer-checked:border-primary peer-checked:ring-2 peer-checked:ring-primary/20 transition-all hover:bg-surface-container-low">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+<span class="text-label-sm font-label-sm text-primary uppercase">Publish Now</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant text-sm">The article will be immediately available online.</p>
+</div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input checked="" class="peer sr-only" name="publish_mode" type="radio" value="schedule"/>
+<div class="h-full flex flex-col p-4 border border-primary bg-surface-container-lowest rounded ring-2 ring-primary/20 transition-all">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_clock">calendar_clock</span>
+<span class="text-label-sm font-label-sm text-primary uppercase">Schedule for Later</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant text-sm">Select a specific date and time for release.</p>
+</div>
+</label>
+</div>
+</fieldset>
+<!-- Date/Time Configuration -->
+<div class="flex flex-col gap-stack-sm">
+<h2 class="text-headline-md font-headline-md text-primary">Timing</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit md:gap-stack-sm">
+<div class="flex flex-col gap-1">
+<label class="text-label-sm font-label-sm text-on-surface uppercase" for="publish_date">Date</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="calendar_today">calendar_today</span>
+</div>
+<input class="w-full pl-10 pr-3 py-2 bg-surface-container-lowest border border-[#E5E0D8] text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent rounded-DEFAULT transition-shadow" id="publish_date" name="publish_date" type="date" value="2024-11-24"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm font-label-sm text-on-surface uppercase" for="publish_time">Time</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="schedule">schedule</span>
+</div>
+<input class="w-full pl-10 pr-3 py-2 bg-surface-container-lowest border border-[#E5E0D8] text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent rounded-DEFAULT transition-shadow" id="publish_time" name="publish_time" type="time" value="09:00"/>
+</div>
+</div>
+<div class="flex flex-col gap-1 md:col-span-2">
+<label class="text-label-sm font-label-sm text-on-surface uppercase" for="timezone">Time Zone</label>
+<select class="w-full px-3 py-2 bg-surface-container-lowest border border-[#E5E0D8] text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent rounded-DEFAULT transition-shadow appearance-none" id="timezone" name="timezone">
+<option selected="" value="EST">Eastern Standard Time (EST)</option>
+<option value="CST">Central Standard Time (CST)</option>
+<option value="MST">Mountain Standard Time (MST)</option>
+<option value="PST">Pacific Standard Time (PST)</option>
+<option value="UTC">Coordinated Universal Time (UTC)</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-outline mt-6">
+<span class="material-symbols-outlined" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-t border-[#E5E0D8] w-full"/>
+<!-- Permissions Note & Actions -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-unit">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+<span class="text-label-sm font-label-sm italic opacity-80">Only Editors and Administrators can perform this action.</span>
+</div>
+<div class="flex gap-4 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-6 py-2 border border-secondary text-secondary hover:bg-surface-container hover:text-primary transition-colors duration-200 rounded-DEFAULT text-label-sm font-label-sm uppercase tracking-wider" type="button">
+                            Cancel
+                        </button>
+<button class="flex-1 sm:flex-none px-6 py-2 bg-primary-container text-white hover:bg-primary transition-colors duration-200 rounded-DEFAULT text-label-sm font-label-sm uppercase tracking-wider shadow-sm" type="submit">
+                            Schedule Publication
+                        </button>
+</div>
+</div>
+</form>
+</div>
+<!-- Secondary Column (Live Preview) -->
+<aside class="w-full md:w-1/3 flex flex-col gap-stack-sm border-l-0 md:border-l border-[#E5E0D8] pt-stack-md md:pt-0 md:pl-gutter">
+<h3 class="text-label-sm font-label-sm text-on-surface uppercase border-b border-[#E5E0D8] pb-2">Live Preview</h3>
+<div class="bg-[#F2EEE6] border border-[#E5E0D8] p-4 flex flex-col gap-4 rounded-sm shadow-sm group hover:shadow-md transition-shadow">
+<!-- Preview Card -->
+<div class="relative w-full pb-[60%] overflow-hidden border border-[#E5E0D8] rounded-sm">
+<img alt="Article Cover Preview" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A beautifully composed photograph of an ancient, leather-bound manuscript resting on a rough wooden table. Soft, natural window light spills across the pages, highlighting the texture of the paper and the intricate, hand-written calligraphy. The mood is contemplative, academic, and deeply rooted in historical tradition, perfectly suited for the 'Sacred Editorial' theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVNNdcLRTJ0dlfaSPX79g9PFWlhbx1O58dENBH01-Hada5uqX_OzQz8rMagXnFu7g0xj7l0HmDOsHSA7JqKobVvORPqBrccTesn7514YzQKe-5JrO9FYcHHBheEqjVDLfDTEBLpdbK8G6TeBqGfskGCF4RhLONG2ZALpUoMZz35dFEc5cSI3c5-Iv2BJk2O6JppYY1LmyKM82hf3TKY1TKBDwxF4kG89KN5NIxZ6-cPQk3nZ5FMLFG"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-secondary opacity-70">
+<span class="text-label-sm font-label-sm uppercase tracking-widest">Theology</span>
+<span class="text-[10px]">·</span>
+<span class="text-label-sm font-label-sm">Nov 24</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-on-background leading-tight">The Ontology of Silence in Modern Discourse</h4>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-3 text-sm">An examination of how the absence of speech functions not as a void, but as a constructive space for theological reflection in an increasingly noisy cultural landscape.</p>
+</div>
+</div>
+<p class="text-label-sm font-label-sm text-center text-secondary italic opacity-70 mt-2">Card view on Homepage</p>
+</aside>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface border-t border-outline-variant w-full py-stack-sm mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-gutter w-full max-w-container-max mx-auto gap-4">
+<span class="text-label-sm font-label-sm font-bold text-primary">Sacred Editorial</span>
+<span class="text-on-surface-variant dark:text-surface-variant text-label-sm font-label-sm opacity-70">© 2024 Sacred Editorial Management. All rights reserved.</span>
+<div class="flex gap-4">
+<a class="text-secondary dark:text-secondary-fixed-dim opacity-70 text-label-sm font-label-sm hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-secondary dark:text-secondary-fixed-dim opacity-70 text-label-sm font-label-sm hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="text-secondary dark:text-secondary-fixed-dim opacity-70 text-label-sm font-label-sm hover:opacity-100 transition-opacity" href="#">Ethical Standards</a>
+</div>
+</div>
+</footer>
+</body></html>

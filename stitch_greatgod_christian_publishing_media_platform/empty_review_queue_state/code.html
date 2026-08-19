@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sacred Editorial CMS - Review Queue</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-container-highest": "#e4e2dd",
+                        "outline": "#887270",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "primary-container": "#5d1212",
+                        "background": "#fbf9f4",
+                        "surface-variant": "#e4e2dd",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "surface-container-low": "#f5f3ee",
+                        "secondary-fixed": "#dbe5e0",
+                        "inverse-surface": "#30312e",
+                        "primary-fixed": "#ffdad7",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "primary": "#3e0003",
+                        "inverse-primary": "#ffb3ad",
+                        "on-tertiary-container": "#4e3d00",
+                        "surface": "#fbf9f4",
+                        "on-primary-container": "#e27770",
+                        "tertiary-fixed": "#ffe088",
+                        "on-surface": "#1b1c19",
+                        "on-primary-fixed": "#410004",
+                        "secondary-container": "#d8e2dd",
+                        "surface-bright": "#fbf9f4",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f0eee9",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "secondary": "#57605d",
+                        "tertiary-container": "#cca72f",
+                        "inverse-on-surface": "#f2f1ec",
+                        "surface-dim": "#dbdad5",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#735c00",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-surface-variant": "#554240",
+                        "on-secondary-fixed": "#141d1a",
+                        "surface-container-high": "#eae8e3",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1b1c19",
+                        "surface-tint": "#9c413d",
+                        "outline-variant": "#dbc0be",
+                        "on-secondary-container": "#5b6561",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "32px",
+                        "stack-lg": "64px",
+                        "stack-sm": "16px",
+                        "container-max": "1120px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["\"Source Serif 4\""],
+                        "display-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""]
+                    },
+                    "fontSize": {
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom scrollbar for sidebar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #dbc0be;
+            border-radius: 10px;
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="h-screen w-64 fixed left-0 top-0 overflow-y-auto border-r border-outline-variant bg-surface-container-low flex flex-col py-stack-sm px-4 gap-4 z-50 hidden md:flex">
+<!-- Header -->
+<div class="flex items-center gap-3 mb-stack-md px-2">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shrink-0">
+<span class="material-symbols-outlined icon-fill">menu_book</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight leading-none mb-1">Editorial Admin</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Scholarly CMS</p>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full bg-primary-container text-on-primary hover:bg-surface-tint transition-colors rounded py-3 px-4 font-label-sm text-label-sm uppercase flex items-center justify-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            New Entry
+        </button>
+<!-- Main Tabs -->
+<div class="flex flex-col gap-1 flex-grow">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-primary hover:bg-surface-container-high transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-95 duration-150 transition-transform">dashboard</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-primary hover:bg-surface-container-high transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-95 duration-150 transition-transform">auto_stories</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Content Manager</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-primary font-bold bg-surface-container-highest group" href="#">
+<span class="material-symbols-outlined text-[20px] icon-fill">menu_book</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Sermon Library</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-primary hover:bg-surface-container-high transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-95 duration-150 transition-transform">group_work</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">User Roles</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-primary hover:bg-surface-container-high transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-95 duration-150 transition-transform">settings</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Settings</span>
+</a>
+</div>
+<!-- Footer Tabs -->
+<div class="flex flex-col gap-1 mt-auto pt-4 border-t border-outline-variant">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-primary hover:bg-surface-container-high transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-95 duration-150 transition-transform">description</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Documentation</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-primary hover:bg-surface-container-high transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-95 duration-150 transition-transform">contact_support</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Support</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="w-full h-16 sticky top-0 z-40 bg-surface border-b border-outline-variant flex justify-between items-center px-gutter max-w-full">
+<!-- Mobile Brand / Search placeholder -->
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden md:flex items-center bg-surface-container-low rounded-full px-4 py-2 border border-outline-variant focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mr-2">search</span>
+<input class="bg-transparent border-none outline-none text-body-md text-on-surface placeholder-on-surface-variant w-64 focus:ring-0 p-0" placeholder="Search manuscripts..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<!-- Trailing Actions -->
+<div class="flex items-center gap-3 text-on-surface-variant">
+<button class="hover:bg-surface-container-low p-2 rounded-full transition-colors opacity-80 hover:opacity-100 flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:bg-surface-container-low p-2 rounded-full transition-colors opacity-80 hover:opacity-100 flex items-center justify-center">
+<span class="material-symbols-outlined">history</span>
+</button>
+<button class="hover:bg-surface-container-low p-2 rounded-full transition-colors opacity-80 hover:opacity-100 flex items-center justify-center">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+<div class="h-6 w-px bg-outline-variant hidden md:block"></div>
+<!-- Primary Action & Profile -->
+<div class="flex items-center gap-4">
+<button class="font-label-sm text-label-sm text-primary hover:bg-surface-container-low px-4 py-2 rounded transition-colors hidden md:block">
+                        Publish Changes
+                    </button>
+<img alt="Administrator Profile" class="w-8 h-8 rounded-full border border-outline-variant cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHGbvnokNZCYoMF3nbf0F2RgeSwwnk6uTY1XlSFwG5N5swqLnQdDS_Vbv01AJueQyf8qkCYWQvNziHy0StP1Kq9cGs1CsJR-4RSbLXsQGSGqcG8LOFJ8fpJPJsx2CWY7pHamn4fj9ukseh9zQQ-fA-Ul1HZHWl2WdJl-oVXtF3Cl9tCRlqCJZJ-yzzgdLiwYDtMGNe3XngKtlLLBjXJB3RSKpnKUBBY7nY_UTG33rgm0hn3h7QOvam"/>
+</div>
+</div>
+</header>
+<!-- Canvas Area -->
+<div class="flex-1 flex flex-col items-center justify-center px-margin-mobile md:px-gutter py-stack-lg bg-surface relative overflow-hidden">
+<!-- Subtle Background Texture/Pattern (Atmospheric) -->
+<div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: radial-gradient(circle at 2px 2px, #887270 1px, transparent 0); background-size: 32px 32px;"></div>
+<!-- Central Empty State Content -->
+<div class="max-w-2xl w-full text-center z-10 flex flex-col items-center">
+<!-- Illustration/Icon Area -->
+<div class="relative w-48 h-48 mb-stack-md fade-in-up" style="animation-delay: 0.1s;">
+<!-- Soft glowing backdrop -->
+<div class="absolute inset-0 bg-surface-container-highest rounded-full blur-2xl opacity-50"></div>
+<!-- Central icon container -->
+<div class="relative w-full h-full bg-surface-container-low rounded-full border border-outline-variant flex items-center justify-center shadow-[inset_0_2px_10px_rgba(0,0,0,0.02)]">
+<span class="material-symbols-outlined text-[80px] text-primary-container icon-fill opacity-90">task_alt</span>
+<!-- Floating decorative elements -->
+<span class="material-symbols-outlined absolute top-4 right-8 text-[24px] text-tertiary-container opacity-70" style="animation: float 3s ease-in-out infinite;">auto_awesome</span>
+<span class="material-symbols-outlined absolute bottom-8 left-6 text-[20px] text-secondary opacity-50" style="animation: float 4s ease-in-out infinite reverse;">edit_note</span>
+</div>
+</div>
+<!-- Typography -->
+<div class="fade-in-up" style="animation-delay: 0.2s;">
+<h2 class="font-display-lg text-display-lg text-primary mb-4">A Quiet Desk</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto mb-stack-md">
+                        All manuscripts have been stewarded. The review queue is currently empty, allowing space for reflection and preparation for the upcoming editorial cycle.
+                    </p>
+</div>
+<!-- Flourish Divider -->
+<div class="w-24 h-px bg-gradient-to-r from-transparent via-outline to-transparent mb-stack-md fade-in-up opacity-50" style="animation-delay: 0.3s;"></div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in-up" style="animation-delay: 0.4s;">
+<button class="w-full sm:w-auto bg-primary-container text-on-primary px-8 py-3 rounded-DEFAULT font-label-sm text-label-sm uppercase tracking-wider hover:bg-surface-tint transition-all duration-200 shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+                        View Editorial Calendar
+                    </button>
+<button class="w-full sm:w-auto bg-transparent border border-outline text-on-surface px-8 py-3 rounded-DEFAULT font-label-sm text-label-sm uppercase tracking-wider hover:bg-surface-container-low transition-all duration-200 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">library_books</span>
+                        Review Published Content
+                    </button>
+</div>
+</div>
+<!-- Contextual Footer Metadata -->
+<div class="absolute bottom-stack-sm left-0 right-0 text-center fade-in-up" style="animation-delay: 0.6s;">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">
+                    Last update: Today, 10:42 AM <span class="mx-2 opacity-50">|</span> Editor: Rebecca Hall
+                </p>
+</div>
+</div>
+</main>
+<style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</body></html>

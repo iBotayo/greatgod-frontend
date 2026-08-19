@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Audit Log - GreatGod CMS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#5b6561",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#141d1a",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "primary": "#3e0003",
+                        "secondary-container": "#d8e2dd",
+                        "on-tertiary-container": "#4e3d00",
+                        "inverse-primary": "#ffb3ad",
+                        "outline": "#887270",
+                        "inverse-surface": "#30312e",
+                        "primary-fixed": "#ffdad7",
+                        "surface-bright": "#fbf9f4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f5f3ee",
+                        "tertiary": "#735c00",
+                        "secondary": "#57605d",
+                        "secondary-fixed": "#dbe5e0",
+                        "surface-container-high": "#eae8e3",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-container": "#f0eee9",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "primary-container": "#5d1212",
+                        "surface-variant": "#e4e2dd",
+                        "tertiary-fixed": "#ffe088",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "background": "#fbf9f4",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-background": "#1b1c19",
+                        "on-surface-variant": "#554240",
+                        "tertiary-container": "#cca72f",
+                        "surface-dim": "#dbdad5",
+                        "outline-variant": "#dbc0be",
+                        "on-primary-container": "#e27770",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "on-primary-fixed": "#410004",
+                        "on-surface": "#1b1c19",
+                        "inverse-on-surface": "#f2f1ec",
+                        "surface-tint": "#9c413d",
+                        "surface": "#fbf9f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "32px",
+                        "container-max": "1120px",
+                        "stack-sm": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "body-lg": ["\"Source Serif 4\""]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Subtle scrollbar for table */
+        .table-container::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .table-container::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        .table-container::-webkit-scrollbar-thumb {
+            background-color: #dbc0be; /* outline-variant */
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex antialiased">
+<!-- SideNavBar (from JSON) -->
+<nav class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant dark:border-outline flex flex-col h-full py-unit px-4 z-50">
+<!-- Brand -->
+<div class="mb-stack-md pt-4 px-2">
+<h1 class="font-headline-md text-headline-md font-medium text-primary dark:text-primary-fixed-dim">GreatGod</h1>
+<p class="font-label-sm text-label-sm text-secondary mt-1">Editorial CMS</p>
+</div>
+<!-- Main Navigation -->
+<ul class="flex-1 space-y-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="auto_stories">auto_stories</span>
+                    Content Manager
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="mic_external_on">mic_external_on</span>
+                    Sermon Library
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="manage_accounts">manage_accounts</span>
+                    User Roles
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-primary dark:text-primary-fixed-dim font-bold border-r-2 border-primary dark:border-primary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors opacity-80 duration-150 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+<!-- CTA -->
+<div class="px-2 mb-stack-md">
+<button class="w-full bg-primary-container text-on-primary text-label-sm font-label-sm py-2 rounded flex items-center justify-center gap-2 transition-colors hover:bg-primary">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Publication
+            </button>
+</div>
+<!-- Footer Navigation -->
+<ul class="space-y-1 mb-4 border-t border-outline-variant pt-4">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="help_outline">help_outline</span>
+                    Support
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="logout">logout</span>
+                    Sign Out
+                </a>
+</li>
+</ul>
+<!-- Admin Profile -->
+<div class="flex items-center gap-3 px-2 pb-2">
+<img alt="GreatGod Admin Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A small, circular avatar image of a dignified administrator wearing scholarly attire, shot in warm, natural lighting typical of a high-end editorial portrait. The background is a soft, blurred library setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAodyCX2KHYli_TTylGFKc8RYStECnOT16MiHPbOtDMj7jAuy2urCRZkGPyfrAxARU9Fz38moShxu-lJnv2SgqOITZGXjpsjn_QJ-QSt_SnbO1ZKpNJrhJ9nEPJepkf3yAJ1L0LpcmrF3bDhm_UNFQG9_3sBvUsFIIly7OyMKVlRaASZvS3yEy-X6FGF-N9FAtg9XjqTVRDY51Ehv9i7SfGcPOeH4HcbSUnyCs-AnNkyOl75e9AYwUE"/>
+<div class="flex-1 overflow-hidden">
+<p class="font-label-sm text-label-sm text-on-surface truncate">Admin User</p>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col h-screen overflow-hidden">
+<!-- Header Area (Contextual to Audit Log, not the generic TopNavBar as intent is Settings/Admin specific) -->
+<header class="flex justify-between items-end px-gutter pt-stack-md pb-stack-sm border-b border-outline-variant bg-surface sticky top-0 z-40">
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                    Back to Settings
+                </p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">System Audit Log</h2>
+</div>
+<div class="flex items-center gap-4">
+<!-- Search -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-sm">search</span>
+<input class="pl-9 pr-4 py-2 bg-surface-bright border border-outline-variant rounded font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 w-64 transition-shadow" placeholder="Search logs..." type="text"/>
+</div>
+<!-- Filter -->
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-sm">tune</span>
+                    Filter
+                </button>
+<!-- Export -->
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-high border border-outline-variant rounded font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Export CSV
+                </button>
+</div>
+</header>
+<!-- Log Table Area -->
+<div class="flex-1 overflow-auto bg-surface-container-low p-gutter table-container">
+<div class="max-w-[1400px] mx-auto bg-surface-bright border border-outline-variant rounded shadow-sm">
+<!-- Table Header -->
+<div class="grid grid-cols-12 gap-4 px-6 py-4 border-b border-outline-variant bg-surface font-label-sm text-label-sm text-secondary">
+<div class="col-span-3">Actor</div>
+<div class="col-span-2">Action</div>
+<div class="col-span-3">Target</div>
+<div class="col-span-2">Timestamp</div>
+<div class="col-span-1">Status</div>
+<div class="col-span-1 text-right">Details</div>
+</div>
+<!-- Table Body -->
+<div class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<div class="grid grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-surface-container-low transition-colors group">
+<div class="col-span-3 flex items-center gap-3">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of an editorial manager, warm lighting, scholarly aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDitxaLkSB8xT5YPyk6RWdYVbMu_f_X8xdd0BlKHeG8-4xq6dLZgsqDwd6vZJMK2RT5NMH8mGu6tvHFdg0Ja-NPuGRpn6juWlsh4nciCJKYtGgFvsXw8lfBbVQgExfMdKFj37w2kaFahaOKTFdZaUI9Af6JY-bO2BFbO3NqJ0EeFtgUHnu-9gnCZAE9Hv2FNsApieBnfsRrPF4K9E_0q64joR4vo0636lO8l8CNJt9Z-R0EX_OPBXLH"/>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface">Dr. Sarah Jenkins</p>
+<span class="inline-block px-2 py-0.5 mt-1 bg-surface-container text-secondary text-[10px] uppercase tracking-wider rounded">Chief Editor</span>
+</div>
+</div>
+<div class="col-span-2">
+<span class="font-body-md text-body-md text-on-surface">Content Published</span>
+</div>
+<div class="col-span-3">
+<p class="font-body-md text-body-md text-on-surface truncate">The Theology of Rest in a Digital Age</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">Article</p>
+</div>
+<div class="col-span-2 font-body-md text-body-md text-secondary">
+                            Oct 24, 2023 · 14:32:05
+                        </div>
+<div class="col-span-1">
+<span class="flex items-center gap-1 text-[#2e6b4c] font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] icon-fill">check_circle</span>
+                                Success
+                            </span>
+</div>
+<div class="col-span-1 text-right">
+<button class="text-primary font-label-sm text-label-sm hover:underline opacity-0 group-hover:opacity-100 transition-opacity">View Detail</button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-surface-container-low transition-colors group">
+<div class="col-span-3 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant text-secondary">
+<span class="material-symbols-outlined text-sm">smart_toy</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface">System Process</p>
+<span class="inline-block px-2 py-0.5 mt-1 bg-surface-container text-secondary text-[10px] uppercase tracking-wider rounded">Automated</span>
+</div>
+</div>
+<div class="col-span-2">
+<span class="font-body-md text-body-md text-on-surface">Backup Completed</span>
+</div>
+<div class="col-span-3">
+<p class="font-body-md text-body-md text-on-surface truncate">Weekly Archive db_dump_2310</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">System Action</p>
+</div>
+<div class="col-span-2 font-body-md text-body-md text-secondary">
+                            Oct 24, 2023 · 02:00:01
+                        </div>
+<div class="col-span-1">
+<span class="flex items-center gap-1 text-[#2e6b4c] font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] icon-fill">check_circle</span>
+                                Success
+                            </span>
+</div>
+<div class="col-span-1 text-right">
+<button class="text-primary font-label-sm text-label-sm hover:underline opacity-0 group-hover:opacity-100 transition-opacity">View Detail</button>
+</div>
+</div>
+<!-- Row 3 (Error) -->
+<div class="grid grid-cols-12 gap-4 px-6 py-4 items-center bg-[#fff8f8] hover:bg-[#fff0f0] transition-colors group">
+<div class="col-span-3 flex items-center gap-3">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a junior editor, looking slightly stressed, warm lighting, editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxsB0IQ1g-gwWm1UTfFl8MQgTb4r5UA6FNQj-5udbKqRys5CTyeB_BuIkzQROk0PmqkHuofTuNRCGFtsh4M8RvPRXJdKju67NPF3-DnOBMZv-KZpRjBolM5KPgopmFmNavtmdIXqoscxAIskjUNQPnNxdpL1BhjAcy_YAr56GJ40jGgLEz54DBdvKxeA7nOhvnWtmbgsaIt5Z4SDCIOv6kHeuc6HdKTa-ig9ZFR7oQMj-AuobJ-ZkL"/>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface">Marcus Thorne</p>
+<span class="inline-block px-2 py-0.5 mt-1 bg-surface-container text-secondary text-[10px] uppercase tracking-wider rounded">Contributor</span>
+</div>
+</div>
+<div class="col-span-2">
+<span class="font-body-md text-body-md text-error">Authentication Failed</span>
+</div>
+<div class="col-span-3">
+<p class="font-body-md text-body-md text-on-surface truncate">CMS Login Attempt (IP: 192.168.1.4)</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">Security</p>
+</div>
+<div class="col-span-2 font-body-md text-body-md text-secondary">
+                            Oct 23, 2023 · 18:45:12
+                        </div>
+<div class="col-span-1">
+<span class="flex items-center gap-1 text-error font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] icon-fill">error</span>
+                                Failed
+                            </span>
+</div>
+<div class="col-span-1 text-right">
+<button class="text-primary font-label-sm text-label-sm hover:underline opacity-0 group-hover:opacity-100 transition-opacity">View Detail</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 border-t border-outline-variant flex items-center justify-between bg-surface">
+<p class="font-label-sm text-label-sm text-secondary">Showing 1 to 50 of 1,204 entries</p>
+<div class="flex items-center gap-2">
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center justify-center">1</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container text-secondary font-label-sm text-label-sm flex items-center justify-center transition-colors">2</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container text-secondary font-label-sm text-label-sm flex items-center justify-center transition-colors">3</button>
+<span class="text-secondary">...</span>
+<button class="w-8 h-8 rounded hover:bg-surface-container text-secondary font-label-sm text-label-sm flex items-center justify-center transition-colors">25</button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

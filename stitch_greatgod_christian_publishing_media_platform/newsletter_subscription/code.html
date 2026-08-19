@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Newsletter Subscription</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#57605d",
+                        "on-background": "#261817",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#ffedeb",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "outline": "#887270",
+                        "on-secondary-container": "#5d6663",
+                        "secondary-container": "#dbe5e0",
+                        "surface-tint": "#9c413d",
+                        "on-tertiary-container": "#4e3e00",
+                        "surface-variant": "#f8dcda",
+                        "primary-fixed": "#ffdad7",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#404946",
+                        "background": "#fff8f7",
+                        "surface-container": "#ffe9e7",
+                        "tertiary-fixed": "#ffe085",
+                        "on-primary-fixed": "#410004",
+                        "outline-variant": "#dbc0be",
+                        "secondary-fixed": "#dbe5e0",
+                        "inverse-surface": "#3d2c2b",
+                        "primary": "#3e0003",
+                        "tertiary": "#735c00",
+                        "tertiary-container": "#c6a94e",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#151d1b",
+                        "on-surface-variant": "#554240",
+                        "tertiary-fixed-dim": "#e3c466",
+                        "surface": "#fff8f7",
+                        "primary-container": "#5d1212",
+                        "surface-paper": "#fbf9f4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#231b00",
+                        "surface-linen": "#f5f3ee",
+                        "inverse-primary": "#ffb3ad",
+                        "surface-dim": "#efd4d1",
+                        "surface-bright": "#fff8f7",
+                        "surface-container-low": "#fff0ef",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#fee2df",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#f8dcda",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "on-surface": "#261817",
+                        "on-primary-container": "#e27770",
+                        "success-secure": "#2e4d41"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "stack-sm": "16px",
+                        "form-width": "560px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "stack-md": "32px",
+                        "stack-lg": "64px",
+                        "container-max": "1120px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "donation-amount": ["EB Garamond"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-md": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="h-full bg-surface-paper text-on-surface antialiased overflow-x-hidden flex flex-col md:hidden">
+<!-- TopAppBar (Transactional - Hidden/Modified) -->
+<!-- We hide the standard navigation shell for a linear/transactional flow like signup, but keep a simple header -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 max-w-container-max mx-auto bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline flat no shadows sticky top-0 z-50">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight">GreatGod</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<main class="flex-grow flex flex-col px-margin-mobile pt-stack-md pb-stack-lg relative">
+<!-- Background Decorative Element -->
+<div aria-hidden="true" class="absolute inset-0 z-0 opacity-10 pointer-events-none flex justify-center items-start pt-10">
+<span class="material-symbols-outlined text-[300px] text-primary">menu_book</span>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center max-w-form-width mx-auto w-full">
+<div class="mb-stack-sm flex justify-center w-full">
+<div class="h-16 w-16 bg-surface-linen rounded-full border border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="mail">mail</span>
+</div>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-unit">Join the GreatGod Weekly</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Receive scholarly clarity and spiritual stewardship directly to your inbox. A reflective, heritage-inspired digest.</p>
+<!-- Highlights -->
+<ul class="flex flex-col gap-unit w-full mb-stack-md bg-surface-linen p-4 rounded-lg border border-outline-variant">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary fill text-xl" data-icon="auto_stories" data-weight="fill">auto_stories</span>
+<span class="font-label-lg text-label-lg text-on-surface">Weekly Reflections</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary fill text-xl" data-icon="headphones" data-weight="fill">headphones</span>
+<span class="font-label-lg text-label-lg text-on-surface">Latest Sermons</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary fill text-xl" data-icon="bookmark" data-weight="fill">bookmark</span>
+<span class="font-label-lg text-label-lg text-on-surface">New Releases</span>
+</li>
+</ul>
+<!-- Signup Form -->
+<form class="w-full flex flex-col gap-stack-sm" id="signup-form" onsubmit="event.preventDefault(); document.getElementById('signup-form').classList.add('hidden'); document.getElementById('success-state').classList.remove('hidden');">
+<div class="relative w-full">
+<label class="sr-only font-label-sm text-label-sm" for="email">Email Address</label>
+<input class="w-full bg-surface-container-lowest border border-outline text-on-surface font-body-md text-body-md rounded-DEFAULT px-4 py-3 focus:outline-none focus:border-primary focus:border-2 focus:ring-0 transition-all placeholder:text-outline" id="email" name="email" placeholder="Enter your email address" required="" type="email"/>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest py-4 rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center justify-center gap-2" type="submit">
+                    Subscribe
+                    <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Success State (Hidden by default) -->
+<div class="hidden w-full flex flex-col items-center text-center bg-surface-linen p-stack-sm rounded-lg border border-outline-variant mt-stack-sm" id="success-state">
+<div class="h-12 w-12 bg-secondary-container rounded-full flex items-center justify-center mb-unit">
+<span class="material-symbols-outlined text-success-secure text-2xl" data-icon="check_circle">check_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Welcome.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Your subscription is confirmed. We look forward to sharing our reflections with you soon.</p>
+<button class="mt-4 text-primary font-label-sm text-label-sm underline" onclick="document.getElementById('success-state').classList.add('hidden'); document.getElementById('signup-form').classList.remove('hidden'); document.getElementById('email').value='';">
+                    Subscribe another email
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer (Stewardship Footer for transactional flows) -->
+<footer class="w-full py-stack-md px-margin-mobile text-center flex flex-col items-center gap-unit bg-surface-paper dark:bg-surface-dim full-width mt-stack-lg bg-surface-linen dark:bg-surface-container flat no shadows border-t border-outline-variant">
+<div class="flex items-center gap-2 text-success-secure mb-unit">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+<span class="font-label-sm text-label-sm">Secure SSL Connection</span>
+</div>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim">© 2024 GreatGod Media.</p>
+<div class="flex gap-4 mt-2">
+<a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors" href="#">Terms</a>
+</div>
+</footer>
+</body></html>

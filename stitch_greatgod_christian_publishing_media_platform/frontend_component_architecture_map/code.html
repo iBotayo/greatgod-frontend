@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Frontend Component Architecture - Sacred Editorial</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#fbf9f4",
+                    "inverse-surface": "#30312e",
+                    "secondary": "#57605d",
+                    "on-primary-fixed-variant": "#7e2a27",
+                    "surface-variant": "#e4e2dd",
+                    "surface-container-low": "#f5f3ee",
+                    "on-tertiary-container": "#4e3d00",
+                    "on-secondary-fixed-variant": "#3f4945",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1b1c19",
+                    "outline": "#887270",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f4",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae8e3",
+                    "primary-fixed": "#ffdad7",
+                    "secondary-fixed": "#dbe5e0",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#9c413d",
+                    "on-primary-fixed": "#410004",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-secondary-fixed": "#141d1a",
+                    "on-tertiary-fixed": "#241a00",
+                    "secondary-fixed-dim": "#bfc9c4",
+                    "inverse-primary": "#ffb3ad",
+                    "on-surface-variant": "#554240",
+                    "surface": "#fbf9f4",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#e27770",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#f0eee9",
+                    "outline-variant": "#dbc0be",
+                    "secondary-container": "#d8e2dd",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "surface-dim": "#dbdad5",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "tertiary": "#735c00",
+                    "on-background": "#1b1c19",
+                    "primary": "#3e0003",
+                    "tertiary-container": "#cca72f",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f2f1ec",
+                    "tertiary-fixed": "#ffe088",
+                    "primary-container": "#5d1212",
+                    "on-secondary-container": "#5b6561"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-md": "32px",
+                    "container-max": "1120px",
+                    "unit": "8px",
+                    "stack-sm": "16px",
+                    "stack-lg": "64px",
+                    "gutter": "32px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "display-lg": ["EB Garamond"],
+                    "headline-lg-mobile": ["EB Garamond"],
+                    "headline-lg": ["EB Garamond"],
+                    "body-lg": ["\"Source Serif 4\""],
+                    "label-sm": ["Hanken Grotesk"],
+                    "body-md": ["\"Source Serif 4\""],
+                    "headline-md": ["EB Garamond"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "500"}],
+                    "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                    "body-md": ["17px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for scholarly feel */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #dbc0be; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #887270; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased overflow-x-hidden flex h-screen">
+<!-- SideNavBar Component -->
+<nav class="hidden md:flex flex-col p-4 gap-2 h-full bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant h-screen w-64 left-0 top-0 fixed z-20">
+<div class="mb-stack-md px-2">
+<h1 class="font-headline-md text-primary dark:text-inverse-primary text-xl">Sacred Editorial</h1>
+<p class="font-label-sm text-label-sm text-secondary">Managing Editor</p>
+</div>
+<button class="mb-stack-sm flex items-center justify-center gap-2 bg-primary-container text-on-primary w-full py-2 px-4 rounded font-label-sm text-label-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            New Submission
+        </button>
+<div class="flex-1 flex flex-col gap-1 overflow-y-auto">
+<!-- Active state logic mapped to "Dashboard" as proxy for architecture overview -->
+<a class="flex items-center gap-3 px-4 py-2 font-label-sm text-label-sm bg-primary-fixed-dim dark:bg-on-primary-container text-on-primary-fixed dark:text-on-primary-fixed-variant rounded-full scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-2 font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="description">description</span>
+                Manuscripts
+            </a>
+<a class="flex items-center gap-3 px-4 py-2 font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="calendar_month">calendar_month</span>
+                Editorial Calendar
+            </a>
+<a class="flex items-center gap-3 px-4 py-2 font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="auto_stories">auto_stories</span>
+                Content Library
+            </a>
+<a class="flex items-center gap-3 px-4 py-2 font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_tree">account_tree</span>
+                Taxonomy
+            </a>
+<a class="flex items-center gap-3 px-4 py-2 font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+                Team
+            </a>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-2 font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="inventory_2">inventory_2</span>
+                Archive
+            </a>
+<a class="flex items-center gap-3 px-4 py-2 font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+                Help
+            </a>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col md:ml-64 w-full relative">
+<!-- TopNavBar Component -->
+<header class="bg-background dark:bg-background w-full top-0 sticky z-10 border-b border-outline-variant dark:border-outline-variant">
+<div class="flex justify-between items-center px-margin-mobile md:px-gutter h-16 w-full max-w-container-max mx-auto">
+<div class="md:hidden font-headline-md text-headline-md text-primary dark:text-inverse-primary tracking-tight">Sacred Editorial</div>
+<nav class="hidden md:flex gap-8 h-full items-center">
+<a class="font-label-sm text-label-sm text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 cursor-pointer active:opacity-70 transition-opacity" href="#">Dashboard</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 transition-opacity" href="#">Review Queue</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 transition-opacity" href="#">Calendar</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 transition-opacity" href="#">Library</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A small, professional portrait of a scholarly editor in soft, warm lighting, suitable for an avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs-HTdn0TV4GfVV9RVhePQVr_TEK4eld_3bToYT6HbbxFh2eloVlDUBeweh06M2_p6I37TI3wjJ0Ar07EQs_y6StlZAzoDJcJBtwYHPm4ExMw1lj-yUm_FjVat85eqpav7JZz1jp6Z5jLXll-eEDh672AspVK2ZmnQbzTPF935y5jMchskoZ2-_B9uNT6cr0w4aKSwM6j9EIoQdciA0Yp3px9u7xezVksGYi9dCExZj7nW8OdKVBgD"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas Area -->
+<main class="flex-1 overflow-y-auto px-margin-mobile md:px-gutter py-stack-lg max-w-container-max mx-auto w-full">
+<header class="mb-stack-lg max-w-3xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-unit block">Documentation</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-stack-sm">Frontend Component Architecture</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">A comprehensive overview of the modular building blocks defining the Sacred Editorial digital ecosystem. Designed for clarity, reusability, and serene aesthetics.</p>
+</header>
+<!-- Section 1: Global Components -->
+<section class="mb-stack-lg">
+<div class="flex items-center justify-between border-b border-outline-variant pb-unit mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">1. Global Primitives</h2>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-1 rounded text-secondary">Foundation</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter">
+<!-- Component Card Macro -->
+<div class="bg-surface-container-low border border-outline-variant p-stack-sm hover:bg-surface-container transition-colors duration-300">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-label-sm text-label-sm text-primary">AppShell</h3>
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="web">web</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm leading-snug">The foundational layout wrapper managing persistent navigation and content boundaries.</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-stack-sm hover:bg-surface-container transition-colors duration-300">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-label-sm text-label-sm text-primary">Interactive Forms</h3>
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="input">input</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm leading-snug">Includes Input, Select, and Toggle. Styled with pure backgrounds and deep burgundy focus rings.</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-stack-sm hover:bg-surface-container transition-colors duration-300">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-label-sm text-label-sm text-primary">Systemic States</h3>
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="pending">pending</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm leading-snug">Standardized views for Loading, Empty, and Error states, maintaining a calm demeanor.</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-stack-sm hover:bg-surface-container transition-colors duration-300">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-label-sm text-label-sm text-primary">Feedback Modules</h3>
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="chat_bubble">chat_bubble</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm leading-snug">Modals and Toasts using subtle tonal layering rather than aggressive drop shadows.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container dark:bg-inverse-surface w-full py-stack-sm mt-auto border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-gutter w-full max-w-container-max mx-auto">
+<span class="text-label-sm font-label-sm font-bold text-primary">Sacred Editorial</span>
+<div class="flex gap-4 mt-4 md:mt-0">
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim opacity-70 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim opacity-70 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim opacity-70 hover:opacity-100 transition-opacity" href="#">Ethical Standards</a>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant mt-4 md:mt-0 text-center">© 2024 Sacred Editorial Management. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stewardship Archive - Discussion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fff8f7",
+                        "surface-container-high": "#fee2df",
+                        "on-secondary-fixed-variant": "#404946",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#5d1212",
+                        "on-surface-variant": "#554240",
+                        "on-secondary-fixed": "#151d1b",
+                        "tertiary-fixed": "#ffe085",
+                        "surface": "#fff8f7",
+                        "tertiary": "#735c00",
+                        "on-tertiary-fixed": "#231b00",
+                        "surface-container-low": "#fff0ef",
+                        "secondary-fixed": "#dbe5e0",
+                        "outline-variant": "#dbc0be",
+                        "tertiary-fixed-dim": "#e3c466",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "inverse-surface": "#3d2c2b",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#f8dcda",
+                        "on-error": "#ffffff",
+                        "surface-linen": "#f5f3ee",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "on-primary-container": "#e27770",
+                        "surface-paper": "#fbf9f4",
+                        "surface-variant": "#f8dcda",
+                        "error-container": "#ffdad6",
+                        "success-secure": "#2e4d41",
+                        "surface-tint": "#9c413d",
+                        "surface-dim": "#efd4d1",
+                        "on-tertiary-container": "#4e3e00",
+                        "outline": "#887270",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#ffedeb",
+                        "secondary": "#57605d",
+                        "on-primary-fixed": "#410004",
+                        "on-surface": "#261817",
+                        "surface-bright": "#fff8f7",
+                        "on-secondary-container": "#5d6663",
+                        "on-background": "#261817",
+                        "surface-container": "#ffe9e7",
+                        "secondary-container": "#dbe5e0",
+                        "error": "#ba1a1a",
+                        "primary": "#3e0003",
+                        "tertiary-container": "#c6a94e",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb3ad",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ffdad7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1120px",
+                        "stack-lg": "64px",
+                        "gutter": "32px",
+                        "stack-md": "32px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "16px",
+                        "form-width": "560px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["EB Garamond"],
+                        "donation-amount": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-md": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.surface-paper');
+            color: theme('colors.on-surface');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky border-b border-outline dark:border-outline-variant bg-background z-50">
+<div class="flex justify-between items-center w-full px-gutter h-16 max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">Stewardship Archive</div>
+<div class="hidden md:flex gap-8 font-headline-md text-headline-md font-label-lg text-label-lg">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-80" href="#">Library</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary font-bold cursor-pointer active:opacity-80" href="#">Articles</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-80" href="#">Authors</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-80" href="#">About</a>
+</div>
+<div class="flex gap-4">
+<button class="text-primary dark:text-primary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<button class="text-primary dark:text-primary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-lg">
+<!-- Context Header -->
+<div class="max-w-form-width mx-auto mb-stack-md text-center">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Reflections &amp; Discourse</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Scholarly commentary on "The Dynamics of Early Church Stewardship"</p>
+</div>
+<!-- Comments Section Vessel -->
+<div class="max-w-form-width mx-auto">
+<!-- Add Comment Area (Simplified for context) -->
+<div class="bg-surface-linen border border-outline rounded p-4 mb-stack-lg">
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden shrink-0 border border-outline">
+<img alt="Current User" class="w-full h-full object-cover" data-alt="A small, circular avatar portrait of a thoughtful scholar in a dimly lit library. Warm, muted academic tones, classical portrait style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuHRlQcgOcLs1a6zw_BMRyLFhTHKk-o3B7ihAzQFPRCUAw-NNMnw1VLQ5zPdX_VOrqCFc7PGerRdFVpKyQFoEPtgc8s5-V8FXCHHlrhS4CXUbVYExmDOZfP99XtmpDkwud6oKa-RwdaIOVWJdRgUt9T_bhobxMTItL8U8mlkbV85RWkGUgfuuZJUZInKlQLu7doBv1HgeuC_9q5Fpiwgj5t9VsCCO6diwNXPS_X6j0jMEVGwJeK6GS"/>
+</div>
+<div class="flex-grow">
+<textarea class="w-full bg-surface-container-lowest border border-outline rounded p-3 font-body-md text-body-md text-on-surface focus:border-primary focus:border-2 focus:outline-none resize-none placeholder:text-on-surface-variant/50" placeholder="Contribute a reflection..." rows="3"></textarea>
+<div class="flex justify-end mt-3">
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-6 py-2 uppercase tracking-[0.08em] rounded hover:bg-on-primary-fixed-variant transition-colors">Submit Reflection</button>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-stack-sm">
+<!-- Comment 1: Standard -->
+<article class="bg-surface-linen border border-outline rounded p-4 transition-all focus-within:border-primary focus-within:border-2">
+<header class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border border-outline">
+<img alt="Dr. Elias Thorne" class="w-full h-full object-cover" data-alt="A headshot portrait of an elderly theology professor with a grey beard, wearing a tweed jacket, set against a blurred bookshelf background. Calm, authoritative academic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUInEyuYeCmmHcGR3kymZ-SgD_gZShQ1Rq0ZJTzGQwUjefQuostekcnCBIK2c8ZnaYFOGkvU9ggUVW7QfJHQgT4srrKWoGHpInuOUnrEwywIA3xRuoDKfEKAiNz3KR3dWra218MOHYrqXHoiKaKm2z9E8BalhIU0X9WwnlsRR4B-m6gWV2c6y7xyO1XN2DY8L4az-VQt0CQrEaWl_KGCx1P7HKuYr7lSXKBNKAQdv_F6p7NW03D6e7"/>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-primary">Dr. Elias Thorne</h3>
+<time class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest text-[11px]">Oct 24, 1842</time>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="More options">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</header>
+<div class="font-body-md text-body-md text-on-surface mb-4">
+<p>The interpretation of resource distribution in Chapter 4 is profoundly nuanced. I appreciate the distinction drawn between obligatory tithes and spontaneous, community-driven offerings. It aligns well with contemporary archival findings from the Antioch fragments.</p>
+</div>
+<footer class="flex items-center gap-4 border-t border-outline/30 pt-3">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="thumb_up">thumb_up</span>
+<span class="font-label-sm text-label-sm">12</span>
+</button>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors">Report</button>
+</footer>
+</article>
+<!-- Comment 2: Pending Moderation -->
+<article class="bg-surface-container border border-outline-variant border-dashed rounded p-4 opacity-80">
+<div class="flex items-center gap-2 mb-3 text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="hourglass_empty">hourglass_empty</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Pending Moderation</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant italic mb-3">
+                        "I wonder if the administrative structures mentioned were entirely formalized by the second century, or if..."
+                    </div>
+<div class="bg-surface-container-low border border-outline-variant rounded p-3 text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Your reflection is being reviewed for doctrinal integrity.</p>
+</div>
+</article>
+<!-- Comment 3: Removed -->
+<article class="bg-surface-linen border border-outline rounded p-4">
+<header class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-outline-variant" data-icon="person_off">person_off</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-outline">Unknown Author</h3>
+</div>
+</div>
+</header>
+<div class="bg-surface-container-high border-l-4 border-error p-3 mt-2">
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined text-[18px]" data-icon="gavel">gavel</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Comment Removed</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 text-[15px]">This comment was removed by moderators for failing to adhere to the scholarly standards of clarity and spiritual stewardship required within the archive.</p>
+</div>
+</article>
+<!-- Comment 4: Standard Response -->
+<article class="bg-surface-linen border border-outline rounded p-4 ml-8 relative before:content-[''] before:absolute before:left-[-16px] before:top-[24px] before:w-[16px] before:border-t before:border-outline before:border-l before:h-[calc(100%+16px)] before:bottom-0 before:rounded-tl">
+<header class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border border-outline">
+<img alt="Sarah Jenkins, MA" class="w-full h-full object-cover" data-alt="A portrait of a young female academic wearing round glasses, looking engaged. Soft, natural light spilling across a wooden desk, evoking a quiet study room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl1Rpxrek2cDAAuRpb5pX7-D30qgp7ycaieBBV6YVlhmQQxw31KjnLGKrn5Ov6v4uNTAKGGXAslHtzupiKfmSAwTLL1IJc1NZBtoS2kpt_Gqr0pQJa1M7jVa0-DRWhi4EYm0Ir1NaixorNOCusffa95NGbDAuZBDTWGJjrm1tiupXdhr6IXylKibyQYbGG7CcPikZ1NzO4VzxbHQrWm4y9fNCrZcwOZmWrH-l7sKo7TqOU81uyJuvv"/>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-primary">Sarah Jenkins, MA</h3>
+<time class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest text-[11px]">Oct 25, 1842</time>
+</div>
+</div>
+</header>
+<div class="font-body-md text-body-md text-on-surface mb-4">
+<p>Dr. Thorne, while I agree regarding the Antioch fragments, we must also consider the Pauline epistles which suggest a much earlier codification of these practices. A comparative analysis might yield further clarity.</p>
+</div>
+<footer class="flex items-center gap-4 border-t border-outline/30 pt-3">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="thumb_up">thumb_up</span>
+<span class="font-label-sm text-label-sm">5</span>
+</button>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors">Report</button>
+</footer>
+</article>
+</div>
+<div class="mt-stack-sm text-center">
+<button class="border border-outline text-primary font-label-sm text-label-sm px-6 py-2 uppercase tracking-[0.08em] rounded hover:bg-surface-container transition-colors">Load Older Reflections</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-md mt-stack-lg border-t border-outline dark:border-outline-variant bg-background">
+<div class="flex flex-col items-center justify-center gap-4 w-full px-margin-mobile max-w-container-max mx-auto text-center">
+<div class="font-label-lg text-label-lg uppercase tracking-widest text-primary">Stewardship Archive</div>
+<div class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-label-sm text-label-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Moderation Guidelines</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Contact Support</a>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-2">© 2024 Stewardship Archive. All rights reserved. Scholarly Clarity and Spiritual Stewardship.</p>
+</div>
+</footer>
+</body></html>

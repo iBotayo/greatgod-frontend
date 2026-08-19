@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Content Filters</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#dbe5e0",
+                      "on-primary-container": "#e27770",
+                      "on-secondary": "#ffffff",
+                      "surface-bright": "#fbf9f4",
+                      "inverse-on-surface": "#f2f1ec",
+                      "inverse-primary": "#ffb3ad",
+                      "surface-variant": "#e4e2dd",
+                      "surface-container-highest": "#e4e2dd",
+                      "error-container": "#ffdad6",
+                      "on-error": "#ffffff",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "surface": "#fbf9f4",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "error": "#ba1a1a",
+                      "on-surface": "#1b1c19",
+                      "on-primary-fixed": "#410004",
+                      "surface-container-low": "#f5f3ee",
+                      "tertiary-container": "#cca72f",
+                      "surface-tint": "#9c413d",
+                      "inverse-surface": "#30312e",
+                      "surface-dim": "#dbdad5",
+                      "tertiary-fixed": "#ffe088",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "primary-fixed": "#ffdad7",
+                      "on-surface-variant": "#554240",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#1b1c19",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#dbc0be",
+                      "secondary": "#57605d",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#735c00",
+                      "on-tertiary-container": "#4e3d00",
+                      "primary-container": "#5d1212",
+                      "primary": "#3e0003",
+                      "surface-container-high": "#eae8e3",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "surface-container": "#f0eee9",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-secondary-container": "#5b6561",
+                      "on-secondary-fixed": "#141d1a",
+                      "background": "#fbf9f4",
+                      "secondary-container": "#d8e2dd",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "outline": "#887270"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1120px",
+                      "gutter": "32px",
+                      "stack-md": "32px",
+                      "margin-mobile": "20px",
+                      "stack-lg": "64px",
+                      "stack-sm": "16px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "display-lg": [
+                              "EB Garamond"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .custom-chip-checkbox:checked + label {
+            background-color: theme('colors.primary-container');
+            color: theme('colors.on-primary-container');
+            border-color: theme('colors.primary-container');
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased flex items-center justify-center min-h-screen">
+<!-- Modal Backdrop -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-40 transition-opacity"></div>
+<!-- Filter Modal -->
+<div class="relative z-50 bg-surface-bright rounded-xl w-full max-w-md mx-margin-mobile shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-outline-variant overflow-hidden">
+<!-- Header -->
+<div class="px-gutter py-stack-sm border-b border-outline-variant flex items-center justify-between bg-surface">
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight">Content Filters</h2>
+<button aria-label="Close filters" class="text-on-surface-variant hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 rounded-full p-1">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Content -->
+<div class="px-gutter py-stack-md">
+<fieldset class="space-y-stack-sm">
+<legend class="font-label-sm text-label-sm text-on-surface-variant mb-unit uppercase tracking-widest">Resource Type</legend>
+<div class="flex flex-wrap gap-unit">
+<!-- Chip: Articles -->
+<div class="relative">
+<input checked="" class="custom-chip-checkbox sr-only" id="filter-articles" type="checkbox"/>
+<label class="cursor-pointer inline-flex items-center px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest font-label-sm text-label-sm text-secondary transition-all hover:bg-surface-container-low focus-within:ring-2 focus-within:ring-primary-container focus-within:ring-offset-1" for="filter-articles">
+                            Articles
+                        </label>
+</div>
+<!-- Chip: Devotionals -->
+<div class="relative">
+<input class="custom-chip-checkbox sr-only" id="filter-devotionals" type="checkbox"/>
+<label class="cursor-pointer inline-flex items-center px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest font-label-sm text-label-sm text-secondary transition-all hover:bg-surface-container-low focus-within:ring-2 focus-within:ring-primary-container focus-within:ring-offset-1" for="filter-devotionals">
+                            Devotionals
+                        </label>
+</div>
+<!-- Chip: Sermons -->
+<div class="relative">
+<input class="custom-chip-checkbox sr-only" id="filter-sermons" type="checkbox"/>
+<label class="cursor-pointer inline-flex items-center px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest font-label-sm text-label-sm text-secondary transition-all hover:bg-surface-container-low focus-within:ring-2 focus-within:ring-primary-container focus-within:ring-offset-1" for="filter-sermons">
+                            Sermons
+                        </label>
+</div>
+<!-- Chip: Podcasts -->
+<div class="relative">
+<input class="custom-chip-checkbox sr-only" id="filter-podcasts" type="checkbox"/>
+<label class="cursor-pointer inline-flex items-center px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest font-label-sm text-label-sm text-secondary transition-all hover:bg-surface-container-low focus-within:ring-2 focus-within:ring-primary-container focus-within:ring-offset-1" for="filter-podcasts">
+                            Podcasts
+                        </label>
+</div>
+<!-- Chip: Videos -->
+<div class="relative">
+<input class="custom-chip-checkbox sr-only" id="filter-videos" type="checkbox"/>
+<label class="cursor-pointer inline-flex items-center px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest font-label-sm text-label-sm text-secondary transition-all hover:bg-surface-container-low focus-within:ring-2 focus-within:ring-primary-container focus-within:ring-offset-1" for="filter-videos">
+                            Videos
+                        </label>
+</div>
+<!-- Chip: Books/Resources -->
+<div class="relative">
+<input class="custom-chip-checkbox sr-only" id="filter-books" type="checkbox"/>
+<label class="cursor-pointer inline-flex items-center px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest font-label-sm text-label-sm text-secondary transition-all hover:bg-surface-container-low focus-within:ring-2 focus-within:ring-primary-container focus-within:ring-offset-1" for="filter-books">
+                            Books/Resources
+                        </label>
+</div>
+</div>
+</fieldset>
+<!-- Decorative Divider -->
+<div class="my-stack-md flex justify-center">
+<div class="w-2/3 h-px bg-gradient-to-r from-transparent via-outline-variant to-transparent"></div>
+</div>
+<!-- Sort By (Optional conceptual addition based on typical filter/sort patterns in editorial) -->
+<fieldset class="space-y-stack-sm mt-stack-sm">
+<legend class="font-label-sm text-label-sm text-on-surface-variant mb-unit uppercase tracking-widest">Sort By</legend>
+<div class="relative">
+<select class="appearance-none w-full bg-surface-container-lowest border border-outline-variant text-secondary font-body-md text-body-md py-3 px-4 rounded focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-colors">
+<option>Most Recent</option>
+<option>Most Read</option>
+<option>Relevance</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</fieldset>
+</div>
+<!-- Footer Actions -->
+<div class="px-gutter py-stack-sm bg-surface-container-lowest border-t border-outline-variant flex justify-end items-center gap-unit">
+<button class="px-4 py-2 font-label-sm text-label-sm text-secondary hover:text-primary transition-colors focus:outline-none focus:underline" type="button">
+                Reset
+            </button>
+<button class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-6 py-3 rounded hover:bg-primary-fixed-variant transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container shadow-sm" type="button">
+                Apply Filters
+            </button>
+</div>
+</div>
+</body></html>

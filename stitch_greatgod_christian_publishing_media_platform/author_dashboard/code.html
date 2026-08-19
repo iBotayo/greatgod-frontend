@@ -1,0 +1,289 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Author Dashboard - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:wght@400..700&amp;family=Source+Serif+4:opsz,wght@8..60,400..700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-primary": "#ffb3ad",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#dbdad5",
+                      "background": "#fbf9f4",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#410004",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "inverse-on-surface": "#f2f1ec",
+                      "inverse-surface": "#30312e",
+                      "secondary-container": "#d8e2dd",
+                      "surface-container-high": "#eae8e3",
+                      "tertiary-fixed": "#ffe088",
+                      "outline": "#887270",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#4e3d00",
+                      "error": "#ba1a1a",
+                      "tertiary": "#735c00",
+                      "on-secondary-container": "#5b6561",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "secondary": "#57605d",
+                      "on-surface": "#1b1c19",
+                      "surface-container-low": "#f5f3ee",
+                      "on-tertiary-fixed": "#241a00",
+                      "primary-fixed": "#ffdad7",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "surface-container": "#f0eee9",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "on-secondary-fixed": "#141d1a",
+                      "surface": "#fbf9f4",
+                      "surface-tint": "#9c413d",
+                      "surface-container-highest": "#e4e2dd",
+                      "secondary-fixed": "#dbe5e0",
+                      "on-surface-variant": "#554240",
+                      "on-background": "#1b1c19",
+                      "primary-container": "#5d1212",
+                      "surface-bright": "#fbf9f4",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "surface-variant": "#e4e2dd",
+                      "tertiary-container": "#cca72f",
+                      "primary": "#3e0003",
+                      "on-primary-container": "#e27770",
+                      "outline-variant": "#dbc0be"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-sm": "16px",
+                      "stack-md": "32px",
+                      "gutter": "32px",
+                      "container-max": "1120px",
+                      "unit": "8px",
+                      "stack-lg": "64px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 bg-surface border-b border-outline-variant">
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 ease-in-out p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-display-lg text-headline-lg-mobile text-primary tracking-tight">GreatGod</div>
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 ease-in-out p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[80px] pb-[100px] px-margin-mobile md:px-0 max-w-container-max mx-auto">
+<!-- Greeting Section -->
+<section class="py-stack-md flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-stack-sm border border-outline-variant p-1 bg-surface-container-low">
+<img class="w-full h-full object-cover rounded-full" data-alt="A dignified portrait of a writer, Amara Nwosu, in a warm, minimalist setting. The lighting is soft and natural, creating a serene and thoughtful atmosphere typical of editorial photography. The color palette features deep burgundies, soft creams, and warm stones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxrH7T4lbTFVoJN2-14MKLJOrTDzcd35ZkTiLIjSmYxmKj7HFY2X1jJRs18RwTlnFA7zD9Qs_KdF9y94G7zY2BNky68o-Vr-sYhQIkP3WvRg01F7QBgKmjFTxYp9Er1dCODldra2_WiMmRQEtpGrtWogejKef8a63b30XvPZN2nYDrQL1kL4hMMuM0nDA_bGV6_OkFyV-1aiwSvdHDs6YdQVm5CxzLiGUlUqVI7XjTR8K1vlCue5kk">
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-unit">Welcome back, Amara.</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Your voice is needed today. What will you write?</p>
+</section>
+<!-- Primary Actions -->
+<section class="flex flex-col gap-unit mb-stack-lg">
+<a href="{{DATA:SCREEN:SCREEN_167}}" class="w-full bg-primary-container text-on-primary py-3 rounded-DEFAULT font-label-sm text-label-sm tracking-wider uppercase flex items-center justify-center gap-2 hover:bg-primary-container/90 transition-colors"><span class="material-symbols-outlined text-[18px]">edit_document</span>Start New Draft</a>
+<a href="{{DATA:SCREEN:SCREEN_168}}" class="w-full border border-secondary text-secondary py-3 rounded-DEFAULT font-label-sm text-label-sm tracking-wider uppercase flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[18px]">list_alt</span>View All Drafts</a>
+</section>
+<!-- Divider -->
+<div class="w-full h-[1px] bg-gradient-to-r from-transparent via-outline-variant to-transparent mb-stack-lg"></div>
+<!-- Active Drafts -->
+<section class="mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">edit</span>
+                Active Drafts
+            </h2>
+<div class="flex flex-col gap-stack-sm">
+<!-- Draft Card 1 -->
+<a href="{{DATA:SCREEN:SCREEN_166}}" class="block bg-surface-container-low border border-outline-variant p-stack-sm rounded-lg hover:border-primary/30 transition-colors cursor-pointer group"><article><div class="flex justify-between items-start mb-2"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Theology</span><span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span></div><h3 class="font-headline-md text-[22px] leading-[28px] text-on-surface mb-2 group-hover:text-primary transition-colors">Grace in the Modern Metropolis</h3><div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant/70"><span class="">1,240 words</span><span class="">·</span><span class="">Saved 2 hrs ago</span></div></article></a>
+<!-- Draft Card 2 -->
+<article class="bg-surface-container-low border border-outline-variant p-stack-sm rounded-lg hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Reflection</span>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</div>
+<h3 class="font-headline-md text-[22px] leading-[28px] text-on-surface mb-2 group-hover:text-primary transition-colors">Silence as a Spiritual Discipline</h3>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant/70">
+<span class="">850 words</span>
+<span class="">·</span>
+<span class="">Saved yesterday</span>
+</div>
+</article>
+</div>
+</section>
+<!-- In Review -->
+<section class="mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">rate_review</span>
+                In Review
+            </h2>
+<div class="flex flex-col gap-stack-sm">
+<!-- Review Card 1 -->
+<a href="{{DATA:SCREEN:SCREEN_161}}" class="block bg-surface border border-outline-variant p-stack-sm rounded-lg relative overflow-hidden"><article><div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary-container"></div><div class="pl-2"><div class="flex justify-between items-center mb-2"><span class="font-label-sm text-label-sm text-tertiary-container uppercase tracking-wider flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">pending</span>Pending Review</span></div><h3 class="font-headline-md text-[22px] leading-[28px] text-on-surface mb-2">The Architecture of Worship Spaces</h3><p class="font-body-md text-[15px] leading-[24px] text-on-surface-variant mb-2">Submitted to the 'Culture' column. Awaiting editorial feedback.</p><div class="font-label-sm text-label-sm text-on-surface-variant/70">Submitted Oct 12</div></div></article></a>
+</div>
+</section>
+<!-- Recently Published -->
+<section class="mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">history_edu</span>
+                Recently Published
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-sm">
+<!-- Published Card 1 -->
+<article class="flex gap-4 items-center bg-surface-container-lowest border border-outline-variant p-2 rounded-lg">
+<div class="w-20 h-20 shrink-0 overflow-hidden rounded-md border border-outline-variant/50">
+<img class="w-full h-full object-cover" data-alt="A macro shot of old parchment paper with elegant, faded serif typography. The lighting highlights the texture of the paper, fitting the 'Sacred Editorial' warm and calm aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEey4w37NUYVrR-Ip2Z6pzKYZ2mVUv4ug5jTzYpcIqVT3Vsx7NQCbi6SJ9-kiWvEgKpRlxsrVV2_Qm4gy4_imOvzXrzIHEeALIT9nUQWbAsYJGOSxMnNp-ameWh1q5AVxww2FwYmLUmJlhKABX0mKVM3XB4SIQ9TaqEQKGiTZ7-m82fkCQSFgtNbYoWgGbV_qhFeD3TY6Z8ICNpwKAMAZrEN2ZAILkCChcA_nJCRD_BtqeI278ODur">
+</div>
+<div>
+<h3 class="font-headline-md text-[18px] leading-[24px] text-on-surface mb-1 line-clamp-2">Finding the Sacred in the Ordinary Workday</h3>
+<div class="font-label-sm text-label-sm text-on-surface-variant/70">
+                            Published Oct 1
+                        </div>
+</div>
+</article>
+<!-- Published Card 2 -->
+<article class="flex gap-4 items-center bg-surface-container-lowest border border-outline-variant p-2 rounded-lg">
+<div class="w-20 h-20 shrink-0 overflow-hidden rounded-md border border-outline-variant/50">
+<img class="w-full h-full object-cover" data-alt="A soft focus image of a wooden pew in a quiet chapel. Sunlight filters through a distant window, casting warm light on the wood. The style is classic, editorial, and serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEyPRfRTIRfcwjGZ07cTjAE_CS0MBrN675YuMhF5ns26frQyRbCG6TgIp6JZpemOCtjjE_suKLqyIGAf1_aziv6GUdyXaGeAjv0Ctt-Zpb7jT7iLwMNAdk7QflLluqvNTk6EHqG0I_bHsKzWD59cntAyrhXba7XLTHBRxc14jA9uK0tN35Zvc_pOmq1QCA8XCzXz71jYxuQ6d_4gth0oGJt0LSBqcQ0iSgtsrva717n0d-ipeNGBHH">
+</div>
+<div>
+<h3 class="font-headline-md text-[18px] leading-[24px] text-on-surface mb-1 line-clamp-2">Community and the Breaking of Bread</h3>
+<div class="font-label-sm text-label-sm text-on-surface-variant/70">
+                            Published Sep 15
+                        </div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-20 bg-surface border-t border-outline-variant px-margin-mobile md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 duration-200" href="{{DATA:SCREEN:SCREEN_179}}">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 duration-200" href="{{DATA:SCREEN:SCREEN_182}}">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm mt-1">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 duration-200" href="{{DATA:SCREEN:SCREEN_133}}">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-label-sm mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-secondary-container/30 rounded-full py-1 px-4 scale-95 active:scale-90 duration-200" href="{{DATA:SCREEN:SCREEN_170}}">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+
+
+</body></html>

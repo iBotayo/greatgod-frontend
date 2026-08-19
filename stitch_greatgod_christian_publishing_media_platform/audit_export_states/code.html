@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Audit Log Export Process - GreatGod CMS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#5b6561",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#141d1a",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "primary": "#3e0003",
+                        "secondary-container": "#d8e2dd",
+                        "on-tertiary-container": "#4e3d00",
+                        "inverse-primary": "#ffb3ad",
+                        "outline": "#887270",
+                        "inverse-surface": "#30312e",
+                        "primary-fixed": "#ffdad7",
+                        "surface-bright": "#fbf9f4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f5f3ee",
+                        "tertiary": "#735c00",
+                        "secondary": "#57605d",
+                        "secondary-fixed": "#dbe5e0",
+                        "surface-container-high": "#eae8e3",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-container": "#f0eee9",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "primary-container": "#5d1212",
+                        "surface-variant": "#e4e2dd",
+                        "tertiary-fixed": "#ffe088",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "background": "#fbf9f4",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-background": "#1b1c19",
+                        "on-surface-variant": "#554240",
+                        "tertiary-container": "#cca72f",
+                        "surface-dim": "#dbdad5",
+                        "outline-variant": "#dbc0be",
+                        "on-primary-container": "#e27770",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "on-primary-fixed": "#410004",
+                        "on-surface": "#1b1c19",
+                        "inverse-on-surface": "#f2f1ec",
+                        "surface-tint": "#9c413d",
+                        "surface": "#fbf9f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "32px",
+                        "container-max": "1120px",
+                        "stack-sm": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "body-lg": ["\"Source Serif 4\""]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: "Source Serif 4", serif; background-color: #fbf9f4; color: #1b1c19; }
+        .grid-12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px; }
+        @media (max-width: 768px) { .grid-12 { grid-template-columns: repeat(8, minmax(0, 1fr)); } }
+        
+        /* Spinner Animation */
+        .spinner {
+            animation: rotate 2s linear infinite;
+        }
+        .spinner circle {
+            stroke: #5D1212;
+            stroke-width: 3;
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+            animation: dash 1.5s ease-in-out infinite;
+            stroke-linecap: round;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+        @keyframes dash {
+            0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; }
+            50% { stroke-dasharray: 90, 200; stroke-dashoffset: -35px; }
+            100% { stroke-dasharray: 90, 200; stroke-dashoffset: -124px; }
+        }
+        
+        .progress-bar-fill {
+            transition: width 2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex antialiased">
+<!-- Side Navigation (Shared Component Context) -->
+<nav aria-label="Sidebar" class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 py-unit px-4 bg-surface-container-low border-r border-outline-variant z-10">
+<div class="mb-8 mt-4 px-2">
+<h1 class="font-headline-md text-headline-md font-medium text-primary mb-1">GreatGod</h1>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Editorial CMS</p>
+</div>
+<button class="mb-8 w-full bg-primary-container text-on-primary font-label-sm text-label-sm py-3 px-4 rounded transition-colors hover:opacity-90 flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            New Publication
+        </button>
+<ul class="space-y-1 flex-1">
+<li><a class="flex items-center gap-3 px-3 py-3 rounded-lg text-secondary hover:bg-surface-container transition-colors" href="#"><span aria-hidden="true" class="material-symbols-outlined">dashboard</span><span class="font-label-sm text-label-sm">Dashboard</span></a></li>
+<li><a class="flex items-center gap-3 px-3 py-3 rounded-lg text-secondary hover:bg-surface-container transition-colors" href="#"><span aria-hidden="true" class="material-symbols-outlined">auto_stories</span><span class="font-label-sm text-label-sm">Content Manager</span></a></li>
+<li><a class="flex items-center gap-3 px-3 py-3 rounded-lg text-secondary hover:bg-surface-container transition-colors" href="#"><span aria-hidden="true" class="material-symbols-outlined">mic_external_on</span><span class="font-label-sm text-label-sm">Sermon Library</span></a></li>
+<li><a class="flex items-center gap-3 px-3 py-3 rounded-lg text-secondary hover:bg-surface-container transition-colors" href="#"><span aria-hidden="true" class="material-symbols-outlined">manage_accounts</span><span class="font-label-sm text-label-sm">User Roles</span></a></li>
+<li><a class="flex items-center gap-3 px-3 py-3 rounded-lg text-primary font-bold border-r-2 border-primary bg-surface-container-high transition-colors" href="#"><span aria-hidden="true" class="material-symbols-outlined">settings</span><span class="font-label-sm text-label-sm">Settings</span></a></li>
+</ul>
+<div class="mt-auto border-t border-outline-variant pt-4 pb-4">
+<ul class="space-y-1">
+<li><a class="flex items-center gap-3 px-3 py-3 rounded-lg text-secondary hover:bg-surface-container transition-colors" href="#"><span aria-hidden="true" class="material-symbols-outlined">help_outline</span><span class="font-label-sm text-label-sm">Support</span></a></li>
+<li><a class="flex items-center gap-3 px-3 py-3 rounded-lg text-secondary hover:bg-surface-container transition-colors" href="#"><span aria-hidden="true" class="material-symbols-outlined">logout</span><span class="font-label-sm text-label-sm">Sign Out</span></a></li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-0 md:ml-64 flex flex-col min-h-screen relative">
+<!-- Top Navigation -->
+<header class="flex justify-between items-center w-full px-gutter h-16 docked top-0 sticky z-40 bg-surface border-b border-outline-variant shadow-sm backdrop-blur-sm bg-opacity-90">
+<div class="flex items-center gap-8">
+<div class="hidden md:flex gap-6">
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-all" href="#">Recent</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-all" href="#">Drafts</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-all" href="#">Published</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-secondary hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container"><span class="material-symbols-outlined">notifications</span></button>
+<button class="text-secondary hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container"><span class="material-symbols-outlined">history</span></button>
+<div class="h-8 w-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden ml-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">person</span>
+</div>
+</div>
+</header>
+<!-- Main Workspace (Underneath Overlays) -->
+<main class="flex-1 p-gutter max-w-container-max mx-auto w-full relative z-0">
+<div class="mb-stack-md flex justify-between items-end border-b border-outline-variant pb-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Audit Log</h2>
+<p class="font-body-md text-body-md text-secondary">Review system activity and administrative changes.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 border border-outline text-secondary font-label-sm text-label-sm rounded hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span> Filter
+                    </button>
+<!-- Trigger Button for Demo -->
+<button class="px-6 py-2 bg-primary-container text-on-primary font-label-sm text-label-sm rounded shadow-sm hover:opacity-90 transition-opacity flex items-center gap-2" id="start-export-btn">
+<span class="material-symbols-outlined text-[18px]">download</span> Export Report
+                    </button>
+</div>
+</div>
+<!-- Faux Table Content -->
+<div class="bg-surface-bright border border-outline-variant rounded-lg overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="py-3 px-4 font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">Timestamp</th>
+<th class="py-3 px-4 font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">User</th>
+<th class="py-3 px-4 font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">Action</th>
+<th class="py-3 px-4 font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">Resource</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-4 text-secondary text-sm">Oct 24, 2023 - 14:32</td>
+<td class="py-4 px-4 flex items-center gap-2"><div class="w-6 h-6 rounded-full bg-secondary-container text-xs flex items-center justify-center font-bold text-on-secondary-container">A</div>Admin User</td>
+<td class="py-4 px-4"><span class="px-2 py-1 bg-surface-container text-secondary text-xs rounded border border-outline-variant">Updated Role</span></td>
+<td class="py-4 px-4 text-primary">Editor Profile</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-4 text-secondary text-sm">Oct 24, 2023 - 11:15</td>
+<td class="py-4 px-4 flex items-center gap-2"><div class="w-6 h-6 rounded-full bg-secondary-container text-xs flex items-center justify-center font-bold text-on-secondary-container">E</div>Editor Smith</td>
+<td class="py-4 px-4"><span class="px-2 py-1 bg-surface-container text-secondary text-xs rounded border border-outline-variant">Published</span></td>
+<td class="py-4 px-4 text-primary">Sunday Sermon Notes</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-4 text-secondary text-sm">Oct 23, 2023 - 09:45</td>
+<td class="py-4 px-4 flex items-center gap-2"><div class="w-6 h-6 rounded-full bg-secondary-container text-xs flex items-center justify-center font-bold text-on-secondary-container">A</div>Admin User</td>
+<td class="py-4 px-4"><span class="px-2 py-1 bg-error-container text-on-error-container text-xs rounded border border-outline-variant">Deleted</span></td>
+<td class="py-4 px-4 text-primary">Old Draft #421</td>
+</tr>
+</tbody>
+</table>
+</div>
+</main>
+<!-- STATE OVERLAYS (Controlled via JS for demo) -->
+<!-- Backdrop -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4" id="overlay-backdrop">
+<!-- State 1: Preparing Export (Loading) -->
+<div class="bg-surface-bright w-full max-w-md rounded-xl border border-outline-variant shadow-xl p-8 transform scale-95 opacity-0 transition-all duration-300 hidden flex-col items-center text-center" id="state-loading">
+<div class="relative w-16 h-16 mb-6">
+<svg class="spinner w-full h-full" viewbox="0 0 50 50">
+<circle class="path" cx="25" cy="25" fill="none" r="20" stroke-width="4"></circle>
+</svg>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Preparing Export</h3>
+<p class="font-body-md text-body-md text-secondary mb-8">Gathering audit logs for the selected date range. This may take a moment depending on the volume of data.</p>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mb-2 overflow-hidden">
+<div class="bg-primary-container h-1.5 rounded-full progress-bar-fill" id="progress-bar" style="width: 0%"></div>
+</div>
+<div class="w-full flex justify-between font-label-sm text-label-sm text-secondary">
+<span>Compiling records...</span>
+<span id="progress-text">0%</span>
+</div>
+<button class="mt-8 text-secondary hover:text-primary text-sm underline underline-offset-4 font-label-sm" onclick="resetDemo()">Cancel Export</button>
+</div>
+<!-- State 2: Success -->
+<div class="bg-surface-bright w-full max-w-md rounded-xl border border-outline-variant shadow-xl p-8 transform scale-95 opacity-0 transition-all duration-300 hidden flex-col items-center text-center" id="state-success">
+<div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-6 ring-4 ring-surface">
+<span class="material-symbols-outlined text-[32px]">check_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Export Complete</h3>
+<p class="font-body-md text-body-md text-secondary mb-8">Your audit log report has been generated successfully and is ready for download.</p>
+<div class="w-full bg-surface-container-low border border-outline-variant rounded p-4 mb-8 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">description</span>
+<div class="text-left">
+<p class="font-label-sm text-label-sm text-primary">audit-log_Oct2023.csv</p>
+<p class="text-xs text-secondary mt-0.5">4.2 MB • Generated Today</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4 w-full">
+<button class="flex-1 py-3 border border-outline text-secondary font-label-sm text-label-sm rounded hover:bg-surface-container-low transition-colors" onclick="resetDemo()">Close</button>
+<button class="flex-1 py-3 bg-primary-container text-on-primary font-label-sm text-label-sm rounded shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2" onclick="resetDemo()">
+<span class="material-symbols-outlined text-[18px]">download</span> Download
+                    </button>
+</div>
+</div>
+<!-- State 3: Error -->
+<div class="bg-surface-bright w-full max-w-md rounded-xl border border-outline-variant shadow-xl p-8 transform scale-95 opacity-0 transition-all duration-300 hidden flex-col items-center text-center" id="state-error">
+<div class="w-16 h-16 rounded-full bg-error-container text-on-error-container flex items-center justify-center mb-6 ring-4 ring-surface">
+<span class="material-symbols-outlined text-[32px]">warning</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Export Failed</h3>
+<p class="font-body-md text-body-md text-secondary mb-8">We encountered an issue while compiling the audit log data. The connection may have timed out.</p>
+<div class="w-full bg-surface-container-lowest border border-error/20 rounded p-4 mb-8 text-left">
+<p class="font-label-sm text-label-sm text-error mb-1">Error Code: ERR_TIMEOUT_504</p>
+<p class="text-xs text-secondary">Please try refining your date range to export a smaller batch of records, or attempt the export again.</p>
+</div>
+<div class="flex gap-4 w-full">
+<button class="flex-1 py-3 border border-outline text-secondary font-label-sm text-label-sm rounded hover:bg-surface-container-low transition-colors" onclick="resetDemo()">Cancel</button>
+<button class="flex-1 py-3 border border-primary text-primary font-label-sm text-label-sm rounded hover:bg-surface-container transition-colors flex items-center justify-center gap-2" onclick="startDemo()">
+<span class="material-symbols-outlined text-[18px]">refresh</span> Retry Export
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+        // Demo Interaction Logic
+        const btnStart = document.getElementById('start-export-btn');
+        const backdrop = document.getElementById('overlay-backdrop');
+        const stateLoading = document.getElementById('state-loading');
+        const stateSuccess = document.getElementById('state-success');
+        const stateError = document.getElementById('state-error');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+
+        let demoInterval;
+
+        function showBackdrop() {
+            backdrop.classList.remove('hidden');
+            // Small delay for transition to take effect
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+            }, 10);
+        }
+
+        function hideBackdrop() {
+            backdrop.classList.add('opacity-0');
+            setTimeout(() => {
+                backdrop.classList.add('hidden');
+            }, 300);
+        }
+
+        function hideAllStates() {
+            [stateLoading, stateSuccess, stateError].forEach(el => {
+                el.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => el.classList.add('hidden'), 300);
+            });
+        }
+
+        function showState(element) {
+            hideAllStates();
+            setTimeout(() => {
+                element.classList.remove('hidden');
+                setTimeout(() => {
+                    element.classList.remove('opacity-0', 'scale-95');
+                }, 10);
+            }, 300);
+        }
+
+        function startDemo() {
+            clearInterval(demoInterval);
+            progressBar.style.width = '0%';
+            progressText.innerText = '0%';
+            
+            showBackdrop();
+            showState(stateLoading);
+
+            let progress = 0;
+            // Simulate progress
+            demoInterval = setInterval(() => {
+                progress += Math.random() * 20;
+                if (progress > 100) progress = 100;
+                
+                progressBar.style.width = `${progress}%`;
+                progressText.innerText = `${Math.round(progress)}%`;
+
+                if (progress >= 100) {
+                    clearInterval(demoInterval);
+                    // Randomly decide between success and error for demonstration purposes
+                    // For a reliable demo, let's just show success after loading
+                    setTimeout(() => {
+                        showState(stateSuccess);
+                        // Uncomment below to test error state randomly
+                        // if(Math.random() > 0.5) showState(stateSuccess);
+                        // else showState(stateError);
+                    }, 500);
+                }
+            }, 500);
+        }
+
+        function resetDemo() {
+            clearInterval(demoInterval);
+            hideBackdrop();
+            setTimeout(hideAllStates, 300);
+        }
+
+        btnStart.addEventListener('click', startDemo);
+
+        // Optional: click outside to close (if not loading)
+        backdrop.addEventListener('click', (e) => {
+            if (e.target === backdrop && stateLoading.classList.contains('hidden')) {
+                resetDemo();
+            }
+        });
+    </script>
+</body></html>

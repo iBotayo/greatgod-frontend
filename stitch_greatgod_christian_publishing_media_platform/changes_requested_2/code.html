@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Changes Requested</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "surface-container": "#f0eee9",
+                    "tertiary-container": "#cca72f",
+                    "inverse-on-surface": "#f2f1ec",
+                    "on-secondary-container": "#5b6561",
+                    "on-surface": "#1b1c19",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "secondary-fixed": "#dbe5e0",
+                    "on-primary-fixed-variant": "#7e2a27",
+                    "background": "#fbf9f4",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-background": "#1b1c19",
+                    "surface-dim": "#dbdad5",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f5f3ee",
+                    "surface-tint": "#9c413d",
+                    "secondary": "#57605d",
+                    "secondary-container": "#d8e2dd",
+                    "primary-container": "#5d1212",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#410004",
+                    "primary-fixed": "#ffdad7",
+                    "surface": "#fbf9f4",
+                    "on-tertiary-container": "#4e3d00",
+                    "tertiary-fixed": "#ffe088",
+                    "outline-variant": "#dbc0be",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#30312e",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#887270",
+                    "secondary-fixed-dim": "#bfc9c4",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#141d1a",
+                    "tertiary": "#735c00",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-surface-variant": "#554240",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "inverse-primary": "#ffb3ad",
+                    "surface-bright": "#fbf9f4",
+                    "surface-container-high": "#eae8e3",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#3e0003",
+                    "surface-variant": "#e4e2dd",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-primary-container": "#e27770",
+                    "on-secondary-fixed-variant": "#3f4945"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-md": "32px",
+                    "stack-lg": "64px",
+                    "margin-mobile": "20px",
+                    "stack-sm": "16px",
+                    "container-max": "1120px",
+                    "unit": "8px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "\"Source Serif 4\""
+                    ],
+                    "headline-lg": [
+                            "EB Garamond"
+                    ],
+                    "headline-md": [
+                            "EB Garamond"
+                    ],
+                    "label-sm": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg-mobile": [
+                            "EB Garamond"
+                    ],
+                    "display-lg": [
+                            "EB Garamond"
+                    ],
+                    "body-lg": [
+                            "\"Source Serif 4\""
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "17px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-sm": [
+                            "13px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.08em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar Semantic Shell: Destination Rule applies, rendering Nav -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline duration-200 ease-in-out">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors rounded-full p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<a class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary dark:text-primary-fixed-dim tracking-tight" href="#">GreatGod</a>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-8 items-center font-label-sm text-label-sm">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors px-3 py-2 rounded-DEFAULT" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors px-3 py-2 rounded-DEFAULT" href="#">Discover</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors px-3 py-2 rounded-DEFAULT" href="#">Library</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors px-3 py-2 rounded-DEFAULT border-b-2 border-primary" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors rounded-full p-2">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="hidden md:block w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A small, professional author headshot in a bright, modern studio setting. Warm, light-mode aesthetic with soft natural lighting and a neutral beige background. Subtle, classical portrait styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGoMfVyC5jBHWcWIl5lgEho_87muLGohL-mzrJPLss7HwxRHFtIUkuowZ1Ls0jm2G1x90rGvYmnQo0SanVFuPhw8E-0U8qTisgYb_KY6IWQgh4K8l3aZ-vDvYGDct-b6pqQztT7BQs778GkNRRS81Lj3J7WSg7bZcjR1WReeU1yIMqb3z8bHJvyGky--k-_1_-ePOq-5cUprpipI6o3Y_FHZN0KE9oEV9HjS9KehV3Kr0Q1ElZDNWM"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 md:pb-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<!-- Breadcrumb & Status Context -->
+<div class="flex items-center gap-2 mb-8 mt-4 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest opacity-80">
+<a class="hover:text-primary transition-colors" href="#">My Manuscripts</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span>Theology of Grace</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-gutter">
+<!-- Main Content Column -->
+<div class="md:col-span-8 space-y-stack-md">
+<!-- Status Banner -->
+<div class="bg-surface-container border-l-4 border-primary p-6 rounded-r-lg relative overflow-hidden group shadow-sm transition-all duration-300">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-tint/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">error</span>
+<h1 class="font-headline-md text-headline-md text-on-surface">Changes Requested</h1>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-6">
+                            Your manuscript, <em class="text-on-surface">Theology of Grace in Modern Context</em>, requires revisions before it can proceed to final approval. Please review the editor's notes and submit an updated draft.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-6 py-3 rounded-DEFAULT hover:bg-surface-tint transition-colors uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit_document</span>
+                                Edit and Resubmit
+                            </button>
+<button class="border border-outline text-on-surface font-label-sm text-label-sm px-6 py-3 rounded-DEFAULT hover:bg-surface-container-highest transition-colors uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+                                Message Editor
+                            </button>
+</div>
+</div>
+</div>
+<div class="w-full h-px bg-outline-variant opacity-50"></div>
+<!-- Editor Note Overview -->
+<section>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6">Editor's Summary</h2>
+<div class="bg-surface-bright border border-outline-variant rounded-lg p-6 md:p-8">
+<div class="flex items-start gap-4 mb-6 pb-6 border-b border-outline-variant">
+<img class="w-12 h-12 rounded-full object-cover border border-outline-variant p-0.5" data-alt="A small, professional headshot of an editor in a warm, light-filled office. Minimalist-classical aesthetic with a subtle depth of field. Professional, calm, and trustworthy appearance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVRhoB1dQQu0XNijyj-IN9JhnDK2Otl3bQiEdCzHMHiExqi9gE-X3xj1W3z7qH2K1LE0FVp5UXv5TqcN_1_hA6pYs1xn6_am91KJAb2GZQZP3CSqR2qiRrQfhEk93NdiwY7JPCeDN2wAYFghVUDuJ18_nkW-gcCDIQTbDdO0gABWD7_mCsoSPRte69ab4Di0z_gjaux2b_DpsVj2deW0Q-9HPYkOuTDLfacdT5n65ky6EqkGI5ABhR"/>
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest mb-1">Reviewed by Rebecca Hall</h3>
+<div class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2 text-sm opacity-80">
+<span>Senior Editor</span>
+<span>·</span>
+<span>Reviewed on Oct 24, 2024</span>
+</div>
+</div>
+</div>
+<blockquote class="font-body-lg text-body-lg text-on-surface italic leading-relaxed border-l-2 border-surface-tint pl-6 my-6">
+                            "Thank you for this deeply thoughtful submission. The historical analysis in the first half is excellent. However, before we can move forward, please strengthen the connection between the historical context and the practical application in section 3. The transition feels a bit abrupt."
+                        </blockquote>
+</div>
+</section>
+<div class="w-full h-px bg-outline-variant opacity-50"></div>
+<!-- Specific Changes List -->
+<section>
+<div class="flex justify-between items-end mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Specific Action Items</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">3 Tasks</span>
+</div>
+<div class="space-y-4">
+<!-- Task 1 -->
+<div class="group border border-outline-variant bg-surface rounded-lg p-5 hover:border-outline hover:shadow-sm transition-all flex gap-4 items-start cursor-pointer">
+<div class="mt-1 w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center flex-shrink-0 group-hover:border-primary transition-colors">
+</div>
+<div class="flex-1">
+<h4 class="font-label-sm text-label-sm text-on-surface mb-2 uppercase tracking-wide">Section 1: Introduction</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Add a clearer bridging sentence to the introduction that maps out the structure of the essay for the reader.</p>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<!-- Task 2 -->
+<div class="group border border-outline-variant bg-surface rounded-lg p-5 hover:border-outline hover:shadow-sm transition-all flex gap-4 items-start cursor-pointer">
+<div class="mt-1 w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center flex-shrink-0 group-hover:border-primary transition-colors">
+</div>
+<div class="flex-1">
+<h4 class="font-label-sm text-label-sm text-on-surface mb-2 uppercase tracking-wide">Section 2: Historical Context</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Clarify the citation format for Augustine in paragraph 4 to match the house style guide.</p>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<!-- Task 3 -->
+<div class="group border border-outline-variant bg-surface rounded-lg p-5 hover:border-outline hover:shadow-sm transition-all flex gap-4 items-start cursor-pointer">
+<div class="mt-1 w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center flex-shrink-0 group-hover:border-primary transition-colors">
+</div>
+<div class="flex-1 flex flex-col gap-3">
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface mb-2 uppercase tracking-wide">Section 3: Practical Application</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Expand on the connection between the historical overview and the modern application. Provide at least one concrete modern example.</p>
+</div>
+<div class="bg-surface-container-low p-4 border-l-2 border-surface-tint rounded-r-DEFAULT text-sm font-body-md text-on-surface-variant italic">
+<span class="font-bold not-italic block mb-1 text-on-surface">Inline comment from Rebecca:</span>
+                                    "This paragraph is where the argument could really shine, but it currently feels disconnected from the previous 5 pages. Let's tie it back to the central thesis explicitly."
+                                </div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 self-start">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar Metadata Column -->
+<div class="md:col-span-4 mt-8 md:mt-0">
+<div class="sticky top-24 bg-surface-container-low border border-outline-variant rounded-lg p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface border-b border-outline-variant pb-4 mb-4">Manuscript Details</h3>
+<dl class="space-y-4 font-body-md text-body-md text-sm">
+<div>
+<dt class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Title</dt>
+<dd class="text-on-surface">Theology of Grace in Modern Context</dd>
+</div>
+<div>
+<dt class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Current Status</dt>
+<dd class="text-surface-tint font-bold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+                                Revisions Requested
+                            </dd>
+</div>
+<div>
+<dt class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Submitted</dt>
+<dd class="text-on-surface">Oct 12, 2024</dd>
+</div>
+<div>
+<dt class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Word Count</dt>
+<dd class="text-on-surface">4,250 words</dd>
+</div>
+</dl>
+<div class="mt-6 pt-6 border-t border-outline-variant">
+<a class="text-primary hover:text-surface-tint transition-colors font-label-sm text-label-sm uppercase tracking-widest flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                            Download Original Draft
+                        </a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Semantic Shell for Mobile -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-20 bg-surface dark:bg-surface-dim border-t border-outline-variant dark:border-outline px-margin-mobile md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform font-label-sm text-label-sm gap-1" href="#">
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform font-label-sm text-label-sm gap-1" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span>Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform font-label-sm text-label-sm gap-1" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span>Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-secondary-container/30 rounded-full py-1 px-4 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform font-label-sm text-label-sm gap-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span>Profile</span>
+</a>
+</nav>
+<!-- Footer Component -->
+<footer class="w-full py-stack-lg px-margin-mobile md:px-stack-lg flex flex-col items-center gap-stack-md bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant dark:border-outline pb-28 md:pb-stack-lg">
+<div class="font-display-lg text-headline-md text-primary dark:text-primary-fixed-dim">
+            GreatGod
+        </div>
+<nav class="flex flex-wrap justify-center gap-6 font-body-md text-body-md">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">About</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Statement of Faith</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Privacy Policy</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Terms of Service</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Newsletter</a>
+</nav>
+<div class="font-body-md text-body-md text-on-surface dark:text-on-surface-variant opacity-70 text-sm">
+            © 2024 GreatGod Publishing. All rights reserved.
+        </div>
+</footer>
+</body></html>

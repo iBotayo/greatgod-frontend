@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Resource Download Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#ffb3ad",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "success-secure": "#2e4d41",
+                      "primary-fixed": "#ffdad7",
+                      "tertiary-container": "#c6a94e",
+                      "tertiary": "#735c00",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-error": "#ffffff",
+                      "secondary": "#57605d",
+                      "surface-container-low": "#fff0ef",
+                      "surface-tint": "#9c413d",
+                      "primary-container": "#5d1212",
+                      "inverse-primary": "#ffb3ad",
+                      "surface-container-highest": "#f8dcda",
+                      "on-secondary-fixed": "#151d1b",
+                      "surface-container-high": "#fee2df",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#e3c466",
+                      "on-secondary-container": "#5d6663",
+                      "on-secondary-fixed-variant": "#404946",
+                      "secondary-fixed-dim": "#bfc9c5",
+                      "surface-bright": "#fff8f7",
+                      "surface": "#fff8f7",
+                      "inverse-surface": "#3d2c2b",
+                      "surface-container": "#fceae8",
+                      "error": "#ba1a1a",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#ffedeb",
+                      "surface-linen": "#f5f3ee",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#231b00",
+                      "on-primary-container": "#e27770",
+                      "primary": "#3e0003",
+                      "secondary-fixed": "#dbe5e0",
+                      "on-background": "#261817",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#ffe085",
+                      "surface-container-lowest": "#ffffff",
+                      "background": "#fff8f7",
+                      "on-surface": "#261817",
+                      "on-error-container": "#93000a",
+                      "surface-variant": "#f8dcda",
+                      "outline-variant": "#dbc0be",
+                      "on-primary-fixed": "#410004",
+                      "surface-paper": "#fbf9f4",
+                      "on-surface-variant": "#554240",
+                      "outline": "#887270",
+                      "surface-dim": "#efd4d1",
+                      "secondary-container": "#dbe5e0",
+                      "on-tertiary-container": "#4e3e00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "gutter": "32px",
+                      "stack-md": "32px",
+                      "stack-sm": "16px",
+                      "container-max": "1120px",
+                      "stack-lg": "64px",
+                      "form-width": "560px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "label-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "donation-amount": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "donation-amount": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-paper text-on-surface antialiased min-h-screen flex flex-col items-center justify-center py-12 px-margin-mobile">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface flex justify-between items-center px-margin-mobile h-16 max-w-container-max mx-auto shadow-sm">
+<button aria-label="Menu" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 duration-200 p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-headline-md text-headline-md tracking-widest text-primary dark:text-primary-fixed uppercase font-bold text-center flex-grow">
+            GREATGOD
+        </div>
+<button aria-label="Search" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 duration-200 p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<main class="w-full max-w-form-width mx-auto mt-24 mb-32 flex flex-col gap-stack-lg">
+<!-- Header Section -->
+<section class="text-center">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-4">Download Resource</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">
+                Select your preferred format for "The Foundations of Grace". Each format is carefully crafted for its specific medium.
+            </p>
+</section>
+<!-- Formats Selection -->
+<section class="bg-surface-linen border border-outline rounded p-8 flex flex-col gap-stack-md shadow-sm">
+<h2 class="font-label-lg text-label-lg text-primary uppercase border-b border-outline-variant pb-4 mb-2">Available Formats</h2>
+<!-- Format Option 1: PDF -->
+<div class="group border border-outline hover:border-primary transition-colors duration-300 rounded p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 cursor-pointer focus-within:border-primary focus-within:ring-1 focus-within:ring-primary bg-white">
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container-low rounded-full text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-3xl icon-fill" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">PDF Document</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Refined layout preserving the original typography and margins. Ideal for desktop reading or printing.</p>
+<p class="font-label-sm text-label-sm text-secondary mt-2">File size: 4.2 MB</p>
+</div>
+</div>
+<button class="w-full sm:w-auto bg-primary text-on-primary font-label-sm text-label-sm uppercase py-3 px-6 rounded hover:opacity-90 transition-opacity whitespace-nowrap active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    Download
+                </button>
+</div>
+<!-- Format Option 2: EPUB -->
+<div class="group border border-outline hover:border-primary transition-colors duration-300 rounded p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 cursor-pointer focus-within:border-primary focus-within:ring-1 focus-within:ring-primary bg-white">
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container-low rounded-full text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-3xl icon-fill" data-icon="menu_book">menu_book</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">EPUB Format</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Refined reading experience optimized for e-readers, tablets, and mobile devices with adjustable text.</p>
+<p class="font-label-sm text-label-sm text-secondary mt-2">File size: 1.8 MB</p>
+</div>
+</div>
+<button class="w-full sm:w-auto border border-outline text-primary font-label-sm text-label-sm uppercase py-3 px-6 rounded hover:bg-surface-variant transition-colors whitespace-nowrap active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    Download
+                </button>
+</div>
+<!-- Format Option 3: Print Minimal -->
+<div class="group border border-outline hover:border-primary transition-colors duration-300 rounded p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 cursor-pointer focus-within:border-primary focus-within:ring-1 focus-within:ring-primary bg-white">
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container-low rounded-full text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-3xl icon-fill" data-icon="print">print</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Print-Friendly PDF</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Minimalist design stripped of background colors and heavy images to save ink when printing at home.</p>
+<p class="font-label-sm text-label-sm text-secondary mt-2">File size: 1.1 MB</p>
+</div>
+</div>
+<button class="w-full sm:w-auto border border-outline text-primary font-label-sm text-label-sm uppercase py-3 px-6 rounded hover:bg-surface-variant transition-colors whitespace-nowrap active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    Download
+                </button>
+</div>
+</section>
+<!-- Permission Information -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded p-6 flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="info">info</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-primary mb-2">Permission Information</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm leading-relaxed">
+                    These materials are provided under principles of stewardship for your personal study and edification. 
+                    You may download, print, and share them freely in their original, unedited form. 
+                    Commercial reproduction or distribution is not permitted. Thank you for respecting these terms.
+                </p>
+</div>
+</section>
+<!-- Stewardship Footer -->
+<div class="mt-8 flex justify-center items-center gap-2 text-success-secure opacity-80">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Secure SSL Connection</span>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contributor Dashboard - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#735c00",
+                      "primary-container": "#5d1212",
+                      "surface-tint": "#9c413d",
+                      "outline": "#887270",
+                      "outline-variant": "#dbc0be",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed": "#151d1b",
+                      "on-tertiary-fixed": "#231b00",
+                      "inverse-primary": "#ffb3ad",
+                      "secondary": "#57605d",
+                      "background": "#fff8f7",
+                      "secondary-fixed": "#dbe5e0",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "on-primary-fixed": "#410004",
+                      "inverse-on-surface": "#ffedeb",
+                      "surface-paper": "#fbf9f4",
+                      "secondary-fixed-dim": "#bfc9c5",
+                      "primary-fixed": "#ffdad7",
+                      "surface-bright": "#fff8f7",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "success-secure": "#2e4d41",
+                      "on-secondary": "#ffffff",
+                      "primary": "#3e0003",
+                      "tertiary-container": "#c6a94e",
+                      "on-secondary-container": "#5d6663",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#ffe085",
+                      "surface-variant": "#f1dedc",
+                      "on-error": "#ffffff",
+                      "stone-outline": "#887270",
+                      "surface-container-low": "#fff0ef",
+                      "surface-dim": "#e8d6d4",
+                      "secondary-container": "#dbe5e0",
+                      "on-background": "#231918",
+                      "on-primary-container": "#e27770",
+                      "on-secondary-fixed-variant": "#404946",
+                      "on-tertiary-container": "#4e3e00",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#554240",
+                      "surface-container-high": "#f6e4e2",
+                      "on-surface": "#231918",
+                      "surface-container-highest": "#f1dedc",
+                      "surface": "#fff8f7",
+                      "error-container": "#ffdad6",
+                      "inverse-surface": "#392e2d",
+                      "tertiary-fixed-dim": "#e3c466",
+                      "surface-container": "#fceae8",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "surface-linen": "#f5f3ee"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-md": "32px",
+                      "stack-sm": "16px",
+                      "unit": "8px",
+                      "container-max": "1120px",
+                      "stack-lg": "64px",
+                      "gutter": "32px",
+                      "form-width": "560px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "donation-amount": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "label-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "donation-amount": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+          .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+          }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-margin-mobile h-16 max-w-container-max mx-auto hidden md:flex">
+<div class="flex items-center space-x-4">
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight">GreatGod</span>
+</div>
+<nav class="flex space-x-6">
+<a class="text-primary dark:text-primary-fixed font-label-lg text-label-lg flex flex-col items-center opacity-80 transition-opacity duration-200" href="#">
+                    Dashboard
+                    <div class="h-0.5 w-full bg-primary mt-1"></div>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low transition-colors rounded px-2 py-1" href="#">Drafts</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low transition-colors rounded px-2 py-1" href="#">Profile</a>
+</nav>
+<div class="flex items-center space-x-2">
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<img class="w-8 h-8 rounded-full object-cover border border-outline" data-alt="A small, circular avatar portrait of a modern, professional individual. The lighting is soft and natural, emphasizing a welcoming expression. The background is a subtle, neutral tone that fits seamlessly within a calm, light-mode interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVK6QqFiFv4S5M8jx4vtP6R0DtfKqtGaH9Z6vWIggLEeXaStjGSl0cGRogWfU_SBI_f7ux09_pR2GW-_FAvpEmtUbIUIkE1XPPKpofi8jOhAV26Fyy4XZacE_gc-qgaFOnUIikTyCU8XZXHluwgkXxRzQMOESJ80uzPf_Ae3uf_okYDSJ0jUx-iEvFmSnsmp848MwDHhjKFbdIn4BjSIEhqNqURW-xYVDkL0-ZNA2seWj3vBG5wImE"/>
+</div>
+</div>
+<!-- Mobile Header Version -->
+<div class="flex justify-between items-center w-full px-margin-mobile h-16 max-w-container-max mx-auto md:hidden">
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight">GreatGod</span>
+<div class="flex items-center space-x-2">
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile py-stack-md md:py-stack-lg flex flex-col gap-stack-lg">
+<!-- Hero Section -->
+<section class="text-center max-w-form-width mx-auto">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-unit">Welcome to the GreatGod community, Reader</h1>
+<p class="text-on-surface-variant">Your voice is a vital part of our shared journey. We invite you to begin crafting your first reflection.</p>
+</section>
+<!-- Main Content Area - Bento Grid approach for empty states -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-container-max mx-auto w-full">
+<!-- Drafts Empty State -->
+<div class="bg-surface-paper border border-outline-variant rounded-xl p-stack-md flex flex-col items-center justify-center text-center min-h-[300px] relative overflow-hidden group">
+<!-- Subtle decorative background element -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-surface-variant rounded-bl-full opacity-50 -z-10 group-hover:scale-110 transition-transform duration-700 ease-out"></div>
+<span class="material-symbols-outlined text-4xl text-outline mb-stack-sm" style="font-variation-settings: 'FILL' 0;">edit_document</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-unit">Recent Drafts</h2>
+<p class="text-on-surface-variant text-sm mb-stack-sm max-w-xs">Your voice matters. Start your first draft today and share your unique perspective with the community.</p>
+<button class="bg-primary text-on-primary font-label-sm text-label-sm uppercase px-6 py-3 rounded hover:bg-surface-tint transition-colors flex items-center gap-2 mt-auto">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Create New Draft
+                </button>
+</div>
+<!-- Submissions Empty State -->
+<div class="bg-surface-paper border border-outline-variant rounded-xl p-stack-md flex flex-col items-center justify-center text-center min-h-[300px] relative overflow-hidden group">
+<!-- Subtle decorative background element -->
+<div class="absolute bottom-0 left-0 w-32 h-32 bg-surface-variant rounded-tr-full opacity-50 -z-10 group-hover:scale-110 transition-transform duration-700 ease-out"></div>
+<span class="material-symbols-outlined text-4xl text-outline mb-stack-sm" style="font-variation-settings: 'FILL' 0;">send</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-unit">Submission Status</h2>
+<p class="text-on-surface-variant text-sm mb-stack-sm max-w-xs">Once you submit a piece for review, its status will gracefully appear here for your tracking.</p>
+<div class="mt-auto px-4 py-2 border border-dashed border-outline-variant rounded text-on-surface-variant text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">info</span>
+                    Awaiting your first submission
+                </div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="bg-surface-container dark:bg-surface-container-high border-t border-outline-variant dark:border-outline fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 md:hidden">
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-container text-on-primary-container dark:text-on-primary-container rounded-full px-4 py-1 scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm mt-1">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">edit_document</span>
+<span class="font-label-sm text-label-sm mt-1">Drafts</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</button>
+</nav>
+<!-- Add safe area padding for mobile bottom nav -->
+<div class="h-20 md:hidden"></div>
+</body></html>

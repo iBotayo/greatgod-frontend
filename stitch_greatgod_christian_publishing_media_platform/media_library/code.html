@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod CMS - Media Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:wght@400;600&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..900;1,8..60,400..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdad7",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fbf9f4",
+                        "surface-variant": "#e4e2dd",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-background": "#1b1c19",
+                        "tertiary-container": "#cca72f",
+                        "secondary-container": "#d8e2dd",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#5b6561",
+                        "surface-container-high": "#eae8e3",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "surface-container-highest": "#e4e2dd",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#57605d",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#4e3d00",
+                        "surface": "#fbf9f4",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "tertiary-fixed": "#ffe088",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-surface": "#1b1c19",
+                        "on-surface-variant": "#554240",
+                        "outline": "#887270",
+                        "surface-dim": "#dbdad5",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "tertiary": "#735c00",
+                        "primary-container": "#5d1212",
+                        "surface-tint": "#9c413d",
+                        "on-primary-fixed": "#410004",
+                        "on-secondary-fixed": "#141d1a",
+                        "inverse-surface": "#30312e",
+                        "primary": "#3e0003",
+                        "inverse-primary": "#ffb3ad",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "surface-container-low": "#f5f3ee",
+                        "background": "#fbf9f4",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#dbc0be",
+                        "on-primary-container": "#e27770",
+                        "secondary-fixed": "#dbe5e0",
+                        "surface-container": "#f0eee9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1120px",
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "display-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-lg": ["\"Source Serif 4\""]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased flex">
+<!-- SideNavBar (Shared Component) -->
+<nav class="bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant dark:border-outline h-screen w-64 fixed left-0 top-0 flex flex-col h-full py-unit px-4 z-50">
+<div class="mb-stack-md mt-stack-sm flex items-center space-x-3 px-2">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a thoughtful older man with white hair, wearing a dark tweed jacket, photographed in soft, warm library lighting. The image evokes wisdom and editorial authority, suitable for an admin profile avatar in a theological setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKLuWqtACUllfO1p5ittwHHWQ9sdGvFrZuYFwJ2Ky8vmF8U898GuBQAYu-aBU3mKyMExprAq5zHm7l1KE8v6He4PbzEd0-BWaYGEZNmqXmjTvkKBBnOydYJOhvjl1_0sl8WsrrP5-LTIbHBdnJzXmoJre1yyJOaRo6WRI21eRPIzXQmcdXP6r6-J961VGKEnr1KS7lE4LJsmeoqhe2ifWDPHc-DrqyPPFZ1g3V1OL-FBF6SZvpCn3Z"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-medium text-primary dark:text-primary-fixed-dim leading-none text-xl">GreatGod</h1>
+<p class="font-label-sm text-label-sm text-secondary mt-1">Editorial CMS</p>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-container hover:opacity-90 transition-opacity font-label-sm text-label-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 w-full mb-stack-md shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>New Publication</span>
+</button>
+<ul class="flex-1 space-y-1 overflow-y-auto">
+<li>
+<a class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors opacity-80 duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-primary dark:text-primary-fixed-dim font-bold border-r-2 border-primary dark:border-primary-fixed-dim bg-surface-container opacity-100 duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-sm text-label-sm">Content Manager</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors opacity-80 duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="mic_external_on">mic_external_on</span>
+<span class="font-label-sm text-label-sm">Sermon Library</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors opacity-80 duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="manage_accounts">manage_accounts</span>
+<span class="font-label-sm text-label-sm">User Roles</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors opacity-80 duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto pt-4 border-t border-outline-variant dark:border-outline space-y-1 mb-4">
+<a class="flex items-center space-x-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="help_outline">help_outline</span>
+<span class="font-label-sm text-label-sm">Support</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+<span class="font-label-sm text-label-sm">Sign Out</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 min-h-screen flex flex-col relative">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-surface dark:bg-background border-b border-outline-variant dark:border-outline docked full-width top-0 sticky z-40 flex justify-between items-center w-full px-gutter h-16 max-w-[calc(100%-16rem)]">
+<div class="flex items-center space-x-8">
+<div class="relative w-64 hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-1.5 bg-surface-container-low border border-outline-variant rounded-full font-body-md text-sm focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent" placeholder="Search media library..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-secondary hover:text-primary transition-all p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-secondary hover:text-primary transition-all p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<button class="bg-surface-variant text-on-surface border border-outline-variant font-label-sm text-label-sm py-1.5 px-4 rounded-full hover:bg-surface-container-high transition-colors ml-4 shadow-sm text-sm">
+                    Upload Assets
+                </button>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 p-gutter overflow-y-auto max-w-container-max mx-auto w-full pb-stack-lg">
+<!-- Header Section -->
+<div class="mb-stack-md flex flex-col md:flex-row md:items-end justify-between border-b border-outline-variant pb-6 gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-2">Media Library</h2>
+<p class="font-body-md text-body-md text-secondary max-w-2xl">Manage all visual, audio, and document assets utilized across the GreatGod editorial network.</p>
+</div>
+</div>
+<!-- Bento Grid Media Layout -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<!-- Media Item 1 (Image) -->
+<div class="group bg-surface-container-low border border-outline-variant rounded-lg overflow-hidden flex flex-col hover:border-outline transition-colors cursor-pointer relative shadow-sm">
+<div class="aspect-video bg-surface-variant relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A beautifully composed photograph of an ancient, weathered stone church illuminated by golden hour sunlight. The lighting is warm and dramatic, highlighting the texture of the stone and the serene atmosphere of the surrounding countryside. Deep, rich tones with high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGVjG8Oybgkh0c5_G3GzSMrRQCVf09QV5y_vGfsdY0M4IYYGcX4YXEpAvkGTh67IY5Z8GtYvTSHl15nghBmUoWYgGFoAyFx7L8jSJPTGL_51o1Q5_y55ZrAZxmRbRaZMDWH_vY-kYd0uPNdaoSrnE3zu4QhKR74DkDkZPtyN6I74vnjp2Jvz95_scIDh0cfYO4KIZqnBRYbqMuMcCrWAMaaAaVS9aIX1a36Y4QZWBxmzl_JoXlYV63"/>
+<div class="absolute top-2 left-2 bg-surface/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-label-sm text-label-sm text-on-surface border border-outline-variant">
+                            IMAGE
+                        </div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between bg-surface-container-low">
+<div>
+<h3 class="font-headline-md text-lg leading-tight mb-1 truncate text-on-background">st-peters-dawn.jpg</h3>
+<div class="flex items-center text-secondary space-x-2 font-label-sm text-[11px] uppercase tracking-wider mb-3">
+<span>2.4 MB</span>
+<span>·</span>
+<span>2400x1600</span>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-3 flex justify-between items-center">
+<span class="flex items-center text-primary-container text-xs font-label-sm">
+<span class="material-symbols-outlined text-[14px] mr-1">warning</span> No Alt Text
+                            </span>
+<span class="font-label-sm text-xs text-secondary">3 Uses</span>
+</div>
+</div>
+</div>
+<!-- Media Item 2 (Audio) -->
+<div class="group bg-surface-container-low border border-outline-variant rounded-lg overflow-hidden flex flex-col hover:border-outline transition-colors cursor-pointer relative shadow-sm">
+<div class="aspect-video bg-secondary-container relative flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-on-secondary-container opacity-50 group-hover:scale-110 transition-transform">podcasts</span>
+<div class="absolute top-2 left-2 bg-surface/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-label-sm text-label-sm text-on-surface border border-outline-variant">
+                            AUDIO
+                        </div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between bg-surface-container-low">
+<div>
+<h3 class="font-headline-md text-lg leading-tight mb-1 truncate text-on-background">Sermon-Romans-8.mp3</h3>
+<div class="flex items-center text-secondary space-x-2 font-label-sm text-[11px] uppercase tracking-wider mb-3">
+<span>45.2 MB</span>
+<span>·</span>
+<span>48:12</span>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-3 flex justify-between items-center">
+<span class="flex items-center text-secondary text-xs font-label-sm">
+<span class="material-symbols-outlined text-[14px] mr-1 text-green-700">check_circle</span> Metadata OK
+                            </span>
+<span class="font-label-sm text-xs text-secondary">1 Use</span>
+</div>
+</div>
+</div>
+<!-- Media Item 3 (Image - Wide) -->
+<div class="md:col-span-2 group bg-surface-container-low border border-outline-variant rounded-lg overflow-hidden flex flex-col md:flex-row hover:border-outline transition-colors cursor-pointer relative shadow-sm">
+<div class="md:w-1/2 aspect-video md:aspect-auto bg-surface-variant relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A wide, panoramic shot of a quiet monastery library interior. Rows of ancient, leather-bound books line tall wooden shelves. Dust motes dance in shafts of soft light streaming through high, arched windows. The color palette is composed of deep browns, warm creams, and muted golds, conveying a sense of profound history and calm study." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Fhsi3ZLXzkHJwHiVv4B2HF7rxmRXutzZGxO86wpzSA-PA1QQzbUYRcK3W1UjSeW4IkVb9TNMhu3tYE_DWPD1LaJyiqjokjiZOHUG6APdoGgIr2LZvYj-SZCHJF1ttEUOQ0rIfVm3GUvm6Ku-MGEvjUeDNRxgtZX7slO1mpbGQPrJSLeflbcVmeT_gpzxAIL4GtraJnNpozct_M_owmFPjLY_OC3gGqUrG8m0kCxW4RTfOX8fIVEZ"/>
+<div class="absolute top-2 left-2 bg-surface/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-label-sm text-label-sm text-on-surface border border-outline-variant">
+                            IMAGE
+                        </div>
+</div>
+<div class="p-4 md:p-6 md:w-1/2 flex flex-col justify-between bg-surface-container-low">
+<div>
+<h3 class="font-headline-md text-xl leading-tight mb-2 text-on-background">monastery-library-wide.png</h3>
+<p class="font-body-md text-sm text-secondary mb-4 line-clamp-2">Featured image for the "Traditions of Solitude" essay series.</p>
+<div class="flex flex-wrap items-center text-secondary gap-y-1 gap-x-2 font-label-sm text-[11px] uppercase tracking-wider mb-3">
+<span>8.1 MB</span>
+<span>·</span>
+<span>3840x1200</span>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-3 flex justify-between items-center">
+<span class="flex items-center text-secondary text-xs font-label-sm">
+<span class="material-symbols-outlined text-[14px] mr-1 text-green-700">check_circle</span> Alt Text OK
+                            </span>
+<span class="font-label-sm text-xs text-secondary">12 Uses</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Moderation Details - Editorial Suite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#cca72f",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "surface-tint": "#9c413d",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-secondary": "#ffffff",
+                      "tertiary": "#735c00",
+                      "surface-container-high": "#eae8e3",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "error-container": "#ffdad6",
+                      "inverse-surface": "#30312e",
+                      "primary-container": "#5d1212",
+                      "primary": "#3e0003",
+                      "tertiary-fixed": "#ffe088",
+                      "outline-variant": "#dbc0be",
+                      "secondary-fixed": "#dbe5e0",
+                      "on-primary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#57605d",
+                      "on-primary-fixed": "#410004",
+                      "surface-bright": "#fbf9f4",
+                      "secondary-container": "#d8e2dd",
+                      "on-primary-container": "#e27770",
+                      "on-background": "#1b1c19",
+                      "on-surface": "#1b1c19",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "surface": "#fbf9f4",
+                      "surface-container-low": "#f5f3ee",
+                      "surface-container": "#f0eee9",
+                      "outline": "#887270",
+                      "on-secondary-container": "#5b6561",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#ffdad7",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "surface-variant": "#e4e2dd",
+                      "error": "#ba1a1a",
+                      "background": "#fbf9f4",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "surface-dim": "#dbdad5",
+                      "on-tertiary-container": "#4e3d00",
+                      "on-secondary-fixed": "#141d1a",
+                      "inverse-on-surface": "#f2f1ec",
+                      "on-error-container": "#93000a",
+                      "inverse-primary": "#ffb3ad",
+                      "surface-container-highest": "#e4e2dd",
+                      "on-surface-variant": "#554240"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "stack-sm": "16px",
+                      "stack-md": "32px",
+                      "container-max": "1120px",
+                      "margin-mobile": "20px",
+                      "stack-lg": "64px",
+                      "gutter": "32px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+      </script>
+<style>
+          .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+          }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased flex">
+<!-- Sidebar Component (Hidden on mobile, showing intent match for a moderation details view) -->
+<aside class="hidden md:flex border-r border-outline bg-surface-container-low h-screen w-64 fixed left-0 top-0 flex-col py-stack-sm z-10">
+<div class="px-4 mb-stack-md flex flex-col gap-2">
+<h1 class="font-headline-md text-headline-md text-primary">Editorial Suite</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Community Oversight</p>
+</div>
+<div class="px-4 mb-6">
+<button class="w-full bg-primary-container text-on-primary-container font-label-sm text-label-sm py-2 px-4 rounded hover:opacity-90 transition-opacity">
+                New Report
+            </button>
+</div>
+<nav class="flex-1 flex flex-col gap-1 overflow-y-auto">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container transition-all duration-150 ease-in-out font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<!-- Moderation Queue (Active mapping for detail view) -->
+<a class="flex items-center gap-3 text-primary border-l-4 border-primary bg-surface-container-high px-4 py-3 font-label-sm text-label-sm transition-colors duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined">forum</span>
+                Moderation Queue
+            </a>
+<!-- Flagged Content -->
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container transition-all duration-150 ease-in-out font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined">flag</span>
+                Flagged Content
+            </a>
+<!-- User Logs -->
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container transition-all duration-150 ease-in-out font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined">history</span>
+                User Logs
+            </a>
+<!-- Settings -->
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container transition-all duration-150 ease-in-out font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="mt-auto flex flex-col gap-1 border-t border-outline pt-4">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container transition-all duration-150 ease-in-out font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined">help</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container transition-all duration-150 ease-in-out font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+                Archive
+            </a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 md:ml-64 min-h-screen flex flex-col">
+<!-- Top App Bar (Mobile Context/Detail Header) -->
+<header class="sticky top-0 z-10 border-b border-outline bg-background w-full h-16 flex justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto md:hidden">
+<button class="text-primary hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-80 flex items-center gap-2">
+<span class="material-symbols-outlined">arrow_back</span>
+<span class="font-label-sm text-label-sm">Back to Queue</span>
+</button>
+<h2 class="font-headline-md text-primary tracking-tight truncate max-w-[200px]">Review Comment</h2>
+</header>
+<!-- Content Area -->
+<div class="flex-1 w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-md flex flex-col lg:flex-row gap-gutter">
+<!-- Left Column: Context & Comment -->
+<div class="flex-1 flex flex-col gap-stack-md">
+<!-- Breadcrumbs / Context Navigation -->
+<nav class="hidden md:flex items-center gap-2 text-on-surface-variant opacity-70">
+<a class="hover:text-primary transition-colors font-label-sm text-label-sm flex items-center" href="#"><span class="material-symbols-outlined text-[16px] mr-1">arrow_back</span> Queue</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="font-label-sm text-label-sm">Review Ticket #8842</span>
+</nav>
+<!-- Article Context Card -->
+<section class="bg-surface-container-low border border-outline rounded p-6 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary-fixed"></div>
+<div class="flex flex-col gap-3 ml-2">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">article</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Posted In</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">The Theological Implications of Digital Permanence</h3>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary opacity-70">
+<span>By Dr. Elias Thorne</span>
+<span>·</span>
+<span>Oct 12, 2024</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mt-2">
+                            As we increasingly entrust our thoughts to silicon archives, the classical understanding of memory and stewardship undergoes a profound transformation. What does it mean for an archive to be truly sacred in a medium designed for infinite replication?
+                        </p>
+<a class="font-label-sm text-label-sm text-primary underline mt-2 hover:no-underline w-fit" href="#">Read Full Article</a>
+</div>
+</section>
+<!-- The Comment Under Review -->
+<section class="flex flex-col gap-4">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background border-b border-outline pb-4 flex items-center justify-between">
+                        Content Review
+                        <span class="bg-error-container text-on-error-container font-label-sm text-label-sm px-3 py-1 rounded-full flex items-center gap-1 border border-[#ffb4ab]">
+<span class="material-symbols-outlined text-[16px]">flag</span>
+                            Reported
+                        </span>
+</h2>
+<div class="bg-surface border border-outline rounded p-6 shadow-sm">
+<!-- Comment Header -->
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A portrait of a scholarly individual sitting in a softly lit, wood-paneled library. The image represents a user profile avatar in a light-mode UI, featuring natural, warm lighting and a muted, calm palette of browns and creams. The mood is intellectual and quiet." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVVuPp5yvwlrzo8UhDSo6W57-P1cd_ZxLJ5cjM3SAbl21me_LTPJMK9VdS0MtoIqCnarLULx1VBnURmeX5rP5EjGvYCuM4LpTy3sfndxetBOBueMVF0a3TVBTgpYieWVNAAzwKBqgsOcmpWfAE05MAERKFsrJHeoDkEyRZheqRErj0-oA0EOCXmZis_Z66lorZajkkoKSueNmhm5SLWk2SLrVHNCnm0qveqQBobaVUYPxRdfNBECd3"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">@scholar_thomas</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Oct 14, 2024 - 14:32</span>
+</div>
+</div>
+</div>
+<!-- Comment Body -->
+<div class="font-body-lg text-body-lg text-on-surface whitespace-pre-wrap pl-4 border-l-2 border-primary-fixed-dim">
+The author completely misunderstands the early church fathers' view on record keeping. To suggest that digital permanence aligns with their vision of spiritual legacy is not just historically inaccurate, it's deliberately misleading. 
+
+This entire publication seems more interested in tech-utopianism than actual rigorous theology. It's disappointing to see such shallow analysis paraded as profound thought. Honestly, anyone who agrees with this premise hasn't read the primary sources.
+                        </div>
+</div>
+</section>
+</div>
+<!-- Right Column: Moderation Actions & Details -->
+<aside class="w-full lg:w-80 flex flex-col gap-stack-sm shrink-0">
+<!-- Report Details -->
+<div class="bg-surface-container border border-outline rounded p-5">
+<h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+                        Report Details
+                    </h3>
+<ul class="flex flex-col gap-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex justify-between border-b border-outline-variant pb-2">
+<span class="font-label-sm text-label-sm">Category</span>
+<span class="text-on-surface">Uncivil Discourse</span>
+</li>
+<li class="flex justify-between border-b border-outline-variant pb-2">
+<span class="font-label-sm text-label-sm">Reported By</span>
+<span class="text-on-surface">Community Member</span>
+</li>
+<li class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm">Reporter Comment</span>
+<span class="italic text-sm">"Dismissive tone and gatekeeping. Violates the guideline for charitable engagement."</span>
+</li>
+</ul>
+</div>
+<!-- User History -->
+<div class="bg-surface border border-outline rounded p-5">
+<h3 class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">history</span>
+                        User History
+                    </h3>
+<div class="grid grid-cols-2 gap-4 text-center">
+<div class="bg-surface-container-low p-3 rounded border border-outline-variant">
+<span class="block font-headline-md text-headline-md text-on-surface">42</span>
+<span class="font-label-sm text-label-sm text-secondary opacity-70">Total Comments</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded border border-outline-variant">
+<span class="block font-headline-md text-headline-md text-surface-tint">2</span>
+<span class="font-label-sm text-label-sm text-secondary opacity-70">Prior Flags</span>
+</div>
+</div>
+</div>
+<!-- Action Panel -->
+<div class="bg-background border border-outline rounded p-5 shadow-sm sticky top-20">
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Resolution</h3>
+<form class="flex flex-col gap-4">
+<!-- Primary Action Group -->
+<div class="flex flex-col gap-2 border-b border-outline-variant pb-4">
+<label class="font-label-sm text-label-sm flex items-center gap-2 cursor-pointer hover:bg-surface-container p-2 rounded transition-colors">
+<input checked="" class="text-primary focus:ring-primary h-4 w-4 border-outline" name="mod_action" type="radio" value="approve"/>
+<span class="text-on-surface">Approve Reflection</span>
+<span class="material-symbols-outlined text-secondary text-[16px] ml-auto">check_circle</span>
+</label>
+<label class="font-label-sm text-label-sm flex items-center gap-2 cursor-pointer hover:bg-surface-container p-2 rounded transition-colors group">
+<input class="text-primary focus:ring-primary h-4 w-4 border-outline" name="mod_action" type="radio" value="hide"/>
+<span class="text-on-surface group-hover:text-surface-tint transition-colors">Hide from Public View</span>
+<span class="material-symbols-outlined text-secondary text-[16px] ml-auto">visibility_off</span>
+</label>
+<label class="font-label-sm text-label-sm flex items-center gap-2 cursor-pointer hover:bg-surface-container p-2 rounded transition-colors group">
+<input class="text-primary focus:ring-primary h-4 w-4 border-outline" name="mod_action" type="radio" value="escalate"/>
+<span class="text-on-surface group-hover:text-tertiary transition-colors">Escalate to Senior Editor</span>
+<span class="material-symbols-outlined text-secondary text-[16px] ml-auto">escalator_warning</span>
+</label>
+</div>
+<!-- Conditional Text Area (Simulated visual state) -->
+<div class="flex flex-col gap-2 mt-2">
+<label class="font-label-sm text-label-sm text-on-surface" for="reason">Reason for Action <span class="text-error">*</span></label>
+<p class="font-body-md text-[13px] leading-tight text-on-surface-variant opacity-80">Mandatory when hiding or escalating. Notes are visible to other editors.</p>
+<textarea class="w-full bg-surface-lowest border border-outline rounded p-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent focus:outline-none resize-none transition-all placeholder-secondary-fixed-dim" id="reason" placeholder="Provide context for this decision..." rows="3"></textarea>
+</div>
+<div class="flex gap-3 mt-4">
+<button class="flex-1 bg-surface border border-outline text-on-surface font-label-sm text-label-sm py-3 px-4 rounded hover:bg-surface-container-high transition-colors text-center" type="button">
+                                Cancel
+                            </button>
+<button class="flex-1 bg-primary-container text-on-primary-container font-label-sm text-label-sm py-3 px-4 rounded hover:opacity-90 transition-opacity text-center flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+                                Submit
+                            </button>
+</div>
+</form>
+</div>
+</aside>
+</div>
+</main>
+</body></html>

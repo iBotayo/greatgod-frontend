@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Unpublish / Archive Confirmation - Sacred Editorial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#f0eee9",
+                        "outline-variant": "#dbc0be",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ffdad7",
+                        "background": "#fbf9f4",
+                        "on-primary-container": "#e27770",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#5d1212",
+                        "primary": "#3e0003",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "secondary-container": "#d8e2dd",
+                        "on-surface-variant": "#554240",
+                        "surface": "#fbf9f4",
+                        "on-secondary-container": "#5b6561",
+                        "on-tertiary-container": "#4e3d00",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "inverse-primary": "#ffb3ad",
+                        "surface-dim": "#dbdad5",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "tertiary": "#735c00",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-primary-fixed": "#410004",
+                        "surface-bright": "#fbf9f4",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-surface": "#1b1c19",
+                        "surface-container-high": "#eae8e3",
+                        "surface-variant": "#e4e2dd",
+                        "secondary": "#57605d",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#30312e",
+                        "on-background": "#1b1c19",
+                        "surface-container-low": "#f5f3ee",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "outline": "#887270",
+                        "tertiary-container": "#cca72f",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#9c413d",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#141d1a",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary-fixed": "#dbe5e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "unit": "8px",
+                        "stack-md": "32px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "64px",
+                        "container-max": "1120px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "display-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Smooth backdrop transition */
+        #modal-backdrop {
+            transition: opacity 0.3s ease-in-out;
+            opacity: 1;
+        }
+        #modal-panel {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-in-out;
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+        
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col items-center justify-center p-4">
+<!-- The trigger button (just for context in this isolated preview) -->
+<button class="px-6 py-3 bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors rounded border border-outline-variant font-label-sm text-label-sm" onclick="document.getElementById('dialog-overlay').classList.remove('hidden')" type="button">
+        Open Unpublish Dialog
+    </button>
+<!-- Dialog Overlay -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6" id="dialog-overlay" role="dialog">
+<!-- Backdrop -->
+<div aria-hidden="true" class="fixed inset-0 bg-[#fbf9f4]/80 backdrop-blur-sm transition-opacity" id="modal-backdrop"></div>
+<!-- Dialog Panel -->
+<div class="relative w-full max-w-2xl bg-surface-container-lowest border border-[#E5E0D8] shadow-2xl overflow-hidden flex flex-col my-8" id="modal-panel">
+<!-- Header -->
+<div class="px-8 py-6 border-b border-[#E5E0D8] flex items-center justify-between bg-surface-bright">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary" id="modal-title">Status Revision</h2>
+<p class="font-label-sm text-label-sm text-secondary uppercase mt-2">Theology &amp; Modernity: A Retrospective</p>
+</div>
+<button class="text-secondary hover:text-on-surface transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container p-1 rounded" onclick="document.getElementById('dialog-overlay').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
+</button>
+</div>
+<!-- Content Body -->
+<div class="px-8 py-8 flex flex-col gap-stack-md bg-surface-container-lowest">
+<!-- Audit Metadata -->
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary opacity-80">
+<span class="material-symbols-outlined text-base" data-icon="history">history</span>
+<span>Originally published by <span class="text-on-surface font-semibold">Eleanor Vance</span> on <time datetime="2023-10-15">Oct 15, 2023</time></span>
+</div>
+<!-- Action Selection -->
+<div class="space-y-4">
+<p class="font-body-md text-body-md text-on-surface-variant">Select the appropriate action for this manuscript. Archiving retains the document in the editorial library for internal reference, while deletion is permanent.</p>
+<!-- Radio Group -->
+<div class="flex flex-col gap-3">
+<!-- Option: Archive -->
+<label class="relative flex cursor-pointer rounded border border-outline-variant bg-surface p-4 focus:outline-none hover:bg-surface-container-low transition-colors">
+<input checked="" class="peer sr-only" name="unpublish_action" type="radio" value="archive"/>
+<span class="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-outline-variant bg-white peer-checked:border-primary-container peer-checked:bg-primary-container">
+<span class="h-1.5 w-1.5 rounded-full bg-white hidden peer-checked:block"></span>
+</span>
+<span class="ml-4 flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">Archive Manuscript</span>
+<span class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Removes from public view. Retains all version history and editorial notes in the Content Library.</span>
+</span>
+<span aria-hidden="true" class="absolute -inset-px rounded border-2 border-transparent peer-checked:border-primary-container pointer-events-none"></span>
+</label>
+<!-- Option: Delete -->
+<label class="relative flex cursor-pointer rounded border border-outline-variant bg-surface p-4 focus:outline-none hover:bg-error-container/20 transition-colors">
+<input class="peer sr-only" name="unpublish_action" type="radio" value="delete"/>
+<span class="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-outline-variant bg-white peer-checked:border-error peer-checked:bg-error">
+<span class="h-1.5 w-1.5 rounded-full bg-white hidden peer-checked:block"></span>
+</span>
+<span class="ml-4 flex flex-col">
+<span class="font-label-sm text-label-sm text-error">Permanent Deletion</span>
+<span class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Destructive action. Permanently removes the manuscript, assets, and all associated metadata.</span>
+</span>
+<span aria-hidden="true" class="absolute -inset-px rounded border-2 border-transparent peer-checked:border-error pointer-events-none"></span>
+</label>
+</div>
+</div>
+<div class="h-px bg-[#E5E0D8] w-full my-2"></div>
+<!-- Reason Textarea -->
+<div class="space-y-2">
+<label class="block font-label-sm text-label-sm text-on-surface" for="reason">Reason for Unpublishing <span class="text-error">*</span></label>
+<div class="relative">
+<textarea class="block w-full rounded border-[#E5E0D8] bg-surface-bright py-3 px-4 font-body-md text-body-md text-on-surface placeholder:text-outline focus:border-primary-container focus:ring-2 focus:ring-primary-container focus:ring-offset-2 transition-shadow" id="reason" name="reason" placeholder="Provide editorial context for this status change..." required="" rows="3"></textarea>
+</div>
+<p class="font-label-sm text-label-sm text-secondary opacity-70 mt-1">This note will be appended to the manuscript's audit log.</p>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="px-8 py-5 border-t border-[#E5E0D8] bg-surface-container flex flex-col-reverse sm:flex-row justify-end gap-4 items-center">
+<button class="w-full sm:w-auto font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors px-6 py-2" onclick="document.getElementById('dialog-overlay').classList.add('hidden')" type="button">
+                    Cancel
+                </button>
+<button class="w-full sm:w-auto bg-primary-container text-white font-label-sm text-label-sm px-8 py-3 rounded hover:bg-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2" type="button">
+                    Confirm Revision
+                </button>
+</div>
+</div>
+</div>
+<!-- Script to handle custom radio button interaction visual states if needed, though handled by peer classes in Tailwind -->
+</body></html>

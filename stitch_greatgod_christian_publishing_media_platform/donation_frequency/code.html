@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Donation Frequency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600&amp;family=EB+Garamond:wght@500&amp;family=Source+Serif+4:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#735c00",
+                      "outline": "#887270",
+                      "surface-bright": "#fff8f7",
+                      "primary-container": "#5d1212",
+                      "surface-paper": "#fbf9f4",
+                      "error-container": "#ffdad6",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed": "#231b00",
+                      "on-primary": "#ffffff",
+                      "surface-linen": "#f5f3ee",
+                      "secondary-fixed": "#dbe5e0",
+                      "surface-container-low": "#fff0ef",
+                      "error": "#ba1a1a",
+                      "surface-variant": "#f1dedc",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "secondary": "#57605d",
+                      "on-surface-variant": "#554240",
+                      "on-tertiary": "#ffffff",
+                      "secondary-container": "#dbe5e0",
+                      "secondary-fixed-dim": "#bfc9c5",
+                      "inverse-primary": "#ffb3ad",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "surface": "#fff8f7",
+                      "on-secondary-fixed": "#151d1b",
+                      "on-primary-fixed": "#410004",
+                      "on-primary-container": "#e27770",
+                      "success-secure": "#2e4d41",
+                      "inverse-on-surface": "#ffedeb",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-error": "#ffffff",
+                      "primary": "#3e0003",
+                      "surface-container-highest": "#f1dedc",
+                      "primary-fixed": "#ffdad7",
+                      "on-secondary-fixed-variant": "#404946",
+                      "on-tertiary-container": "#4e3e00",
+                      "tertiary-container": "#c6a94e",
+                      "background": "#fff8f7",
+                      "on-surface": "#231918",
+                      "tertiary-fixed": "#ffe085",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#231918",
+                      "outline-variant": "#dbc0be",
+                      "stone-outline": "#887270",
+                      "surface-tint": "#9c413d",
+                      "inverse-surface": "#392e2d",
+                      "surface-container": "#fceae8",
+                      "on-secondary-container": "#5d6663",
+                      "surface-container-high": "#f6e4e2",
+                      "surface-dim": "#e8d6d4",
+                      "tertiary-fixed-dim": "#e3c466"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "form-width": "560px",
+                      "container-max": "1120px",
+                      "gutter": "32px",
+                      "unit": "8px",
+                      "stack-md": "32px",
+                      "stack-sm": "16px",
+                      "stack-lg": "64px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "donation-amount": [
+                              "EB Garamond"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "donation-amount": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .custom-radio:checked + div {
+            background-color: #f5f3ee;
+            border-color: #3e0003;
+            border-width: 2px;
+        }
+        .custom-radio:checked + div .radio-inner {
+            background-color: #3e0003;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar Semantic Shell - Linear/Transactional Flow - No global Nav -->
+<header class="bg-surface border-b border-outline-variant flex justify-between items-center w-full px-margin-mobile h-16 max-w-container-max mx-auto md:px-gutter">
+<a class="flex items-center hover:opacity-80 transition-opacity duration-200" href="#">
+<span class="material-symbols-outlined text-primary text-xl">arrow_back</span>
+</a>
+<div class="font-headline-md text-headline-md text-primary tracking-tight">GreatGod</div>
+<button class="flex items-center text-on-surface-variant hover:opacity-80 transition-opacity duration-200">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</header>
+<main class="flex-grow flex flex-col items-center justify-start pt-stack-lg pb-stack-lg px-margin-mobile md:px-gutter">
+<!-- Progress Tracker -->
+<div class="w-full max-w-form-width mb-stack-lg">
+<div class="relative pt-2">
+<div class="flex mb-2 items-center justify-between font-label-sm text-label-sm text-outline">
+<span>01 Amount</span>
+<span class="text-primary">02 Frequency</span>
+<span>03 Details</span>
+<span>04 Payment</span>
+</div>
+<div class="overflow-hidden h-1 mb-4 text-xs flex rounded-full bg-outline-variant">
+<div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-primary" style="width: 50%"></div>
+</div>
+</div>
+</div>
+<!-- Giving Vessel -->
+<div class="bg-surface-linen w-full max-w-form-width rounded-lg p-stack-md flex flex-col items-center text-center">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-unit">Rhythm of Giving</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md max-w-md">
+                Select how often you wish to offer this gift. Your continued stewardship sustains the sacred mission.
+            </p>
+<form action="#" class="w-full text-left" method="POST">
+<fieldset class="space-y-stack-sm mb-stack-lg">
+<legend class="sr-only">Donation Frequency</legend>
+<label class="block relative cursor-pointer group">
+<input class="custom-radio sr-only" name="frequency" type="radio" value="weekly"/>
+<div class="w-full border border-stone-outline bg-white rounded-md p-4 flex items-center justify-between hover:border-primary transition-colors group-hover:bg-surface-bright">
+<div class="flex items-center gap-4">
+<div class="w-5 h-5 rounded-full border border-stone-outline flex items-center justify-center bg-white group-hover:border-primary">
+<div class="radio-inner w-2.5 h-2.5 rounded-full bg-transparent transition-colors"></div>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Weekly</span>
+</div>
+<span class="font-body-md text-body-md text-outline italic">Sustain steadily</span>
+</div>
+</label>
+<label class="block relative cursor-pointer group">
+<input checked="" class="custom-radio sr-only" name="frequency" type="radio" value="monthly"/>
+<div class="w-full border border-stone-outline bg-white rounded-md p-4 flex items-center justify-between hover:border-primary transition-colors group-hover:bg-surface-bright">
+<div class="flex items-center gap-4">
+<div class="w-5 h-5 rounded-full border border-stone-outline flex items-center justify-center bg-white group-hover:border-primary">
+<div class="radio-inner w-2.5 h-2.5 rounded-full bg-transparent transition-colors"></div>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Monthly</span>
+</div>
+<span class="font-body-md text-body-md text-outline italic">Most common</span>
+</div>
+</label>
+<label class="block relative cursor-pointer group">
+<input class="custom-radio sr-only" name="frequency" type="radio" value="quarterly"/>
+<div class="w-full border border-stone-outline bg-white rounded-md p-4 flex items-center justify-between hover:border-primary transition-colors group-hover:bg-surface-bright">
+<div class="flex items-center gap-4">
+<div class="w-5 h-5 rounded-full border border-stone-outline flex items-center justify-center bg-white group-hover:border-primary">
+<div class="radio-inner w-2.5 h-2.5 rounded-full bg-transparent transition-colors"></div>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Quarterly</span>
+</div>
+<span class="font-body-md text-body-md text-outline italic">Seasonal rhythm</span>
+</div>
+</label>
+<label class="block relative cursor-pointer group">
+<input class="custom-radio sr-only" name="frequency" type="radio" value="annually"/>
+<div class="w-full border border-stone-outline bg-white rounded-md p-4 flex items-center justify-between hover:border-primary transition-colors group-hover:bg-surface-bright">
+<div class="flex items-center gap-4">
+<div class="w-5 h-5 rounded-full border border-stone-outline flex items-center justify-center bg-white group-hover:border-primary">
+<div class="radio-inner w-2.5 h-2.5 rounded-full bg-transparent transition-colors"></div>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Annually</span>
+</div>
+<span class="font-body-md text-body-md text-outline italic">Yearly harvest</span>
+</div>
+</label>
+</fieldset>
+<div class="flex flex-col sm:flex-row gap-4 items-center justify-between mt-stack-md">
+<button class="w-full sm:w-auto px-6 py-3 font-label-sm text-label-sm uppercase tracking-wider text-outline border border-stone-outline rounded-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                         Back
+                     </button>
+<button class="w-full sm:w-auto bg-primary text-on-primary px-8 py-3 font-label-sm text-label-sm uppercase tracking-wider rounded-md hover:bg-primary-fixed-variant transition-colors flex items-center justify-center gap-2" type="submit">
+                        Continue to Details
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Trust Footer inside Vessel -->
+<div class="mt-stack-md pt-stack-sm border-t border-outline-variant w-full flex flex-col items-center justify-center gap-1 opacity-80">
+<div class="flex items-center gap-1 text-success-secure">
+<span class="material-symbols-outlined text-sm" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Secure SSL Encrypted Connection</span>
+</div>
+<span class="font-body-md text-body-md text-xs italic text-outline text-center">Your commitment is held in strict confidence.</span>
+</div>
+</div>
+</main>
+<!-- Suppressed Footer semantic shell as per instructions for transactional flow -->
+</body></html>

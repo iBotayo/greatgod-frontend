@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Sign In Error</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#7e2a27",
+                    "tertiary-fixed": "#ffe085",
+                    "surface-dim": "#efd4d1",
+                    "outline-variant": "#dbc0be",
+                    "primary-container": "#5d1212",
+                    "secondary": "#57605d",
+                    "on-primary-fixed": "#410004",
+                    "surface": "#fff8f7",
+                    "success-secure": "#2e4d41",
+                    "surface-container": "#ffe9e7",
+                    "surface-container-high": "#fee2df",
+                    "on-secondary-fixed": "#151d1b",
+                    "on-primary-container": "#e27770",
+                    "inverse-primary": "#ffb3ad",
+                    "tertiary-fixed-dim": "#e3c466",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#3d2c2b",
+                    "surface-linen": "#f5f3ee",
+                    "tertiary-container": "#c6a94e",
+                    "secondary-fixed": "#dbe5e0",
+                    "surface-container-low": "#fff0ef",
+                    "on-surface": "#261817",
+                    "surface-bright": "#fff8f7",
+                    "on-tertiary-fixed": "#231b00",
+                    "on-primary": "#ffffff",
+                    "outline": "#887270",
+                    "tertiary": "#735c00",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "on-tertiary": "#ffffff",
+                    "surface-paper": "#fbf9f4",
+                    "secondary-fixed-dim": "#bfc9c5",
+                    "surface-container-highest": "#f8dcda",
+                    "surface-tint": "#9c413d",
+                    "primary-fixed": "#ffdad7",
+                    "primary": "#3e0003",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#dbe5e0",
+                    "on-surface-variant": "#554240",
+                    "on-secondary-container": "#5d6663",
+                    "on-tertiary-container": "#4e3e00",
+                    "on-error-container": "#93000a",
+                    "background": "#fff8f7",
+                    "on-secondary-fixed-variant": "#404946",
+                    "surface-variant": "#f8dcda",
+                    "inverse-on-surface": "#ffedeb",
+                    "error": "#ba1a1a",
+                    "on-background": "#261817",
+                    "on-tertiary-fixed-variant": "#574500"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "form-width": "560px",
+                    "gutter": "32px",
+                    "container-max": "1120px",
+                    "stack-sm": "16px",
+                    "unit": "8px",
+                    "stack-lg": "64px",
+                    "margin-mobile": "20px",
+                    "stack-md": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg": [
+                            "EB Garamond"
+                    ],
+                    "headline-lg-mobile": [
+                            "EB Garamond"
+                    ],
+                    "label-sm": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-md": [
+                            "\"Source Serif 4\""
+                    ],
+                    "donation-amount": [
+                            "EB Garamond"
+                    ],
+                    "body-lg": [
+                            "\"Source Serif 4\""
+                    ],
+                    "headline-md": [
+                            "EB Garamond"
+                    ],
+                    "label-lg": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-sm": [
+                            "13px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.08em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "17px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "donation-amount": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            /* Prevent overscroll on mobile for a native feel */
+            overscroll-behavior-y: none;
+        }
+        
+        /* Subtle input focus transition */
+        input {
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<!-- Suppressing Navigation Shells due to Linear/Transactional intent (Login) -->
+<body class="bg-surface-paper min-h-screen flex flex-col items-center justify-center p-margin-mobile">
+<main class="w-full max-w-[400px] flex flex-col">
+<!-- Brand Header -->
+<header class="text-center mb-stack-md">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">GreatGod</h1>
+<p class="font-body-md text-body-md text-secondary mt-2">Sign in to your stewardship account</p>
+</header>
+<!-- Error Banner -->
+<div class="bg-error-container border-l-4 border-error p-4 rounded-r-lg mb-stack-sm flex gap-3 items-start shadow-sm" role="alert">
+<span class="material-symbols-outlined text-on-error-container shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">error</span>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-error-container leading-tight pt-0.5">The email or password entered is incorrect.</p>
+</div>
+</div>
+<!-- Form Container -->
+<div class="bg-surface-linen p-6 rounded-xl border border-outline-variant shadow-sm mb-stack-md">
+<form action="#" class="flex flex-col gap-5" method="POST">
+<!-- Email Field (Error State) -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 uppercase tracking-widest pl-1" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-error" style="font-size: 20px;">mail</span>
+<input aria-invalid="true" autocomplete="email" class="w-full bg-surface-container-lowest border-2 border-error text-on-surface pl-10 pr-4 py-3 rounded-md font-body-md text-body-md focus:outline-none focus:border-error focus:ring-1 focus:ring-error" id="email" name="email" type="email" value="steward@example.com"/>
+</div>
+</div>
+<!-- Password Field (Error State) -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 uppercase tracking-widest pl-1" for="password">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-error" style="font-size: 20px;">key</span>
+<input aria-invalid="true" autocomplete="current-password" class="w-full bg-surface-container-lowest border-2 border-error text-on-surface pl-10 pr-4 py-3 rounded-md font-body-md text-body-md focus:outline-none focus:border-error focus:ring-1 focus:ring-error" id="password" name="password" type="password" value="********"/>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest py-4 rounded-full mt-2 hover:bg-primary/90 transition-colors active:scale-[0.98]" type="submit">
+                    Sign In
+                </button>
+</form>
+</div>
+<!-- Secondary Action (Recovery) -->
+<div class="text-center">
+<a class="font-label-sm text-label-sm text-primary uppercase tracking-widest hover:underline underline-offset-4 transition-all" href="#">
+                Forgot Password?
+            </a>
+</div>
+<!-- Stewardship Footer (Contextual for transactional flows) -->
+<footer class="mt-stack-lg flex flex-col items-center gap-2 opacity-80">
+<span class="material-symbols-outlined text-success-secure" style="font-size: 18px;">lock</span>
+<p class="font-label-sm text-label-sm text-success-secure uppercase tracking-widest">Secure SSL Connection</p>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Search Results - GreatGod</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#735c00",
+                    "inverse-primary": "#ffb3ad",
+                    "primary-container": "#5d1212",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "surface-dim": "#dbdad5",
+                    "background": "#fbf9f4",
+                    "surface-container-high": "#eae8e3",
+                    "outline": "#887270",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#3f4945",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#fbf9f4",
+                    "surface-bright": "#fbf9f4",
+                    "surface-container": "#f0eee9",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#5b6561",
+                    "secondary-fixed-dim": "#bfc9c4",
+                    "outline-variant": "#dbc0be",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffe088",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-tertiary-container": "#4e3d00",
+                    "secondary-container": "#d8e2dd",
+                    "surface-variant": "#e4e2dd",
+                    "primary": "#3e0003",
+                    "on-primary-container": "#e27770",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#30312e",
+                    "surface-container-low": "#f5f3ee",
+                    "secondary-fixed": "#dbe5e0",
+                    "surface-tint": "#9c413d",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-secondary-fixed": "#141d1a",
+                    "inverse-on-surface": "#f2f1ec",
+                    "on-surface-variant": "#554240",
+                    "on-primary-fixed": "#410004",
+                    "on-surface": "#1b1c19",
+                    "on-background": "#1b1c19",
+                    "primary-fixed": "#ffdad7",
+                    "tertiary-container": "#cca72f",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#7e2a27",
+                    "secondary": "#57605d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1120px",
+                    "stack-sm": "16px",
+                    "stack-md": "32px",
+                    "unit": "8px",
+                    "stack-lg": "64px",
+                    "margin-mobile": "20px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "display-lg": [
+                            "EB Garamond"
+                    ],
+                    "headline-lg-mobile": [
+                            "EB Garamond"
+                    ],
+                    "body-lg": [
+                            "\"Source Serif 4\""
+                    ],
+                    "headline-lg": [
+                            "EB Garamond"
+                    ],
+                    "headline-md": [
+                            "EB Garamond"
+                    ],
+                    "body-md": [
+                            "\"Source Serif 4\""
+                    ],
+                    "label-sm": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "17px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "13px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.08em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        /* Hide scrollbar for clean filter row */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface border-b border-outline-variant fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 transition-colors duration-200 ease-in-out">
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-display-lg text-headline-lg-mobile text-primary tracking-tight">GreatGod</div>
+<button class="text-primary font-bold hover:bg-surface-container-low p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-32 md:pb-stack-lg px-margin-mobile md:px-gutter max-w-container-max mx-auto w-full flex justify-center">
+<!-- Narrow Central Column for Editorial Readability -->
+<div class="w-full max-w-[720px]">
+<!-- Header & Search Input -->
+<div class="mb-stack-md">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-stack-sm">Search Results</h1>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-xl">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-full py-4 pl-12 pr-4 font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent transition-all shadow-sm" placeholder="Search GreatGod..." type="text" value="Grace"/>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex overflow-x-auto no-scrollbar gap-unit mb-stack-sm py-2">
+<button class="whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant text-on-surface font-label-sm text-label-sm hover:bg-surface-container-low transition-colors">All</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm transition-colors">Articles</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant text-on-surface font-label-sm text-label-sm hover:bg-surface-container-low transition-colors">Audio</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant text-on-surface font-label-sm text-label-sm hover:bg-surface-container-low transition-colors">Video</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant text-on-surface font-label-sm text-label-sm hover:bg-surface-container-low transition-colors">Scripture</button>
+</div>
+<!-- Result Count -->
+<div class="mb-stack-md font-label-sm text-label-sm text-secondary opacity-70">
+                24 results for "Grace"
+            </div>
+<!-- Results List -->
+<div class="flex flex-col">
+<!-- Result 1: Article (Featured style) -->
+<article class="py-stack-sm border-b border-outline-variant last:border-0 flex flex-col sm:flex-row gap-stack-sm items-start group cursor-pointer">
+<div class="w-full sm:w-1/3 aspect-[4/3] rounded-lg overflow-hidden border border-outline-variant shrink-0 relative bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A serene, beautifully composed photograph of a quiet study corner bathed in soft, warm morning light. An open book rests on a wooden desk alongside a steaming cup of tea. The color palette is minimal, leaning on warm creams, deep burgundies, and subtle stone neutrals, reflecting a trustworthy and calm editorial aesthetic. The lighting creates gentle tonal depth without harsh shadows, evoking a sense of peaceful reflection and theological contemplation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg_60a48Qbh9EtgSDkOa9zp7F_2So90qOizj77NVRtd5i3xplJ3pBP9IQENO6yweCDzQrx68xs2xcJs3AsX5sJSrTtE7ZL1UxBhYkQr7LaN_INNLeHdhcoYQg-2swFiazhRz_ffTrS8MGJL0zZq8sHDV9fC9vUxJoZvBJghWF3G2FKK96f_EpJX_iLoVwEaXyPs--oRBmgtjkquGxZcY2ozHjfq_5F7fo_d86RMuW7KwcMvB22VQc0"/>
+</div>
+<div class="flex flex-col justify-center h-full sm:py-2">
+<div class="font-label-sm text-label-sm text-secondary opacity-70 mb-2 flex items-center gap-2">
+<span>Theology</span>
+<span>·</span>
+<span>6 min read</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-surface-tint transition-colors">The Beauty of Grace in Everyday Trials</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">by Grace Adeyemi</p>
+</div>
+</article>
+<!-- Result 2: Article -->
+<article class="py-stack-sm border-b border-outline-variant last:border-0 flex flex-col justify-center group cursor-pointer">
+<div class="font-label-sm text-label-sm text-secondary opacity-70 mb-2 flex items-center gap-2">
+<span>Scripture Study</span>
+<span>·</span>
+<span>12 min read</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-surface-tint transition-colors">Grace and Truth: A Study of John 1:14</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">by Pastor Samuel Okoro</p>
+</article>
+<!-- Result 3: Audio -->
+<article class="py-stack-sm border-b border-outline-variant last:border-0 flex gap-stack-sm items-center group cursor-pointer bg-surface-container-low -mx-4 px-4 rounded-lg transition-colors hover:bg-surface-container">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center shrink-0 text-on-secondary-container">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<div class="flex flex-col justify-center">
+<div class="font-label-sm text-label-sm text-secondary opacity-70 mb-1 flex items-center gap-2">
+<span>Podcast Episode</span>
+<span>·</span>
+<span>45 mins</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-surface-tint transition-colors">The Scandal of Grace</h3>
+</div>
+</article>
+<!-- Result 4: Article -->
+<article class="py-stack-sm border-b border-outline-variant last:border-0 flex flex-col justify-center group cursor-pointer">
+<div class="font-label-sm text-label-sm text-secondary opacity-70 mb-2 flex items-center gap-2">
+<span>Christian Living</span>
+<span>·</span>
+<span>5 min read</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-surface-tint transition-colors">Grace for the Anxious Heart</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">by Sarah Jenkins</p>
+</article>
+</div>
+<!-- End of Content Flourish -->
+<div class="mt-stack-lg flex justify-center">
+<div class="w-24 h-px bg-gradient-to-r from-transparent via-outline to-transparent opacity-50"></div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Discover is active based on Search context) -->
+<nav class="bg-surface border-t border-outline-variant fixed bottom-0 w-full z-50 flex justify-around items-center h-20 px-margin-mobile md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary bg-secondary-container/30 rounded-full py-1 px-4 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined mb-1" data-icon="explore" data-weight="fill" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined mb-1" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-label-sm">Library</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</nav>
+</body></html>

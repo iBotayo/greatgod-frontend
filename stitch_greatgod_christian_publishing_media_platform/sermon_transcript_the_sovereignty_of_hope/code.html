@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sermon Transcript - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffe085",
+                        "error": "#ba1a1a",
+                        "surface-paper": "#fbf9f4",
+                        "background": "#fff8f7",
+                        "surface-container-high": "#f6e4e2",
+                        "stone-outline": "#887270",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#e8d6d4",
+                        "on-secondary-fixed": "#151d1b",
+                        "on-primary-container": "#e27770",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-primary": "#ffffff",
+                        "surface-linen": "#f5f3ee",
+                        "surface-variant": "#f1dedc",
+                        "on-background": "#231918",
+                        "on-tertiary-container": "#4e3e00",
+                        "outline-variant": "#dbc0be",
+                        "tertiary-container": "#c6a94e",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#887270",
+                        "surface": "#fff8f7",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#fff0ef",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "inverse-primary": "#ffb3ad",
+                        "on-surface-variant": "#554240",
+                        "primary-container": "#5d1212",
+                        "primary-fixed": "#ffdad7",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "surface-container": "#fceae8",
+                        "secondary-fixed": "#dbe5e0",
+                        "secondary-container": "#dbe5e0",
+                        "on-surface": "#231918",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#410004",
+                        "primary": "#3e0003",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#57605d",
+                        "success-secure": "#2e4d41",
+                        "tertiary": "#735c00",
+                        "tertiary-fixed-dim": "#e3c466",
+                        "on-tertiary-fixed": "#231b00",
+                        "inverse-on-surface": "#ffedeb",
+                        "surface-tint": "#9c413d",
+                        "on-secondary-container": "#5d6663",
+                        "on-secondary-fixed-variant": "#404946",
+                        "inverse-surface": "#392e2d",
+                        "surface-container-highest": "#f1dedc",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff8f7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1120px",
+                        "form-width": "560px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "stack-sm": "16px",
+                        "stack-md": "32px"
+                    },
+                    "fontFamily": {
+                        "donation-amount": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        .scripture-link {
+            text-decoration: underline;
+            text-decoration-color: theme('colors.primary-fixed-dim');
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+            transition: all 0.2s ease;
+        }
+        .scripture-link:hover {
+            color: theme('colors.primary');
+            background-color: theme('colors.primary-fixed');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-paper text-on-surface min-h-screen flex flex-col font-body-md antialiased">
+<!-- Top Navigation (Task-Focused Sub-page) -->
+<header class="w-full top-0 sticky bg-surface-paper border-b border-outline-variant z-50 flex justify-between items-center px-margin-mobile py-4 md:px-gutter md:py-6">
+<button aria-label="Back to Video" class="flex items-center gap-2 text-on-surface hover:text-primary transition-colors group">
+<span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform" data-icon="arrow_back">arrow_back</span>
+<span class="font-label-lg text-label-lg hidden md:inline">Back to Sermon</span>
+</button>
+<div class="font-headline-md text-headline-md text-primary tracking-tight">Sermon Transcript</div>
+<div class="w-8 md:w-24"></div> <!-- Spacer for centering -->
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-md md:py-stack-lg">
+<!-- Transcript Header Info -->
+<article class="max-w-[800px] mx-auto">
+<header class="mb-stack-lg text-center">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-4">The Mount of Olives and the Heart of Prayer</h1>
+<div class="flex items-center justify-center gap-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
+<span>Rev. Thomas Mercer</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>October 12, 2024</span>
+</div>
+</header>
+<!-- Transcript Content -->
+<div class="prose prose-stone prose-lg max-w-none font-body-lg text-body-lg text-on-surface leading-relaxed space-y-6">
+<p>Grace and peace to you all this morning. We find ourselves today looking at a deeply intimate moment in the life of Christ. A moment of profound struggle, yes, but also of ultimate submission.</p>
+<p>If you have your Bibles, please turn with me to <a class="scripture-link font-medium" href="#">Luke 22:39-46</a>. We are walking with Jesus as He leaves the upper room and heads to the Mount of Olives. This was His custom, the text tells us. It wasn't a strange place for Him; it was a familiar place of refuge and communion with the Father.</p>
+<div class="pl-6 border-l-2 border-outline-variant italic text-on-surface-variant my-8">
+                    "And he came out and went, as was his custom, to the Mount of Olives, and the disciples followed him. And when he came to the place, he said to them, <a class="scripture-link" href="#">'Pray that you may not enter into temptation.'</a>" (<a class="scripture-link font-medium" href="#">Luke 22:39-40</a>)
+                </div>
+<p>Notice that first command. Before He even addresses His own impending agony, His pastoral heart is turned toward His disciples. 'Pray that you may not enter into temptation.' He knew what was coming for them, just as He knew what was coming for Himself. The hour of darkness was descending.</p>
+<p>Then He withdraws. About a stone's throw away. He knelt down and began to pray.</p>
+<p>My friends, how often do we see prayer as a last resort? A breaking of the glass in case of emergency? For Jesus, it was the breathing of His soul. As we read in <a class="scripture-link font-medium" href="#">Matthew 26:39</a>, He fell on His face. The physical posture reflecting the spiritual weight.</p>
+<div class="bg-surface-container-low p-6 rounded-lg my-8 shadow-sm border border-surface-variant">
+<p class="font-headline-md text-headline-md text-primary mb-4">"Father, if you are willing, remove this cup from me. Nevertheless, not my will, but yours, be done."</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Luke 22:42</p>
+</div>
+<p>This is the crucible of faith. The cup He speaks of is not merely physical death, though that would be horrific enough. It is the cup of God's righteous wrath against sin. The cup mentioned in <a class="scripture-link font-medium" href="#">Isaiah 51:17</a>, the 'cup of staggering.' He, who knew no sin, was preparing to become sin for us, as Paul writes in <a class="scripture-link font-medium" href="#">2 Corinthians 5:21</a>.</p>
+<p>He asks if there is another way. It is a genuine human plea. But it is immediately anchored by supreme divine obedience. 'Nevertheless.' What a powerful word. Despite my anguish, despite the impending horror, not my will, but yours.</p>
+<p>Are we able to pray that 'nevertheless' in our own lives? When the diagnosis comes, when the job is lost, when the relationship fractures... can we kneel in our own Gethsemane and say, 'Father, I want this removed, nevertheless, Your will be done'?</p>
+<p>The text tells us an angel from heaven appeared to Him, strengthening Him. And being in agony, He prayed more earnestly; and His sweat became like great drops of blood falling down to the ground. (<a class="scripture-link font-medium" href="#">Luke 22:43-44</a>). The intensity of this moment cannot be overstated.</p>
+<p>When He finally rises and returns to the disciples, what does He find? He finds them sleeping for sorrow. They were exhausted by grief. We often judge them harshly, but grief is a heavy blanket. Yet, Jesus' response is a gentle but urgent wake-up call: 'Rise and pray that you may not enter into temptation.'</p>
+<p>Let us not sleep through the sorrow, church. Let us not be lulled into spiritual slumber when the hour demands vigilant prayer. May we look to the Mount of Olives, see our Savior kneeling in the dirt, and learn what it means to truly yield our will to the Father.</p>
+</div>
+<footer class="mt-stack-lg pt-8 border-t border-outline-variant flex justify-center pb-stack-lg">
+<button aria-label="Back to Top" class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors group">
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Return to Top</span>
+<span class="material-symbols-outlined group-hover:-translate-y-1 transition-transform" data-icon="arrow_upward">arrow_upward</span>
+</button>
+</footer>
+</article>
+</main>
+<script>
+        // Simple scroll to top functionality
+        document.querySelector('footer button').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Payment Failed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&amp;family=Source+Serif+4:wght@400;600&amp;family=Hanken+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#ffedeb",
+                        "on-secondary-container": "#5d6663",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#e3c466",
+                        "surface-bright": "#fff8f7",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "stone-outline": "#887270",
+                        "surface-container-highest": "#f1dedc",
+                        "success-secure": "#2e4d41",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "secondary": "#57605d",
+                        "tertiary": "#735c00",
+                        "on-primary-fixed": "#410004",
+                        "on-surface-variant": "#554240",
+                        "on-background": "#231918",
+                        "secondary-container": "#dbe5e0",
+                        "surface": "#fff8f7",
+                        "on-error": "#ffffff",
+                        "primary": "#3e0003",
+                        "surface-dim": "#e8d6d4",
+                        "outline-variant": "#dbc0be",
+                        "on-secondary-fixed": "#151d1b",
+                        "tertiary-container": "#c6a94e",
+                        "on-tertiary-container": "#4e3e00",
+                        "on-primary-container": "#e27770",
+                        "surface-container-low": "#fff0ef",
+                        "on-secondary-fixed-variant": "#404946",
+                        "surface-tint": "#9c413d",
+                        "secondary-fixed": "#dbe5e0",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ffdad7",
+                        "inverse-surface": "#392e2d",
+                        "surface-paper": "#fbf9f4",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-variant": "#f1dedc",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fff8f7",
+                        "surface-container-high": "#f6e4e2",
+                        "primary-container": "#5d1212",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#231918",
+                        "surface-container": "#fceae8",
+                        "on-tertiary-fixed": "#231b00",
+                        "on-secondary": "#ffffff",
+                        "outline": "#887270",
+                        "tertiary-fixed": "#ffe085",
+                        "surface-linen": "#f5f3ee",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "inverse-primary": "#ffb3ad"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "stack-sm": "16px",
+                        "container-max": "1120px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "form-width": "560px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["EB Garamond", "serif"],
+                        "body-md": ["Source Serif 4", "serif"],
+                        "label-lg": ["Hanken Grotesk", "sans-serif"],
+                        "label-sm": ["Hanken Grotesk", "sans-serif"],
+                        "donation-amount": ["EB Garamond", "serif"],
+                        "headline-md": ["EB Garamond", "serif"],
+                        "body-lg": ["Source Serif 4", "serif"],
+                        "headline-lg": ["EB Garamond", "serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Source Serif 4', serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar (Transactional - Hidden Nav, Keep Header) -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 max-w-container-max mx-auto border-b border-outline-variant bg-surface docked full-width top-0">
+<button class="text-primary hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">GreatGod</h1>
+<button class="text-primary hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">close</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center p-margin-mobile">
+<!-- The Vessel -->
+<div class="bg-surface-linen w-full max-w-form-width rounded-xl p-stack-md flex flex-col items-center text-center shadow-sm border border-outline-variant">
+<!-- Warning Icon -->
+<div class="mb-stack-sm bg-error-container text-on-error-container p-4 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">error</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-unit">Payment Unsuccessful</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md max-w-md">
+                We were unable to process your scheduled recurring donation. Your continued support is a blessing, and we want to ensure your giving journey remains uninterrupted.
+            </p>
+<!-- Failed Details Card -->
+<div class="bg-surface w-full rounded-lg border border-error p-stack-sm mb-stack-md flex flex-col gap-unit text-left">
+<div class="flex justify-between items-center border-b border-outline-variant pb-unit">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Amount</span>
+<span class="font-donation-amount text-[32px] leading-tight text-on-background">$50.00</span>
+</div>
+<div class="flex justify-between items-center py-unit border-b border-outline-variant">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Scheduled Date</span>
+<span class="font-body-md text-body-md text-on-background">October 15, 2024</span>
+</div>
+<div class="flex justify-between items-center pt-unit">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Reason</span>
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined text-sm">credit_card_off</span>
+<span class="font-body-md text-body-md">Card Expired</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="w-full flex flex-col gap-4">
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-4 rounded-lg uppercase tracking-wider hover:bg-primary-container hover:text-on-primary-container transition-colors">
+                    Update Payment Method
+                </button>
+<button class="w-full bg-transparent border border-stone-outline text-on-background font-label-lg text-label-lg py-4 rounded-lg uppercase tracking-wider hover:bg-surface-container-low transition-colors">
+                    Retry Charge
+                </button>
+</div>
+<!-- Trust Footer -->
+<div class="mt-stack-md flex flex-col items-center gap-2 text-on-surface-variant opacity-80">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="font-label-sm text-label-sm">Secure SSL Encrypted Connection</span>
+</div>
+<p class="font-body-md text-body-md text-sm italic text-center max-w-xs">
+                    Your financial security is handled with the utmost care and reverence.
+                </p>
+</div>
+</div>
+</main>
+<!-- Footer (Suppressed for Transactional flow, keeping minimal text if needed, but omitted here per rules) -->
+</body></html>

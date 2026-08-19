@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Submission Status | GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-primary": "#ffb3ad",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#dbdad5",
+                      "background": "#fbf9f4",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#410004",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "inverse-on-surface": "#f2f1ec",
+                      "inverse-surface": "#30312e",
+                      "secondary-container": "#d8e2dd",
+                      "surface-container-high": "#eae8e3",
+                      "tertiary-fixed": "#ffe088",
+                      "outline": "#887270",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#4e3d00",
+                      "error": "#ba1a1a",
+                      "tertiary": "#735c00",
+                      "on-secondary-container": "#5b6561",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "secondary": "#57605d",
+                      "on-surface": "#1b1c19",
+                      "surface-container-low": "#f5f3ee",
+                      "on-tertiary-fixed": "#241a00",
+                      "primary-fixed": "#ffdad7",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "surface-container": "#f0eee9",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "on-secondary-fixed": "#141d1a",
+                      "surface": "#fbf9f4",
+                      "surface-tint": "#9c413d",
+                      "surface-container-highest": "#e4e2dd",
+                      "secondary-fixed": "#dbe5e0",
+                      "on-surface-variant": "#554240",
+                      "on-background": "#1b1c19",
+                      "primary-container": "#5d1212",
+                      "surface-bright": "#fbf9f4",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "surface-variant": "#e4e2dd",
+                      "tertiary-container": "#cca72f",
+                      "primary": "#3e0003",
+                      "on-primary-container": "#e27770",
+                      "outline-variant": "#dbc0be"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-sm": "16px",
+                      "stack-md": "32px",
+                      "gutter": "32px",
+                      "container-max": "1120px",
+                      "unit": "8px",
+                      "stack-lg": "64px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col pt-16 md:pt-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 bg-surface border-b border-outline-variant flat no shadows transition-colors duration-200 ease-in-out md:hidden">
+<button class="text-primary hover:bg-surface-container-low p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="font-display-lg text-headline-lg-mobile text-primary tracking-tight">GreatGod</div>
+<div class="w-10"></div> <!-- Placeholder for balance -->
+</header>
+<header class="hidden md:flex fixed top-0 w-full z-50 justify-between items-center px-margin-mobile md:px-stack-lg h-16 bg-surface border-b border-outline-variant flat no shadows transition-colors duration-200 ease-in-out">
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tight flex items-center gap-4">
+<button class="text-primary hover:bg-surface-container-low p-2 rounded-full transition-colors flex items-center justify-center mt-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+            GreatGod
+        </div>
+</header>
+<main class="flex-grow flex justify-center w-full px-margin-mobile md:px-stack-lg py-stack-md md:py-stack-lg mt-0 md:mt-16">
+<div class="w-full max-w-[720px] flex flex-col gap-stack-lg">
+<!-- Header Section -->
+<section class="flex flex-col gap-stack-sm text-center md:text-left">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest opacity-70">Submission Status</p>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">The Ontology of Grace</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-prose">
+                    Your essay is currently under review by our editorial team. You will be notified via email once the review is complete.
+                </p>
+<div class="flex flex-wrap gap-4 items-center justify-center md:justify-start mt-4">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">calendar_today</span>
+                        Submitted on Oct 14
+                    </span>
+<span class="text-outline-variant">|</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">person</span>
+                        Assigned Editor: Rebecca Hall
+                    </span>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="bg-surface-container-low border border-outline-variant rounded-lg p-stack-md md:p-stack-lg">
+<div class="relative">
+<!-- Vertical Line for Desktop/Tablet, Horizontal for Mobile (Simplified to vertical for clarity in fixed grid) -->
+<div class="absolute left-[15px] md:left-[19px] top-4 bottom-4 w-px bg-outline-variant"></div>
+<div class="flex flex-col gap-stack-md relative z-10">
+<!-- Step 1: Submitted -->
+<div class="flex items-start gap-stack-sm">
+<div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-surface border border-outline-variant flex items-center justify-center shrink-0 shadow-sm text-primary">
+<span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col pt-1 md:pt-2">
+<h3 class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest">Submitted</h3>
+<p class="font-body-md text-body-md text-secondary text-sm mt-1">Oct 14, 2024</p>
+</div>
+</div>
+<!-- Step 2: Under Editorial Review (Active) -->
+<div class="flex items-start gap-stack-sm">
+<div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm ring-4 ring-primary-container/20">
+<span class="material-symbols-outlined text-sm md:text-base animate-pulse" style="font-variation-settings: 'FILL' 1;">edit_document</span>
+</div>
+<div class="flex flex-col pt-1 md:pt-2">
+<h3 class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-bold">Under Editorial Review</h3>
+<p class="font-body-md text-body-md text-secondary text-sm mt-1">Currently in progress.</p>
+<!-- Content Block for active state -->
+<div class="mt-4 p-4 bg-surface border border-outline-variant rounded flex items-start gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A portrait photograph of a thoughtful female editor in a quiet library setting. Warm, natural lighting, deep focus, sacred editorial style with warm earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAckTW5pJkHj-1z2N2FtCjRwqaWzpeDeNWP63e-k9c1Z9huLIXt-zzVyYZfKIbX2gs9OyaKHzVwkPf9YHUG1I0vyeD2JrPsJ-xJjgF3xdJVs3FgLHDNpLUCxSo5NTdtppw2Jx6NlBnKrdbtP65kpRpsssGmozEl3eoxe8flXhpiyfTOYZkHyPSSecuiKO1QYnsyMl9oXyRQTUTqL2_294aCeMbAU53SO3dPWRaFNHc9nNT31n71BwyK"/>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface text-sm">Rebecca Hall is reviewing your submission for theological consistency and clarity. This process usually takes 2-3 weeks.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Changes Requested -->
+<div class="flex items-start gap-stack-sm opacity-50">
+<div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-surface border border-outline-variant flex items-center justify-center shrink-0 text-outline">
+<span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 0;">forum</span>
+</div>
+<div class="flex flex-col pt-1 md:pt-2">
+<h3 class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest">Changes Requested</h3>
+<p class="font-body-md text-body-md text-secondary text-sm mt-1">Pending editor review.</p>
+</div>
+</div>
+<!-- Step 4: Approved -->
+<div class="flex items-start gap-stack-sm opacity-50">
+<div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-surface border border-outline-variant flex items-center justify-center shrink-0 text-outline">
+<span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 0;">verified</span>
+</div>
+<div class="flex flex-col pt-1 md:pt-2">
+<h3 class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest">Approved</h3>
+<p class="font-body-md text-body-md text-secondary text-sm mt-1">Pending revisions.</p>
+</div>
+</div>
+<!-- Step 5: Published -->
+<div class="flex items-start gap-stack-sm opacity-50">
+<div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-surface border border-outline-variant flex items-center justify-center shrink-0 text-outline">
+<span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 0;">public</span>
+</div>
+<div class="flex flex-col pt-1 md:pt-2">
+<h3 class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest">Published</h3>
+<p class="font-body-md text-body-md text-secondary text-sm mt-1">Pending final approval.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions -->
+<section class="flex justify-center md:justify-start pt-stack-sm pb-stack-lg">
+<button class="px-6 py-3 border border-outline text-on-surface font-label-sm text-label-sm uppercase tracking-widest hover:bg-surface-container-low transition-colors rounded-DEFAULT flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+                    Back to Dashboard
+                </button>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-margin-mobile md:px-stack-lg flex flex-col items-center gap-stack-md bg-surface-container-low border-t border-outline-variant mt-auto">
+<div class="font-display-lg text-headline-md text-primary tracking-tight">GreatGod</div>
+<nav class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300 ease-in-out" href="#">About</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300 ease-in-out" href="#">Statement of Faith</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300 ease-in-out" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300 ease-in-out" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300 ease-in-out" href="#">Newsletter</a>
+</nav>
+<p class="font-body-md text-body-md text-secondary text-sm">© 2024 GreatGod Publishing. All rights reserved.</p>
+</footer>
+</body></html>

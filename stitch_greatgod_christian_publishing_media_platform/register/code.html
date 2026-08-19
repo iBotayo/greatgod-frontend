@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#231b00",
+                        "surface": "#fff8f7",
+                        "surface-container-highest": "#f1dedc",
+                        "on-primary-fixed": "#410004",
+                        "inverse-primary": "#ffb3ad",
+                        "on-surface": "#231918",
+                        "secondary": "#57605d",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#ffedeb",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "primary-container": "#5d1212",
+                        "tertiary": "#735c00",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "surface-variant": "#f1dedc",
+                        "surface-linen": "#f5f3ee",
+                        "on-secondary-fixed-variant": "#404946",
+                        "surface-tint": "#9c413d",
+                        "stone-outline": "#887270",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "surface-container": "#fceae8",
+                        "outline": "#887270",
+                        "outline-variant": "#dbc0be",
+                        "on-primary-container": "#e27770",
+                        "on-secondary-container": "#5d6663",
+                        "on-secondary-fixed": "#151d1b",
+                        "secondary-fixed": "#dbe5e0",
+                        "success-secure": "#2e4d41",
+                        "surface-dim": "#e8d6d4",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#392e2d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#554240",
+                        "tertiary-fixed": "#ffe085",
+                        "tertiary-container": "#c6a94e",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "background": "#fff8f7",
+                        "surface-bright": "#fff8f7",
+                        "secondary-container": "#dbe5e0",
+                        "surface-paper": "#fbf9f4",
+                        "on-background": "#231918",
+                        "surface-container-low": "#fff0ef",
+                        "primary": "#3e0003",
+                        "surface-container-high": "#f6e4e2",
+                        "primary-fixed": "#ffdad7",
+                        "on-tertiary-container": "#4e3e00",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#e3c466"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "stack-md": "32px",
+                        "margin-mobile": "20px",
+                        "gutter": "32px",
+                        "form-width": "560px",
+                        "container-max": "1120px",
+                        "stack-lg": "64px",
+                        "stack-sm": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-md": ["EB Garamond"],
+                        "donation-amount": ["EB Garamond"],
+                        "body-md": ["Source Serif 4"],
+                        "headline-lg": ["EB Garamond"],
+                        "body-lg": ["Source Serif 4"],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .bg-surface-linen { background-color: #f5f3ee; }
+            .border-stone-outline { border-color: #887270; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar (Transactional - Hidden Navigation, Brand Focus Only) -->
+<header class="bg-surface border-b border-outline-variant flex justify-center items-center w-full px-margin-mobile h-16">
+<a class="font-headline-md text-headline-md text-primary tracking-tight" href="#">GreatGod</a>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex items-center justify-center py-stack-lg px-margin-mobile">
+<div class="w-full max-w-form-width bg-surface-linen rounded-lg border border-outline-variant overflow-hidden">
+<div class="p-stack-md sm:p-[48px]">
+<div class="text-center mb-stack-md">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-unit">Begin Your Stewardship</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Create a secure account to manage your giving and history.</p>
+</div>
+<form class="space-y-stack-sm">
+<!-- Email Field -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-unit" for="email">Email Address</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-stone-outline rounded text-on-surface font-body-md text-body-md px-4 py-3 focus:outline-none focus:ring-0 focus:border-[2px] focus:border-primary transition-colors placeholder:text-outline" id="email" name="email" placeholder="name@example.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-unit" for="password">Password</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-stone-outline rounded text-on-surface font-body-md text-body-md px-4 py-3 focus:outline-none focus:ring-0 focus:border-[2px] focus:border-primary transition-colors placeholder:text-outline" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<!-- Password Requirements -->
+<div class="bg-surface p-4 rounded border border-outline-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-2">Password Requirements:</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-2 font-body-md text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline">check_circle</span>
+<span>At least 8 characters long</span>
+</li>
+<li class="flex items-center gap-2 font-body-md text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline">check_circle</span>
+<span>Contains at least one number</span>
+</li>
+<li class="flex items-center gap-2 font-body-md text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline">check_circle</span>
+<span>Contains a special character (!@#$%)</span>
+</li>
+</ul>
+</div>
+<!-- Confirm Password Field -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-unit" for="confirm-password">Confirm Password</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-stone-outline rounded text-on-surface font-body-md text-body-md px-4 py-3 focus:outline-none focus:ring-0 focus:border-[2px] focus:border-primary transition-colors placeholder:text-outline" id="confirm-password" name="confirm-password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-stack-sm">
+<button class="w-full bg-primary hover:bg-primary-fixed-dim text-on-primary font-label-sm text-label-sm uppercase tracking-[0.08em] py-4 rounded transition-colors duration-200" type="submit">
+                            Create Account
+                        </button>
+</div>
+</form>
+<div class="mt-stack-sm text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Already have an account? 
+                        <a class="text-primary hover:text-primary-container font-label-lg text-label-lg underline underline-offset-4 decoration-outline hover:decoration-primary transition-all" href="#">Sign In</a>
+</p>
+</div>
+</div>
+<!-- Trust Footer Component (Integrated into Vessel) -->
+<div class="bg-surface-paper border-t border-outline-variant p-4 flex flex-col items-center justify-center text-center gap-1">
+<div class="flex items-center gap-2 text-success-secure">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Secure SSL Encrypted Connection</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Suppressed due to Transactional Nature, but a simplified version can exist if needed. Opting for full suppression to keep focus on form as per guidelines) -->
+</body></html>

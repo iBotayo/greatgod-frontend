@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Moderation History - Stewardship Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#cca72f",
+                    "secondary-fixed-dim": "#bfc9c4",
+                    "surface-tint": "#9c413d",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#735c00",
+                    "surface-container-high": "#eae8e3",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#30312e",
+                    "primary-container": "#5d1212",
+                    "primary": "#3e0003",
+                    "tertiary-fixed": "#ffe088",
+                    "outline-variant": "#dbc0be",
+                    "secondary-fixed": "#dbe5e0",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#57605d",
+                    "on-primary-fixed": "#410004",
+                    "surface-bright": "#fbf9f4",
+                    "secondary-container": "#d8e2dd",
+                    "on-primary-container": "#e27770",
+                    "on-background": "#1b1c19",
+                    "on-surface": "#1b1c19",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "surface": "#fbf9f4",
+                    "surface-container-low": "#f5f3ee",
+                    "surface-container": "#f0eee9",
+                    "outline": "#887270",
+                    "on-secondary-container": "#5b6561",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdad7",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "surface-variant": "#e4e2dd",
+                    "error": "#ba1a1a",
+                    "background": "#fbf9f4",
+                    "on-secondary-fixed-variant": "#3f4945",
+                    "on-primary-fixed-variant": "#7e2a27",
+                    "surface-dim": "#dbdad5",
+                    "on-tertiary-container": "#4e3d00",
+                    "on-secondary-fixed": "#141d1a",
+                    "inverse-on-surface": "#f2f1ec",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#ffb3ad",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-surface-variant": "#554240"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "stack-sm": "16px",
+                    "stack-md": "32px",
+                    "container-max": "1120px",
+                    "margin-mobile": "20px",
+                    "stack-lg": "64px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["\"Source Serif 4\""],
+                    "headline-md": ["EB Garamond"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "display-lg": ["EB Garamond"],
+                    "headline-lg": ["EB Garamond"],
+                    "headline-lg-mobile": ["EB Garamond"],
+                    "body-md": ["\"Source Serif 4\""]
+            },
+            "fontSize": {
+                    "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                    "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "body-md": ["17px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          }
+        },
+      }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined[data-weight="fill"] { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="flex flex-col md:flex-row min-h-screen">
+<!-- SideNavBar (Desktop Only) -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 border-r border-outline dark:border-outline-variant bg-surface-container-low py-stack-sm z-50 shadow-sm">
+<div class="px-gutter mb-8">
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Editorial Suite</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">Community Oversight</p>
+</div>
+<div class="flex-1 flex flex-col gap-1 px-4">
+<!-- Inactive -->
+<a class="flex items-center gap-3 text-on-surface-variant dark:text-on-surface-variant px-4 py-3 hover:bg-surface-container dark:hover:bg-surface-container-highest transition-all duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-lg text-label-lg">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant dark:text-on-surface-variant px-4 py-3 hover:bg-surface-container dark:hover:bg-surface-container-highest transition-all duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label-lg text-label-lg">Moderation Queue</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant dark:text-on-surface-variant px-4 py-3 hover:bg-surface-container dark:hover:bg-surface-container-highest transition-all duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="flag">flag</span>
+<span class="font-label-lg text-label-lg">Flagged Content</span>
+</a>
+<!-- Active -->
+<a class="flex items-center gap-3 text-primary dark:text-primary-fixed-dim border-l-4 border-primary bg-surface-container-high px-4 py-3 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="history" data-weight="fill">history</span>
+<span class="font-label-lg text-label-lg font-bold">User Logs</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-3 text-on-surface-variant dark:text-on-surface-variant px-4 py-3 hover:bg-surface-container dark:hover:bg-surface-container-highest transition-all duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-lg text-label-lg">Settings</span>
+</a>
+</div>
+<div class="px-4 mt-auto">
+<button class="w-full py-2 bg-primary-container text-on-primary font-label-sm text-label-sm rounded uppercase hover:opacity-90 transition-opacity mb-4">
+                New Report
+            </button>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container transition-all rounded" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+<span class="font-label-sm text-label-sm">Support</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container transition-all rounded" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-label-sm">Archive</span>
+</a>
+</div>
+<div class="mt-4 flex items-center gap-3 px-4 py-2 border-t border-outline-variant pt-4">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small, circular avatar portrait of an elderly scholarly man with glasses, viewed from the shoulders up, against a muted beige background. The lighting is soft and warm, typical of classical portraiture. The mood is distinguished and academic, rendered in high detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAun0b3qiPK-3phaeUF1nSOAnOHD2Pik2Nzof62kXH1OSbzUtZiIfJg1V1YFbXbMmdijrO3LHMsaYIiSTXbVBgp4yJDHfth9RWk0foveMr58vhdTt87-DVRKf9KMQU9zCxEpCJxIvEHREhl3Qt4v9YksfqBzlk5sTbWX-QtWIa1vfezR3TQchdbAoPakDphaZ3swKt2shLOIjt2wfMM_74MR26u5kcKHRInoPMOuAMdXMHBTIQTIeuk"/>
+<span class="font-label-sm text-label-sm text-on-surface">Moderator Profile</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 bg-background min-h-screen pb-stack-lg">
+<!-- Mobile Header (Visible only on mobile) -->
+<header class="md:hidden flex justify-between items-center w-full px-margin-mobile h-16 bg-background border-b border-outline-variant sticky top-0 z-40 shadow-sm">
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Editorial Suite</h1>
+<button class="text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-stack-md md:pt-stack-lg">
+<!-- Page Title & Search Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-stack-md gap-4">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Moderation History</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">A comprehensive audit trail of editorial actions taken within the stewardship archive. Review timestamps, reasons, and oversight details.</p>
+</div>
+<div class="w-full md:w-auto relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full md:w-80 pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:border-transparent transition-all" placeholder="Search logs by name or reason..." type="text"/>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap gap-2 mb-stack-md">
+<button class="px-4 py-1.5 bg-surface-container-high border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors">All Actions</button>
+<button class="px-4 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container transition-colors">Approved</button>
+<button class="px-4 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container transition-colors">Removed</button>
+<button class="px-4 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container transition-colors">Flagged</button>
+</div>
+<!-- Log Table Container (Card Style) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="py-4 px-6 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Timestamp</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Moderator</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Action</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Target / Author</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Reason provided</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Log Entry 1 -->
+<tr class="hover:bg-surface-container-low transition-colors duration-150">
+<td class="py-4 px-6">
+<span class="font-body-md text-body-md text-on-surface whitespace-nowrap">Oct 24, 2024</span>
+<br/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">14:32 EST</span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-label-sm">EH</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Eleanor Vance</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-error-container text-on-error-container font-label-sm text-[11px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]" data-icon="delete">delete</span> Removed
+                                    </span>
+</td>
+<td class="py-4 px-6">
+<span class="font-body-md text-body-md text-on-surface">"Theological Reflections on..."</span>
+<br/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">by Thomas Merton (Guest)</span>
+</td>
+<td class="py-4 px-6">
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs truncate" title="Violates community guidelines regarding respectful discourse; inflammatory language used in paragraph 3.">Violates community guidelines regarding respectful discourse; inflammatory language...</p>
+</td>
+</tr>
+<!-- Log Entry 2 -->
+<tr class="hover:bg-surface-container-low transition-colors duration-150">
+<td class="py-4 px-6">
+<span class="font-body-md text-body-md text-on-surface whitespace-nowrap">Oct 23, 2024</span>
+<br/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">09:15 EST</span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-label-sm">AW</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Arthur Wesley</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-[11px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span> Approved
+                                    </span>
+</td>
+<td class="py-4 px-6">
+<span class="font-body-md text-body-md text-on-surface">Comment on "Liturgical Seasons"</span>
+<br/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">by S. Kierkegaard</span>
+</td>
+<td class="py-4 px-6">
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs text-secondary">No issues found. Cleared from flag queue.</p>
+</td>
+</tr>
+<!-- Log Entry 3 -->
+<tr class="hover:bg-surface-container-low transition-colors duration-150">
+<td class="py-4 px-6">
+<span class="font-body-md text-body-md text-on-surface whitespace-nowrap">Oct 21, 2024</span>
+<br/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">16:45 EST</span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-label-sm">EH</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Eleanor Vance</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-tertiary-container text-on-tertiary-container font-label-sm text-[11px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]" data-icon="edit">edit</span> Edited
+                                    </span>
+</td>
+<td class="py-4 px-6">
+<span class="font-body-md text-body-md text-on-surface">Article metadata: "Sacred Spaces"</span>
+<br/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">System</span>
+</td>
+<td class="py-4 px-6">
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Corrected attribution tags and updated historical timeline references per author request.</p>
+</td>
+</tr>
+<!-- Log Entry 4 -->
+<tr class="hover:bg-surface-container-low transition-colors duration-150">
+<td class="py-4 px-6">
+<span class="font-body-md text-body-md text-on-surface whitespace-nowrap">Oct 20, 2024</span>
+<br/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">11:10 EST</span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-label-sm">MR</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Marcus Reid</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-error-container text-on-error-container font-label-sm text-[11px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]" data-icon="block">block</span> Suspended
+                                    </span>
+</td>
+<td class="py-4 px-6">
+<span class="font-body-md text-body-md text-on-surface">User Account: @Theophilus99</span>
+<br/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">User</span>
+</td>
+<td class="py-4 px-6">
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Repeated spam postings in the comments section of archival documents. 7-day suspension.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between px-6 py-4 border-t border-outline-variant bg-surface-container-lowest">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing 1-4 of 128 logs</span>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant rounded hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-2 border border-outline-variant rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-stack-lg border-t border-outline-variant pt-8 text-center md:text-left">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Log entries are retained indefinitely for archival integrity.</p>
+</div>
+</div>
+</main>
+</body></html>

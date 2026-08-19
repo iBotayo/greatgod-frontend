@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sacred Editorial - Frontend QA Checklist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#735c00",
+                      "tertiary-fixed": "#ffe088",
+                      "primary": "#3e0003",
+                      "secondary-container": "#d8e2dd",
+                      "surface-container-high": "#eae8e3",
+                      "inverse-on-surface": "#f2f1ec",
+                      "tertiary-container": "#cca72f",
+                      "on-secondary-fixed": "#141d1a",
+                      "on-secondary-container": "#5b6561",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "primary-container": "#5d1212",
+                      "on-tertiary-fixed": "#241a00",
+                      "surface-tint": "#9c413d",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "primary-fixed": "#ffdad7",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "surface": "#fbf9f4",
+                      "surface-variant": "#e4e2dd",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "on-surface-variant": "#554240",
+                      "surface-bright": "#fbf9f4",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "on-primary-container": "#e27770",
+                      "error-container": "#ffdad6",
+                      "background": "#fbf9f4",
+                      "on-primary-fixed": "#410004",
+                      "on-background": "#1b1c19",
+                      "outline-variant": "#dbc0be",
+                      "secondary-fixed": "#dbe5e0",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f5f3ee",
+                      "inverse-surface": "#30312e",
+                      "outline": "#887270",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-tertiary": "#ffffff",
+                      "on-surface": "#1b1c19",
+                      "surface-container": "#f0eee9",
+                      "inverse-primary": "#ffb3ad",
+                      "secondary": "#57605d",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#dbdad5",
+                      "on-tertiary-container": "#4e3d00",
+                      "surface-container-highest": "#e4e2dd"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "stack-lg": "64px",
+                      "gutter": "32px",
+                      "margin-mobile": "20px",
+                      "stack-md": "32px",
+                      "stack-sm": "16px",
+                      "container-max": "1120px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+          font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Subtle Flourish */
+        .flourish-divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(229, 224, 216, 0) 0%, rgba(229, 224, 216, 1) 50%, rgba(229, 224, 216, 0) 100%);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky bg-background dark:bg-background border-b border-outline-variant dark:border-outline-variant z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-gutter h-16 w-full max-w-container-max mx-auto">
+<!-- Brand -->
+<div class="text-headline-md font-headline-md text-primary dark:text-inverse-primary tracking-tight">
+                Sacred Editorial
+            </div>
+<!-- Navigation Cluster (Desktop) -->
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 text-label-sm font-label-sm uppercase hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 transition-opacity" href="#">QA Documentation</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium text-label-sm font-label-sm uppercase hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 transition-opacity" href="#">Design System</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium text-label-sm font-label-sm uppercase hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 transition-opacity" href="#">Components</a>
+</nav>
+<!-- Trailing Actions -->
+<div class="flex gap-4 items-center">
+<button class="text-secondary hover:text-primary transition-colors cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Editor Profile" class="object-cover w-full h-full" data-alt="A small, circular profile picture of an editor. The image shows a professional headshot of a person wearing a simple dark sweater against a neutral, warm cream background. The lighting is soft and flattering, maintaining a calm and trustworthy mood suitable for a professional editorial platform. The colors are muted, relying on deep blacks and warm neutrals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVb1zbfJh9ijM6OWsEi85d9NRXhiC5ihVgN6k2fWgr0N4U-aWLEDBN1tpWlPBC361H7ArzS3GhdPSPQ9gFBfaksg4-6xlYD6fd1UshJGKf31F4DkG7MSG-KCWNCD2TI715KTrZOnqZffI63gu-S4QedZ3AsIVxO7J9E4bX5v_hDKHHzN_bTpkJo_i7GGUeWRgLGhoqJBDWePECVnMEGtJ1rDK2dCW3Xtuwaw9VhAJ8eL2GBOZgAC2k"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-md md:py-stack-lg">
+<!-- Header Section -->
+<div class="mb-stack-lg text-center max-w-3xl mx-auto">
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-widest mb-4">Project Alpha</p>
+<h1 class="text-headline-lg font-headline-lg text-on-background mb-6">Frontend Quality Assurance</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">A comprehensive health check of the GreatGod digital prototype across all defined user personas and global technical requirements.</p>
+</div>
+<!-- Health Summary Bento -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-stack-lg">
+<div class="bg-surface-container-low border border-outline-variant p-6 rounded-lg flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="rule">rule</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">68%</h3>
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wider">Overall Coverage</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-6 rounded-lg flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-error-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-error text-3xl" data-icon="warning">warning</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">12</h3>
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wider">Missing Screens</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-6 rounded-lg flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="update">update</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">Oct 24</h3>
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wider">Last Audit Date</p>
+</div>
+</div>
+<div class="flourish-divider w-full mb-stack-lg"></div>
+<!-- Persona Sections Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-stack-md">
+<!-- Seeking Reader -->
+<div class="bg-surface border border-outline-variant rounded-DEFAULT overflow-hidden">
+<div class="bg-surface-container p-4 border-b border-outline-variant flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="menu_book">menu_book</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Seeking Reader</h2>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div class="flex items-start justify-between gap-4 border-b border-surface-variant pb-3 last:border-0 last:pb-0">
+<div>
+<p class="text-body-md font-body-md font-medium text-on-surface">Home Page Structure</p>
+<p class="text-label-sm font-label-sm text-secondary mt-1">Ref: GreatGod - Home</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-1 bg-secondary-container text-on-secondary-container text-xs font-semibold rounded-full uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span> Validated
+                        </span>
+</div>
+</div>
+</div>
+<!-- Devoted Reader -->
+<div class="bg-surface border border-outline-variant rounded-DEFAULT overflow-hidden">
+<div class="bg-surface-container p-4 border-b border-outline-variant flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="local_library">local_library</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Devoted Reader</h2>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div class="flex items-start justify-between gap-4 border-b border-surface-variant pb-3 last:border-0 last:pb-0">
+<div>
+<p class="text-body-md font-body-md font-medium text-on-surface">Deep Reading Typography</p>
+<p class="text-label-sm font-label-sm text-secondary mt-1">Ref: Article View - Longform</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-1 bg-surface-variant text-on-surface-variant text-xs font-semibold rounded-full uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]" data-icon="pending">pending</span> Pending
+                        </span>
+</div>
+</div>
+</div>
+<!-- Equipping Leader -->
+<div class="bg-surface border border-outline-variant rounded-DEFAULT overflow-hidden">
+<div class="bg-surface-container p-4 border-b border-outline-variant flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Equipping Leader</h2>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div class="flex items-start justify-between gap-4 border-b border-surface-variant pb-3 last:border-0 last:pb-0">
+<div>
+<p class="text-body-md font-body-md font-medium text-on-surface">Resource Compilation UI</p>
+<p class="text-label-sm font-label-sm text-secondary mt-1">Ref: Study Guide Builder</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-1 bg-error-container text-error text-xs font-semibold rounded-full uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]" data-icon="error">error</span> Missing
+                        </span>
+</div>
+</div>
+</div>
+<!-- Author -->
+<div class="bg-surface border border-outline-variant rounded-DEFAULT overflow-hidden">
+<div class="bg-surface-container p-4 border-b border-outline-variant flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="edit_document">edit_document</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Author</h2>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div class="flex items-start justify-between gap-4 border-b border-surface-variant pb-3 last:border-0 last:pb-0">
+<div>
+<p class="text-body-md font-body-md font-medium text-on-surface">Drafting Canvas Tools</p>
+<p class="text-label-sm font-label-sm text-secondary mt-1">Ref: Author Workspace</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-1 bg-secondary-container text-on-secondary-container text-xs font-semibold rounded-full uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span> Validated
+                        </span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-sm mt-auto bg-surface-container dark:bg-inverse-surface border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-gutter w-full max-w-container-max mx-auto">
+<div class="text-label-sm font-label-sm font-bold text-primary mb-4 md:mb-0">
+                Sacred Editorial QA Document
+            </div>
+<div class="flex gap-4">
+<span class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant">© 2024 Sacred Editorial Management. All rights reserved.</span>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Events Listing - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-linen": "#f5f3ee",
+                        "primary-container": "#5d1212",
+                        "surface-bright": "#fff8f7",
+                        "surface-paper": "#fbf9f4",
+                        "on-error": "#ffffff",
+                        "background": "#fff8f7",
+                        "tertiary-container": "#c6a94e",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "secondary-container": "#dbe5e0",
+                        "surface": "#fff8f7",
+                        "on-tertiary-fixed": "#231b00",
+                        "inverse-surface": "#3d2c2b",
+                        "outline-variant": "#dbc0be",
+                        "secondary-fixed": "#dbe5e0",
+                        "success-secure": "#2e4d41",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#410004",
+                        "tertiary": "#735c00",
+                        "inverse-on-surface": "#ffedeb",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "on-secondary-container": "#5d6663",
+                        "surface-tint": "#9c413d",
+                        "surface-variant": "#f8dcda",
+                        "on-tertiary-container": "#4e3e00",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#efd4d1",
+                        "secondary": "#57605d",
+                        "surface-container-highest": "#f8dcda",
+                        "primary-fixed": "#ffdad7",
+                        "on-surface": "#261817",
+                        "outline": "#887270",
+                        "on-background": "#261817",
+                        "surface-container-high": "#fee2df",
+                        "tertiary-fixed-dim": "#e3c466",
+                        "surface-container": "#ffe9e7",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#151d1b",
+                        "surface-container-low": "#fff0ef",
+                        "primary": "#3e0003",
+                        "on-surface-variant": "#554240",
+                        "on-primary-container": "#e27770",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffe085",
+                        "inverse-primary": "#ffb3ad",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#404946",
+                        "on-tertiary-fixed-variant": "#574500"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "stack-sm": "16px",
+                        "margin-mobile": "20px",
+                        "container-max": "1120px",
+                        "form-width": "560px",
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "stack-md": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-md": ["EB Garamond"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "donation-amount": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-paper text-on-surface antialiased min-h-screen pt-16 pb-20 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 bg-surface border-b border-outline-variant duration-200 ease-in-out">
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-display-lg text-headline-lg-mobile text-primary tracking-tight">GreatGod</div>
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-stack-lg">
+<!-- Header Section -->
+<section class="mb-stack-lg text-center md:text-left">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-unit">Gatherings &amp; Symposia</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Join us for upcoming conferences, theological discussions, and biblical studies focused on profound spiritual stewardship.</p>
+</section>
+<!-- Tabs -->
+<div class="flex items-center space-x-6 border-b border-outline-variant mb-stack-md">
+<button class="font-label-lg text-label-lg text-primary border-b-2 border-primary pb-2 uppercase tracking-widest">Upcoming</button>
+<button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors pb-2 uppercase tracking-widest">Conference Archive</button>
+</div>
+<!-- Events Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<!-- Event Card 1 -->
+<article class="bg-surface-linen border border-outline hover:border-primary-container transition-colors duration-300 rounded group flex flex-col h-full overflow-hidden">
+<div class="h-64 w-full relative overflow-hidden">
+<img alt="Library Interior" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A grand, historic library interior in Oxford, UK. Towering wooden bookshelves filled with ancient texts. Warm, scholarly lighting streams through tall mullioned windows. Minimalist-Classical aesthetic with deep burgundy accents and a calm, scholarly atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE9R2DsGzGAoRAc6b6B8kII039IRqcfMu8CD2I9j9SDKAvzxIToRfqizNavGmKgzfx3iWTtqcQfXd7NdZJTSYWC-xIWZHFtmg1U3YULmfPaJiCi9UlVfRoNxDAtCz3YEpQhatA_Kd9IzmWOmDrByaG3JrMBJtVnRx7gvWnEZE1A51zybvT_sAYPUnECv4_gUn7vIYCy77H2FMA0_0oDI7Y3UTBS4_HbvwBsh3guR_EeZkwrAicDr6s"/>
+<div class="absolute top-4 left-4 bg-surface-paper px-3 py-1 border border-outline rounded font-label-sm text-label-sm text-primary uppercase">Symposium</div>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<div class="flex items-center space-x-4 mb-unit font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1" data-icon="calendar_month">calendar_month</span> Oct 12-14, 2024</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1" data-icon="location_on">location_on</span> Oxford, UK</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">The Architecture of Faith</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-sm flex-grow">An exploration of sacred spaces and their profound impact on theological contemplation throughout history.</p>
+<a class="inline-flex items-center justify-center bg-primary-container text-on-primary font-label-sm text-label-sm px-6 py-3 rounded hover:bg-on-primary-fixed-variant transition-colors uppercase w-fit" href="#">View Event</a>
+</div>
+</article>
+<!-- Event Card 2 -->
+<article class="bg-surface-linen border border-outline hover:border-primary-container transition-colors duration-300 rounded group flex flex-col h-full overflow-hidden">
+<div class="h-64 w-full relative overflow-hidden">
+<img alt="Sanctuary Interior" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A serene, minimalist contemporary sanctuary space. Soft, high-key natural light illuminating simple wooden pews and stone floors. Clean lines, a sense of quiet authority, and a calm, trustworthy atmosphere. Minimalist-Classical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh1oWYzSGe4k1kTQpw3A2wcpV0-jvtIA-y5onphw1IrwoQCDydZavkpWG7xlFayNobzTuxr9oulAsymBOTfb4QT3PUc8SW1Hl_GCuP3YruvxnIL3jnI4ZwKAIa4eXQ7pwQlV6glSuOPBQIzX3AkH93EZmLPBpvfl4bCFFpwgia9CTNZGlARU2MLgUVsoI2E32J7lwjG4s-tRJ04PfpEcsBZcawJpnRxSrBQhcU7N5bGopRFhJmAwO6"/>
+<div class="absolute top-4 left-4 bg-surface-paper px-3 py-1 border border-outline rounded font-label-sm text-label-sm text-primary uppercase">Study</div>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<div class="flex items-center space-x-4 mb-unit font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1" data-icon="calendar_month">calendar_month</span> Jun 05 - Aug 10, 2024</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1" data-icon="language">language</span> Online</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Summer Biblical Study 2024</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-sm flex-grow">A rigorous, twelve-week deep dive into the Pauline Epistles, focusing on early church dynamics and enduring pastoral wisdom.</p>
+<a class="inline-flex items-center justify-center border border-outline text-primary-container font-label-sm text-label-sm px-6 py-3 rounded hover:border-primary-container transition-colors uppercase w-fit" href="#">View Event</a>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-20 bg-surface border-t border-outline-variant px-margin-mobile md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-secondary-container/30 rounded-full py-1 px-4 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-label-sm">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-margin-mobile md:px-stack-lg flex flex-col items-center gap-stack-md bg-surface-container-low border-t border-outline-variant mt-stack-lg">
+<div class="font-display-lg text-headline-md text-primary">GreatGod</div>
+<div class="flex flex-wrap justify-center gap-4 font-body-md text-body-md">
+<a class="text-secondary hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="text-secondary hover:text-primary transition-colors duration-300" href="#">Statement of Faith</a>
+<a class="text-secondary hover:text-primary transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="text-secondary hover:text-primary transition-colors duration-300" href="#">Terms of Service</a>
+<a class="text-secondary hover:text-primary transition-colors duration-300" href="#">Newsletter</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface">© 2024 GreatGod Publishing. All rights reserved.</div>
+</footer>
+</body></html>

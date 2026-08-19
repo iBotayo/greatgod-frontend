@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Giving</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#735c00",
+                        "outline": "#887270",
+                        "surface-bright": "#fff8f7",
+                        "primary-container": "#5d1212",
+                        "surface-paper": "#fbf9f4",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#231b00",
+                        "on-primary": "#ffffff",
+                        "surface-linen": "#f5f3ee",
+                        "secondary-fixed": "#dbe5e0",
+                        "surface-container-low": "#fff0ef",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#f1dedc",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "secondary": "#57605d",
+                        "on-surface-variant": "#554240",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#dbe5e0",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "inverse-primary": "#ffb3ad",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface": "#fff8f7",
+                        "on-secondary-fixed": "#151d1b",
+                        "on-primary-fixed": "#410004",
+                        "on-primary-container": "#e27770",
+                        "success-secure": "#2e4d41",
+                        "inverse-on-surface": "#ffedeb",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-error": "#ffffff",
+                        "primary": "#3e0003",
+                        "surface-container-highest": "#f1dedc",
+                        "primary-fixed": "#ffdad7",
+                        "on-secondary-fixed-variant": "#404946",
+                        "on-tertiary-container": "#4e3e00",
+                        "tertiary-container": "#c6a94e",
+                        "background": "#fff8f7",
+                        "on-surface": "#231918",
+                        "tertiary-fixed": "#ffe085",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#231918",
+                        "outline-variant": "#dbc0be",
+                        "stone-outline": "#887270",
+                        "surface-tint": "#9c413d",
+                        "inverse-surface": "#392e2d",
+                        "surface-container": "#fceae8",
+                        "on-secondary-container": "#5d6663",
+                        "surface-container-high": "#f6e4e2",
+                        "surface-dim": "#e8d6d4",
+                        "tertiary-fixed-dim": "#e3c466"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "form-width": "560px",
+                        "container-max": "1120px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "stack-md": "32px",
+                        "stack-sm": "16px",
+                        "stack-lg": "64px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Hanken Grotesk"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "donation-amount": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""]
+                    },
+                    "fontSize": {
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom styles for the segmented control */
+        .segmented-control input:checked + label {
+            background-color: theme('colors.surface-linen');
+            border-color: theme('colors.primary');
+            border-width: 2px;
+            color: theme('colors.primary');
+            box-shadow: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline flex justify-between items-center w-full px-margin-mobile h-16 max-w-container-max mx-auto md:px-gutter fixed top-0 left-0 right-0 z-50">
+<button aria-label="Go back" class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full p-2 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight">GreatGod</h1>
+<button aria-label="Close" class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full p-2 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-32 px-margin-mobile md:px-gutter flex flex-col items-center">
+<!-- The Vessel Layer -->
+<div class="w-full max-w-[560px] bg-surface-linen rounded-xl border border-stone-outline p-6 md:p-8 flex flex-col relative overflow-hidden shadow-sm">
+<!-- Progress Tracker -->
+<div class="absolute top-0 left-0 w-full h-[1px] bg-outline-variant">
+<div class="h-full bg-primary" style="width: 16.66%;"></div>
+</div>
+<div class="w-full flex justify-between items-center mb-stack-md pt-2">
+<span class="font-label-sm text-label-sm text-primary uppercase">01 Amount</span>
+<span class="font-label-sm text-label-sm text-outline-variant uppercase">02 Details</span>
+<span class="font-label-sm text-label-sm text-outline-variant uppercase">03 Payment</span>
+</div>
+<!-- Appeal Header -->
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-unit">Your Sacred Gift</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[400px] mx-auto">
+                    Your generosity enables us to continue our mission. Choose how you would like to contribute to the stewardship of our community.
+                </p>
+</div>
+<!-- Donation Form Area -->
+<form class="flex flex-col gap-stack-md">
+<!-- Frequency Segmented Control -->
+<div class="flex flex-col gap-stack-sm">
+<fieldset class="segmented-control flex gap-4 w-full">
+<legend class="sr-only">Select donation frequency</legend>
+<div class="flex-1 relative">
+<input checked="" class="peer sr-only" id="freq-one-off" name="frequency" type="radio" value="one-off"/>
+<label class="flex flex-col items-center justify-center w-full p-4 bg-white border border-stone-outline rounded text-center cursor-pointer hover:bg-surface-container-low transition-colors font-label-lg text-label-lg text-on-surface-variant peer-focus-visible:ring-2 peer-focus-visible:ring-primary peer-focus-visible:ring-offset-2" for="freq-one-off">
+<span class="material-symbols-outlined mb-2 text-primary" data-icon="volunteer_activism">volunteer_activism</span>
+                                One-off Gift
+                            </label>
+</div>
+<div class="flex-1 relative">
+<input class="peer sr-only" id="freq-recurring" name="frequency" type="radio" value="recurring"/>
+<label class="flex flex-col items-center justify-center w-full p-4 bg-white border border-stone-outline rounded text-center cursor-pointer hover:bg-surface-container-low transition-colors font-label-lg text-label-lg text-on-surface-variant peer-focus-visible:ring-2 peer-focus-visible:ring-primary peer-focus-visible:ring-offset-2" for="freq-recurring">
+<span class="material-symbols-outlined mb-2 text-primary" data-icon="autorenew">autorenew</span>
+                                Monthly Giving
+                            </label>
+</div>
+</fieldset>
+<!-- Impact Explanations (Dynamic based on selection in a real app, static here for design) -->
+<div class="bg-surface-paper border border-outline-variant p-4 rounded text-center">
+<p class="font-body-md text-body-md text-on-surface-variant italic" id="impact-text-one-off">
+                            A single contribution provides immediate support for our most pressing needs.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant italic hidden" id="impact-text-recurring">
+                            A recurring gift sustains our foundational work month over month.
+                        </p>
+</div>
+</div>
+<!-- Next Step CTA -->
+<div class="mt-stack-md">
+<button class="w-full bg-primary text-white font-label-lg text-label-lg py-4 rounded hover:bg-primary-container transition-colors uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-sm" type="button">
+                        Continue to Amount
+                    </button>
+</div>
+</form>
+<!-- Trust Footer Component within Vessel -->
+<div class="mt-stack-lg pt-stack-sm border-t border-outline-variant flex flex-col items-center gap-unit text-center">
+<div class="flex items-center gap-2 text-success-secure">
+<span class="material-symbols-outlined text-[16px]" data-icon="lock" data-weight="fill">lock</span>
+<span class="font-label-sm text-label-sm uppercase">Secure SSL Encrypted Connection</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic text-sm">
+                    All donations are tax-deductible as permitted by law.
+                </p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only for main destinations, suppressed here as it's a transactional flow) -->
+<!-- The prompt states this is a "Giving Page" where users are in a flow (Step 1 of 6). 
+         Therefore, the bottom navigation shell should be suppressed per the Semantic Shell Mandate for Transactional/Linear flows. -->
+<!-- Optional Visual Flourish Background (Subtle) -->
+<div class="fixed inset-0 z-[-1] pointer-events-none opacity-[0.03]" data-alt="A very subtle, abstract, minimal texture resembling soft, textured linen or ancient parchment in light, warm tones. The lighting is perfectly even, conveying a sense of calm, timeless tranquility. Minimalist editorial style, sacred aesthetic, high key." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBhCq1ytEwG0jTqV4uZWlRpzNHybMXvPGPR9KSDFydAJz9mXuGz5C7SOkybHwgJvn46geyKFM6FlfMSlgeGBbxI3O8KW0nsXKso_Buwnij9UsvSL6IhwKObT31bpI454mJsQjtJdVieVi4vpf_vf12pnxcIEG8zYwWZwyNJbMdFZoIvTYBlrdphInhmzfrbhsJjqjq0qUydH3mvX1-G9MWeOfd-x3IzQUu11pwF837HndJ4SOxuFQ64')"></div>
+<script>
+        // Simple script to toggle impact text (Vanilla JS for micro-interaction)
+        document.addEventListener('DOMContentLoaded', () => {
+            const oneOffRadio = document.getElementById('freq-one-off');
+            const recurringRadio = document.getElementById('freq-recurring');
+            const oneOffText = document.getElementById('impact-text-one-off');
+            const recurringText = document.getElementById('impact-text-recurring');
+
+            function updateImpactText() {
+                if (oneOffRadio.checked) {
+                    oneOffText.classList.remove('hidden');
+                    recurringText.classList.add('hidden');
+                } else if (recurringRadio.checked) {
+                    oneOffText.classList.add('hidden');
+                    recurringText.classList.remove('hidden');
+                }
+            }
+
+            oneOffRadio.addEventListener('change', updateImpactText);
+            recurringRadio.addEventListener('change', updateImpactText);
+        });
+    </script>
+</body></html>

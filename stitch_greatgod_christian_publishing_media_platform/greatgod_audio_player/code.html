@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sermon Audio Player</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#ffe085",
+                      "error": "#ba1a1a",
+                      "surface-paper": "#fbf9f4",
+                      "background": "#fff8f7",
+                      "surface-container-high": "#f6e4e2",
+                      "stone-outline": "#887270",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-dim": "#e8d6d4",
+                      "on-secondary-fixed": "#151d1b",
+                      "on-primary-container": "#e27770",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-primary": "#ffffff",
+                      "surface-linen": "#f5f3ee",
+                      "surface-variant": "#f1dedc",
+                      "on-background": "#231918",
+                      "on-tertiary-container": "#4e3e00",
+                      "outline-variant": "#dbc0be",
+                      "tertiary-container": "#c6a94e",
+                      "secondary-fixed-dim": "#bfc9c5",
+                      "on-tertiary": "#ffffff",
+                      "outline": "#887270",
+                      "surface": "#fff8f7",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#fff0ef",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "inverse-primary": "#ffb3ad",
+                      "on-surface-variant": "#554240",
+                      "primary-container": "#5d1212",
+                      "primary-fixed": "#ffdad7",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "surface-container": "#fceae8",
+                      "secondary-fixed": "#dbe5e0",
+                      "secondary-container": "#dbe5e0",
+                      "on-surface": "#231918",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed": "#410004",
+                      "primary": "#3e0003",
+                      "on-secondary": "#ffffff",
+                      "secondary": "#57605d",
+                      "success-secure": "#2e4d41",
+                      "tertiary": "#735c00",
+                      "tertiary-fixed-dim": "#e3c466",
+                      "on-tertiary-fixed": "#231b00",
+                      "inverse-on-surface": "#ffedeb",
+                      "surface-tint": "#9c413d",
+                      "on-secondary-container": "#5d6663",
+                      "on-secondary-fixed-variant": "#404946",
+                      "inverse-surface": "#392e2d",
+                      "surface-container-highest": "#f1dedc",
+                      "on-error": "#ffffff",
+                      "surface-bright": "#fff8f7"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "container-max": "1120px",
+                      "form-width": "560px",
+                      "gutter": "32px",
+                      "unit": "8px",
+                      "stack-lg": "64px",
+                      "stack-sm": "16px",
+                      "stack-md": "32px"
+              },
+              "fontFamily": {
+                      "donation-amount": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "label-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "donation-amount": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Smooth transition for minimizable player */
+        #full-player {
+            transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1), opacity 0.4s ease;
+        }
+        #full-player.minimized {
+            transform: translateY(100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        #mini-player {
+            transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1), opacity 0.3s ease;
+            transform: translateY(150%);
+            opacity: 0;
+        }
+        #mini-player.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Custom range slider styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            background: #5d1212; /* primary-container */
+            cursor: pointer;
+            margin-top: -5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 2px;
+            cursor: pointer;
+            background: #dbc0be; /* outline-variant */
+            border-radius: 1px;
+        }
+        input[type=range]:focus {
+            outline: none;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface h-screen w-screen overflow-hidden flex flex-col font-body-md relative">
+<!-- Top App Bar Component -->
+<header class="w-full top-0 sticky bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-stone-outline flex justify-between items-center px-margin-mobile py-4 z-40">
+<button aria-label="Menu" class="text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">GreatGod</div>
+<button aria-label="Search" class="text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Full Screen Player View -->
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile md:px-form-width pb-stack-lg relative z-10 bg-surface-paper" id="full-player">
+<!-- Artwork -->
+<div class="w-full max-w-[400px] aspect-square rounded-xl overflow-hidden mb-stack-md shadow-sm border border-outline-variant relative group">
+<img alt="Sermon Artwork" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="A serene landscape bathed in early morning golden hour light, representing peace and spiritual awakening. Soft mist rises from a calm lake reflecting tall, ancient pine trees. The color palette features deep earth tones, warm ambers, and gentle stone greys, adhering to a sacred, minimalist aesthetic. High-quality editorial style photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN6yDHQeSOXWxiHs1JqXNdwgSmwbyJPY6vvJ3Dpr2Yz5MIAzVq9z8EFoPOveUOmhd6vpW8lLJ_5ZdJPaVie8DQUh660CS2ZJNpsZHUS7-yvBmADofsMq5mYbBBtDwmzvRzR4fbbVkRq2xd_ahciGVQRLqq2regUbkUTxf85pweKDUBk90Dbpns2bCLmJUdc-y9oQFC6HsGbpJqSKo4GkkVp685DLysrSVsnyGya2ZfLViRPPM6M3n7"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<!-- Metadata -->
+<div class="text-center mb-stack-lg w-full max-w-[500px]">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">The Silence of Grace</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-1">Pastor Thomas Merton</p>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Sunday Service • 45 mins</p>
+</div>
+<!-- Scrubber -->
+<div class="w-full max-w-[560px] mb-8">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-2">
+<span>12:34</span>
+<span>45:00</span>
+</div>
+<div class="relative w-full h-2 bg-surface-variant rounded-full flex items-center">
+<!-- Progress Bar visual representation -->
+<div class="absolute left-0 top-0 h-full bg-primary-container rounded-full" style="width: 30%;"></div>
+<input aria-label="Audio progress" class="absolute inset-0 w-full z-10 opacity-0 cursor-pointer" max="100" min="0" type="range" value="30"/>
+<!-- Thumb visual -->
+<div class="absolute w-3 h-3 bg-primary-container rounded-full shadow-sm" style="left: 30%; transform: translateX(-50%);"></div>
+</div>
+</div>
+<!-- Controls -->
+<div class="flex items-center justify-center gap-8 w-full max-w-[400px]">
+<button aria-label="Skip backward 15 seconds" class="text-on-surface-variant hover:text-primary transition-colors p-3 rounded-full hover:bg-surface-container-low active:scale-90">
+<span class="material-symbols-outlined text-[28px]" data-icon="replay_10">replay_10</span>
+</button>
+<button aria-label="Previous track" class="text-on-surface-variant hover:text-primary transition-colors p-3 rounded-full hover:bg-surface-container-low active:scale-90">
+<span class="material-symbols-outlined text-[32px]" data-icon="skip_previous">skip_previous</span>
+</button>
+<!-- Play/Pause Button - Primary Action -->
+<button aria-label="Play" class="bg-primary-container text-on-primary w-20 h-20 rounded-full flex items-center justify-center hover:bg-primary transition-colors shadow-sm active:scale-95">
+<span class="material-symbols-outlined fill text-[40px]" data-icon="play_arrow" data-weight="fill">play_arrow</span>
+</button>
+<button aria-label="Next track" class="text-on-surface-variant hover:text-primary transition-colors p-3 rounded-full hover:bg-surface-container-low active:scale-90">
+<span class="material-symbols-outlined text-[32px]" data-icon="skip_next">skip_next</span>
+</button>
+<button aria-label="Skip forward 15 seconds" class="text-on-surface-variant hover:text-primary transition-colors p-3 rounded-full hover:bg-surface-container-low active:scale-90">
+<span class="material-symbols-outlined text-[28px]" data-icon="forward_10">forward_10</span>
+</button>
+</div>
+<!-- Minimize Action -->
+<button aria-label="Minimize Player" class="absolute top-6 right-6 md:right-8 text-on-surface-variant hover:text-primary p-2 rounded-full hover:bg-surface-container-low transition-colors" id="btn-minimize">
+<span class="material-symbols-outlined" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</main>
+<!-- Mini Player (Floating above Bottom Nav) -->
+<div class="fixed bottom-[72px] md:bottom-6 left-0 right-0 mx-margin-mobile md:mx-auto md:w-[560px] bg-surface-linen border border-outline-variant rounded-xl shadow-sm z-30 flex items-center p-3 cursor-pointer hover:bg-surface-container-highest transition-colors" id="mini-player">
+<div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 border border-outline-variant mr-4">
+<img alt="Mini Artwork" class="object-cover w-full h-full" data-alt="A serene landscape bathed in early morning golden hour light, representing peace and spiritual awakening. Soft mist rises from a calm lake reflecting tall, ancient pine trees. The color palette features deep earth tones, warm ambers, and gentle stone greys, adhering to a sacred, minimalist aesthetic. High-quality editorial style photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq7tTXJG2GZFwrHyVWvjBoojIU2sBkNn-mzRRhS6qseyPb9I5a1PxwcVFxffnLeCHyK4EKLuHjr_ej4pRh6r6pHluNpytiH0IWWVBYrFBfbucpjX9tor5VoUh2fRz6oK-98MGSBqzTqqu6NcwN_jDdjCUOBXz9KBD7yCu-I3bLIlfkWyq1WUpyirZ2c1c5XtmPql6t3LPR0vuzmj7RkbTjT_6gBwmc72IerT-tkezCwkF56wIAe8CE"/>
+</div>
+<div class="flex-grow min-w-0 pr-4">
+<h4 class="font-label-lg text-label-lg text-primary truncate">The Silence of Grace</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">Pastor Thomas Merton</p>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<button aria-label="Play" class="text-primary p-2 rounded-full hover:bg-surface-variant active:scale-90 transition-all">
+<span class="material-symbols-outlined fill" data-icon="play_arrow" data-weight="fill">play_arrow</span>
+</button>
+<button aria-label="Close Mini Player" class="text-on-surface-variant p-2 rounded-full hover:bg-surface-variant active:scale-90 transition-all" id="btn-close-mini">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Mini Progress -->
+<div class="absolute bottom-0 left-0 h-1 bg-surface-variant w-full rounded-b-xl overflow-hidden">
+<div class="h-full bg-primary-container w-[30%]"></div>
+</div>
+</div>
+<!-- BottomNavBar Component (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-linen dark:bg-inverse-surface border-t border-outline-variant flex justify-around items-center pt-2 pb-safe px-margin-mobile md:hidden">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed scale-100 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Discover (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed scale-100 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<!-- Library (Inactive - Assuming context is playing a specific item, library might not be strictly active, but player usually floats over it. We'll leave all inactive for full-screen player context unless intended otherwise. Let's make Podcasts/Sermons context map to Library or similar, but instructions say map to intent. The player is a modal/overlay state, so nav might be suppressed. However, instructions say "Standard list layouts... BottomNav destination count 4". If this is a destination screen for 'Podcasts', map to Library maybe? We will keep them generic inactive since it's an overlay.) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed scale-100 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="library_books">library_books</span>
+<span class="font-label-sm text-label-sm">Library</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed scale-100 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fullPlayer = document.getElementById('full-player');
+            const miniPlayer = document.getElementById('mini-player');
+            const btnMinimize = document.getElementById('btn-minimize');
+            const btnCloseMini = document.getElementById('btn-close-mini');
+
+            // Minimize action
+            btnMinimize.addEventListener('click', () => {
+                fullPlayer.classList.add('minimized');
+                miniPlayer.classList.add('active');
+            });
+
+            // Maximize action (clicking mini player body)
+            miniPlayer.addEventListener('click', (e) => {
+                // Don't maximize if clicking the close or play buttons
+                if(e.target.closest('button')) return;
+                
+                fullPlayer.classList.remove('minimized');
+                miniPlayer.classList.remove('active');
+            });
+
+            // Close mini player entirely
+            btnCloseMini.addEventListener('click', (e) => {
+                e.stopPropagation();
+                miniPlayer.classList.remove('active');
+                // In a real app, this might stop playback and return to main screen
+            });
+        });
+    </script>
+</body></html>

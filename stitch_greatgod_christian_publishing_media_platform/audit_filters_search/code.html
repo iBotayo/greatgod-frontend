@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Audit Log - Filters Expanded</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error": "#ba1a1a",
+                      "on-secondary-container": "#5b6561",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed": "#141d1a",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "primary": "#3e0003",
+                      "secondary-container": "#d8e2dd",
+                      "on-tertiary-container": "#4e3d00",
+                      "inverse-primary": "#ffb3ad",
+                      "outline": "#887270",
+                      "inverse-surface": "#30312e",
+                      "primary-fixed": "#ffdad7",
+                      "surface-bright": "#fbf9f4",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f5f3ee",
+                      "tertiary": "#735c00",
+                      "secondary": "#57605d",
+                      "secondary-fixed": "#dbe5e0",
+                      "surface-container-high": "#eae8e3",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "surface-container": "#f0eee9",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "primary-container": "#5d1212",
+                      "surface-variant": "#e4e2dd",
+                      "tertiary-fixed": "#ffe088",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "background": "#fbf9f4",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "surface-container-highest": "#e4e2dd",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-background": "#1b1c19",
+                      "on-surface-variant": "#554240",
+                      "tertiary-container": "#cca72f",
+                      "surface-dim": "#dbdad5",
+                      "outline-variant": "#dbc0be",
+                      "on-primary-container": "#e27770",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "on-primary-fixed": "#410004",
+                      "on-surface": "#1b1c19",
+                      "inverse-on-surface": "#f2f1ec",
+                      "surface-tint": "#9c413d",
+                      "surface": "#fbf9f4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-lg": "64px",
+                      "stack-md": "32px",
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "gutter": "32px",
+                      "container-max": "1120px",
+                      "stack-sm": "16px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbf9f4; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dbe5e0; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #bfc9c4; 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex overflow-hidden">
+<!-- SideNavBar -->
+<aside class="bg-surface-container-low border-r border-outline-variant h-screen w-64 fixed left-0 top-0 flex flex-col py-unit px-4 z-50">
+<div class="mb-8 mt-4 flex items-center px-4 gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="GreatGod Admin Profile" class="w-full h-full object-cover" data-alt="A refined, subtle avatar placeholder image in light cream and deep burgundy tones, minimalist style, suitable for a sophisticated editorial CMS administrator profile picture. Soft lighting, uncluttered background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASkr_tjWWiswZ2EmhE-mKgeNuD7VV0Pjilxz8dweKyp_V__JmWKLpOKnvqDjwSw14HBBQpSVRbgLrqrt_Nmz9TKCeVxfSUKiDxfOwZKAwsF2sh1-7Y_hbZOgtQOuv8yez2hXjFunVYbkC-7B8hWS_X1HKRRgFHF65SZuTtjO2s6X7JIFnODSeXEknJ5bYyljH6Fngv1FMjIoB9XKNO1cpXtHF6GM3WlGM5RrQmRmZhfBaqU0ultza2"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-medium text-primary">GreatGod</h1>
+<p class="font-label-sm text-label-sm text-secondary">Editorial CMS</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-sm text-label-sm">Content Manager</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="mic_external_on">mic_external_on</span>
+<span class="font-label-sm text-label-sm">Sermon Library</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="manage_accounts">manage_accounts</span>
+<span class="font-label-sm text-label-sm">User Roles</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold border-r-2 border-primary bg-surface-container opacity-80 duration-150" href="#">
+<span class="material-symbols-outlined filled" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-outline-variant space-y-1">
+<button class="w-full mb-4 bg-primary-container text-on-primary rounded-lg py-3 px-4 font-label-sm text-label-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Publication
+            </button>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-secondary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="help_outline">help_outline</span>
+<span class="font-label-sm text-label-sm">Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-secondary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+<span class="font-label-sm text-label-sm">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col h-screen relative">
+<!-- TopNavBar -->
+<header class="bg-surface border-b border-outline-variant docked full-width top-0 sticky z-40 flex justify-between items-center w-full px-gutter h-16">
+<div class="flex items-center gap-6">
+<h2 class="font-headline-md text-headline-md text-primary hidden lg:block">GreatGod CMS</h2>
+<nav class="hidden md:flex gap-6 ml-4">
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-all py-5" href="#">Recent</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-all py-5" href="#">Drafts</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-all py-5" href="#">Published</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[20px]">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent w-64" placeholder="Search logs..." type="text" value="user:admin"/>
+</div>
+<button class="text-secondary hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<button class="bg-primary-container text-on-primary font-label-sm text-label-sm px-4 py-2 rounded-full hover:opacity-90 transition-opacity ml-2">
+                    Publish Changes
+                </button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-2">
+<img alt="Administrator" class="w-full h-full object-cover" data-alt="Administrator profile thumbnail, minimalist editorial style, warm tones, subtle lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvQ8LW0UZ1HCR8uUelA8_v8j31nzf5AgcFHbxfUA0mbBBL5KCISCxo0psjPiZQ3dI1d7TV9qe4IjbBnrSCr9LW9eidC91dkhL75lqkzQxHZK_UenkZU10rPolrBL4z-6b42acW5w_ZFbdj0wQ-AxCo4AQfJ7P4NmPlXVW-C0YW1JShcrSBsTt8eI2zQV7pJkI6dO_vfrMdBjvFQH6kp38B9LMgwVqEA0FqAHMxX15jxEy0nXhqxdbG"/>
+</div>
+</div>
+</header>
+<!-- Page Content: Audit Log Table (Dimmed Background) -->
+<div class="flex-1 overflow-auto bg-background p-gutter relative">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-2">Audit Log</h2>
+<p class="font-body-md text-secondary">System-wide record of administrative and editorial actions.</p>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded bg-surface-container text-primary font-label-sm text-label-sm hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filters Active (3)
+                    </button>
+</div>
+<!-- Dimming Overlay for background content -->
+<div class="relative">
+<div class="absolute inset-0 bg-surface-container-low/60 backdrop-blur-[1px] z-10 rounded-lg pointer-events-none"></div>
+<!-- Table Header -->
+<div class="bg-surface-container-lowest rounded-t-lg border border-outline-variant border-b-0 overflow-hidden">
+<div class="grid grid-cols-12 gap-4 p-4 border-b border-outline-variant bg-surface-container-low font-label-sm text-label-sm text-secondary uppercase tracking-wider">
+<div class="col-span-3">Timestamp</div>
+<div class="col-span-3">Actor</div>
+<div class="col-span-2">Action</div>
+<div class="col-span-3">Target</div>
+<div class="col-span-1 text-right">Status</div>
+</div>
+<!-- Table Rows -->
+<div class="flex flex-col">
+<!-- Row 1 -->
+<div class="grid grid-cols-12 gap-4 p-4 border-b border-outline-variant items-center hover:bg-surface-container-low transition-colors">
+<div class="col-span-3 font-body-md text-on-surface-variant text-sm">Oct 24, 2023 · 14:32:01</div>
+<div class="col-span-3 flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-label-sm text-[10px]">JD</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-background">John Doe</span>
+<span class="font-label-sm text-secondary text-[11px]">Administrator</span>
+</div>
+</div>
+<div class="col-span-2">
+<span class="inline-flex items-center px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-[11px]">UPDATE_USER_ROLE</span>
+</div>
+<div class="col-span-3 font-body-md text-sm text-on-surface-variant truncate">Jane Smith -&gt; Editor</div>
+<div class="col-span-1 text-right">
+<span class="material-symbols-outlined text-surface-tint text-[18px]">check_circle</span>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 gap-4 p-4 border-b border-outline-variant items-center hover:bg-surface-container-low transition-colors">
+<div class="col-span-3 font-body-md text-on-surface-variant text-sm">Oct 24, 2023 · 11:15:44</div>
+<div class="col-span-3 flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-sm text-[10px]">SA</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-background">System Auto</span>
+<span class="font-label-sm text-secondary text-[11px]">System</span>
+</div>
+</div>
+<div class="col-span-2">
+<span class="inline-flex items-center px-2 py-1 rounded bg-surface-variant text-on-surface-variant font-label-sm text-[11px]">BACKUP_DB</span>
+</div>
+<div class="col-span-3 font-body-md text-sm text-on-surface-variant truncate">Daily Snapshot</div>
+<div class="col-span-1 text-right">
+<span class="material-symbols-outlined text-surface-tint text-[18px]">check_circle</span>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-12 gap-4 p-4 border-b border-outline-variant items-center hover:bg-surface-container-low transition-colors">
+<div class="col-span-3 font-body-md text-on-surface-variant text-sm">Oct 23, 2023 · 09:42:10</div>
+<div class="col-span-3 flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-label-sm text-[10px]">JD</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-background">John Doe</span>
+<span class="font-label-sm text-secondary text-[11px]">Administrator</span>
+</div>
+</div>
+<div class="col-span-2">
+<span class="inline-flex items-center px-2 py-1 rounded bg-error-container text-on-error-container font-label-sm text-[11px]">DELETE_ARTICLE</span>
+</div>
+<div class="col-span-3 font-body-md text-sm text-on-surface-variant truncate">ID: 4921 (Draft)</div>
+<div class="col-span-1 text-right">
+<span class="material-symbols-outlined text-surface-tint text-[18px]">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-between items-center p-4 bg-surface-container-lowest rounded-b-lg border border-outline-variant border-t-0">
+<span class="font-label-sm text-secondary">Showing 1-3 of 1,240 records</span>
+<div class="flex gap-2">
+<button class="p-1 text-outline hover:text-primary disabled:opacity-50"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-1 text-primary"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Filter Panel Overlay (The focus of the prompt) -->
+<div class="absolute right-8 top-24 w-96 bg-surface-container-lowest shadow-2xl rounded-xl border border-outline-variant z-50 flex flex-col overflow-hidden max-h-[calc(100vh-8rem)]">
+<!-- Panel Header -->
+<div class="px-6 py-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<h3 class="font-headline-md text-headline-md text-on-background text-xl">Filter Audit Log</h3>
+<button class="text-secondary hover:text-primary rounded-full p-1 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Panel Body (Scrollable) -->
+<div class="p-6 overflow-y-auto flex-1 space-y-6">
+<!-- Actor Search -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-background mb-2">Actor (User/System)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[18px]">person_search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface border border-outline-variant rounded focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent font-body-md text-sm text-on-surface" placeholder="Search by name or ID..." type="text" value="admin"/>
+</div>
+</div>
+<div class="h-px bg-outline-variant w-full opacity-50"></div>
+<!-- Role Filter -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-background mb-3">Role</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<input checked="" class="peer appearance-none w-4 h-4 border border-outline rounded bg-surface checked:bg-primary-container checked:border-primary-container focus:ring-2 focus:ring-primary-container/30 transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary text-[14px] opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<span class="font-body-md text-sm text-on-surface-variant group-hover:text-on-background transition-colors">Administrator</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<input class="peer appearance-none w-4 h-4 border border-outline rounded bg-surface checked:bg-primary-container checked:border-primary-container focus:ring-2 focus:ring-primary-container/30 transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary text-[14px] opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<span class="font-body-md text-sm text-on-surface-variant group-hover:text-on-background transition-colors">Editor</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<input class="peer appearance-none w-4 h-4 border border-outline rounded bg-surface checked:bg-primary-container checked:border-primary-container focus:ring-2 focus:ring-primary-container/30 transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary text-[14px] opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<span class="font-body-md text-sm text-on-surface-variant group-hover:text-on-background transition-colors">Moderator</span>
+</label>
+</div>
+</div>
+<div class="h-px bg-outline-variant w-full opacity-50"></div>
+<!-- Action Category Filter -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-background mb-3">Action Category</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 border border-outline-variant rounded-full font-label-sm text-label-sm bg-surface text-secondary hover:bg-surface-container transition-colors">Content</button>
+<button class="px-3 py-1.5 border border-primary-container rounded-full font-label-sm text-label-sm bg-primary-container/10 text-primary-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span> User
+                        </button>
+<button class="px-3 py-1.5 border border-outline-variant rounded-full font-label-sm text-label-sm bg-surface text-secondary hover:bg-surface-container transition-colors">Financial</button>
+<button class="px-3 py-1.5 border border-primary-container rounded-full font-label-sm text-label-sm bg-primary-container/10 text-primary-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span> System
+                        </button>
+</div>
+</div>
+<div class="h-px bg-outline-variant w-full opacity-50"></div>
+<!-- Date Range (Visual Representation) -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-background mb-3">Date Range</label>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<span class="font-label-sm text-[11px] text-secondary mb-1 block uppercase tracking-wider">Start Date</span>
+<div class="flex items-center border border-outline-variant rounded bg-surface px-3 py-2 cursor-pointer hover:border-outline transition-colors">
+<span class="material-symbols-outlined text-secondary text-[16px] mr-2">calendar_today</span>
+<span class="font-body-md text-sm text-on-surface">Oct 1, 2023</span>
+</div>
+</div>
+<div>
+<span class="font-label-sm text-[11px] text-secondary mb-1 block uppercase tracking-wider">End Date</span>
+<div class="flex items-center border border-outline-variant rounded bg-surface px-3 py-2 cursor-pointer hover:border-outline transition-colors">
+<span class="material-symbols-outlined text-secondary text-[16px] mr-2">calendar_today</span>
+<span class="font-body-md text-sm text-secondary italic">Present</span>
+</div>
+</div>
+</div>
+</div>
+<div class="h-px bg-outline-variant w-full opacity-50"></div>
+<!-- Outcome -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-background mb-3">Outcome</label>
+<select class="w-full border border-outline-variant rounded bg-surface px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent font-body-md text-sm text-on-surface appearance-none">
+<option>Any Outcome</option>
+<option>Success</option>
+<option>Failure / Error</option>
+<option>Pending</option>
+</select>
+</div>
+</div>
+<!-- Panel Footer Actions -->
+<div class="px-6 py-4 border-t border-outline-variant bg-surface-container-lowest flex justify-end gap-3">
+<button class="px-4 py-2 border border-outline text-secondary font-label-sm text-label-sm rounded hover:bg-surface-container transition-colors">
+                    Reset
+                </button>
+<button class="px-4 py-2 bg-primary-container text-on-primary font-label-sm text-label-sm rounded hover:opacity-90 transition-opacity shadow-sm">
+                    Apply Filters
+                </button>
+</div>
+</div>
+</main>
+</body></html>

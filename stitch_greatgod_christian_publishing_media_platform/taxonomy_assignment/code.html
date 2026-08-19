@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sacred Editorial - Taxonomy Assignment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#f0eee9",
+                        "outline-variant": "#dbc0be",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ffdad7",
+                        "background": "#fbf9f4",
+                        "on-primary-container": "#e27770",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#5d1212",
+                        "primary": "#3e0003",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "secondary-container": "#d8e2dd",
+                        "on-surface-variant": "#554240",
+                        "surface": "#fbf9f4",
+                        "on-secondary-container": "#5b6561",
+                        "on-tertiary-container": "#4e3d00",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "inverse-primary": "#ffb3ad",
+                        "surface-dim": "#dbdad5",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "tertiary": "#735c00",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-primary-fixed": "#410004",
+                        "surface-bright": "#fbf9f4",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-surface": "#1b1c19",
+                        "surface-container-high": "#eae8e3",
+                        "surface-variant": "#e4e2dd",
+                        "secondary": "#57605d",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#30312e",
+                        "on-background": "#1b1c19",
+                        "surface-container-low": "#f5f3ee",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "outline": "#887270",
+                        "tertiary-container": "#cca72f",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#9c413d",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#141d1a",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary-fixed": "#dbe5e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "unit": "8px",
+                        "stack-md": "32px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "64px",
+                        "container-max": "1120px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "display-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .stone-border {
+            border-color: #E5E0D8;
+        }
+        
+        /* Custom styling for inputs to match Sacred Editorial */
+        input[type="text"], select {
+            background-color: theme('colors.surface-container-lowest');
+            border: 1px solid theme('colors.outline-variant');
+            transition: all 0.2s ease;
+        }
+        input[type="text"]:focus, select:focus {
+            outline: none;
+            border-color: theme('colors.primary-container');
+            box-shadow: 0 0 0 2px theme('colors.primary-container'), 0 0 0 4px rgba(93, 18, 18, 0.1);
+        }
+        
+        /* Subtle interactive states */
+        .interactive-card {
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+        .interactive-card:hover {
+            background-color: #f7f5f0;
+            border-color: theme('colors.outline');
+        }
+        
+        /* Tag styling */
+        .tag-pill {
+            display: inline-flex;
+            align-items: center;
+            background-color: theme('colors.surface-container-high');
+            border: 1px solid theme('colors.outline-variant');
+            border-radius: 9999px;
+            padding: 4px 12px;
+            font-family: theme('fontFamily.label-sm');
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: theme('colors.on-surface-variant');
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .tag-pill:hover {
+            background-color: theme('colors.surface-variant');
+            border-color: theme('colors.outline');
+        }
+        .tag-pill.selected {
+            background-color: theme('colors.primary-container');
+            color: theme('colors.on-primary');
+            border-color: theme('colors.primary-container');
+        }
+        
+        .divider-flourish {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #E5E0D8, transparent);
+            margin: theme('spacing.stack-md') 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar -->
+<header class="bg-background dark:bg-background text-primary dark:text-inverse-primary w-full top-0 sticky border-b border-outline-variant dark:border-outline-variant z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-gutter h-16 w-full max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md text-primary dark:text-inverse-primary tracking-tight">
+                Sacred Editorial
+            </div>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 text-label-sm font-label-sm" href="#">Dashboard</a>
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 text-label-sm font-label-sm cursor-pointer active:opacity-70 transition-opacity" href="#">Review Queue</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 text-label-sm font-label-sm" href="#">Calendar</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 text-label-sm font-label-sm" href="#">Library</a>
+</nav>
+<div class="flex items-center gap-4">
+<button aria-label="Notifications" class="text-secondary hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="Settings" class="text-secondary hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden border border-outline-variant ml-2 flex-shrink-0 cursor-pointer">
+<img alt="Editor Profile" class="w-full h-full object-cover" data-alt="A small, circular profile picture of an editor, featuring a muted, warm-toned headshot against a soft cream background. The lighting is gentle and professional, fitting a high-end classical publishing aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5ouJcEqMU170pjeI48t5U9iKUG_1an-nR6GBQeki9TONdKWHpsS1Jgz_7OkXSHlr2cMU4OdsAe68qaxHmIY6qMq8ytAiBC21mbW2i5LxekHxqsIbuZFJHFFFw-P-RsUwmip8WryZC2qykTaxrBorUe1V-hH2XsHsTzpOpu3zyQNahQ3IT5Lz9bAdvk60wJCjWYMEcun-FhJ3vFRD5lGUSX3x61OBGv2GAunFVYdsQ-eBXFWzf4K6e"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 w-full max-w-container-max mx-auto">
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full px-margin-mobile md:px-gutter py-stack-md md:py-stack-lg flex justify-center">
+<!-- Focused Form Area -->
+<div class="w-full max-w-3xl">
+<!-- Breadcrumb / Context -->
+<div class="flex items-center gap-2 mb-stack-sm text-secondary text-label-sm font-label-sm">
+<a class="hover:text-primary transition-colors" href="#">Review Queue</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">Manuscripts</a>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface">Taxonomy</span>
+</div>
+<!-- Manuscript Header -->
+<header class="mb-stack-lg border-b stone-border pb-stack-sm">
+<span class="text-label-sm font-label-sm text-primary mb-2 block uppercase tracking-wider">Step 2 of 3 · Taxonomy Assignment</span>
+<h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary mb-4 leading-tight">
+                        The Teleology of Silence: Monastic Rhythms in the Digital Age
+                    </h1>
+<div class="flex items-center gap-3 text-secondary text-label-sm font-label-sm opacity-70">
+<span>By Eleanor Vance</span>
+<span>·</span>
+<span>4,200 words</span>
+<span>·</span>
+<span>Submitted Oct 12</span>
+</div>
+</header>
+<!-- Form Section -->
+<div class="space-y-stack-md">
+<!-- Form Info Text -->
+<p class="text-body-md font-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+                        Assign the structural metadata for this manuscript. The Primary Topic dictates its core placement within the library, while categories and tags facilitate lateral discovery.
+                    </p>
+<!-- Primary Topic (Required) -->
+<div class="bg-[#F2EEE6] p-stack-sm md:p-stack-md rounded border stone-border">
+<div class="flex justify-between items-start mb-2">
+<label class="text-label-sm font-label-sm text-primary flex items-center gap-1" for="primary-topic">
+                                Primary Topic <span aria-hidden="true" class="text-error">*</span>
+</label>
+<span class="text-xs text-secondary opacity-70">Required</span>
+</div>
+<select aria-describedby="topic-error" aria-required="true" class="w-full p-3 rounded font-body-md text-body-md text-on-surface bg-surface-container-lowest focus:ring-2 focus:ring-primary-container focus:border-primary-container" id="primary-topic" name="primary_topic" required="">
+<option disabled="" selected="" value="">Select a foundational domain...</option>
+<option value="theology">Theology &amp; Doctrine</option>
+<option value="philosophy">Philosophy &amp; Ethics</option>
+<option value="history">Historical Analysis</option>
+<option value="culture">Culture &amp; Society</option>
+<option value="practice">Spiritual Practice</option>
+</select>
+<div class="hidden mt-2 text-error text-sm flex items-center gap-1" id="topic-error">
+<span class="material-symbols-outlined text-[16px]" data-icon="error">error</span>
+                            A primary topic must be assigned before scheduling.
+                        </div>
+</div>
+<!-- Secondary Classification -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-sm md:gap-gutter">
+<!-- Category -->
+<div class="flex flex-col">
+<label class="text-label-sm font-label-sm text-on-surface-variant mb-2" for="category">Category</label>
+<select class="w-full p-3 rounded border stone-border font-body-md text-body-md text-on-surface bg-surface-container-lowest focus:ring-2 focus:ring-primary-container" id="category" name="category">
+<option disabled="" selected="" value="">Select category...</option>
+<option value="essay">Long-form Essay</option>
+<option value="review">Book Review</option>
+<option value="interview">Interview</option>
+<option value="reflection">Reflection</option>
+</select>
+<p class="text-xs text-secondary mt-1 opacity-70">Determines the content format.</p>
+</div>
+<!-- Series -->
+<div class="flex flex-col">
+<label class="text-label-sm font-label-sm text-on-surface-variant mb-2" for="series">Series Collection</label>
+<select class="w-full p-3 rounded border stone-border font-body-md text-body-md text-on-surface bg-surface-container-lowest focus:ring-2 focus:ring-primary-container" id="series" name="series">
+<option selected="" value="">None (Standalone)</option>
+<option value="modern-monasticism">Modern Monasticism</option>
+<option value="tech-ethics">Technology &amp; Ethics</option>
+<option value="contemplative">The Contemplative Life</option>
+</select>
+<p class="text-xs text-secondary mt-1 opacity-70">Optional: Group with existing works.</p>
+</div>
+</div>
+<div class="divider-flourish"></div>
+<!-- Tags (Bento-style layout for selection) -->
+<div>
+<div class="flex justify-between items-center mb-4">
+<label class="text-label-sm font-label-sm text-on-surface-variant">Thematic Tags</label>
+<button class="text-primary text-label-sm font-label-sm hover:underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]" data-icon="add">add</span> New Tag
+                            </button>
+</div>
+<div class="bg-surface-container p-stack-sm rounded border stone-border flex flex-wrap gap-2">
+<!-- Selected Tags -->
+<button aria-pressed="true" class="tag-pill selected" type="button">
+                                Monasticism
+                                <span class="material-symbols-outlined text-[14px] ml-1" data-icon="close">close</span>
+</button>
+<button aria-pressed="true" class="tag-pill selected" type="button">
+                                Technology
+                                <span class="material-symbols-outlined text-[14px] ml-1" data-icon="close">close</span>
+</button>
+<button aria-pressed="true" class="tag-pill selected" type="button">
+                                Silence
+                                <span class="material-symbols-outlined text-[14px] ml-1" data-icon="close">close</span>
+</button>
+<!-- Available Tags -->
+<button aria-pressed="false" class="tag-pill" type="button">Contemplation</button>
+<button aria-pressed="false" class="tag-pill" type="button">Asceticism</button>
+<button aria-pressed="false" class="tag-pill" type="button">Digital Culture</button>
+<button aria-pressed="false" class="tag-pill" type="button">Community</button>
+<button aria-pressed="false" class="tag-pill" type="button">Attention</button>
+<button aria-pressed="false" class="tag-pill" type="button">Modernity</button>
+</div>
+<p class="text-xs text-secondary mt-2 opacity-70">Select up to 5 thematic tags to improve internal search and related-reading algorithms.</p>
+</div>
+<!-- Actions -->
+<div class="pt-stack-md mt-stack-md border-t stone-border flex justify-between items-center">
+<button class="text-label-sm font-label-sm text-secondary hover:text-primary transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_back">arrow_back</span>
+                            Back to Manuscript
+                        </button>
+<div class="flex gap-4">
+<button class="px-6 py-2 rounded text-label-sm font-label-sm border border-secondary text-secondary hover:bg-surface-container hover:text-primary transition-all" type="button">
+                                Save Draft
+                            </button>
+<!-- The 'disabled' state styling is applied via group/peer logic or JS in a real app, 
+                                 here represented by lower opacity and pointer-events-none until validation passes -->
+<button class="px-6 py-2 rounded text-label-sm font-label-sm bg-primary-container text-white opacity-50 cursor-not-allowed flex items-center gap-2 transition-all" id="btn-next" type="button">
+                                Next: Schedule
+                                <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface w-full py-stack-sm mt-auto border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-gutter w-full max-w-container-max mx-auto">
+<div class="text-label-sm font-label-sm font-bold text-primary mb-4 md:mb-0">
+                Sacred Editorial
+            </div>
+<div class="text-on-surface-variant dark:text-surface-variant text-label-sm font-label-sm mb-4 md:mb-0">
+                © 2024 Sacred Editorial Management. All rights reserved.
+            </div>
+<div class="flex gap-4">
+<a class="text-secondary dark:text-secondary-fixed-dim opacity-70 text-label-sm font-label-sm hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-secondary dark:text-secondary-fixed-dim opacity-70 text-label-sm font-label-sm hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="text-secondary dark:text-secondary-fixed-dim opacity-70 text-label-sm font-label-sm hover:opacity-100 transition-opacity" href="#">Ethical Standards</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple vanilla JS for the form validation logic described in the prompt
+        document.addEventListener('DOMContentLoaded', () => {
+            const topicSelect = document.getElementById('primary-topic');
+            const errorMsg = document.getElementById('topic-error');
+            const nextBtn = document.getElementById('btn-next');
+            const tagPills = document.querySelectorAll('.tag-pill');
+
+            // Validation simulation
+            topicSelect.addEventListener('change', (e) => {
+                if(e.target.value !== "") {
+                    // Valid
+                    errorMsg.classList.add('hidden');
+                    nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    nextBtn.classList.add('hover:bg-primary', 'cursor-pointer');
+                    topicSelect.classList.remove('border-error', 'ring-error');
+                }
+            });
+
+            // Attempt to click disabled button
+            nextBtn.addEventListener('click', (e) => {
+                if(topicSelect.value === "") {
+                    e.preventDefault();
+                    errorMsg.classList.remove('hidden');
+                    topicSelect.classList.add('border-error', 'ring-1', 'ring-error');
+                    
+                    // Shake effect
+                    topicSelect.classList.add('animate-pulse');
+                    setTimeout(() => topicSelect.classList.remove('animate-pulse'), 500);
+                } else {
+                    // Proceed to next step logic
+                    console.log('Proceeding to schedule...');
+                }
+            });
+
+            // Tag interaction toggle
+            tagPills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    const isSelected = this.classList.contains('selected');
+                    
+                    if(isSelected) {
+                        this.classList.remove('selected');
+                        this.setAttribute('aria-pressed', 'false');
+                        // Remove close icon if present
+                        const icon = this.querySelector('.material-symbols-outlined');
+                        if(icon) icon.remove();
+                    } else {
+                        // Check limit (simulation)
+                        const selectedCount = document.querySelectorAll('.tag-pill.selected').length;
+                        if(selectedCount >= 5) {
+                            alert('Maximum 5 tags allowed.');
+                            return;
+                        }
+                        
+                        this.classList.add('selected');
+                        this.setAttribute('aria-pressed', 'true');
+                        // Add close icon
+                        this.innerHTML += `<span class="material-symbols-outlined text-[14px] ml-1" data-icon="close">close</span>`;
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>

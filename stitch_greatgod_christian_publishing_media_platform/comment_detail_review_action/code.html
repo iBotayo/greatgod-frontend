@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Comment Review - Sacred Editorial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "on-primary-fixed": "#410004",
+                        "on-secondary-fixed": "#141d1a",
+                        "on-tertiary-container": "#4e3d00",
+                        "surface-container-highest": "#e4e2dd",
+                        "inverse-primary": "#ffb3ad",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary-fixed": "#dbe5e0",
+                        "on-surface": "#1b1c19",
+                        "surface-container-low": "#f5f3ee",
+                        "on-secondary-container": "#5b6561",
+                        "surface-tint": "#9c413d",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "outline-variant": "#dbc0be",
+                        "outline": "#887270",
+                        "surface-variant": "#e4e2dd",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f2f1ec",
+                        "surface-container-high": "#eae8e3",
+                        "surface-container": "#f0eee9",
+                        "on-background": "#1b1c19",
+                        "on-surface-variant": "#554240",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#d8e2dd",
+                        "primary-container": "#5d1212",
+                        "error": "#ba1a1a",
+                        "secondary": "#57605d",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "surface": "#fbf9f4",
+                        "on-error": "#ffffff",
+                        "background": "#fbf9f4",
+                        "tertiary": "#735c00",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#ffdad7",
+                        "primary": "#3e0003",
+                        "surface-bright": "#fbf9f4",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#30312e",
+                        "on-primary-container": "#e27770",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "surface-dim": "#dbdad5",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "tertiary-container": "#cca72f",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#241a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "stack-md": "32px",
+                        "stack-sm": "16px",
+                        "container-max": "1120px",
+                        "stack-lg": "64px",
+                        "unit": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "display-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Radio button custom styling */
+        input[type="radio"]:checked {
+            background-image: none;
+            background-color: theme('colors.primary-container');
+            border-color: theme('colors.primary-container');
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen font-body-md text-body-md antialiased selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<header class="bg-background dark:bg-background w-full top-0 sticky z-50 border-b border-outline-variant dark:border-outline-variant flat no shadows">
+<div class="flex justify-between items-center px-margin-mobile md:px-gutter h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-6">
+<div class="text-headline-md font-headline-md text-primary dark:text-inverse-primary tracking-tight cursor-pointer">
+                    Sacred Editorial
+                </div>
+<nav class="hidden md:flex gap-6 h-full items-center">
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 transition-opacity flex items-center h-full" href="#">
+<span class="text-label-sm font-label-sm">Dashboard</span>
+</a>
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 transition-opacity flex items-center h-full pt-1" href="#">
+<span class="text-label-sm font-label-sm">Review Queue</span>
+</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 transition-opacity flex items-center h-full" href="#">
+<span class="text-label-sm font-label-sm">Calendar</span>
+</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 transition-opacity flex items-center h-full" href="#">
+<span class="text-label-sm font-label-sm">Library</span>
+</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button aria-label="notifications" class="text-secondary hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="settings" class="text-secondary hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Editor Profile" class="w-full h-full object-cover" data-alt="A close-up portrait of a thoughtful editor with glasses, softly lit in a warm, classical study environment, evoking a trustworthy, calm, and professional editorial aesthetic in neutral cream and deep mahogany tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWXIUPQ3ymruCEJoWPN3Ma3AeQTHUb9Lg3Q3ZCc3MU5yufsiQVQ50hENGMtqEPqHQEK4eqbv6jfBiaAzM5qqiH9iVXWvyOLo1O75KaGLOuYL5Vmh-Udj3h3FooMWMuTeiAeOrMPcY8ZOdKZh_BsGko6T6urPGCmLVZz08Ew0HNCleOEy-C2LAbp6W6fXXaAX-AO8w2LmzlDttH_AKEVbuyUODFBy1o16Cl7AefjK_fZcOb54DZ0G0U"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-md flex flex-col md:flex-row gap-8">
+<!-- Left Column: Context & History -->
+<aside class="w-full md:w-1/3 flex flex-col gap-6">
+<!-- User History Card -->
+<section class="bg-surface-container-low border border-outline-variant p-6 rounded-DEFAULT flex flex-col gap-4 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-secondary" data-icon="person">person</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Elias Thorne</h3>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Community Member</p>
+</div>
+</div>
+<div class="h-px w-full bg-outline-variant"></div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Previous Reflections</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">42</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Flags Received</span>
+<span class="font-body-md text-body-md font-medium text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="flag">flag</span> 1
+                        </span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Member Since</span>
+<span class="font-body-md text-body-md text-on-surface">Oct 2021</span>
+</div>
+</div>
+<button class="text-left font-label-sm text-label-sm text-primary underline hover:no-underline mt-2">View Full History</button>
+</section>
+<!-- Original Content Context -->
+<section class="bg-surface-container-low border border-outline-variant p-6 rounded-DEFAULT flex flex-col gap-3 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-surface-tint"></div>
+<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="article">article</span>
+                    In Response To
+                </h4>
+<h3 class="font-headline-md text-headline-md text-on-surface leading-tight mt-1">The Architecture of Silence: Finding Solitude in a Noisy Age</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 text-sm">
+                    In our relentless pursuit of connectivity, we have unintentionally built monuments to noise. The ancient monastic traditions offer a counter-narrative, suggesting that true spiritual resonance is found only when we carve out intentional spaces of silence within our daily routines.
+                </p>
+<div class="flex items-center gap-2 mt-2">
+<span class="font-label-sm text-label-sm text-secondary">Oct 14, 2024</span>
+<span class="text-outline-variant">·</span>
+<button class="font-label-sm text-label-sm text-primary underline hover:no-underline">Read Article</button>
+</div>
+</section>
+</aside>
+<!-- Right Column: Review Action -->
+<div class="w-full md:w-2/3 flex flex-col gap-8">
+<!-- Reflection Content -->
+<section class="flex flex-col gap-4">
+<div class="flex items-baseline justify-between border-b border-outline-variant pb-2">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Pending Reflection</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-variant px-2 py-1 rounded-sm">Submitted 2h ago</span>
+</div>
+<div class="bg-white p-8 border border-outline-variant rounded-DEFAULT shadow-sm relative">
+<div class="absolute -left-3 -top-3 text-outline opacity-20">
+<span class="material-symbols-outlined text-6xl" data-icon="format_quote" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<div class="prose font-body-lg text-body-lg text-on-surface leading-relaxed max-w-none relative z-10">
+<p class="mb-4">
+                            I found the premise of this article deeply troubling and completely disconnected from modern reality. The author suggests we just "carve out spaces," but for a working parent, this is absolute nonsense. 
+                        </p>
+<p class="mb-4">
+                            Furthermore, implying that those who can't find this magical silence are somehow spiritually deficient is insulting. It's easy to be silent when you sit in an ivory tower and don't have to deal with real-world problems. The whole piece reeks of privilege and elitism that has no place in genuine theological discourse.
+                        </p>
+<p>
+                            Honestly, anyone agreeing with this is just pretending to be profound while ignoring the struggles of actual people. Stop publishing this drivel.
+                        </p>
+</div>
+</div>
+</section>
+<!-- Moderation Action Form -->
+<section class="bg-surface-container border border-outline-variant p-6 md:p-8 rounded-DEFAULT">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline-variant pb-2">Moderation Decision</h3>
+<form class="flex flex-col gap-6" id="moderation-form">
+<!-- Radio Options -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<label class="relative flex flex-col bg-white border border-outline-variant p-4 rounded-DEFAULT cursor-pointer hover:bg-surface-container-low transition-colors group has-[:checked]:border-primary-container has-[:checked]:ring-1 has-[:checked]:ring-primary-container">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface font-bold uppercase tracking-wider">Approve</span>
+<input class="form-radio text-primary-container focus:ring-primary-container h-4 w-4 border-outline" name="decision" type="radio" value="approve"/>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Visible to all readers. Conforms to community guidelines.</span>
+</label>
+<label class="relative flex flex-col bg-white border border-outline-variant p-4 rounded-DEFAULT cursor-pointer hover:bg-surface-container-low transition-colors group has-[:checked]:border-primary-container has-[:checked]:ring-1 has-[:checked]:ring-primary-container">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface font-bold uppercase tracking-wider">Hide / Remove</span>
+<input checked="" class="form-radio text-primary-container focus:ring-primary-container h-4 w-4 border-outline" name="decision" type="radio" value="hide"/>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Violates standards. Removed from public view.</span>
+</label>
+<label class="relative flex flex-col bg-white border border-outline-variant p-4 rounded-DEFAULT cursor-pointer hover:bg-surface-container-low transition-colors group has-[:checked]:border-primary-container has-[:checked]:ring-1 has-[:checked]:ring-primary-container">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface font-bold uppercase tracking-wider">Escalate</span>
+<input class="form-radio text-primary-container focus:ring-primary-container h-4 w-4 border-outline" name="decision" type="radio" value="escalate"/>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Requires senior editor review or legal attention.</span>
+</label>
+</div>
+<!-- Reason Text Area -->
+<div class="flex flex-col gap-2 mt-2">
+<label class="font-label-sm text-label-sm text-on-surface" for="reason">Reason for Action <span class="text-error">*</span></label>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant mb-1">Mandatory for hidden or escalated reflections. Will be sent to the author in cases of removal.</p>
+<textarea class="w-full bg-white border border-outline-variant rounded-DEFAULT focus:ring-2 focus:ring-primary-container focus:border-primary-container focus:ring-offset-2 p-3 font-body-md text-body-md text-on-surface placeholder:text-outline-variant" id="reason" name="reason" placeholder="Provide a brief explanation citing specific community guidelines..." rows="4"></textarea>
+</div>
+<!-- Form Actions -->
+<div class="flex items-center justify-end gap-4 mt-4 pt-4 border-t border-outline-variant">
+<button class="font-label-sm text-label-sm px-6 py-2 text-secondary hover:text-on-surface transition-colors cursor-pointer" type="button">
+                            Cancel
+                        </button>
+<button class="font-label-sm text-label-sm bg-primary-container text-white px-6 py-2 rounded-DEFAULT hover:bg-on-primary-fixed-variant transition-colors cursor-pointer border border-transparent shadow-sm flex items-center gap-2" type="submit">
+<span>Submit Decision</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+</button>
+</div>
+</form>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface w-full py-stack-sm mt-auto border-t border-outline-variant flat no shadows">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-gutter w-full max-w-container-max mx-auto gap-4 md:gap-0">
+<span class="text-on-surface-variant dark:text-surface-variant text-label-sm font-label-sm">© 2024 Sacred Editorial Management. All rights reserved.</span>
+<div class="flex items-center gap-6">
+<a class="text-secondary dark:text-secondary-fixed-dim opacity-70 hover:opacity-100 transition-opacity text-label-sm font-label-sm" href="#">Privacy Policy</a>
+<a class="text-secondary dark:text-secondary-fixed-dim opacity-70 hover:opacity-100 transition-opacity text-label-sm font-label-sm" href="#">Terms of Service</a>
+<a class="text-secondary dark:text-secondary-fixed-dim opacity-70 hover:opacity-100 transition-opacity text-label-sm font-label-sm" href="#">Ethical Standards</a>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-primary">Sacred Editorial</span>
+</div>
+</footer>
+<script>
+        // Simple interactivity for demonstration
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('moderation-form');
+            const reasonInput = document.getElementById('reason');
+            const radioButtons = document.querySelectorAll('input[name="decision"]');
+
+            // Form submission simulation
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const decision = document.querySelector('input[name="decision"]:checked').value;
+                if ((decision === 'hide' || decision === 'escalate') && !reasonInput.value.trim()) {
+                    reasonInput.classList.add('ring-2', 'ring-error', 'border-error');
+                    alert('Please provide a reason for hiding or escalating this reflection.');
+                } else {
+                    reasonInput.classList.remove('ring-2', 'ring-error', 'border-error');
+                    alert('Decision submitted successfully.');
+                    // In a real app, this would submit to the backend and redirect
+                }
+            });
+
+            // Clear error styling on input
+            reasonInput.addEventListener('input', () => {
+                reasonInput.classList.remove('ring-2', 'ring-error', 'border-error');
+            });
+            
+            // Focus reason if hide/escalate selected
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    if(e.target.value === 'hide' || e.target.value === 'escalate') {
+                        reasonInput.focus();
+                    }
+                })
+            })
+        });
+    </script>
+</body></html>

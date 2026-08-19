@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Donation Review - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#735c00",
+                      "outline": "#887270",
+                      "surface-bright": "#fff8f7",
+                      "primary-container": "#5d1212",
+                      "surface-paper": "#fbf9f4",
+                      "error-container": "#ffdad6",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed": "#231b00",
+                      "on-primary": "#ffffff",
+                      "surface-linen": "#f5f3ee",
+                      "secondary-fixed": "#dbe5e0",
+                      "surface-container-low": "#fff0ef",
+                      "error": "#ba1a1a",
+                      "surface-variant": "#f1dedc",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "secondary": "#57605d",
+                      "on-surface-variant": "#554240",
+                      "on-tertiary": "#ffffff",
+                      "secondary-container": "#dbe5e0",
+                      "secondary-fixed-dim": "#bfc9c5",
+                      "inverse-primary": "#ffb3ad",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "surface": "#fff8f7",
+                      "on-secondary-fixed": "#151d1b",
+                      "on-primary-fixed": "#410004",
+                      "on-primary-container": "#e27770",
+                      "success-secure": "#2e4d41",
+                      "inverse-on-surface": "#ffedeb",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-error": "#ffffff",
+                      "primary": "#3e0003",
+                      "surface-container-highest": "#f1dedc",
+                      "primary-fixed": "#ffdad7",
+                      "on-secondary-fixed-variant": "#404946",
+                      "on-tertiary-container": "#4e3e00",
+                      "tertiary-container": "#c6a94e",
+                      "background": "#fff8f7",
+                      "on-surface": "#231918",
+                      "tertiary-fixed": "#ffe085",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#231918",
+                      "outline-variant": "#dbc0be",
+                      "stone-outline": "#887270",
+                      "surface-tint": "#9c413d",
+                      "inverse-surface": "#392e2d",
+                      "surface-container": "#fceae8",
+                      "on-secondary-container": "#5d6663",
+                      "surface-container-high": "#f6e4e2",
+                      "surface-dim": "#e8d6d4",
+                      "tertiary-fixed-dim": "#e3c466"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "form-width": "560px",
+                      "container-max": "1120px",
+                      "gutter": "32px",
+                      "unit": "8px",
+                      "stack-md": "32px",
+                      "stack-sm": "16px",
+                      "stack-lg": "64px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "donation-amount": [
+                              "EB Garamond"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "donation-amount": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .progress-line {
+            height: 1px;
+            background-color: theme('colors.stone-outline');
+            width: 100%;
+            position: relative;
+        }
+        .progress-line::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%; /* Full for review step */
+            background-color: theme('colors.primary');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface border-b border-outline-variant flex justify-between items-center w-full px-margin-mobile h-16 max-w-container-max mx-auto docked full-width top-0 z-40 hidden md:flex">
+<div class="flex items-center gap-4">
+<button aria-label="Go back" class="text-primary hover:bg-surface-container-low transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<span class="font-headline-md text-headline-md text-primary tracking-tight">GreatGod</span>
+</div>
+<button aria-label="Close" class="text-primary hover:bg-surface-container-low transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</header>
+<!-- Mobile Header (Transaction Intent - Supressing shell, keeping only necessary nav) -->
+<header class="bg-surface flex justify-between items-center w-full px-margin-mobile h-16 md:hidden">
+<button aria-label="Go back" class="text-primary">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<span class="font-headline-md text-headline-md text-primary tracking-tight">GreatGod</span>
+<button aria-label="Close" class="text-primary">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</header>
+<main class="flex-grow flex flex-col items-center pt-stack-lg pb-stack-lg px-margin-mobile">
+<!-- Header Section -->
+<div class="text-center max-w-[600px] mb-stack-lg">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-unit">Review Your Offering</h1>
+<p class="font-body-md text-body-md text-secondary">Please confirm the details of your stewardship before completing the transaction.</p>
+</div>
+<!-- Giving Vessel (The Form Area) -->
+<div class="w-full max-w-form-width bg-surface-linen rounded border border-outline-variant relative overflow-hidden shadow-sm">
+<!-- Progress Tracker -->
+<div class="w-full px-8 pt-6 pb-2">
+<div class="progress-line mb-2"></div>
+<div class="flex justify-between font-label-sm text-label-sm text-outline uppercase tracking-widest">
+<span>01 Amount</span>
+<span>02 Details</span>
+<span class="text-primary">03 Review</span>
+</div>
+</div>
+<div class="p-8 pt-4">
+<!-- Summary Card -->
+<div class="bg-surface-container-lowest border border-stone-outline rounded p-6 mb-stack-md">
+<!-- Principal Amount -->
+<div class="flex justify-between items-end border-b border-outline-variant pb-4 mb-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase mb-1">Donation Amount</span>
+<span class="font-donation-amount text-donation-amount text-primary">$250.00</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase mb-2">USD</span>
+</div>
+<!-- Details Grid -->
+<div class="grid grid-cols-2 gap-y-4 gap-x-8 font-body-md text-body-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Frequency</span>
+<span>Monthly</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Fund</span>
+<span>General Ministry</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Payment Method</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-size: 20px;">credit_card</span>
+<span>Visa •••• 4242</span>
+</div>
+</div>
+</div>
+<!-- Fees & Total -->
+<div class="mt-6 pt-4 border-t border-outline-variant">
+<div class="flex justify-between items-center mb-2 font-body-md text-body-md text-secondary">
+<span>Processing Fee Covered</span>
+<span>$7.50</span>
+</div>
+<div class="flex justify-between items-center font-headline-md text-headline-md text-primary mt-2">
+<span>Total Charged</span>
+<span>$257.50</span>
+</div>
+</div>
+</div>
+<!-- Legal/Consent -->
+<div class="mb-stack-md">
+<p class="font-body-md text-body-md text-secondary text-sm">
+                        By confirming, you agree to our Terms of Stewardship and authorize GreatGod to charge your payment method the total amount shown.
+                    </p>
+</div>
+<!-- Primary CTA -->
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg uppercase tracking-widest py-4 rounded transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-weight="fill">lock</span>
+                    Confirm Donation
+                </button>
+</div>
+<!-- Trust Footer inside Vessel -->
+<div class="bg-surface-container-low border-t border-outline-variant p-4 flex flex-col items-center justify-center text-center gap-2">
+<div class="flex items-center gap-1 text-success-secure font-label-sm text-label-sm">
+<span class="material-symbols-outlined" style="font-size: 16px;">verified_user</span>
+<span>Secure SSL Encrypted Connection</span>
+</div>
+<p class="font-body-md text-body-md text-secondary text-xs italic">
+                    GreatGod is a registered 501(c)(3). All donations are tax-deductible to the extent allowed by law.
+                </p>
+</div>
+</div>
+</main>
+<!-- Global Footer -->
+<footer class="bg-surface-paper w-full mt-stack-lg py-stack-md px-margin-mobile text-center flex flex-col items-center gap-unit border-t border-surface-linen">
+<span class="font-label-lg text-label-lg text-primary mb-2">GreatGod</span>
+<div class="flex flex-wrap justify-center gap-4 font-label-sm text-label-sm text-outline mb-2">
+<a class="hover:text-primary transition-colors" href="#">Secure SSL Encrypted</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Stewardship</a>
+</div>
+<p class="font-body-md text-body-md text-secondary text-sm">© 2024 GreatGod Media. All donations are tax-deductible.</p>
+</footer>
+</body></html>

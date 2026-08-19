@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Article Editor - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#ffe088",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "surface-container-high": "#eae8e3",
+                      "primary": "#3e0003",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#5d1212",
+                      "surface-dim": "#dbdad5",
+                      "tertiary-container": "#cca72f",
+                      "outline": "#887270",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "error-container": "#ffdad6",
+                      "on-surface": "#1b1c19",
+                      "surface-container-low": "#f5f3ee",
+                      "inverse-on-surface": "#f2f1ec",
+                      "on-secondary-container": "#5b6561",
+                      "on-secondary": "#ffffff",
+                      "on-primary-container": "#e27770",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#dbc0be",
+                      "surface-container": "#f0eee9",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#57605d",
+                      "secondary-fixed": "#dbe5e0",
+                      "surface": "#fbf9f4",
+                      "inverse-primary": "#ffb3ad",
+                      "surface-bright": "#fbf9f4",
+                      "inverse-surface": "#30312e",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "on-secondary-fixed": "#141d1a",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "background": "#fbf9f4",
+                      "primary-fixed": "#ffdad7",
+                      "surface-container-highest": "#e4e2dd",
+                      "surface-variant": "#e4e2dd",
+                      "on-surface-variant": "#554240",
+                      "on-tertiary-container": "#4e3d00",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "tertiary": "#735c00",
+                      "on-primary-fixed": "#410004",
+                      "on-background": "#1b1c19",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#d8e2dd",
+                      "surface-tint": "#9c413d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "stack-sm": "16px",
+                      "stack-lg": "64px",
+                      "stack-md": "32px",
+                      "gutter": "32px",
+                      "container-max": "1120px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Custom scrollbar for editor */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #dbc0be; border-radius: 4px; }
+        
+        .placeholder-empty:empty:before {
+            content: attr(data-placeholder);
+            color: #887270;
+            pointer-events: none;
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- Global Error Banner: Connection Lost -->
+<div class="w-full bg-error-container border-b border-error/20 z-50">
+<div class="max-w-[720px] mx-auto px-margin-mobile md:px-0 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2 text-on-error-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">cloud_off</span>
+<span>Connection lost. Save failed.</span>
+</div>
+<button class="px-4 py-1.5 rounded-full bg-on-error-container text-error-container font-label-sm text-label-sm hover:bg-error transition-colors duration-200">
+                Retry
+            </button>
+</div>
+</div>
+<!-- Contextual Editor Header (Suppresses Global Nav per guidelines) -->
+<header class="w-full h-16 border-b border-outline-variant bg-surface/95 backdrop-blur-sm sticky top-0 z-40 flex items-center justify-between px-margin-mobile md:px-gutter">
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="hidden sm:block">
+<span class="font-label-sm text-label-sm text-outline">Unsaved Changes</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-sm text-label-sm text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+                Offline
+            </span>
+<button class="px-6 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm cursor-not-allowed opacity-70">
+                Publish
+            </button>
+</div>
+</header>
+<!-- Main Editor Canvas -->
+<main class="flex-grow w-full max-w-[720px] mx-auto px-margin-mobile md:px-0 py-stack-lg flex flex-col gap-stack-sm relative">
+<!-- Document Type / Category -->
+<div class="font-label-sm text-label-sm text-primary flex items-center gap-2">
+<span>THEOLOGICAL ESSAY</span>
+<span class="text-outline-variant">|</span>
+<span class="text-on-surface-variant">DRAFT</span>
+</div>
+<!-- Title Input -->
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary outline-none placeholder-empty" contenteditable="true" data-placeholder="Enter a title...">The Nature of Grace in Modern Practice</h1>
+<!-- Subtitle / Excerpt Input -->
+<h2 class="font-headline-md text-headline-md text-on-surface-variant outline-none placeholder-empty mt-4" contenteditable="true" data-placeholder="Add a brief subtitle or excerpt...">An exploration of historical texts and their contemporary application in daily spiritual life.</h2>
+<!-- Divider -->
+<div class="w-24 h-px bg-outline-variant my-8"></div>
+<!-- Body Content Input -->
+<div class="font-body-lg text-body-lg text-on-surface outline-none placeholder-empty min-h-[409px] leading-relaxed" contenteditable="true" data-placeholder="Begin writing...">
+<p>The concept of grace, often relegated to the purely abstract realms of theological discourse, finds its true measure in the friction of everyday existence. When we observe the historical traditions...</p>
+</div>
+</main>
+<!-- Floating Action / Draft Recovery Notification (Bento/Glassmorphism style overlay) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-[480px] z-50">
+<div class="bg-surface-container-high/90 backdrop-blur-md border border-outline-variant rounded-xl p-4 shadow-lg shadow-on-surface/5 flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<div class="bg-tertiary-container/30 text-tertiary p-2 rounded-full flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface mb-1">Recovered Draft</h4>
+<p class="font-body-md text-label-sm text-on-surface-variant">An unsaved draft from 10:15 AM was found locally. Would you like to restore it to prevent data loss?</p>
+</div>
+</div>
+<div class="flex justify-end gap-2 mt-2 border-t border-outline-variant pt-3">
+<button class="px-4 py-2 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors">
+                    Ignore
+                </button>
+<button class="px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm hover:bg-primary hover:text-on-primary transition-colors">
+                    Restore
+                </button>
+</div>
+</div>
+</div>
+</body></html>

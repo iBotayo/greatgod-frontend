@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Roles - GreatGod CMS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdad7",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fbf9f4",
+                        "surface-variant": "#e4e2dd",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-background": "#1b1c19",
+                        "tertiary-container": "#cca72f",
+                        "secondary-container": "#d8e2dd",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#5b6561",
+                        "surface-container-high": "#eae8e3",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "surface-container-highest": "#e4e2dd",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#57605d",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#4e3d00",
+                        "surface": "#fbf9f4",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "tertiary-fixed": "#ffe088",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-surface": "#1b1c19",
+                        "on-surface-variant": "#554240",
+                        "outline": "#887270",
+                        "surface-dim": "#dbdad5",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "tertiary": "#735c00",
+                        "primary-container": "#5d1212",
+                        "surface-tint": "#9c413d",
+                        "on-primary-fixed": "#410004",
+                        "on-secondary-fixed": "#141d1a",
+                        "inverse-surface": "#30312e",
+                        "primary": "#3e0003",
+                        "inverse-primary": "#ffb3ad",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "surface-container-low": "#f5f3ee",
+                        "background": "#fbf9f4",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#dbc0be",
+                        "on-primary-container": "#e27770",
+                        "secondary-fixed": "#dbe5e0",
+                        "surface-container": "#f0eee9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1120px",
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "display-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-lg": ["\"Source Serif 4\""]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low dark:bg-inverse-surface h-screen w-64 fixed left-0 top-0 border-r border-outline-variant dark:border-outline flex flex-col h-full py-unit px-4 z-50 md:flex hidden">
+<div class="mb-8 mt-4 px-2">
+<div class="font-headline-md text-headline-md font-medium text-primary dark:text-primary-fixed-dim">GreatGod</div>
+<div class="font-label-sm text-label-sm text-secondary mt-1">Editorial CMS</div>
+</div>
+<button class="bg-primary-container text-on-primary-container w-full py-3 rounded-DEFAULT font-label-sm text-label-sm mb-6 flex items-center justify-center gap-2 hover:bg-surface-tint transition-colors text-white">
+<span class="material-symbols-outlined text-lg">add</span>
+            New Publication
+        </button>
+<ul class="flex-1 space-y-2 mt-4">
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:opacity-80 transition-opacity">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:opacity-80 transition-opacity">auto_stories</span>
+<span class="font-label-sm text-label-sm">Content Manager</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:opacity-80 transition-opacity">mic_external_on</span>
+<span class="font-label-sm text-label-sm">Sermon Library</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-primary dark:text-primary-fixed-dim font-bold border-r-2 border-primary dark:border-primary-fixed-dim bg-surface-container opacity-80 duration-150" href="#">
+<span class="material-symbols-outlined icon-fill">manage_accounts</span>
+<span class="font-label-sm text-label-sm">User Roles</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:opacity-80 transition-opacity">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto border-t border-outline-variant pt-4 pb-4">
+<div class="flex items-center gap-3 px-2 mb-4">
+<img alt="GreatGod Admin Profile" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="A sophisticated editorial headshot of a mature administrator, softly lit against a muted linen background. The style is classic and professional, reflecting a trustworthy and calm persona appropriate for a high-end editorial CMS. Warm, indirect lighting highlights subtle details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWcJI0JTQ8imzRuJ12Ams4ba2movJP-D8vqoD47fuLvsOPcLdkwadppgHh0g-7s3We7fK0vUguVwahCLXqEHVno_OIiSHsTz11yvHf5sX1qr-IzB-tNDL1-ZAmObCsAVDd8lLaaZ2W8Ounc-YFs0AxvsR5IQr4la4T9ShzCO7fEe8RtzZmRFYYUrq1aDAS5Z3c0UtVsekAUZGJvB0WINKNMxXgTeTRANWYUUgmuqJ2e8M98pRFAxZ4"/>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface">Administrator</div>
+</div>
+</div>
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-secondary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">help_outline</span>
+<span class="font-label-sm text-label-sm">Support</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-secondary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">logout</span>
+<span class="font-label-sm text-label-sm">Sign Out</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-background docked full-width top-0 sticky z-40 border-b border-outline-variant dark:border-outline flex justify-between items-center w-full px-gutter h-16">
+<div class="flex items-center gap-8 h-full">
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim md:hidden block">GreatGod CMS</h1>
+<div class="relative hidden lg:flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-sm">search</span>
+<input class="pl-10 pr-4 py-1.5 rounded-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container text-body-md font-body-md w-64 text-sm placeholder:text-secondary-fixed-dim" placeholder="Search roles or permissions..." type="text"/>
+</div>
+<nav class="hidden md:flex h-full items-end gap-6 ml-4">
+<a class="text-secondary dark:text-secondary-fixed-dim font-label-sm text-label-sm pb-4 hover:text-primary transition-all" href="#">Recent</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-label-sm text-label-sm pb-4 hover:text-primary transition-all" href="#">Drafts</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-4 font-label-sm text-label-sm" href="#">Published</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex font-label-sm text-label-sm border border-secondary text-secondary hover:bg-secondary-container hover:text-on-secondary-container px-4 py-1.5 rounded-DEFAULT transition-colors">
+                    Publish Changes
+                </button>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">history</span>
+</button>
+<img alt="Administrator" class="w-8 h-8 rounded-full border border-outline-variant object-cover md:hidden block" data-alt="A sophisticated editorial headshot of a mature administrator, softly lit against a muted linen background. The style is classic and professional, reflecting a trustworthy and calm persona appropriate for a high-end editorial CMS. Warm, indirect lighting highlights subtle details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGKe4VGfUapnjvpG7D_Ptw4D-tHpgcT3qwoQGpM59XODJf9eM85jxbV2pRRUOoYk3l12rfzr9czOtIMYwUwVC-DRtvIMVZQfYZYfZ1bZ05xy4_T9iUzu8A47z91UaHPLhofysmbAeAajpeTamk14y7Ip6siZ44m-0YcNuxCp9Dbb_R3PIdLt_rjUBQTVG_gcyVLH1XIidu0h_NU69KVZM4mfiie31x3p5TWRpJl3vG3Cw78PUxbMKT"/>
+</div>
+</header>
+<!-- Page Content -->
+<div class="flex-1 p-gutter max-w-container-max mx-auto w-full pt-stack-md">
+<div class="mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Role Management</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">Define and review access levels across the editorial ecosystem. Permissions are inherited progressively from Guest up to Administrator, ensuring a secure and structured publication workflow.</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-DEFAULT overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container border-b border-outline-variant">
+<th class="p-4 font-label-sm text-label-sm text-secondary min-w-[200px]">Permission Focus</th>
+<th class="p-4 font-label-sm text-label-sm text-secondary text-center w-24">Guest</th>
+<th class="p-4 font-label-sm text-label-sm text-secondary text-center w-24">Reader</th>
+<th class="p-4 font-label-sm text-label-sm text-secondary text-center w-28">Contributor</th>
+<th class="p-4 font-label-sm text-label-sm text-secondary text-center w-24">Author</th>
+<th class="p-4 font-label-sm text-label-sm text-secondary text-center w-28">Moderator</th>
+<th class="p-4 font-label-sm text-label-sm text-secondary text-center w-24">Editor</th>
+<th class="p-4 font-label-sm text-label-sm text-primary font-bold text-center w-28 bg-surface-container-high">Admin</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<!-- Section: Content Creation -->
+<tr class="border-b border-outline-variant bg-surface-bright">
+<td class="px-4 py-2 font-label-sm text-label-sm text-primary bg-[#F2EEE6]" colspan="8">Content Creation &amp; Editing</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+<td class="p-4">Read Published Articles</td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center bg-surface-container-high"><span class="material-symbols-outlined text-primary text-sm">check</span></td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+<td class="p-4">Submit Drafts for Review</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center bg-surface-container-high"><span class="material-symbols-outlined text-primary text-sm">check</span></td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+<td class="p-4">Publish Own Content</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center bg-surface-container-high"><span class="material-symbols-outlined text-primary text-sm">check</span></td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+<td class="p-4">Edit Others' Content</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center bg-surface-container-high"><span class="material-symbols-outlined text-primary text-sm">check</span></td>
+</tr>
+<!-- Section: Moderation -->
+<tr class="border-b border-outline-variant bg-surface-bright">
+<td class="px-4 py-2 font-label-sm text-label-sm text-primary bg-[#F2EEE6]" colspan="8">Community &amp; Moderation</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+<td class="p-4">Post Comments</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center bg-surface-container-high"><span class="material-symbols-outlined text-primary text-sm">check</span></td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+<td class="p-4">Moderate Comments</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center bg-surface-container-high"><span class="material-symbols-outlined text-primary text-sm">check</span></td>
+</tr>
+<!-- Section: Administration -->
+<tr class="border-b border-outline-variant bg-surface-bright">
+<td class="px-4 py-2 font-label-sm text-label-sm text-primary bg-[#F2EEE6]" colspan="8">System Administration</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+<td class="p-4">View Analytics</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center"><span class="material-symbols-outlined text-secondary text-sm">check</span></td>
+<td class="p-4 text-center bg-surface-container-high"><span class="material-symbols-outlined text-primary text-sm">check</span></td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="p-4">Manage Users &amp; Roles</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center text-outline-variant">-</td>
+<td class="p-4 text-center bg-surface-container-high"><span class="material-symbols-outlined text-primary text-sm">check</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-surface-container p-4 border-t border-outline-variant flex justify-end gap-4">
+<button class="font-label-sm text-label-sm border border-secondary text-secondary hover:bg-secondary-container hover:text-on-secondary-container px-6 py-2 rounded-DEFAULT transition-colors">
+                        Revert Changes
+                    </button>
+<button class="font-label-sm text-label-sm bg-primary-container text-white hover:bg-surface-tint px-6 py-2 rounded-DEFAULT transition-colors">
+                        Save Role Configurations
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

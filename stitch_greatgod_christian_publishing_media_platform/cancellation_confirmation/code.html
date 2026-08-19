@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cancellation Confirmation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#ffedeb",
+                        "on-secondary-container": "#5d6663",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#e3c466",
+                        "surface-bright": "#fff8f7",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "stone-outline": "#887270",
+                        "surface-container-highest": "#f1dedc",
+                        "success-secure": "#2e4d41",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "secondary": "#57605d",
+                        "tertiary": "#735c00",
+                        "on-primary-fixed": "#410004",
+                        "on-surface-variant": "#554240",
+                        "on-background": "#231918",
+                        "secondary-container": "#dbe5e0",
+                        "surface": "#fff8f7",
+                        "on-error": "#ffffff",
+                        "primary": "#3e0003",
+                        "surface-dim": "#e8d6d4",
+                        "outline-variant": "#dbc0be",
+                        "on-secondary-fixed": "#151d1b",
+                        "tertiary-container": "#c6a94e",
+                        "on-tertiary-container": "#4e3e00",
+                        "on-primary-container": "#e27770",
+                        "surface-container-low": "#fff0ef",
+                        "on-secondary-fixed-variant": "#404946",
+                        "surface-tint": "#9c413d",
+                        "secondary-fixed": "#dbe5e0",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ffdad7",
+                        "inverse-surface": "#392e2d",
+                        "surface-paper": "#fbf9f4",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-variant": "#f1dedc",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fff8f7",
+                        "surface-container-high": "#f6e4e2",
+                        "primary-container": "#5d1212",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#231918",
+                        "surface-container": "#fceae8",
+                        "on-tertiary-fixed": "#231b00",
+                        "on-secondary": "#ffffff",
+                        "outline": "#887270",
+                        "tertiary-fixed": "#ffe085",
+                        "surface-linen": "#f5f3ee",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "inverse-primary": "#ffb3ad"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "stack-sm": "16px",
+                        "container-max": "1120px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "form-width": "560px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "label-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "donation-amount": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar Semantic Shell: HIDE. Transactional/Confirmation state. Canvas priority. -->
+<main class="flex-grow flex flex-col items-center justify-center p-margin-mobile md:p-gutter">
+<div class="w-full max-w-form-width bg-surface-linen border border-outline-variant p-stack-md md:p-stack-lg rounded-DEFAULT text-center shadow-sm relative overflow-hidden">
+<!-- Subtle decorative top line indicating completion -->
+<div class="absolute top-0 left-0 w-full h-[2px] bg-outline-variant"></div>
+<div class="flex flex-col items-center gap-stack-md">
+<!-- Gentle, non-alarming icon -->
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-secondary border border-outline-variant">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 0, 'wght' 300;">
+                        done_all
+                    </span>
+</div>
+<div class="space-y-4">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface tracking-tight">
+                        Cancellation Confirmed
+                    </h1>
+<div class="h-px w-12 bg-outline-variant mx-auto"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[400px] mx-auto pt-2">
+                        Michael, your recurring stewardship has been gracefully concluded. We are deeply grateful for your past faithfulness and support.
+                    </p>
+</div>
+<div class="pt-stack-sm w-full flex flex-col sm:flex-row gap-4 justify-center items-center">
+<button class="bg-primary text-on-primary font-label-sm text-label-sm uppercase px-8 py-4 rounded-DEFAULT hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 w-full sm:w-auto tracking-widest flex items-center justify-center gap-2">
+                        Return to Giving
+                    </button>
+<button class="bg-transparent text-secondary font-label-sm text-label-sm uppercase px-8 py-4 rounded-DEFAULT border border-outline hover:bg-surface-container hover:text-on-surface transition-colors duration-300 w-full sm:w-auto tracking-widest">
+                        View History
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Semantic Shell: HIDE. Transactional/Confirmation state. Canvas priority. -->
+<!-- Footer JSON Anchor -->
+<footer class="w-full py-stack-md px-margin-mobile text-center flex flex-col items-center gap-unit bg-surface-paper dark:bg-surface-dim full-width mt-stack-lg border-t bg-surface-linen dark:bg-surface-container flat no shadows">
+<h3 class="font-label-lg text-label-lg text-primary">GreatGod</h3>
+<div class="flex flex-wrap justify-center gap-4 my-2">
+<a class="font-body-md text-body-md text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">
+                Secure SSL Encrypted
+            </a>
+<span class="text-outline-variant hidden sm:inline">•</span>
+<a class="font-body-md text-body-md text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">
+                Privacy Policy
+            </a>
+<span class="text-outline-variant hidden sm:inline">•</span>
+<a class="font-body-md text-body-md text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">
+                Terms of Stewardship
+            </a>
+</div>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim">
+            © 2024 GreatGod Media. All donations are tax-deductible.
+        </p>
+</footer>
+</body></html>

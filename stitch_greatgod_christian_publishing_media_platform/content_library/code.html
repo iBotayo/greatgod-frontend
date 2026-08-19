@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sacred Editorial - Content Library</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&amp;family=Hanken+Grotesk:wght@600&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#ffb3ad",
+                      "inverse-surface": "#30312e",
+                      "surface-container": "#f0eee9",
+                      "tertiary-fixed": "#ffe088",
+                      "on-primary-container": "#e27770",
+                      "on-surface-variant": "#554240",
+                      "on-background": "#1b1c19",
+                      "surface-container-highest": "#e4e2dd",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "error": "#ba1a1a",
+                      "tertiary-container": "#cca72f",
+                      "surface-dim": "#dbdad5",
+                      "background": "#fbf9f4",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#241a00",
+                      "primary-container": "#5d1212",
+                      "secondary": "#57605d",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#410004",
+                      "outline-variant": "#dbc0be",
+                      "inverse-primary": "#ffb3ad",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "primary": "#3e0003",
+                      "surface-bright": "#fbf9f4",
+                      "surface-tint": "#9c413d",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#dbe5e0",
+                      "surface": "#fbf9f4",
+                      "on-tertiary-container": "#4e3d00",
+                      "inverse-on-surface": "#f2f1ec",
+                      "outline": "#887270",
+                      "on-primary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "surface-container-low": "#f5f3ee",
+                      "surface-container-high": "#eae8e3",
+                      "surface-variant": "#e4e2dd",
+                      "tertiary": "#735c00",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "on-surface": "#1b1c19",
+                      "on-secondary-fixed": "#141d1a",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#5b6561",
+                      "primary-fixed": "#ffdad7",
+                      "secondary-container": "#d8e2dd"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-lg": "64px",
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "stack-sm": "16px",
+                      "stack-md": "32px",
+                      "gutter": "32px",
+                      "container-max": "1120px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+      </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col md:flex-row">
+<!-- TopNavBar (Mobile Only) -->
+<header class="md:hidden w-full top-0 sticky bg-background border-b border-outline-variant z-50">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md text-primary tracking-tight">Sacred Editorial</div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined cursor-pointer active:opacity-70 transition-opacity text-primary">notifications</span>
+<img alt="Editor Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A small circular avatar image showing a professional editor looking confident, styled with soft warm lighting in a classical library setting, high quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXlrTP9xi3D2RlR5Ny_1QoLnjxDk1hD4ZVCpHsz3UcP9KLhOQDG9yKmB6yRjFA7YX_IVylU9G9VHyRwscNFyBVeR2ggEcRw8SOGSt8jYpcLCHV2QaojRFcEy7PjaqwPOL1MBOPwGjqYwRPptESUDbZ4Psnux1t9dL-E9JsweTIXs1x5uWQyme-hxuzG48Qs9mJWykW4IJB9W29QO3RYxXDinksg-aUQfYeCdQkVQ93mf50N4_PPgK0"/>
+</div>
+</div>
+<nav class="flex overflow-x-auto px-margin-mobile gap-6 hide-scrollbar py-2">
+<a class="text-secondary font-medium font-label-sm text-label-sm whitespace-nowrap" href="#">Dashboard</a>
+<a class="text-secondary font-medium font-label-sm text-label-sm whitespace-nowrap" href="#">Review Queue</a>
+<a class="text-secondary font-medium font-label-sm text-label-sm whitespace-nowrap" href="#">Calendar</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-label-sm whitespace-nowrap" href="#">Library</a>
+</nav>
+</header>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden md:flex flex-col p-4 gap-2 h-screen w-64 left-0 top-0 fixed bg-surface-container-low border-r border-outline-variant z-40">
+<div class="flex items-center gap-3 px-4 py-6 mb-4">
+<img alt="Organization Logo" class="w-10 h-10 rounded object-cover" data-alt="A minimalist logo mark for a publishing house, featuring a stylized quill or open book, rendered in dark deep burgundy tones on a light cream background, sharp and elegant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXus2ffQ_r8U84Lz92AczZEDyTksSwD7RpBu0e87kMvy5nDs-YrmYSP27vrD1FkoAOX4VCqsg9begpbGzZFi2eejBOGIn3hOxDCSegpMDGJvv4U2r_yqpoh8J2cVnXuGBxI8PtKeFSP7FGgXtcIPg_YOKbh6buCFhP4TPinlqVyCRObVO4x5oeFnXwr4cZOnNfSWHhG1I4kyW7Aa4cRV4NcAl5ZeqKDZxXTB0OkciJap36kkKBXi4r"/>
+<div>
+<div class="font-headline-md text-primary text-xl tracking-tight">Sacred Editorial</div>
+<div class="font-label-sm text-label-sm text-secondary">Managing Editor</div>
+</div>
+</div>
+<button class="mb-6 w-full bg-primary-container text-on-primary-container font-label-sm text-label-sm py-3 px-4 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">add</span> New Submission
+        </button>
+<nav class="flex flex-col gap-1 flex-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-150 group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-150 group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">description</span>
+<span class="font-label-sm text-label-sm">Manuscripts</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-150 group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">calendar_month</span>
+<span class="font-label-sm text-label-sm">Editorial Calendar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-fixed-dim text-on-primary-fixed rounded-full transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-weight="fill">auto_stories</span>
+<span class="font-label-sm text-label-sm font-bold">Content Library</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-150 group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">account_tree</span>
+<span class="font-label-sm text-label-sm">Taxonomy</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-150 group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">group</span>
+<span class="font-label-sm text-label-sm">Team</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-outline-variant flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-150 group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">inventory_2</span>
+<span class="font-label-sm text-label-sm">Archive</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-150 group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">help</span>
+<span class="font-label-sm text-label-sm">Help</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- Header Section -->
+<div class="px-margin-mobile md:px-gutter py-stack-md border-b border-outline-variant bg-surface-bright">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="font-display-lg text-display-lg text-primary mb-2 hidden md:block">Library</h1>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2 md:hidden">Library</h1>
+<p class="font-body-md text-body-md text-secondary max-w-xl">Master archive of all published works, sermons, and devotionals.</p>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-low p-2 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-secondary ml-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-background placeholder:text-secondary/70 w-full md:w-64" placeholder="Search titles, authors, tags..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Filter & View Controls -->
+<div class="px-margin-mobile md:px-gutter py-4 border-b border-outline-variant bg-surface sticky top-[105px] md:top-0 z-30">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex gap-2 overflow-x-auto hide-scrollbar w-full md:w-auto pb-2 md:pb-0">
+<button class="px-4 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm whitespace-nowrap">All Content</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant text-secondary hover:border-primary hover:text-primary transition-colors font-label-sm text-label-sm whitespace-nowrap">Articles</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant text-secondary hover:border-primary hover:text-primary transition-colors font-label-sm text-label-sm whitespace-nowrap">Sermons</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant text-secondary hover:border-primary hover:text-primary transition-colors font-label-sm text-label-sm whitespace-nowrap">Devotionals</button>
+</div>
+<div class="flex items-center gap-3 self-end md:self-auto">
+<button class="flex items-center gap-1 text-secondary hover:text-primary font-label-sm text-label-sm transition-colors">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filter
+                    </button>
+<div class="w-px h-4 bg-outline-variant"></div>
+<button class="flex items-center gap-1 text-secondary hover:text-primary font-label-sm text-label-sm transition-colors">
+<span class="material-symbols-outlined text-sm">sort</span> Sort: Newest
+                    </button>
+</div>
+</div>
+</div>
+<!-- Library Content Canvas -->
+<div class="flex-1 px-margin-mobile md:px-gutter py-stack-md bg-background">
+<div class="max-w-container-max mx-auto flex flex-col gap-6">
+<!-- List Item 1 -->
+<article class="group flex flex-col md:flex-row gap-6 p-4 md:p-6 bg-surface-container-low border border-outline-variant rounded-lg hover:border-outline transition-colors relative">
+<div class="w-full md:w-48 h-48 md:h-auto shrink-0 bg-surface-variant rounded flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A serene landscape photograph showing a path winding through ancient olive trees at dawn, bathed in soft golden morning light, evoking a sense of ancient wisdom and peace, classical fine art photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7Nt8CdGZL46VLGraW9TAaoRlL-GM6OyMbsaKqiJ-KbmyJT92ctzzeMeGdsyW4lUxoKz600d5GvOSoJvMwnl6Dly6Fbml3UWIGbX6Ui0foJ87y5DXyw1-2PelEiwoIzdHpzhhc9W4wSPnPPCrxJ5aNz5x8fmT-WTHK7Y8EN4xn1jQ5rBbkBgl9ktLeQdPzzAWauBilMnOywyz1zkltvXzKPDkIUScSwod5XikxYyRztOzpaHpSOteh"/>
+</div>
+<div class="flex-1 flex flex-col">
+<div class="flex items-center gap-2 mb-2">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Article</span>
+<span class="text-secondary">·</span>
+<span class="font-label-sm text-label-sm text-secondary">Published Oct 12, 2023</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-3 group-hover:text-primary transition-colors">The Architecture of Silence: Finding Rest in a Noisy Age</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2">An exploration of historical contemplative practices and how modern believers can cultivate interior silence amidst digital distraction.</p>
+<div class="flex items-center gap-4 mt-auto pt-4 border-t border-outline-variant/50">
+<div class="flex items-center gap-1 text-secondary" title="Views">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span class="font-label-sm text-label-sm">12.4k</span>
+</div>
+<div class="flex items-center gap-1 text-secondary" title="Shares">
+<span class="material-symbols-outlined text-sm">share</span>
+<span class="font-label-sm text-label-sm">842</span>
+</div>
+<div class="flex items-center gap-1 text-secondary" title="Saves">
+<span class="material-symbols-outlined text-sm">bookmark</span>
+<span class="font-label-sm text-label-sm">1.2k</span>
+</div>
+<div class="ml-auto flex gap-2">
+<button class="p-2 text-secondary hover:text-primary rounded-full hover:bg-surface-container-high transition-colors" title="Edit (New Version)">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-secondary hover:text-error rounded-full hover:bg-error-container transition-colors" title="Unpublish">
+<span class="material-symbols-outlined">unpublished</span>
+</button>
+<a class="p-2 text-secondary hover:text-primary rounded-full hover:bg-surface-container-high transition-colors" href="#" title="View Live">
+<span class="material-symbols-outlined">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- List Item 2 -->
+<article class="group flex flex-col md:flex-row gap-6 p-4 md:p-6 bg-surface-container-low border border-outline-variant rounded-lg hover:border-outline transition-colors relative">
+<div class="w-full md:w-48 h-48 md:h-auto shrink-0 bg-surface-variant rounded flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close up shot of a beautifully bound vintage leather book lying open on a wooden desk, warm low key lighting emphasizing texture and timeless knowledge, editorial style photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk7YwMYt8FNRMIuO3OFsGMpuI8yqagWzDlDTvt3y7xS73myfE1HSRQdcBGv-lUdJ0qA6LQ4pdAOyXEya8uGlBpVX4sI5tMTRs7W-bfPoc7vvm7gFk_E4hD9-Lfzj3arDoArBRPiSl6ONcuoQ16p3H3GolGyxVstnN80Vi9hVqOKxKv-MBfQWDhneAFodsQhhfjMdw8Jc3de0f7aGu5UZOw1qNIBBqwvP-ae-lZgub-1ggASqY2h_Hh"/>
+</div>
+<div class="flex-1 flex flex-col">
+<div class="flex items-center gap-2 mb-2">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Sermon</span>
+<span class="text-secondary">·</span>
+<span class="font-label-sm text-label-sm text-secondary">Published Sep 28, 2023</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-3 group-hover:text-primary transition-colors">Exiles in Babylon: Living Faithfully in the Modern City</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2">Drawing parallels between historical exile and contemporary cultural displacement, this sermon offers a framework for faithful presence.</p>
+<div class="flex items-center gap-4 mt-auto pt-4 border-t border-outline-variant/50">
+<div class="flex items-center gap-1 text-secondary" title="Views">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span class="font-label-sm text-label-sm">8.1k</span>
+</div>
+<div class="flex items-center gap-1 text-secondary" title="Shares">
+<span class="material-symbols-outlined text-sm">share</span>
+<span class="font-label-sm text-label-sm">450</span>
+</div>
+<div class="ml-auto flex gap-2">
+<button class="p-2 text-secondary hover:text-primary rounded-full hover:bg-surface-container-high transition-colors" title="Edit">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-secondary hover:text-error rounded-full hover:bg-error-container transition-colors" title="Unpublish">
+<span class="material-symbols-outlined">unpublished</span>
+</button>
+<a class="p-2 text-secondary hover:text-primary rounded-full hover:bg-surface-container-high transition-colors" href="#" title="View Live">
+<span class="material-symbols-outlined">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+</div>
+<div class="flex justify-center mt-stack-md">
+<button class="px-6 py-2 border border-outline-variant rounded text-primary font-label-sm text-label-sm hover:bg-surface-container-low transition-colors">Load More Archive</button>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-stack-sm mt-auto bg-surface-container border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-gutter w-full max-w-container-max mx-auto gap-4">
+<div class="text-label-sm font-label-sm font-bold text-primary">Sacred Editorial</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm text-center">© 2024 Sacred Editorial Management. All rights reserved.</div>
+<div class="flex gap-4">
+<a class="text-secondary opacity-70 hover:opacity-100 transition-opacity font-label-sm text-label-sm" href="#">Privacy Policy</a>
+<a class="text-secondary opacity-70 hover:opacity-100 transition-opacity font-label-sm text-label-sm" href="#">Terms of Service</a>
+<a class="text-secondary opacity-70 hover:opacity-100 transition-opacity font-label-sm text-label-sm" href="#">Ethical Standards</a>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

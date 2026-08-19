@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sacred Editorial - Publication Calendar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#f0eee9",
+                      "outline-variant": "#dbc0be",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed": "#ffdad7",
+                      "background": "#fbf9f4",
+                      "on-primary-container": "#e27770",
+                      "inverse-on-surface": "#f2f1ec",
+                      "on-secondary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-error-container": "#93000a",
+                      "primary-container": "#5d1212",
+                      "primary": "#3e0003",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "secondary-container": "#d8e2dd",
+                      "on-surface-variant": "#554240",
+                      "surface": "#fbf9f4",
+                      "on-secondary-container": "#5b6561",
+                      "on-tertiary-container": "#4e3d00",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "inverse-primary": "#ffb3ad",
+                      "surface-dim": "#dbdad5",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "tertiary": "#735c00",
+                      "surface-container-highest": "#e4e2dd",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-primary-fixed": "#410004",
+                      "surface-bright": "#fbf9f4",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-surface": "#1b1c19",
+                      "surface-container-high": "#eae8e3",
+                      "surface-variant": "#e4e2dd",
+                      "secondary": "#57605d",
+                      "on-primary": "#ffffff",
+                      "inverse-surface": "#30312e",
+                      "on-background": "#1b1c19",
+                      "surface-container-low": "#f5f3ee",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "outline": "#887270",
+                      "tertiary-container": "#cca72f",
+                      "on-error": "#ffffff",
+                      "surface-tint": "#9c413d",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed": "#141d1a",
+                      "tertiary-fixed": "#ffe088",
+                      "secondary-fixed": "#dbe5e0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-sm": "16px",
+                      "unit": "8px",
+                      "stack-md": "32px",
+                      "gutter": "32px",
+                      "margin-mobile": "20px",
+                      "stack-lg": "64px",
+                      "container-max": "1120px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg": [
+                              "EB Garamond"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for calendar if needed */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbf9f4; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dbc0be; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #887270; 
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen font-body-md antialiased selection:bg-primary-fixed selection:text-primary">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col p-4 gap-2 h-full bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant h-screen w-64 left-0 top-0 fixed z-20">
+<!-- Header -->
+<div class="flex items-center gap-3 mb-stack-md px-2">
+<img class="w-10 h-10 rounded-full object-cover border border-outline-variant shadow-sm" data-alt="A minimalist, elegant emblem logo for a classical publishing house, featuring a simple geometric serif letterform inscribed in a circle, set against a pristine white background. High contrast, sharp edges, monochromatic, communicating academic rigor and timeless tradition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3HTRG90nAj8wJU4XkBG4Rv3JqeZRSVhHy3nIvBfSoPWcyGfRQNojEZaukZeKzZ0Fy34iPuhqeO3djaS3KKkYUXzXEkpKmq1L9u3BHBffThnGUQeOc5PKgV_XAwXNqYDJj0TMc7E_z_q4Gje8k7-lHYq0hhJXOmxb95JnO42XjsHSuVH3AgHfvSoAxVO5fzHriDa_0hPyh4mL37YneHGiagciNHLPyNmuHGAv7sBUSUaMyoWSNEpoo"/>
+<div>
+<h1 class="font-headline-md text-primary dark:text-inverse-primary text-xl">Sacred Editorial</h1>
+<p class="text-label-sm font-label-sm text-secondary">Managing Editor</p>
+</div>
+</div>
+<!-- CTA -->
+<button class="bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-full py-2.5 px-4 mb-stack-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+            New Submission
+        </button>
+<!-- Main Nav -->
+<div class="flex-1 flex flex-col gap-1 overflow-y-auto">
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm px-4 py-3 flex items-center gap-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-size: 20px;">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm px-4 py-3 flex items-center gap-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="description" style="font-size: 20px;">description</span>
+                Manuscripts
+            </a>
+<a class="bg-primary-fixed-dim dark:bg-on-primary-container text-on-primary-fixed dark:text-on-primary-fixed-variant rounded-full text-label-sm font-label-sm px-4 py-3 flex items-center gap-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month" data-weight="fill" style="font-size: 20px; font-variation-settings: 'FILL' 1;">calendar_month</span>
+                Editorial Calendar
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm px-4 py-3 flex items-center gap-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories" style="font-size: 20px;">auto_stories</span>
+                Content Library
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm px-4 py-3 flex items-center gap-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree" style="font-size: 20px;">account_tree</span>
+                Taxonomy
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm px-4 py-3 flex items-center gap-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-size: 20px;">group</span>
+                Team
+            </a>
+</div>
+<!-- Footer Nav -->
+<div class="mt-auto border-t border-outline-variant pt-4 flex flex-col gap-1">
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm px-4 py-2 flex items-center gap-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-size: 18px;">inventory_2</span>
+                Archive
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full text-label-sm font-label-sm px-4 py-2 flex items-center gap-3 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all duration-150 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="help" style="font-size: 18px;">help</span>
+                Help
+            </a>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-background dark:bg-background w-full top-0 sticky z-10 border-b border-outline-variant dark:border-outline-variant">
+<div class="flex justify-between items-center px-margin-mobile md:px-gutter h-16 w-full max-w-container-max mx-auto">
+<!-- Brand / Mobile Menu -->
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="text-headline-md font-headline-md text-primary dark:text-inverse-primary tracking-tight md:hidden">Sacred Editorial</div>
+</div>
+<!-- Navigation Links (Centered, visible on wider screens if needed, but mostly relying on SideNav. Rendering per instructions) -->
+<nav class="hidden lg:flex items-center gap-8 h-full">
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium text-label-sm font-label-sm hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 h-full flex items-center mt-1" href="#">Dashboard</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium text-label-sm font-label-sm hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 h-full flex items-center mt-1" href="#">Review Queue</a>
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 text-label-sm font-label-sm hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 h-full flex items-center mt-1" href="#">Calendar</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-medium text-label-sm font-label-sm hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-70 h-full flex items-center mt-1" href="#">Library</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center bg-surface-container rounded-full px-3 py-1.5 border border-outline-variant focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined text-secondary text-sm mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md w-48 p-0 text-on-surface placeholder:text-secondary-fixed-dim" placeholder="Search entries..." type="text"/>
+</div>
+<button class="text-secondary hover:text-primary transition-colors cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant ml-2 cursor-pointer" data-alt="A distinguished older individual with silver hair, wearing a conservative tweed jacket, photographed in soft, warm library lighting. The portrait is framed intimately, conveying a sense of scholarly wisdom and editorial authority. Calm, trustworthy, and classically composed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWjbZcNnNSI_vjvHD5mUY43YMU4GkXB9atjtqyPzTPMompskjM8hDSIR7rm1QQ-dfKINf_C5gl1up5iW2xMUx504zwf65JHau2LHEqnTvmCyQqKzQ7oy82S0lD_RD6GPW_Jc_DD-tB-0wTeNGN-yPGR77tKHoakc3B7mJ1s8yw4A0NtW8hiWmZKVsTrzOK36DnoQJDO-OPzm1UwWDzGxNrGZ7Dwd9Kh6ci0atsFNFkqUJC3jPRPYW2"/>
+</div>
+</div>
+</header>
+<!-- Calendar Canvas -->
+<div class="flex-1 w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-md flex flex-col">
+<!-- Calendar Header Toolbar -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-stack-md gap-4">
+<div>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary mb-2 tracking-tight">Publication Calendar</h2>
+<div class="flex items-center gap-4 text-secondary">
+<button class="hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">chevron_left</span></button>
+<span class="text-body-lg font-body-lg text-on-surface font-medium">November 2024</span>
+<button class="hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-surface-container rounded p-1 flex border border-outline-variant">
+<button class="px-3 py-1 text-label-sm font-label-sm bg-surface shadow-sm rounded-sm text-primary">Month</button>
+<button class="px-3 py-1 text-label-sm font-label-sm text-secondary hover:text-on-surface transition-colors">Week</button>
+</div>
+<button class="border border-outline-variant text-on-surface rounded px-4 py-1.5 text-label-sm font-label-sm flex items-center gap-2 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" style="font-size: 16px;">filter_list</span> Filter
+                    </button>
+</div>
+</div>
+<!-- Calendar Grid -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex-1 flex flex-col shadow-sm">
+<!-- Days of Week Header -->
+<div class="grid grid-cols-7 border-b border-outline-variant bg-surface-container-low text-center py-3 text-label-sm font-label-sm text-secondary">
+<div>SUN</div>
+<div>MON</div>
+<div>TUE</div>
+<div>WED</div>
+<div>THU</div>
+<div>FRI</div>
+<div>SAT</div>
+</div>
+<!-- Grid Body -->
+<div class="grid grid-cols-7 flex-1 bg-outline-variant gap-px">
+<!-- Week 1 -->
+<div class="bg-surface p-2 min-h-[120px] flex flex-col gap-1">
+<span class="text-label-sm font-label-sm text-secondary self-end opacity-50">27</span>
+</div>
+<div class="bg-surface p-2 min-h-[120px] flex flex-col gap-1">
+<span class="text-label-sm font-label-sm text-secondary self-end opacity-50">28</span>
+</div>
+<div class="bg-surface p-2 min-h-[120px] flex flex-col gap-1">
+<span class="text-label-sm font-label-sm text-secondary self-end opacity-50">29</span>
+</div>
+<div class="bg-surface p-2 min-h-[120px] flex flex-col gap-1">
+<span class="text-label-sm font-label-sm text-secondary self-end opacity-50">30</span>
+</div>
+<div class="bg-surface p-2 min-h-[120px] flex flex-col gap-1">
+<span class="text-label-sm font-label-sm text-secondary self-end opacity-50">31</span>
+</div>
+<div class="bg-surface p-2 min-h-[120px] flex flex-col gap-1">
+<span class="text-label-sm font-label-sm text-on-surface self-end">1</span>
+<div class="bg-surface-container text-on-surface-variant p-1.5 rounded border border-transparent text-label-sm font-label-sm truncate cursor-pointer hover:border-outline-variant transition-colors group relative">
+<div class="w-2 h-2 rounded-full bg-secondary inline-block mr-1"></div>
+                            Draft: Introduction
+                        </div>
+</div>
+<div class="bg-surface p-2 min-h-[120px] flex flex-col gap-1">
+<span class="text-label-sm font-label-sm text-on-surface self-end">2</span>
+</div>
+<!-- Week 2 -->
+<div class="bg-surface p-2 min-h-[120px] flex flex-col gap-1 bg-surface-container-low/50">
+<span class="text-label-sm font-label-sm text-on-surface self-end">3</span>
+</div>
+<div class="bg-surface p-2 min-h-[120px] flex flex-col gap-1">
+<span class="text-label-sm font-label-sm text-on-surface self-end">4</span>
+<!-- Published Marker (Tonal Layering, Subtle) -->
+<div class="bg-surface-container-lowest border border-outline-variant text-on-surface p-1.5 rounded text-label-sm font-label-sm truncate cursor-pointer hover:shadow-sm transition-shadow">
+<div class="w-2 h-2 rounded-full bg-primary inline-block mr-1"></div>
+                            The Theology of Rest
+                        </div>
+</div>
+<div class="bg-surface p-2 min-h-[120px] flex flex-col gap-1">
+<span class="text-label-sm font-label-sm text-on-surface self-end">5</span>
+</div>
+<div class="bg-surface p-2 min-h-[120px] flex flex-col gap-1 bg-surface-container-low/30">
+<!-- Current Day Indicator -->
+<span class="text-label-sm font-label-sm text-on-primary bg-primary rounded-full w-6 h-6 flex items-center justify-center self-end mb-1">6</span>
+<!-- Failed Status Alert -->
+<div class="bg-error-container text-on-error-container p-1.5 rounded border border-error-container text-label-sm font-label-sm truncate cursor-pointer flex items-center gap-1.5 hover:opacity-90">
+<span class="material-symbols-outlined" style="font-size: 14px;">error</span>
+<span class="truncate">Cultural Commentary</span>
+</div>
+<div class="bg-surface-container text-on-surface-variant p-1.5 rounded border border-transparent text-label-sm font-label-sm truncate cursor-pointer hover:border-outline-variant transition-colors mt-0.5">
+<div class="w-2 h-2 rounded-full bg-secondary inline-block mr-1"></div>
+                            Review: Chapter 4
+                        </div>
+</div>
+<div class="bg-surface p-2 min-h-[120px] flex flex-col gap-1">
+<span class="text-label-sm font-label-sm text-on-surface self-end">7</span>
+</div>
+<div class="bg-surface p-2 min-h-[120px] flex flex-col gap-1">
+<span class="text-label-sm font-label-sm text-on-surface self-end">8</span>
+<div class="bg-surface-container text-on-surface-variant p-1.5 rounded border border-transparent text-label-sm font-label-sm truncate cursor-pointer hover:border-outline-variant transition-colors">
+<div class="w-2 h-2 rounded-full bg-tertiary-container inline-block mr-1"></div>
+                            Scheduled: Liturgy
+                        </div>
+</div>
+<div class="bg-surface p-2 min-h-[120px] flex flex-col gap-1">
+<span class="text-label-sm font-label-sm text-on-surface self-end">9</span>
+</div>
+</div>
+</div>
+<!-- Legend / Footer -->
+<div class="mt-stack-sm flex flex-wrap items-center justify-between text-label-sm font-label-sm text-secondary">
+<div class="flex gap-6">
+<div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-primary"></div> Published</div>
+<div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-tertiary-container"></div> Scheduled</div>
+<div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-secondary"></div> Draft / Review</div>
+<div class="flex items-center gap-2 text-on-error-container"><span class="material-symbols-outlined" style="font-size: 16px;">error</span> Failed Publish</div>
+</div>
+<div class="opacity-70 mt-4 sm:mt-0">All times in EST</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Podcast Player</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&amp;family=Hanken+Grotesk:wght@600&amp;family=Source+Serif+4:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffe085",
+                        "error": "#ba1a1a",
+                        "surface-paper": "#fbf9f4",
+                        "background": "#fff8f7",
+                        "surface-container-high": "#f6e4e2",
+                        "stone-outline": "#887270",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#e8d6d4",
+                        "on-secondary-fixed": "#151d1b",
+                        "on-primary-container": "#e27770",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-primary": "#ffffff",
+                        "surface-linen": "#f5f3ee",
+                        "surface-variant": "#f1dedc",
+                        "on-background": "#231918",
+                        "on-tertiary-container": "#4e3e00",
+                        "outline-variant": "#dbc0be",
+                        "tertiary-container": "#c6a94e",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#887270",
+                        "surface": "#fff8f7",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#fff0ef",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "inverse-primary": "#ffb3ad",
+                        "on-surface-variant": "#554240",
+                        "primary-container": "#5d1212",
+                        "primary-fixed": "#ffdad7",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "surface-container": "#fceae8",
+                        "secondary-fixed": "#dbe5e0",
+                        "secondary-container": "#dbe5e0",
+                        "on-surface": "#231918",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#410004",
+                        "primary": "#3e0003",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#57605d",
+                        "success-secure": "#2e4d41",
+                        "tertiary": "#735c00",
+                        "tertiary-fixed-dim": "#e3c466",
+                        "on-tertiary-fixed": "#231b00",
+                        "inverse-on-surface": "#ffedeb",
+                        "surface-tint": "#9c413d",
+                        "on-secondary-container": "#5d6663",
+                        "on-secondary-fixed-variant": "#404946",
+                        "inverse-surface": "#392e2d",
+                        "surface-container-highest": "#f1dedc",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff8f7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1120px",
+                        "form-width": "560px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "stack-sm": "16px",
+                        "stack-md": "32px"
+                    },
+                    "fontFamily": {
+                        "donation-amount": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row font-body-md">
+<!-- Desktop Sidebar (NavigationDrawer) -->
+<nav class="hidden md:flex h-full w-80 rounded-r-full bg-surface-paper dark:bg-surface-dim flex-col p-4 gap-2 sticky top-0 border-r border-outline-variant">
+<div class="px-4 py-6 mb-4">
+<span class="font-headline-md text-headline-md text-primary">Explore Truth</span>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-lg text-label-lg">Scripture</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-lg text-label-lg">Search</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+<span class="font-label-lg text-label-lg">Articles</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-fixed dark:bg-primary-container text-on-primary-fixed-variant rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="mic" style="font-variation-settings: 'FILL' 1;">mic</span>
+<span class="font-label-lg text-label-lg">Podcasts</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="podcasts">podcasts</span>
+<span class="font-label-lg text-label-lg">Sermons</span>
+</a>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 pb-24 md:pb-0 relative overflow-y-auto">
+<!-- Mobile TopAppBar -->
+<header class="md:hidden w-full top-0 sticky bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-stone-outline flex justify-between items-center px-margin-mobile py-4 z-40">
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low transition-colors duration-200 active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">GreatGod</span>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low transition-colors duration-200 active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Player Content Vessel -->
+<div class="max-w-form-width mx-auto w-full px-margin-mobile pt-stack-md md:pt-stack-lg pb-stack-lg flex-1 flex flex-col items-center">
+<!-- Cover Art -->
+<div class="w-full aspect-square max-w-[400px] mb-stack-md rounded-xl overflow-hidden shadow-sm border border-outline-variant relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A serene, minimalist illustration of an open book bathed in soft morning light, rendered in a classical editorial style with deep burgundy accents on an off-white background, evoking a sense of calm reflection and spiritual depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqOTT9BvRY3JuzsnUSeDysMu6m12vEsJfAPxPnOpRVb157mBPisPj1aDH8G7JenglneTHQLvH8Gy5RV6KhAhzrfr_SG0OkkWa7SBkqGmTg3SJEGYV98rWJ2eE4CPSz4E3YavaaEd93PLNpHfqMW6F3qqqPK9Dze6SplFM2ObNUMCAldW8q_uFrYSJqS4rEYMKma8g4A59g7zgSvNfcqi3WC1SRA79Ba4sfyyARdyFgGkolOHIRCzW4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<!-- Title & Series -->
+<div class="text-center mb-stack-lg w-full">
+<p class="font-label-sm text-label-sm text-secondary tracking-widest uppercase mb-2">The Daily Devotional</p>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-3">Finding Peace in the Storm</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-prose mx-auto">A reflection on maintaining stillness amidst life's chaos, drawing from ancient wisdom and modern practices.</p>
+</div>
+<!-- Player Controls -->
+<div class="w-full bg-surface-linen rounded-2xl p-6 md:p-8 border border-outline-variant shadow-sm relative overflow-hidden">
+<!-- Progress Bar -->
+<div class="mb-8">
+<div class="flex justify-between font-label-sm text-label-sm text-secondary mb-2">
+<span>12:45</span>
+<span>-35:15</span>
+</div>
+<div class="w-full h-1 bg-surface-variant rounded-full relative cursor-pointer group">
+<!-- Filled progress -->
+<div class="absolute top-0 left-0 h-full bg-primary rounded-full w-1/3"></div>
+<!-- Scrubber handle -->
+<div class="absolute top-1/2 -translate-y-1/2 left-1/3 w-3 h-3 bg-primary rounded-full shadow-md scale-0 group-hover:scale-100 transition-transform -ml-1.5"></div>
+</div>
+</div>
+<!-- Main Buttons -->
+<div class="flex items-center justify-center gap-6 md:gap-8">
+<button aria-label="Playback Speed" class="text-secondary hover:text-primary transition-colors p-2 flex items-center justify-center">
+<span class="font-label-sm text-label-sm">1.2x</span>
+</button>
+<button aria-label="Skip Back 15s" class="text-on-surface hover:text-primary transition-colors p-2 flex items-center justify-center active:scale-95">
+<span class="material-symbols-outlined text-3xl" data-icon="replay_10">replay_10</span>
+</button>
+<button aria-label="Play/Pause" class="w-16 h-16 md:w-20 md:h-20 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-md hover:bg-primary-fixed-variant transition-all active:scale-95">
+<span class="material-symbols-outlined text-4xl ml-1" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button aria-label="Skip Forward 15s" class="text-on-surface hover:text-primary transition-colors p-2 flex items-center justify-center active:scale-95">
+<span class="material-symbols-outlined text-3xl" data-icon="forward_10">forward_10</span>
+</button>
+<button aria-label="More Options" class="text-secondary hover:text-primary transition-colors p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Related Content Divider -->
+<div class="w-full flex items-center gap-4 my-stack-lg">
+<div class="h-px bg-outline-variant flex-1"></div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Further Reading</span>
+<div class="h-px bg-outline-variant flex-1"></div>
+</div>
+<!-- Related Articles -->
+<div class="w-full flex flex-col gap-4">
+<a class="flex gap-4 p-4 rounded-xl border border-outline-variant hover:border-primary hover:bg-surface-container-lowest transition-all group bg-surface-paper" href="#">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist photograph of a solitary boat on a calm, misty lake at dawn, utilizing a muted palette of soft greys and deep reds, evoking tranquility and introspection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_W-vMKCu4T9KdxW3GeXoXVTBG5KMtbYOj-H-5wYbgXTyULkS89-AQtveeuLzzIM-wZYdvhU89ndgfRv1NLXkJcT3MMRRKE_SzG7XFNc5V6Gy1MTY401WJpfAk0DOecT_JZWMGYuwmdKsOnHYGk8mzkwSsPirj58ScUdmdc7G1INeKNyOzIfY9BdpO33Rglxt00pakbDFaEFkqu1SVBrF7mGWwF1RB2EeELZxTZzMIXQZXY3XVPV6u"/>
+</div>
+<div class="flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-secondary mb-1">Article</span>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors line-clamp-2">Navigating Silence in a Noisy World</h3>
+</div>
+</a>
+<a class="flex gap-4 p-4 rounded-xl border border-outline-variant hover:border-primary hover:bg-surface-container-lowest transition-all group bg-surface-paper" href="#">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up shot of hands gently clasping a weathered leather-bound book, illuminated by a soft, warm light source from the side, emphasizing texture and a sense of heritage in a calm setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE1gTYmGpyz9WUbTE1vc7k3WNbfIgmOZWQ_b3ZV50jVQNcnHIkVt6JtJrrUV16zg6yewkhZs7-H2GGU_kH7J-mF2ZdT2FODqxIDydHeiTePrpINvQDzMZnB4f3ezzxd7RKg5yjh6Cxh_cagYh80_HvVmRJu0r2HTPcgSE85ABwuUZIK5H-QMQvVtyRX8I2G8naX6R3R7G3HGfWF6awzsRbLMVL6s7oHqWDrXWR-zwShMD-2-Jh9kVo"/>
+</div>
+<div class="flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-secondary mb-1">Study Guide</span>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors line-clamp-2">The Practice of Daily Devotion</h3>
+</div>
+</a>
+</div>
+</div>
+</main>
+<!-- Mobile BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-linen dark:bg-inverse-surface border-t border-outline-variant flex justify-around items-center pt-2 pb-safe px-margin-mobile">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed scale-100 active:scale-90 transition-all duration-200 w-16 h-14" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed scale-100 active:scale-90 transition-all duration-200 w-16 h-14" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-label-sm text-[10px]">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold scale-100 active:scale-90 transition-all duration-200 w-16 h-14" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="library_books" style="font-variation-settings: 'FILL' 1;">library_books</span>
+<span class="font-label-sm text-[10px]">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed scale-100 active:scale-90 transition-all duration-200 w-16 h-14" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-[10px]">Profile</span>
+</a>
+</nav>
+</body></html>

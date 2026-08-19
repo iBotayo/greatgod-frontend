@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Article with Comments - Stewardship Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fff8f7",
+                        "surface-container-high": "#fee2df",
+                        "on-secondary-fixed-variant": "#404946",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#5d1212",
+                        "on-surface-variant": "#554240",
+                        "on-secondary-fixed": "#151d1b",
+                        "tertiary-fixed": "#ffe085",
+                        "surface": "#fff8f7",
+                        "tertiary": "#735c00",
+                        "on-tertiary-fixed": "#231b00",
+                        "surface-container-low": "#fff0ef",
+                        "secondary-fixed": "#dbe5e0",
+                        "outline-variant": "#dbc0be",
+                        "tertiary-fixed-dim": "#e3c466",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "inverse-surface": "#3d2c2b",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#f8dcda",
+                        "on-error": "#ffffff",
+                        "surface-linen": "#f5f3ee",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "on-primary-container": "#e27770",
+                        "surface-paper": "#fbf9f4",
+                        "surface-variant": "#f8dcda",
+                        "error-container": "#ffdad6",
+                        "success-secure": "#2e4d41",
+                        "surface-tint": "#9c413d",
+                        "surface-dim": "#efd4d1",
+                        "on-tertiary-container": "#4e3e00",
+                        "outline": "#887270",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#ffedeb",
+                        "secondary": "#57605d",
+                        "on-primary-fixed": "#410004",
+                        "on-surface": "#261817",
+                        "surface-bright": "#fff8f7",
+                        "on-secondary-container": "#5d6663",
+                        "on-background": "#261817",
+                        "surface-container": "#ffe9e7",
+                        "secondary-container": "#dbe5e0",
+                        "error": "#ba1a1a",
+                        "primary": "#3e0003",
+                        "tertiary-container": "#c6a94e",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb3ad",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ffdad7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1120px",
+                        "stack-lg": "64px",
+                        "gutter": "32px",
+                        "stack-md": "32px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "16px",
+                        "form-width": "560px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["EB Garamond"],
+                        "donation-amount": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-md": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-paper text-on-surface antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky border-b border-outline dark:border-outline-variant bg-background z-50">
+<div class="flex justify-between items-center w-full px-gutter h-16 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight" href="#">Stewardship Archive</a>
+<div class="hidden md:flex gap-6">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-80 font-label-lg text-label-lg" href="#">Library</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary font-bold font-label-lg text-label-lg cursor-pointer active:opacity-80" href="#">Articles</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-80 font-label-lg text-label-lg" href="#">Authors</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer active:opacity-80 font-label-lg text-label-lg" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-4 text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined cursor-pointer hover:text-surface-tint transition-colors duration-200">account_circle</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-surface-tint transition-colors duration-200">notifications</span>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center w-full px-margin-mobile md:px-gutter py-stack-lg">
+<!-- Article Header Simulation -->
+<article class="w-full max-w-form-width mb-stack-lg">
+<header class="mb-stack-md text-center">
+<p class="font-label-sm text-label-sm text-surface-tint uppercase tracking-widest mb-unit">Theological Reflections</p>
+<h1 class="font-headline-lg text-headline-lg md:font-headline-lg md:text-headline-lg text-primary mb-stack-sm">The Nature of Silent Devotion</h1>
+<p class="font-body-md text-body-md text-on-surface-variant italic">By Dr. Elias Thorne • October 12, 1924</p>
+</header>
+<div class="border-b border-outline mb-stack-md w-1/3 mx-auto"></div>
+<div class="font-body-lg text-body-lg text-on-surface space-y-6">
+<p>In the quiet spaces between spoken prayers lies a deeper conversation. The texts of early monastics often point not to the volume of their intercessions, but to the profound stillness that followed them. It is in this void, they argued, that true communion takes shape.</p>
+<p>To cultivate such silence in a modern, clamorous age requires a disciplined stewardship of one's attention. It is not merely the absence of noise, but an active, expectant waiting—a readiness to receive what is whispered rather than proclaimed.</p>
+</div>
+</article>
+<!-- Comments Section (The Vessel) -->
+<section class="w-full max-w-form-width bg-surface-linen border border-outline rounded p-stack-md">
+<header class="flex items-center justify-between mb-stack-md border-b border-outline pb-unit">
+<h2 class="font-headline-md text-headline-md text-primary">Reflections</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-paper border border-outline px-2 py-1 rounded">0 Comments</span>
+</header>
+<!-- Input Area -->
+<div class="mb-stack-lg">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary flex-shrink-0 border border-outline">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<div class="flex-grow">
+<textarea class="w-full bg-surface-container-lowest border border-outline text-on-surface font-body-md text-body-md p-3 rounded focus:ring-0 focus:border-primary focus:border-2 transition-all resize-y min-h-[120px] placeholder:text-on-surface-variant placeholder:italic" placeholder="Add a reflection..."></textarea>
+<div class="flex justify-end mt-stack-sm">
+<button class="bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest px-6 py-3 rounded hover:bg-surface-tint transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-linen">
+                                Post Reflection
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State -->
+<div class="flex flex-col items-center justify-center py-stack-md text-center border-t border-outline border-dashed">
+<span class="material-symbols-outlined text-[48px] text-surface-tint mb-stack-sm opacity-50 font-light" style="font-variation-settings: 'wght' 200;">forum</span>
+<p class="font-body-lg text-body-lg text-on-surface mb-unit">No reflections yet</p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[80%]">Join the conversation. Be the first to share a reflection on this text.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-md mt-stack-lg border-t border-outline dark:border-outline-variant bg-background">
+<div class="flex flex-col items-center justify-center gap-4 w-full px-margin-mobile max-w-container-max mx-auto text-center">
+<div class="font-label-lg text-label-lg uppercase tracking-widest text-primary">
+                Stewardship Archive
+            </div>
+<div class="flex flex-wrap justify-center gap-4 font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Moderation Guidelines</a>
+<a class="hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Contact Support</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">
+                © 2024 Stewardship Archive. All rights reserved. Scholarly Clarity and Spiritual Stewardship.
+            </div>
+</div>
+</footer>
+</body></html>

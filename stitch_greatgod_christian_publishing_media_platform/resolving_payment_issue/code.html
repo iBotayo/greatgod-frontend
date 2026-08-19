@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Updating Payment - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&amp;family=Hanken+Grotesk:wght@400;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#ffedeb",
+                        "on-secondary-container": "#5d6663",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#e3c466",
+                        "surface-bright": "#fff8f7",
+                        "secondary-fixed-dim": "#bfc9c5",
+                        "stone-outline": "#887270",
+                        "surface-container-highest": "#f1dedc",
+                        "success-secure": "#2e4d41",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "secondary": "#57605d",
+                        "tertiary": "#735c00",
+                        "on-primary-fixed": "#410004",
+                        "on-surface-variant": "#554240",
+                        "on-background": "#231918",
+                        "secondary-container": "#dbe5e0",
+                        "surface": "#fff8f7",
+                        "on-error": "#ffffff",
+                        "primary": "#3e0003",
+                        "surface-dim": "#e8d6d4",
+                        "outline-variant": "#dbc0be",
+                        "on-secondary-fixed": "#151d1b",
+                        "tertiary-container": "#c6a94e",
+                        "on-tertiary-container": "#4e3e00",
+                        "on-primary-container": "#e27770",
+                        "surface-container-low": "#fff0ef",
+                        "on-secondary-fixed-variant": "#404946",
+                        "surface-tint": "#9c413d",
+                        "secondary-fixed": "#dbe5e0",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ffdad7",
+                        "inverse-surface": "#392e2d",
+                        "surface-paper": "#fbf9f4",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-variant": "#f1dedc",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fff8f7",
+                        "surface-container-high": "#f6e4e2",
+                        "primary-container": "#5d1212",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#231918",
+                        "surface-container": "#fceae8",
+                        "on-tertiary-fixed": "#231b00",
+                        "on-secondary": "#ffffff",
+                        "outline": "#887270",
+                        "tertiary-fixed": "#ffe085",
+                        "surface-linen": "#f5f3ee",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "inverse-primary": "#ffb3ad"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "stack-sm": "16px",
+                        "container-max": "1120px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "form-width": "560px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "label-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "donation-amount": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "donation-amount": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .spinner {
+            animation: rotate 2s linear infinite;
+            z-index: 2;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -25px 0 0 -25px;
+            width: 50px;
+            height: 50px;
+        }
+        .spinner .path {
+            stroke: #3e0003;
+            stroke-linecap: round;
+            animation: dash 1.5s ease-in-out infinite;
+        }
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes dash {
+            0% { stroke-dasharray: 1, 150; stroke-dashoffset: 0; }
+            50% { stroke-dasharray: 90, 150; stroke-dashoffset: -35; }
+            100% { stroke-dasharray: 90, 150; stroke-dashoffset: -124; }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        .fade-in-delayed {
+            animation: fadeIn 0.8s ease-out 0.4s forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background h-full flex flex-col items-center justify-center font-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation suppressed as per guidelines for transactional/processing screens -->
+<main class="w-full max-w-form-width mx-auto px-margin-mobile flex-grow flex flex-col items-center justify-center relative z-10">
+<div class="bg-surface-linen w-full rounded-xl p-stack-md shadow-sm border border-stone-outline flex flex-col items-center text-center fade-in relative overflow-hidden">
+<!-- Minimalist Progress Indication -->
+<div class="absolute top-0 left-0 w-full h-[1px] bg-stone-outline/30">
+<div class="h-full bg-primary w-2/3 animate-[pulse_2s_ease-in-out_infinite]" style="transition: width 0.5s ease-in-out;"></div>
+</div>
+<!-- Processing Animation Area -->
+<div class="relative w-32 h-32 mb-stack-sm flex items-center justify-center">
+<svg class="spinner" viewbox="0 0 50 50">
+<circle class="path" cx="25" cy="25" fill="none" r="20" stroke-width="2"></circle>
+</svg>
+<!-- Central Icon indicating action type -->
+<span class="material-symbols-outlined text-primary text-3xl opacity-80" data-weight="fill" style="font-variation-settings: 'FILL' 1;">sync</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-unit tracking-tight">Updating Payment</h1>
+<p class="text-secondary font-body-md mb-stack-md max-w-sm">
+                We are securely processing your updated details and retrying your contribution. Please wait a moment.
+            </p>
+<!-- Status Indicator Details -->
+<div class="w-full max-w-xs space-y-4 fade-in-delayed">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-success-secure text-xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm tracking-wide">Secure connection established</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-success-secure text-xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm tracking-wide">Card details verified</span>
+</div>
+<div class="flex items-center gap-3 text-primary font-medium">
+<span class="material-symbols-outlined text-primary text-xl animate-pulse">more_horiz</span>
+<span class="font-label-sm text-label-sm tracking-wide">Processing retry...</span>
+</div>
+</div>
+</div>
+<!-- Trust Footer Component (Integrated into Vessel per guidelines) -->
+<div class="w-full max-w-form-width mt-stack-sm text-center flex flex-col items-center gap-unit fade-in-delayed opacity-80">
+<div class="flex items-center justify-center gap-2 text-success-secure">
+<span class="material-symbols-outlined text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wide">Secure SSL Encrypted Connection</span>
+</div>
+<p class="font-body-md text-sm text-secondary italic">
+                Your payment information is encrypted and transmitted securely.
+            </p>
+</div>
+</main>
+<!-- Bottom Navigation suppressed as per guidelines for transactional screens -->
+<script>
+        // Simulate processing completion after a few seconds (for demonstration)
+        setTimeout(() => {
+            const progressBar = document.querySelector('.bg-primary.w-2\\/3');
+            if(progressBar) {
+                progressBar.style.width = '100%';
+                progressBar.classList.remove('animate-[pulse_2s_ease-in-out_infinite]');
+            }
+            
+            const spinner = document.querySelector('.spinner');
+            const syncIcon = document.querySelector('.material-symbols-outlined.text-primary.text-3xl');
+            
+            if(spinner) spinner.style.display = 'none';
+            if(syncIcon) {
+                syncIcon.innerHTML = 'check_circle';
+                syncIcon.classList.remove('text-primary');
+                syncIcon.classList.add('text-success-secure');
+            }
+
+            const processingText = document.querySelector('.flex.items-center.gap-3.text-primary');
+            if(processingText) {
+                processingText.classList.remove('text-primary');
+                processingText.classList.add('text-success-secure');
+                processingText.innerHTML = `
+                    <span class="material-symbols-outlined text-success-secure text-xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-label-sm text-label-sm tracking-wide">Payment Successful</span>
+                `;
+            }
+
+            const title = document.querySelector('h1');
+            const desc = document.querySelector('p.text-secondary.max-w-sm');
+            if(title) title.innerText = 'Thank You';
+            if(desc) desc.innerText = 'Your payment details have been updated and the contribution was successful.';
+
+        }, 4500);
+    </script>
+</body></html>

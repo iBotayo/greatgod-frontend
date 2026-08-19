@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Donation History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#ffedeb",
+                      "on-secondary-container": "#5d6663",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#e3c466",
+                      "surface-bright": "#fff8f7",
+                      "secondary-fixed-dim": "#bfc9c5",
+                      "stone-outline": "#887270",
+                      "surface-container-highest": "#f1dedc",
+                      "success-secure": "#2e4d41",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "secondary": "#57605d",
+                      "tertiary": "#735c00",
+                      "on-primary-fixed": "#410004",
+                      "on-surface-variant": "#554240",
+                      "on-background": "#231918",
+                      "secondary-container": "#dbe5e0",
+                      "surface": "#fff8f7",
+                      "on-error": "#ffffff",
+                      "primary": "#3e0003",
+                      "surface-dim": "#e8d6d4",
+                      "outline-variant": "#dbc0be",
+                      "on-secondary-fixed": "#151d1b",
+                      "tertiary-container": "#c6a94e",
+                      "on-tertiary-container": "#4e3e00",
+                      "on-primary-container": "#e27770",
+                      "surface-container-low": "#fff0ef",
+                      "on-secondary-fixed-variant": "#404946",
+                      "surface-tint": "#9c413d",
+                      "secondary-fixed": "#dbe5e0",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed": "#ffdad7",
+                      "inverse-surface": "#392e2d",
+                      "surface-paper": "#fbf9f4",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "surface-variant": "#f1dedc",
+                      "surface-container-lowest": "#ffffff",
+                      "background": "#fff8f7",
+                      "surface-container-high": "#f6e4e2",
+                      "primary-container": "#5d1212",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#231918",
+                      "surface-container": "#fceae8",
+                      "on-tertiary-fixed": "#231b00",
+                      "on-secondary": "#ffffff",
+                      "outline": "#887270",
+                      "tertiary-fixed": "#ffe085",
+                      "surface-linen": "#f5f3ee",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "inverse-primary": "#ffb3ad"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "stack-lg": "64px",
+                      "stack-md": "32px",
+                      "stack-sm": "16px",
+                      "container-max": "1120px",
+                      "gutter": "32px",
+                      "margin-mobile": "20px",
+                      "form-width": "560px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "label-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "donation-amount": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "donation-amount": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md antialiased pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile h-16 max-w-container-max mx-auto">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full p-2 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed tracking-tight">GreatGod</h1>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full p-2 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-md md:py-stack-lg">
+<!-- Page Header -->
+<div class="mb-stack-lg text-center md:text-left">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-unit">Donation History</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">A record of your faithful stewardship and contributions to the ministry.</p>
+</div>
+<!-- Summary Section -->
+<section class="bg-surface-linen rounded-xl p-6 md:p-8 mb-stack-lg border border-outline-variant shadow-sm relative overflow-hidden">
+<!-- Decorative subtle pattern -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(var(--tw-colors-stone-outline) 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-outline-variant">
+<div class="pt-4 md:pt-0 md:pl-0 flex flex-col items-center md:items-start first:pt-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Lifetime Giving</span>
+<span class="font-donation-amount text-donation-amount text-primary">$12,450.00</span>
+</div>
+<div class="pt-4 md:pt-0 md:pl-8 flex flex-col items-center md:items-start">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">This Year</span>
+<span class="font-headline-md text-headline-md text-on-surface">$2,100.00</span>
+</div>
+<div class="pt-4 md:pt-0 md:pl-8 flex flex-col items-center md:items-start">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Active Recurring</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-success-secure" data-icon="sync">sync</span>
+<span class="font-headline-md text-headline-md text-on-surface">1</span>
+</div>
+</div>
+</div>
+</section>
+<!-- History List -->
+<section>
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Gifts</h3>
+<button class="font-label-sm text-label-sm text-primary uppercase flex items-center gap-1 hover:text-surface-tint transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded px-2 py-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span> Filter
+                </button>
+</div>
+<div class="bg-surface-paper rounded-xl border border-outline-variant overflow-hidden">
+<!-- List Header (Desktop only) -->
+<div class="hidden md:grid grid-cols-12 gap-4 p-4 border-b border-outline-variant bg-surface-container-lowest font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+<div class="col-span-2">Date</div>
+<div class="col-span-4">Designation</div>
+<div class="col-span-2 text-right">Amount</div>
+<div class="col-span-3">Status</div>
+<div class="col-span-1 text-center">Receipt</div>
+</div>
+<!-- List Items -->
+<div class="divide-y divide-outline-variant">
+<!-- Item 1 -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 p-4 items-center hover:bg-surface-container-low transition-colors">
+<div class="md:col-span-2 font-body-md text-body-md text-on-surface order-1">
+                            Oct 12, 2024
+                        </div>
+<div class="md:col-span-4 flex flex-col order-3 md:order-2">
+<span class="font-label-lg text-label-lg text-on-surface">General Ministry Fund</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="credit_card">credit_card</span> •••• 4242
+                            </span>
+</div>
+<div class="md:col-span-2 text-left md:text-right font-body-lg text-body-lg text-primary order-2 md:order-3">
+                            $250.00
+                        </div>
+<div class="md:col-span-3 flex items-center order-4 md:order-4 mt-2 md:mt-0">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span> Completed
+                            </span>
+</div>
+<div class="md:col-span-1 flex justify-end md:justify-center order-5 md:order-5 absolute right-4 md:relative">
+<button aria-label="Download Receipt" class="text-on-surface-variant hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded p-1">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 p-4 items-center hover:bg-surface-container-low transition-colors">
+<div class="md:col-span-2 font-body-md text-body-md text-on-surface order-1">
+                            Sep 12, 2024
+                        </div>
+<div class="md:col-span-4 flex flex-col order-3 md:order-2">
+<span class="font-label-lg text-label-lg text-on-surface">General Ministry Fund</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="credit_card">credit_card</span> •••• 4242
+                            </span>
+</div>
+<div class="md:col-span-2 text-left md:text-right font-body-lg text-body-lg text-primary order-2 md:order-3">
+                            $250.00
+                        </div>
+<div class="md:col-span-3 flex items-center order-4 md:order-4 mt-2 md:mt-0">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span> Completed
+                            </span>
+</div>
+<div class="md:col-span-1 flex justify-end md:justify-center order-5 md:order-5 absolute right-4 md:relative">
+<button aria-label="Download Receipt" class="text-on-surface-variant hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded p-1">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 p-4 items-center hover:bg-surface-container-low transition-colors">
+<div class="md:col-span-2 font-body-md text-body-md text-on-surface order-1">
+                            Aug 15, 2024
+                        </div>
+<div class="md:col-span-4 flex flex-col order-3 md:order-2">
+<span class="font-label-lg text-label-lg text-on-surface">Global Missions Outreach</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="account_balance">account_balance</span> Bank Acct ending in 8910
+                            </span>
+</div>
+<div class="md:col-span-2 text-left md:text-right font-body-lg text-body-lg text-primary order-2 md:order-3">
+                            $1,000.00
+                        </div>
+<div class="md:col-span-3 flex items-center order-4 md:order-4 mt-2 md:mt-0">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span> Completed
+                            </span>
+</div>
+<div class="md:col-span-1 flex justify-end md:justify-center order-5 md:order-5 absolute right-4 md:relative">
+<button aria-label="Download Receipt" class="text-on-surface-variant hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded p-1">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant bg-surface-container-lowest text-center">
+<button class="font-label-lg text-label-lg text-primary hover:text-surface-tint transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded px-4 py-2 inline-flex items-center gap-2">
+                        Load More <span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 bg-surface-container dark:bg-surface-container-high border-t border-outline-variant dark:border-outline md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="font-label-sm text-label-sm">Giving</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-container text-on-primary-container dark:text-on-primary-container rounded-full px-4 py-1 opacity-80 transition-opacity duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-label-sm">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="shield_lock">shield_lock</span>
+<span class="font-label-sm text-label-sm">Security</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-stack-md px-margin-mobile text-center flex flex-col items-center gap-unit bg-surface-paper dark:bg-surface-dim full-width mt-stack-lg bg-surface-linen dark:bg-surface-container pb-28 md:pb-stack-md">
+<p class="font-label-lg text-label-lg text-primary mb-2">GreatGod</p>
+<div class="flex flex-wrap justify-center gap-4 mb-4">
+<a class="font-label-sm text-label-sm text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors inline-flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px] text-success-secure" data-icon="lock">lock</span> Secure SSL Encrypted
+            </a>
+<a class="font-label-sm text-label-sm text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors inline-flex items-center gap-1" href="#">
+                 Privacy Policy
+            </a>
+<a class="font-label-sm text-label-sm text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors inline-flex items-center gap-1" href="#">
+                 Terms of Stewardship
+            </a>
+</div>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim italic">© 2024 GreatGod Media. All donations are tax-deductible.</p>
+</footer>
+</body></html>

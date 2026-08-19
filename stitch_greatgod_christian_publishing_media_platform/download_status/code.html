@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Download Progress</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#ffb3ad",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "success-secure": "#2e4d41",
+                      "primary-fixed": "#ffdad7",
+                      "tertiary-container": "#c6a94e",
+                      "tertiary": "#735c00",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-error": "#ffffff",
+                      "secondary": "#57605d",
+                      "surface-container-low": "#fff0ef",
+                      "surface-tint": "#9c413d",
+                      "primary-container": "#5d1212",
+                      "inverse-primary": "#ffb3ad",
+                      "surface-container-highest": "#f8dcda",
+                      "on-secondary-fixed": "#151d1b",
+                      "surface-container-high": "#fee2df",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#e3c466",
+                      "on-secondary-container": "#5d6663",
+                      "on-secondary-fixed-variant": "#404946",
+                      "secondary-fixed-dim": "#bfc9c5",
+                      "surface-bright": "#fff8f7",
+                      "surface": "#fff8f7",
+                      "inverse-surface": "#3d2c2b",
+                      "surface-container": "#fceae8",
+                      "error": "#ba1a1a",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#ffedeb",
+                      "surface-linen": "#f5f3ee",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#231b00",
+                      "on-primary-container": "#e27770",
+                      "primary": "#3e0003",
+                      "secondary-fixed": "#dbe5e0",
+                      "on-background": "#261817",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#ffe085",
+                      "surface-container-lowest": "#ffffff",
+                      "background": "#fff8f7",
+                      "on-surface": "#261817",
+                      "on-error-container": "#93000a",
+                      "surface-variant": "#f8dcda",
+                      "outline-variant": "#dbc0be",
+                      "on-primary-fixed": "#410004",
+                      "surface-paper": "#fbf9f4",
+                      "on-surface-variant": "#554240",
+                      "outline": "#887270",
+                      "surface-dim": "#efd4d1",
+                      "secondary-container": "#dbe5e0",
+                      "on-tertiary-container": "#4e3e00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "gutter": "32px",
+                      "stack-md": "32px",
+                      "stack-sm": "16px",
+                      "container-max": "1120px",
+                      "stack-lg": "64px",
+                      "form-width": "560px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["EB Garamond", "serif"],
+                      "headline-lg": ["EB Garamond", "serif"],
+                      "headline-md": ["EB Garamond", "serif"],
+                      "label-lg": ["Hanken Grotesk", "sans-serif"],
+                      "body-lg": ["\"Source Serif 4\"", "serif"],
+                      "donation-amount": ["EB Garamond", "serif"],
+                      "label-sm": ["Hanken Grotesk", "sans-serif"],
+                      "body-md": ["\"Source Serif 4\"", "serif"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                      "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "500"}],
+                      "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                      "label-lg": ["16px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                      "donation-amount": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                      "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                      "body-md": ["17px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&amp;family=Hanken+Grotesk:wght@400;600;700&amp;family=Source+Serif+4:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { background-color: theme('colors.surface-paper'); color: theme('colors.on-surface'); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .progress-bar-fill { transition: width 3s ease-in-out; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col items-center justify-center p-margin-mobile md:p-gutter">
+<!-- Progress State Vessel -->
+<main class="w-full max-w-form-width bg-surface-linen border border-outline rounded-lg p-stack-md flex flex-col items-center text-center shadow-sm relative transition-opacity duration-500" id="progress-state">
+<!-- Icon -->
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-stack-sm">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="cloud_download">cloud_download</span>
+</div>
+<!-- Typography -->
+<h1 class="font-headline-md text-headline-md text-primary mb-2">Downloading Manuscript</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Acquiring 'The Imitation of Christ' (PDF) securely to your device.</p>
+<!-- Progress Bar -->
+<div class="w-full max-w-xs mb-4">
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden border border-outline-variant">
+<div class="h-full bg-primary progress-bar-fill w-0 rounded-full" id="progress-fill"></div>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest" id="progress-text">0% Complete</p>
+<!-- Stewardship Footer (Locked) -->
+<div class="mt-stack-lg flex items-center justify-center gap-2 text-success-secure">
+<span class="material-symbols-outlined text-sm" data-icon="lock" data-weight="fill">lock</span>
+<span class="font-label-sm text-label-sm uppercase">Secure SSL Connection</span>
+</div>
+</main>
+<!-- Success State Vessel (Hidden Initially) -->
+<main class="hidden w-full max-w-form-width bg-surface-linen border border-outline rounded-lg p-stack-md flex flex-col items-center text-center shadow-sm relative transition-opacity duration-500 opacity-0" id="success-state">
+<!-- Icon -->
+<div class="w-16 h-16 rounded-full bg-success-secure/10 flex items-center justify-center mb-stack-sm border border-success-secure/30">
+<span class="material-symbols-outlined text-success-secure text-3xl" data-icon="check_circle" data-weight="fill">check_circle</span>
+</div>
+<!-- Typography -->
+<h1 class="font-headline-md text-headline-md text-primary mb-2">Download Complete</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">'The Imitation of Christ' has been successfully saved to your library.</p>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+<button class="bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest px-8 py-4 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 hover:bg-primary-container transition-colors shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="menu_book">menu_book</span>
+                Open File
+            </button>
+<button class="bg-transparent text-primary border border-outline hover:border-primary font-label-sm text-label-sm uppercase tracking-widest px-8 py-4 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span>
+                Return to Library
+            </button>
+</div>
+</main>
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const progressFill = document.getElementById('progress-fill');
+            const progressText = document.getElementById('progress-text');
+            const progressState = document.getElementById('progress-state');
+            const successState = document.getElementById('success-state');
+
+            // Simulate progress
+            setTimeout(() => {
+                progressFill.style.width = '100%';
+                
+                let percent = 0;
+                const interval = setInterval(() => {
+                    percent += 3.33; // Approx 100 / 30 steps (3s duration)
+                    if (percent >= 100) {
+                        percent = 100;
+                        clearInterval(interval);
+                        
+                        // Transition to success state
+                        setTimeout(() => {
+                            progressState.style.opacity = '0';
+                            setTimeout(() => {
+                                progressState.classList.add('hidden');
+                                successState.classList.remove('hidden');
+                                // Trigger reflow for transition
+                                void successState.offsetWidth;
+                                successState.style.opacity = '1';
+                            }, 500); // Wait for fade out
+                        }, 500); // Brief pause at 100%
+                    }
+                    progressText.textContent = `${Math.floor(percent)}% Complete`;
+                }, 100);
+            }, 500); // Start after slight delay
+        });
+    </script>
+</body></html>

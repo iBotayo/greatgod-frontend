@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Changes Requested</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#ffb3ad",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dbdad5",
+                    "background": "#fbf9f4",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#410004",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "inverse-on-surface": "#f2f1ec",
+                    "inverse-surface": "#30312e",
+                    "secondary-container": "#d8e2dd",
+                    "surface-container-high": "#eae8e3",
+                    "tertiary-fixed": "#ffe088",
+                    "outline": "#887270",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#4e3d00",
+                    "error": "#ba1a1a",
+                    "tertiary": "#735c00",
+                    "on-secondary-container": "#5b6561",
+                    "on-primary-fixed-variant": "#7e2a27",
+                    "secondary": "#57605d",
+                    "on-surface": "#1b1c19",
+                    "surface-container-low": "#f5f3ee",
+                    "on-tertiary-fixed": "#241a00",
+                    "primary-fixed": "#ffdad7",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "surface-container": "#f0eee9",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#bfc9c4",
+                    "on-secondary-fixed": "#141d1a",
+                    "surface": "#fbf9f4",
+                    "surface-tint": "#9c413d",
+                    "surface-container-highest": "#e4e2dd",
+                    "secondary-fixed": "#dbe5e0",
+                    "on-surface-variant": "#554240",
+                    "on-background": "#1b1c19",
+                    "primary-container": "#5d1212",
+                    "surface-bright": "#fbf9f4",
+                    "on-secondary-fixed-variant": "#3f4945",
+                    "surface-variant": "#e4e2dd",
+                    "tertiary-container": "#cca72f",
+                    "primary": "#3e0003",
+                    "on-primary-container": "#e27770",
+                    "outline-variant": "#dbc0be"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "16px",
+                    "stack-md": "32px",
+                    "gutter": "32px",
+                    "container-max": "1120px",
+                    "unit": "8px",
+                    "stack-lg": "64px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "\"Source Serif 4\""
+                    ],
+                    "headline-md": [
+                            "EB Garamond"
+                    ],
+                    "headline-lg": [
+                            "EB Garamond"
+                    ],
+                    "body-lg": [
+                            "\"Source Serif 4\""
+                    ],
+                    "headline-lg-mobile": [
+                            "EB Garamond"
+                    ],
+                    "display-lg": [
+                            "EB Garamond"
+                    ],
+                    "label-sm": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "17px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-sm": [
+                            "13px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.08em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased font-body-md text-body-md selection:bg-outline-variant selection:text-on-surface">
+<!-- TopAppBar from Shared Components -->
+<header class="bg-surface dark:bg-surface-dim docked full-width top-0 border-b border-outline-variant dark:border-outline flat no shadows duration-200 ease-in-out fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-display-lg text-headline-lg-mobile text-primary dark:text-primary-fixed-dim tracking-tight">
+            GreatGod
+        </div>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content Area - Task Focused (No Bottom Nav Shell) -->
+<main class="pt-16 min-h-screen pb-stack-lg">
+<!-- Fixed Grid Layout - Narrow Central Column for Editorial Content -->
+<article class="max-w-[720px] mx-auto px-margin-mobile md:px-0 pt-stack-md md:pt-stack-lg">
+<!-- Context / Status Badge -->
+<div class="mb-stack-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 0;">edit_note</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Editorial Review</span>
+</div>
+<!-- Header Section -->
+<header class="mb-stack-md">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-unit leading-tight">
+                    Changes Requested
+                </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[600px]">
+                    Your submission <span class="italic font-semibold text-on-surface">"The Theology of Rest in a Digital Age"</span> requires revisions before publication. Please review the feedback below.
+                </p>
+</header>
+<!-- Editor Profile Block (Human Connection) -->
+<div class="flex items-center gap-4 mb-stack-md p-4 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT">
+<div class="w-12 h-12 rounded-full bg-cover bg-center border border-outline-variant flex-shrink-0" data-alt="A small, circular black and white portrait photograph of a female editor in her 50s. She has a warm, intelligent expression. The lighting is soft and natural, emphasizing a classic, trustworthy editorial aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD22MUBp8yO4FJ27OQbIm748Wg7lI1DfdA1VAdu5uFOuQ1FOS602BNvI2FamO6WkXFFu6JxIiseg6_t2mIiaFgpVJ-sGpHJd9LwsaSxxk_xUKYjP6N7gVqZhJYr2QGLCzvTD2d0JAdWsXPiXtTv2T1Ycd_fmGGKHijgMWlUq2a-2atj8IQaXhxtSv21Ds_mZ7S28Ts6e4sosaXoBdA8Xy0Yi02LJsQhfln9PBTtXZFIUcEK8G2akvwE')"></div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface">Dr. Eleanor Vance</div>
+<div class="font-label-sm text-label-sm text-secondary">Senior Theological Editor</div>
+</div>
+</div>
+<!-- Flourish Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-outline-variant to-transparent my-stack-md opacity-70"></div>
+<!-- Comments Section -->
+<section class="flex flex-col gap-stack-sm mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-unit">Editor Comments</h2>
+<!-- Comment 1 -->
+<div class="bg-surface-container-low border border-outline-variant rounded-DEFAULT p-6 flex flex-col gap-3 relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-outline-variant opacity-50"></div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Section: Introduction, Paragraph 2</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                        "The transition from the historical overview to the contemporary problem feels abrupt. Could we add a bridging sentence focusing on the industrial revolution to anchor the reader before moving to the digital era?"
+                    </p>
+</div>
+<!-- Comment 2 -->
+<div class="bg-surface-container-low border border-outline-variant rounded-DEFAULT p-6 flex flex-col gap-3 relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-outline-variant opacity-50"></div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">book</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Section: 'The Sacred Pause'</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                        "Beautifully written section. However, the quote from Augustine needs a clearer citation. Please format according to our style guide (Confessions, Book X, Chapter 27)."
+                    </p>
+</div>
+<!-- Comment 3 -->
+<div class="bg-surface-container-low border border-outline-variant rounded-DEFAULT p-6 flex flex-col gap-3 relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-outline-variant opacity-50"></div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">flag</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Section: Conclusion</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                        "The ending feels a bit theoretical. Consider expanding on the practical applications for daily life rather than just summarizing concepts. Let's leave the reader with a tangible step toward finding rest."
+                    </p>
+</div>
+</section>
+<!-- Action Area (Bottom Anchored on mobile, inline on desktop) -->
+<div class="border-t border-outline-variant pt-stack-md flex flex-col sm:flex-row gap-4 items-center justify-start">
+<button class="w-full sm:w-auto bg-primary-container text-on-primary-container font-label-sm text-label-sm py-3 px-8 rounded-DEFAULT hover:opacity-90 transition-opacity duration-200">
+                    Edit and Resubmit
+                </button>
+<button class="w-full sm:w-auto border border-outline text-on-surface font-label-sm text-label-sm py-3 px-8 rounded-DEFAULT hover:bg-surface-container-low transition-colors duration-200">
+                    Message Editor
+                </button>
+</div>
+</article>
+</main>
+<!-- Footer from Shared Components -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest full-width border-t border-outline-variant dark:border-outline flat no shadows duration-300 ease-serif w-full py-stack-lg px-margin-mobile md:px-stack-lg flex flex-col items-center gap-stack-md">
+<div class="font-display-lg text-headline-md text-primary dark:text-primary-fixed-dim">
+            GreatGod
+        </div>
+<nav class="flex flex-wrap justify-center gap-4 md:gap-8">
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">About</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Statement of Faith</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Newsletter</a>
+</nav>
+<div class="font-body-md text-body-md text-on-surface dark:text-on-surface-variant opacity-70">
+            © 2024 GreatGod Publishing. All rights reserved.
+        </div>
+</footer>
+</body></html>

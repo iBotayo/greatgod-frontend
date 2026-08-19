@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod CMS - Audit Log Entry</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#5b6561",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#141d1a",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "primary": "#3e0003",
+                        "secondary-container": "#d8e2dd",
+                        "on-tertiary-container": "#4e3d00",
+                        "inverse-primary": "#ffb3ad",
+                        "outline": "#887270",
+                        "inverse-surface": "#30312e",
+                        "primary-fixed": "#ffdad7",
+                        "surface-bright": "#fbf9f4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f5f3ee",
+                        "tertiary": "#735c00",
+                        "secondary": "#57605d",
+                        "secondary-fixed": "#dbe5e0",
+                        "surface-container-high": "#eae8e3",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-container": "#f0eee9",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "primary-container": "#5d1212",
+                        "surface-variant": "#e4e2dd",
+                        "tertiary-fixed": "#ffe088",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "background": "#fbf9f4",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-background": "#1b1c19",
+                        "on-surface-variant": "#554240",
+                        "tertiary-container": "#cca72f",
+                        "surface-dim": "#dbdad5",
+                        "outline-variant": "#dbc0be",
+                        "on-primary-container": "#e27770",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "on-primary-fixed": "#410004",
+                        "on-surface": "#1b1c19",
+                        "inverse-on-surface": "#f2f1ec",
+                        "surface-tint": "#9c413d",
+                        "surface": "#fbf9f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "32px",
+                        "container-max": "1120px",
+                        "stack-sm": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "body-lg": ["\"Source Serif 4\""]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex antialiased">
+<!-- SideNavBar (Suppressed for transactional/detail view) -->
+<!-- Nav omitted intentionally as per relevance check rules for a detail view page. -->
+<main class="flex-1 flex flex-col min-h-screen">
+<!-- TopAppBar (Modified for Detail View) -->
+<header class="bg-surface docked full-width top-0 sticky z-40 border-b border-outline-variant flex justify-between items-center w-full px-gutter h-16">
+<div class="flex items-center gap-4">
+<button aria-label="Go back" class="p-2 rounded-full hover:bg-surface-container transition-colors text-secondary">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Audit Log</span>
+<h1 class="font-headline-md text-headline-md font-medium text-primary">Entry Details</h1>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Administrator" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A small, circular avatar portrait of an administrator in a classical, soft-focus style, muted earthy tones, high-quality professional lighting, editorial feeling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3drxzUlgGyhu0-PyXzBu7HWA04StqyOXbZgJjpvsF6fNb2COMD2hjOwm4TrWeh7UFeNxqTGwWoecCNbLmaiIlAdM80OrliKvPWPFYjwXkTHviH7V8-33WQkMxL1woO-KVHc8tB76xqXYMqXAbxc4TS0xhHJB8-0wTMGeEzqW_qQ5wdQ8oYcbhRr0H_OUI36DCd6mL7z6tDmal7FT6doo-psfL2leL4ylNOazTHuJUlZj-cBPpL-14"/>
+</div>
+</header>
+<div class="flex-1 w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-lg">
+<!-- Immutable Banner -->
+<div class="bg-surface-container-low border border-outline-variant p-4 rounded flex items-start gap-4 mb-stack-md">
+<span class="material-symbols-outlined text-secondary mt-1">info</span>
+<div>
+<h2 class="font-label-sm text-label-sm text-primary uppercase mb-1">Notice</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Audit records are read-only and immutable. This entry represents a historical snapshot of system activity and cannot be altered or deleted.</p>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Main Content Column -->
+<div class="md:col-span-8 flex flex-col gap-8">
+<!-- What Happened -->
+<section class="bg-surface-bright border border-outline-variant rounded p-6 shadow-sm">
+<div class="flex items-center gap-3 mb-6 border-b border-outline-variant pb-4">
+<span class="material-symbols-outlined text-primary">change_history</span>
+<h2 class="font-headline-md text-headline-md text-primary">The Action</h2>
+</div>
+<div class="mb-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase block mb-1">Action Type</span>
+<span class="font-body-lg text-body-lg text-on-background font-medium">Article Published</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase block mb-2">Content Changes</span>
+<div class="bg-surface-container-low border border-outline-variant p-4 rounded font-body-md text-body-md text-on-surface-variant">
+<p class="mb-2"><strong class="text-on-background font-medium">Status changed:</strong> Draft → Published</p>
+<p><strong class="text-on-background font-medium">Visibility changed:</strong> Internal → Public</p>
+</div>
+</div>
+</section>
+<!-- Target Entity -->
+<section class="bg-surface-bright border border-outline-variant rounded p-6 shadow-sm">
+<div class="flex items-center gap-3 mb-6 border-b border-outline-variant pb-4">
+<span class="material-symbols-outlined text-primary">auto_stories</span>
+<h2 class="font-headline-md text-headline-md text-primary">The Target</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase block mb-1">Entity Type</span>
+<span class="font-body-md text-body-md text-on-background">Editorial Article</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase block mb-1">Entity ID</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-mono text-sm">art_948f2a1b</span>
+</div>
+<div class="sm:col-span-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase block mb-1">Title</span>
+<span class="font-body-lg text-body-lg text-on-background italic">"The Architecture of Silence: Monastic Traditions"</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Secondary Metadata Column -->
+<div class="md:col-span-4 flex flex-col gap-8">
+<!-- Who Did It -->
+<section class="bg-[#F2EEE6] border border-[#E5E0D8] rounded p-6">
+<div class="flex items-center gap-3 mb-6 border-b border-[#E5E0D8] pb-4">
+<span class="material-symbols-outlined text-primary">person</span>
+<h2 class="font-headline-md text-headline-md text-primary">The Actor</h2>
+</div>
+<div class="flex items-center gap-4 mb-6">
+<img alt="Actor Avatar" class="w-12 h-12 rounded object-cover border border-[#E5E0D8]" data-alt="A classical portrait of a senior editor, soft warm light, textured background resembling old paper, formal and dignified, high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTl5RNQ9kd9afUe5Bhg9786_JA1-fafVdVXBR3CQ35-ooZIB4bRBVXCMPfCJ9BiBX7ZapqY0dyQu79PxmNf7mmSWqse2GygJ33zNGu8H2E9CZfcVkRfnwZIzqPZ2ShREjjAw2yqRlkcCsKhKw0hlRSB-_CgJuUC7nVUZAnei9I_ISVtxk2zKefm6bipvmiYpQnIpK8eOj4htTrNL_HXz8PSZdN_nK0d6YAL8TZP5PUvuTZwEyXJFtm"/>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-background">Eleanor Vance</p>
+<p class="font-label-sm text-label-sm text-secondary">Senior Editor</p>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase block mb-1">IP Address</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-mono text-sm">192.168.1.104</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase block mb-1">Session ID</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-mono text-sm text-ellipsis overflow-hidden whitespace-nowrap block">sess_84729xnvj3</span>
+</div>
+</div>
+</section>
+<!-- System Metadata -->
+<section class="bg-surface-bright border border-outline-variant rounded p-6">
+<div class="flex items-center gap-3 mb-6 border-b border-outline-variant pb-4">
+<span class="material-symbols-outlined text-primary">database</span>
+<h2 class="font-headline-md text-headline-md text-primary">Metadata</h2>
+</div>
+<ul class="space-y-4">
+<li class="flex justify-between items-start">
+<span class="font-label-sm text-label-sm text-secondary uppercase w-1/3">Timestamp</span>
+<span class="font-body-md text-body-md text-on-background text-right w-2/3">Oct 24, 2023 · 14:32:05 UTC</span>
+</li>
+<li class="flex justify-between items-start">
+<span class="font-label-sm text-label-sm text-secondary uppercase w-1/3">Outcome</span>
+<span class="font-label-sm text-label-sm text-primary-container bg-error-container px-2 py-1 rounded w-fit">Success</span>
+</li>
+<li class="flex justify-between items-start">
+<span class="font-label-sm text-label-sm text-secondary uppercase w-1/3">Log ID</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-mono text-sm text-right w-2/3">evt_7739201a</span>
+</li>
+</ul>
+</section>
+</div>
+</div>
+<!-- Flourish Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-outline-variant to-transparent my-stack-lg"></div>
+</div>
+</main>
+</body></html>

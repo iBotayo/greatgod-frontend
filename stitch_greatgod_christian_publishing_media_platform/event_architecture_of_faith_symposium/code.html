@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event Detail - The Architecture of Faith Symposium</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500;1,8..60,600;1,8..60,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-linen": "#f5f3ee",
+                      "primary-container": "#5d1212",
+                      "surface-bright": "#fff8f7",
+                      "surface-paper": "#fbf9f4",
+                      "on-error": "#ffffff",
+                      "background": "#fff8f7",
+                      "tertiary-container": "#c6a94e",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "secondary-container": "#dbe5e0",
+                      "surface": "#fff8f7",
+                      "on-tertiary-fixed": "#231b00",
+                      "inverse-surface": "#3d2c2b",
+                      "outline-variant": "#dbc0be",
+                      "secondary-fixed": "#dbe5e0",
+                      "success-secure": "#2e4d41",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed": "#410004",
+                      "tertiary": "#735c00",
+                      "inverse-on-surface": "#ffedeb",
+                      "on-error-container": "#93000a",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "on-secondary-container": "#5d6663",
+                      "surface-tint": "#9c413d",
+                      "surface-variant": "#f8dcda",
+                      "on-tertiary-container": "#4e3e00",
+                      "surface-container-lowest": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "surface-dim": "#efd4d1",
+                      "secondary": "#57605d",
+                      "surface-container-highest": "#f8dcda",
+                      "primary-fixed": "#ffdad7",
+                      "on-surface": "#261817",
+                      "outline": "#887270",
+                      "on-background": "#261817",
+                      "surface-container-high": "#fee2df",
+                      "tertiary-fixed-dim": "#e3c466",
+                      "surface-container": "#ffe9e7",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed": "#151d1b",
+                      "surface-container-low": "#fff0ef",
+                      "primary": "#3e0003",
+                      "on-surface-variant": "#554240",
+                      "on-primary-container": "#e27770",
+                      "secondary-fixed-dim": "#bfc9c5",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#ffe085",
+                      "inverse-primary": "#ffb3ad",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed-variant": "#404946",
+                      "on-tertiary-fixed-variant": "#574500"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "32px",
+                      "stack-sm": "16px",
+                      "margin-mobile": "20px",
+                      "container-max": "1120px",
+                      "form-width": "560px",
+                      "unit": "8px",
+                      "stack-lg": "64px",
+                      "stack-md": "32px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "label-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "donation-amount": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "donation-amount": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-paper text-on-surface font-body-md min-h-screen">
+<!-- Top Navigation (Shell suppressed for this deep-linked content focus per instructions, but adding a simplified structural header for context) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 bg-surface border-b border-outline-variant flat no shadows transition-colors duration-200 ease-in-out">
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back" data-weight="fill" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+<div class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary tracking-tight font-bold">
+            GreatGod
+        </div>
+<div class="w-10"></div> <!-- Spacer for alignment -->
+</header>
+<main class="pt-24 pb-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<!-- Hero Section -->
+<section class="mb-stack-lg text-center md:text-left flex flex-col md:flex-row gap-stack-md items-center md:items-start">
+<div class="w-full md:w-2/3">
+<p class="font-label-sm text-label-sm text-surface-tint uppercase mb-unit tracking-widest">Symposium</p>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-stack-sm leading-tight">The Architecture of Faith Symposium</h1>
+<div class="flex flex-col md:flex-row gap-stack-sm md:gap-gutter text-on-surface-variant mb-stack-md justify-center md:justify-start">
+<div class="flex items-center gap-unit justify-center md:justify-start">
+<span class="material-symbols-outlined text-surface-tint" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-lg text-label-lg">Oct 12-14, 2024</span>
+</div>
+<div class="flex items-center gap-unit justify-center md:justify-start">
+<span class="material-symbols-outlined text-surface-tint" data-icon="location_on">location_on</span>
+<span class="font-label-lg text-label-lg">St. Jude's Cathedral</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/3">
+<div class="w-full aspect-[4/3] rounded-lg border border-outline bg-surface-linen overflow-hidden relative shadow-sm" data-alt="A grand, soaring interior of a classical cathedral rendered in soft, ethereal natural light filtering through stained glass. The stonework is detailed and warm, reflecting a scholarly and spiritual heritage aesthetic. Deep burgundy accents are subtly present in the pews or banners. The mood is calm, trustworthy, and disciplined, evoking historical reverence and architectural mastery. High quality, realistic texture, architectural photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBd9QXaodzgk7lZon9Dfah620oS3RYwNab9GujIf-vze9d9lxhVOzMX1GEyNFHfghJ_ZxkK57XpW1il5O7UU3mBfgT_fYiWmLfcurXoJJmvEVAEa_tZdf5hdfpvGRmQFvBUt_w-r7PYdP_i7f8FNCE1Dz5aM3GPX89MuImLcRNSjbmieEzWYhM7MXNOA9_JPmMcis25YiY--8GLJPzFBs8xg8Qah_5AZXiQs5-bmDoqYJaC13mMcXos')"></div>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main Content Column -->
+<div class="md:col-span-8 space-y-stack-lg">
+<!-- Description -->
+<section>
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-sm border-b border-outline-variant pb-unit">Symposium Overview</h2>
+<div class="font-body-lg text-body-lg text-on-surface space-y-stack-sm">
+<p>The Architecture of Faith Symposium gathers leading theologians, architectural historians, and practitioners to explore the profound intersection of physical space and spiritual life. Over three days, we will examine how sacred structures have historically shaped, and been shaped by, theological conviction.</p>
+<p>This gathering aims to recover a robust theology of place, challenging modern utilitarian approaches to church design. Through plenary sessions, interactive workshops, and focused theological reflection, attendees will develop a deeper appreciation for the stewardship of sacred spaces in contemporary worship.</p>
+</div>
+</section>
+<!-- Speakers (Horizontal Scroll) -->
+<section>
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-sm border-b border-outline-variant pb-unit">Plenary Speakers</h2>
+<div class="flex overflow-x-auto pb-stack-sm gap-stack-sm snap-x scrollbar-hide -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<!-- Speaker 1 -->
+<div class="min-w-[200px] bg-surface-linen border border-outline rounded-lg p-stack-sm text-center snap-center hover:border-surface-tint transition-colors duration-200 cursor-pointer group flex-shrink-0">
+<div class="w-24 h-24 mx-auto rounded-full mb-stack-sm border border-outline overflow-hidden" data-alt="A professional portrait of an academic speaker, an older gentleman with a thoughtful expression, wearing a tweed jacket. The background is a soft, warm neutral tone. The lighting is classic portrait lighting, conveying quiet authority and trustworthiness. High quality, scholarly aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBx0M8h-DKGuLX-w2IuoN2dlUH89El7kKvBGsRoB2j0Xiw8nCVqOxkdgoYeWvxudtoukXAlNPQH6Bu9_9xLoMbV_THK7rmnRRMTZK5Bo8eiRk3mdI0VPS0ChzejBykTKVoXLhk4OZ2psRFctMqNDQhmjrHI0sHnUn6L0R8JZsKWgwcKmlsMZD_r8ZtFkuIrS99kmAudjvseNuPtH6np4ktk7GnhtzWBP73BSB3ViSih2CZ1ZOAGjK4p')"></div>
+<h3 class="font-label-lg text-label-lg text-primary group-hover:text-surface-tint transition-colors">Dr. Thomas Chalmers</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-unit">Historical Theology</p>
+</div>
+<!-- Speaker 2 -->
+<div class="min-w-[200px] bg-surface-linen border border-outline rounded-lg p-stack-sm text-center snap-center hover:border-surface-tint transition-colors duration-200 cursor-pointer group flex-shrink-0">
+<div class="w-24 h-24 mx-auto rounded-full mb-stack-sm border border-outline overflow-hidden" data-alt="A professional portrait of a female academic speaker with glasses, wearing professional attire. She has a warm, intelligent smile. The background is a soft, linen-like texture. Lighting is clear and academic, emphasizing scholarly clarity. High quality, trustworthy aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvpYck-Z1tMuDrXVOwSYqxX1_siTVclBr_K6XHuZgx6XFkqGazTkrj4R7lStXYORUxtyBVPXlS_p0aY6EEFhEGtQ6aew3wFO2-jEGh-c_f5CM6Ou-R-6EpbExBUntpNxIFFN2gaHa39stgxmw9SdA-b4Aq8H60nluYJuKZ84BVWZ_t2P-xIAJgj0ojG9S4pBmJdoXPDNmYwiFNbjBiTUXsHG_mJ5sdaP2QA5TeYrPVsWVb95kdcEEM')"></div>
+<h3 class="font-label-lg text-label-lg text-primary group-hover:text-surface-tint transition-colors">Prof. Eleanor Vance</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-unit">Sacred Architecture</p>
+</div>
+<!-- Speaker 3 -->
+<div class="min-w-[200px] bg-surface-linen border border-outline rounded-lg p-stack-sm text-center snap-center hover:border-surface-tint transition-colors duration-200 cursor-pointer group flex-shrink-0">
+<div class="w-24 h-24 mx-auto rounded-full mb-stack-sm border border-outline overflow-hidden" data-alt="A professional portrait of a distinguished academic speaker, a middle-aged man with a neat beard, wearing a dark suit. The backdrop suggests an old library with blurred bookshelves. The mood is disciplined and serious, fitting a classical theological setting. High quality photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCs019UxYCmUBEJ7aQcC5VUZNVo5QOzsZYIKvPmR8G2kumaleqLdGncMpMfpZUDUwNXHi3CP2GoGDUI8EyQ5jQDRFhEMQ_s_1by32_wau8bmAlERAN0cPIt4mF9WTPQVr1QMIArqzF6WhEgQfetf8A7uV5vycsGs-nDU3DzcGfkkyq06om_Yyli4R6JacflqKcUQKqTymVRnQPUHp83K3sCo8Xynx0D8AiUy1hVw5JZbWmQSBr0LTe')"></div>
+<h3 class="font-label-lg text-label-lg text-primary group-hover:text-surface-tint transition-colors">Rev. Julian Black</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-unit">Liturgical Studies</p>
+</div>
+</div>
+</section>
+<!-- Sessions List -->
+<section>
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-sm border-b border-outline-variant pb-unit">Schedule of Sessions</h2>
+<div class="space-y-stack-sm">
+<!-- Session Day 1 -->
+<div class="bg-surface-bright border border-outline-variant rounded-lg overflow-hidden">
+<div class="bg-surface-linen px-stack-sm py-unit border-b border-outline-variant font-label-lg text-label-lg text-on-surface font-semibold">Saturday, Oct 12</div>
+<ul class="divide-y divide-outline-variant">
+<li class="p-stack-sm flex flex-col md:flex-row md:items-center justify-between gap-unit hover:bg-surface-container-low transition-colors duration-150">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary">The Theology of the Threshold</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Dr. Thomas Chalmers</p>
+</div>
+<div class="font-label-sm text-label-sm text-surface-tint border border-surface-tint px-2 py-1 rounded w-fit shrink-0">09:00 AM - 10:30 AM</div>
+</li>
+<li class="p-stack-sm flex flex-col md:flex-row md:items-center justify-between gap-unit hover:bg-surface-container-low transition-colors duration-150">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary">Light and Liturgy: Form Follows Faith</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Prof. Eleanor Vance</p>
+</div>
+<div class="font-label-sm text-label-sm text-surface-tint border border-surface-tint px-2 py-1 rounded w-fit shrink-0">11:00 AM - 12:30 PM</div>
+</li>
+</ul>
+</div>
+<!-- Session Day 2 -->
+<div class="bg-surface-bright border border-outline-variant rounded-lg overflow-hidden">
+<div class="bg-surface-linen px-stack-sm py-unit border-b border-outline-variant font-label-lg text-label-lg text-on-surface font-semibold">Sunday, Oct 13</div>
+<ul class="divide-y divide-outline-variant">
+<li class="p-stack-sm flex flex-col md:flex-row md:items-center justify-between gap-unit hover:bg-surface-container-low transition-colors duration-150">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary">Aesthetics of Atonement in Medieval Structures</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Rev. Julian Black</p>
+</div>
+<div class="font-label-sm text-label-sm text-surface-tint border border-surface-tint px-2 py-1 rounded w-fit shrink-0">02:00 PM - 03:30 PM</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar / Related Content -->
+<div class="md:col-span-4 space-y-stack-md mt-stack-lg md:mt-0">
+<!-- Related Media -->
+<aside class="bg-surface-linen border border-outline rounded-lg p-stack-sm">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-sm flex items-center gap-unit"><span class="material-symbols-outlined" data-icon="headphones">headphones</span> Related Media</h3>
+<ul class="space-y-stack-sm">
+<li class="group cursor-pointer">
+<a class="flex items-start gap-unit p-unit -mx-unit rounded hover:bg-surface-bright transition-colors" href="#">
+<div class="w-12 h-12 bg-surface-variant rounded flex items-center justify-center shrink-0 border border-outline-variant group-hover:border-surface-tint transition-colors">
+<span class="material-symbols-outlined text-surface-tint" data-icon="play_arrow">play_arrow</span>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-primary group-hover:underline">Podcast: Sacred Spaces Today</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 opacity-70">Episode 42 • 45 mins</p>
+</div>
+</a>
+</li>
+<li class="group cursor-pointer">
+<a class="flex items-start gap-unit p-unit -mx-unit rounded hover:bg-surface-bright transition-colors" href="#">
+<div class="w-12 h-12 bg-surface-variant rounded flex items-center justify-center shrink-0 border border-outline-variant group-hover:border-surface-tint transition-colors">
+<span class="material-symbols-outlined text-surface-tint" data-icon="record_voice_over">record_voice_over</span>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-primary group-hover:underline">Sermon: The Temple and the Truth</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 opacity-70">Rev. Julian Black • Audio</p>
+</div>
+</a>
+</li>
+</ul>
+</aside>
+<!-- Related Resources -->
+<aside class="bg-surface-bright border border-outline rounded-lg p-stack-sm">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-sm flex items-center gap-unit"><span class="material-symbols-outlined" data-icon="menu_book">menu_book</span> Preparatory Resources</h3>
+<ul class="space-y-stack-sm">
+<li class="group cursor-pointer">
+<a class="flex items-center gap-stack-sm p-unit -mx-unit rounded hover:bg-surface-linen transition-colors border border-transparent hover:border-outline-variant" href="#">
+<span class="material-symbols-outlined text-surface-tint text-3xl" data-icon="book">book</span>
+<div>
+<h4 class="font-label-sm text-label-sm text-primary group-hover:text-surface-tint transition-colors">The Meaning of the City</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 opacity-70">Jacques Ellul • Book</p>
+</div>
+</a>
+</li>
+<li class="group cursor-pointer">
+<a class="flex items-center gap-stack-sm p-unit -mx-unit rounded hover:bg-surface-linen transition-colors border border-transparent hover:border-outline-variant" href="#">
+<span class="material-symbols-outlined text-surface-tint text-3xl" data-icon="picture_as_pdf">picture_as_pdf</span>
+<div>
+<h4 class="font-label-sm text-label-sm text-primary group-hover:text-surface-tint transition-colors">Symposium Study Guide</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 opacity-70">PDF Download • 2MB</p>
+</div>
+</a>
+</li>
+</ul>
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-margin-mobile md:px-stack-lg flex flex-col items-center gap-stack-md bg-surface-container-low border-t border-outline-variant flat no shadows">
+<div class="font-display-lg text-headline-md text-primary tracking-tight font-bold">
+            GreatGod
+        </div>
+<nav class="flex flex-wrap justify-center gap-stack-sm md:gap-stack-md">
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300 ease-serif" href="#">About</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300 ease-serif" href="#">Statement of Faith</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300 ease-serif" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300 ease-serif" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300 ease-serif" href="#">Newsletter</a>
+</nav>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-70 mt-stack-sm text-center">
+            © 2024 GreatGod Publishing. All rights reserved.
+        </p>
+</footer>
+</body></html>

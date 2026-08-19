@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Version History</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:wght@400..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#ffe088",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "surface-container-high": "#eae8e3",
+                      "primary": "#3e0003",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#5d1212",
+                      "surface-dim": "#dbdad5",
+                      "tertiary-container": "#cca72f",
+                      "outline": "#887270",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "error-container": "#ffdad6",
+                      "on-surface": "#1b1c19",
+                      "surface-container-low": "#f5f3ee",
+                      "inverse-on-surface": "#f2f1ec",
+                      "on-secondary-container": "#5b6561",
+                      "on-secondary": "#ffffff",
+                      "on-primary-container": "#e27770",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#dbc0be",
+                      "surface-container": "#f0eee9",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#57605d",
+                      "secondary-fixed": "#dbe5e0",
+                      "surface": "#fbf9f4",
+                      "inverse-primary": "#ffb3ad",
+                      "surface-bright": "#fbf9f4",
+                      "inverse-surface": "#30312e",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "on-secondary-fixed": "#141d1a",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "background": "#fbf9f4",
+                      "primary-fixed": "#ffdad7",
+                      "surface-container-highest": "#e4e2dd",
+                      "surface-variant": "#e4e2dd",
+                      "on-surface-variant": "#554240",
+                      "on-tertiary-container": "#4e3d00",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "tertiary": "#735c00",
+                      "on-primary-fixed": "#410004",
+                      "on-background": "#1b1c19",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#d8e2dd",
+                      "surface-tint": "#9c413d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "stack-sm": "16px",
+                      "stack-lg": "64px",
+                      "stack-md": "32px",
+                      "gutter": "32px",
+                      "container-max": "1120px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .version-row {
+            transition: background-color 0.2s ease-in-out;
+        }
+        
+        .version-row:hover {
+            background-color: theme('colors.surface-container-low');
+        }
+        
+        .version-row.selected {
+            background-color: theme('colors.surface-container');
+            border-left: 2px solid theme('colors.primary-container');
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar (Suppressed for editor sub-view, but keeping minimal editor header) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Draft</span>
+<span class="font-body-md text-body-md text-on-surface">The Meaning of Grace</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors">Preview</button>
+<button class="font-label-sm text-label-sm bg-primary-container text-on-primary px-4 py-2 rounded">Publish</button>
+</div>
+</header>
+<!-- Main Editor Canvas & Sidebar Layout -->
+<main class="flex-grow pt-16 flex w-full">
+<!-- Main Editor Canvas (Left) -->
+<div class="flex-grow p-stack-md hidden md:flex flex-col items-center">
+<div class="w-full max-w-[720px] bg-surface-container-lowest border border-outline-variant p-stack-md rounded-DEFAULT min-h-[800px] shadow-sm">
+<!-- Editor placeholder content -->
+<h1 class="font-headline-lg text-headline-lg mb-stack-sm text-primary opacity-30">Start writing...</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant opacity-30">Your content will appear here.</p>
+</div>
+</div>
+<!-- Version History Sidebar (Right) -->
+<aside class="w-full md:w-[400px] flex-shrink-0 bg-surface-container-lowest border-l border-outline-variant flex flex-col h-[calc(100vh-4rem)]">
+<!-- Sidebar Header -->
+<div class="p-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Version History</h2>
+<p class="font-label-sm text-label-sm text-secondary mt-1">Select two versions to compare</p>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Compare Actions Bar -->
+<div class="p-4 border-b border-outline-variant bg-surface flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface"><span id="selected-count">0</span> Selected</span>
+<button class="font-label-sm text-label-sm border border-outline text-on-surface px-4 py-1.5 rounded opacity-50 cursor-not-allowed hover:bg-surface-container-high transition-colors" disabled="" id="compare-btn">
+                    Compare
+                </button>
+</div>
+<!-- Version List -->
+<div class="flex-grow overflow-y-auto p-4 flex flex-col gap-2">
+<!-- Current Version -->
+<div class="version-row p-4 border border-primary/20 rounded-DEFAULT bg-surface-container flex flex-col gap-2 cursor-pointer relative" onclick="toggleSelection(this)">
+<div class="absolute -left-[1px] top-0 bottom-0 w-1 bg-primary-container rounded-l-DEFAULT"></div>
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-primary-container">Current Draft</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Just now</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant overflow-hidden">
+<img class="object-cover w-full h-full" data-alt="A small, circular avatar portrait of a modern professional writer in a well-lit studio. The lighting is warm and natural, casting soft shadows. The overall aesthetic is classical yet modern, fitting a refined editorial platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIxphzsJo3a3VaPWoybnNRO_yEgK8VRZeCiJ-lWopCwfLOnuFCynble9m-FmX-PnL_-M_X0HVAeKt49EGYzolVb5EhXGuQep-fDb025NJaYI9TsIkcNllWqHMJmUlD6s0g2t9gkepVAiz-pu2kWNs0E47K4PPVcO_rZkIs52NYvr-oonPKjuwlhwo1Nz4J5wFtf_rpZMgBuzCfsjI0UA_JQRULboJgYhCzeu7FtCHoFHbBT0tX-QHM"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Amara Nwosu</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">
+                        Unsaved changes...
+                    </p>
+<div class="flex items-center gap-2 mt-2">
+<input class="rounded border-outline text-primary-container focus:ring-primary-container w-4 h-4" onclick="event.stopPropagation(); toggleSelectionCheckbox(this.parentElement.parentElement)" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-secondary">Select to compare</span>
+</div>
+</div>
+<!-- Version v1.4 -->
+<div class="version-row p-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest flex flex-col gap-2 cursor-pointer" onclick="toggleSelection(this)">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface">v1.4</span>
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded text-[10px] font-label-sm uppercase">Published</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Oct 14, 10:45 AM</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant overflow-hidden">
+<img class="object-cover w-full h-full" data-alt="A small, circular avatar portrait of a modern professional writer in a well-lit studio. The lighting is warm and natural, casting soft shadows. The overall aesthetic is classical yet modern, fitting a refined editorial platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSG99rdp-QpsKgF__DJFNJMXLUxgDzbcF5o51WBrfzjDZkAM1BzZvEUntz5Jl7QhJV4qWYwlY3O7BxYHpk6OxpBtvDcQzOcWukuJHdL9I8lbPKwu9AI38hBbVvcVzQ94yHLKRE7LKUZAP_rJCpi-9oDRsJo1nBaXbp2S5ePgdMCN6LZJ1LKspPTuNSFbZWno-AWs-M-jJeATHno6EkGqJm4vbTnhNzHWwre59VeAoYM5TcjCcWiOOE"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Amara Nwosu</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">
+                        Revised intro; updated Romans 8 citation. Fixed typos in conclusion.
+                    </p>
+<div class="flex items-center gap-2 mt-2">
+<input class="rounded border-outline text-primary-container focus:ring-primary-container w-4 h-4" onclick="event.stopPropagation(); toggleSelectionCheckbox(this.parentElement.parentElement)" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-secondary">Select to compare</span>
+</div>
+</div>
+<!-- Version v1.3 -->
+<div class="version-row p-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest flex flex-col gap-2 cursor-pointer" onclick="toggleSelection(this)">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface">v1.3</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Oct 12, 2:15 PM</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant overflow-hidden">
+<span class="font-label-sm text-xs text-on-surface-variant">JD</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">John Doe (Editor)</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">
+                        Structural edits to section 2. Added historical context regarding early church fathers.
+                    </p>
+<div class="flex items-center gap-2 mt-2">
+<input class="rounded border-outline text-primary-container focus:ring-primary-container w-4 h-4" onclick="event.stopPropagation(); toggleSelectionCheckbox(this.parentElement.parentElement)" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-secondary">Select to compare</span>
+</div>
+</div>
+<!-- Version v1.2 -->
+<div class="version-row p-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest flex flex-col gap-2 cursor-pointer" onclick="toggleSelection(this)">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface">v1.2</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Oct 10, 9:30 AM</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant overflow-hidden">
+<img class="object-cover w-full h-full" data-alt="A small, circular avatar portrait of a modern professional writer in a well-lit studio. The lighting is warm and natural, casting soft shadows. The overall aesthetic is classical yet modern, fitting a refined editorial platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7-90rS1rppOF5vw5gj0fePPc8Fb1U9aqwWuZJUEo2T5tmdsawTjp83UuBlYn8j0dFTXocH_TR5_KgDWgg_UVyXzM7vfwEPqgXsQCNRPP0755qv7M-SCbiAO62E8aF-7st4cQxcNOspQOZWloBVyUE2JRiXGnlq_jGQfOLyB6F94tvPi6ZwFbdC1Low2oAdGUA3hR-vgr-lAYcKuhcYGPyJPguF8L7Kg3512VlfXMxnYGEjhNcthFG"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Amara Nwosu</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">
+                        First full draft completed.
+                    </p>
+<div class="flex items-center gap-2 mt-2">
+<input class="rounded border-outline text-primary-container focus:ring-primary-container w-4 h-4" onclick="event.stopPropagation(); toggleSelectionCheckbox(this.parentElement.parentElement)" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-secondary">Select to compare</span>
+</div>
+</div>
+<!-- Version v1.1 -->
+<div class="version-row p-4 border border-outline-variant rounded-DEFAULT bg-surface-container-lowest flex flex-col gap-2 cursor-pointer" onclick="toggleSelection(this)">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface">v1.1</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Oct 08, 4:00 PM</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant overflow-hidden">
+<img class="object-cover w-full h-full" data-alt="A small, circular avatar portrait of a modern professional writer in a well-lit studio. The lighting is warm and natural, casting soft shadows. The overall aesthetic is classical yet modern, fitting a refined editorial platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0wrJv1_7xWz8Y-qYy70iJMi3uiaQ6FodWlqcxid1Pc8bbbB8ag_xPuJ3goePIviM1uRUEM8GXLuqljvnnCZchKPWLUASmD58JhvsGi6ffiCNqgPfF2nsgBJI0XSSbL9Q-4VLJijCRXxaJLOLxJZ1xTuWZiADtpu5OCfpzv7kk-zZjYMKh2egKBKjaoN8H-LmHXq5MMZQF_L1uQtPu6TPL1LCc08pa2jUhIkNNblHnElkbQQdIGqsh"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Amara Nwosu</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">
+                        Outline and initial thoughts.
+                    </p>
+<div class="flex items-center gap-2 mt-2">
+<input class="rounded border-outline text-primary-container focus:ring-primary-container w-4 h-4" onclick="event.stopPropagation(); toggleSelectionCheckbox(this.parentElement.parentElement)" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-secondary">Select to compare</span>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<script>
+        let selectedCount = 0;
+
+        function updateUI() {
+            document.getElementById('selected-count').innerText = selectedCount;
+            const btn = document.getElementById('compare-btn');
+            
+            if (selectedCount === 2) {
+                btn.disabled = false;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                btn.classList.add('bg-secondary', 'text-on-secondary');
+                btn.classList.remove('text-on-surface', 'border-outline');
+            } else {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed', 'text-on-surface', 'border-outline');
+                btn.classList.remove('bg-secondary', 'text-on-secondary');
+            }
+        }
+
+        function toggleSelection(element) {
+            const checkbox = element.querySelector('input[type="checkbox"]');
+            
+            if (element.classList.contains('selected')) {
+                element.classList.remove('selected');
+                checkbox.checked = false;
+                selectedCount--;
+            } else {
+                if (selectedCount >= 2) return; // Prevent selecting more than 2
+                element.classList.add('selected');
+                checkbox.checked = true;
+                selectedCount++;
+            }
+            updateUI();
+        }
+        
+        function toggleSelectionCheckbox(element) {
+             const checkbox = element.querySelector('input[type="checkbox"]');
+             // Revert checkbox state momentarily because toggleSelection handles it based on class
+             checkbox.checked = !checkbox.checked; 
+             toggleSelection(element);
+        }
+    </script>
+</body></html>

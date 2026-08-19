@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Author Profile</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#735c00",
+                        "inverse-primary": "#ffb3ad",
+                        "primary-container": "#5d1212",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "surface-dim": "#dbdad5",
+                        "background": "#fbf9f4",
+                        "surface-container-high": "#eae8e3",
+                        "outline": "#887270",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fbf9f4",
+                        "surface-bright": "#fbf9f4",
+                        "surface-container": "#f0eee9",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#5b6561",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "outline-variant": "#dbc0be",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffe088",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-tertiary-container": "#4e3d00",
+                        "secondary-container": "#d8e2dd",
+                        "surface-variant": "#e4e2dd",
+                        "primary": "#3e0003",
+                        "on-primary-container": "#e27770",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#30312e",
+                        "surface-container-low": "#f5f3ee",
+                        "secondary-fixed": "#dbe5e0",
+                        "surface-tint": "#9c413d",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-secondary-fixed": "#141d1a",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-surface-variant": "#554240",
+                        "on-primary-fixed": "#410004",
+                        "on-surface": "#1b1c19",
+                        "on-background": "#1b1c19",
+                        "primary-fixed": "#ffdad7",
+                        "tertiary-container": "#cca72f",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "secondary": "#57605d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1120px",
+                        "stack-sm": "16px",
+                        "stack-md": "32px",
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "margin-mobile": "20px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        /* Tonal layering & subtle outlines for the "Sacred Editorial" feel */
+        .editorial-card {
+            background-color: theme('colors.surface-container-low');
+            border: 1px solid theme('colors.outline-variant');
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .editorial-card:hover {
+            background-color: theme('colors.surface-container');
+        }
+        .editorial-image-frame {
+            border: 1px solid theme('colors.outline-variant');
+            border-radius: theme('borderRadius.DEFAULT');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen pb-32 md:pb-0 pt-16">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim cursor-pointer">menu</span>
+</div>
+<div class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary dark:text-primary-fixed-dim tracking-tight">
+            GreatGod
+        </div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim cursor-pointer">search</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-stack-md md:pt-stack-lg">
+<!-- Author Profile Header -->
+<section class="flex flex-col md:flex-row items-center md:items-start gap-stack-md pb-stack-lg border-b border-outline-variant">
+<!-- Portrait -->
+<div class="shrink-0 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden editorial-image-frame p-1 bg-surface-container">
+<img class="w-full h-full object-cover rounded-full" data-alt="A highly professional and warm portrait photography of Grace Adeyemi, a theologian and writer. She is a Black woman with a serene expression, dressed in a timeless, understated dark burgundy or warm neutral sweater. The lighting is soft, natural, and directional, resembling a window portrait in a cozy, intellectual study lined with subtle, out-of-focus bookshelves. The aesthetic is classical, grounded, and dignified, utilizing a warm color palette of deep browns, soft creams, and rich natural tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG8lbzKQkdBkACZqv17oB6Qk2AGi5MRzyW5pek4nAsveEOE97gTyE2hXpN9OojN9Fgkl3QZu3xQF7LeTzVGNXf6sfe7AXeY7DlmJjXS8JQ1oEd5MsjjgJwX9w1GJhoSVwdDfrmJHiQmdzKH91cAxFJEKBGtn_jAtPRi1dm-mNMMabGEAZmIdBj3NnlNLdazIVJE0CAmRWGE7Y7wvAwKBSaXzuWuVneKbmF9y8a4zvdhmfxDMImXrBv"/>
+</div>
+<!-- Bio & Actions -->
+<div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-unit">Grace Adeyemi</h1>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-stack-sm">Theologian &amp; Writer</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-stack-md">
+                    Grace is a writer and theologian exploring the intersection of modern life and ancient faith. She lives in Chicago with her family and writes regularly on the theology of the ordinary.
+                </p>
+<!-- Stats -->
+<div class="flex items-center gap-unit text-secondary font-label-sm text-label-sm mb-stack-md opacity-80">
+<span>12 Articles</span>
+<span>·</span>
+<span>4.2k Readers</span>
+<span>·</span>
+<span>Contributor since 2022</span>
+</div>
+<!-- Buttons -->
+<div class="flex gap-stack-sm">
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded font-label-sm text-label-sm hover:bg-primary transition-colors">
+                        Follow
+                    </button>
+<button class="border border-secondary text-secondary px-6 py-2 rounded font-label-sm text-label-sm hover:bg-surface-container-high transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">share</span> Share
+                    </button>
+</div>
+</div>
+</section>
+<!-- Articles Section -->
+<section class="py-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md text-center md:text-left">Latest from Grace</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-stack-md">
+<!-- Featured Card (Spans larger area) -->
+<article class="editorial-card rounded-lg overflow-hidden md:col-span-12 lg:col-span-8 flex flex-col md:flex-row h-full group cursor-pointer">
+<div class="md:w-1/2 h-64 md:h-auto border-b md:border-b-0 md:border-r border-outline-variant">
+<img class="w-full h-full object-cover group-hover:opacity-95 transition-opacity" data-alt="A tranquil, high-quality still life photography capturing the essence of everyday grace. A simple, rustic wooden table featuring an imperfect ceramic mug of tea, a slightly worn open book with cream-colored pages, and a single subtle beam of warm afternoon sunlight illuminating dust motes in the air. The color palette is composed of soft, muted earth tones, warm linens, and deep shadows, evoking a sense of calm, timeless reflection and the beauty of ordinary moments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4EV9_eaGyuoc-Rpc-kkwiTRtFdNaN-oS2RyCLgodjmhEGytsfoa3LMmLlDybHwOn7qujoQODikwQEwglZvFO5owPy06-PQFHDNEGKrkjhVZWJddguXhsqIaDeDxRD8bE7f9ALuK0_YasMc0ONGe-yrTvC5m5FR9MDWoC42zkjU36Pe6x8JK8cVaOL3zBq_2YQZLcef_ICAydkpuXSkgPgYOEpp0ELwnLRlLPcXLeyPng5DZlu1s15"/>
+</div>
+<div class="p-stack-md md:w-1/2 flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-unit">Essay · 8 min read</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-md text-on-surface mb-stack-sm group-hover:text-primary-container transition-colors">The Beauty of Grace in Everyday Trials</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                            In the mundane routines and unexpected disruptions of daily life, there is a quiet liturgy taking place. How do we learn to recognize the sacred within the frustratingly ordinary?
+                        </p>
+</div>
+</article>
+<!-- Smaller Cards -->
+<article class="editorial-card rounded-lg overflow-hidden md:col-span-6 lg:col-span-4 flex flex-col h-full group cursor-pointer">
+<div class="h-48 border-b border-outline-variant">
+<img class="w-full h-full object-cover group-hover:opacity-95 transition-opacity" data-alt="A warm, editorial interior photograph of a quiet, slightly messy living room. A comfortable, worn armchair, soft blankets, and scattered children's toys bathed in soft, diffused morning light filtering through a window. The aesthetic is authentic, lived-in, and peaceful, avoiding overly stylized perfection. The colors are warm neutrals, soft blues, and muted greens, reflecting a sacred editorial approach to family life and domestic space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRpi87gT12Uzm64WVyRRt18AzQ_yQ3VxGAtNs8tIhcwt4480ma4qjkWXNFP5JHF-xnDH5j5YkkLK2bZhagT4nReTTHaZWBv-8VsvEqOdxgK9WqP_jiEJXxmRrVjm2Lb7JtXFvu8NrczMjeivRWZAEwESJHInTaXVIJ2dq2PjzCdfslPXJ4CesH8wsLI1d2AT5sAZVf21xZqC4VeUHZoVXHNVkpc0O0TzZs3lUgxTdVfvJBLrHEl9r7"/>
+</div>
+<div class="p-stack-sm flex flex-col flex-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-unit">Reflection · 5 min read</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-unit group-hover:text-primary-container transition-colors">The Liturgy of the Living Room</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mt-auto">
+                            Finding holy rhythms in the chaos of family life and domestic spaces.
+                        </p>
+</div>
+</article>
+<article class="editorial-card rounded-lg overflow-hidden md:col-span-6 lg:col-span-4 flex flex-col h-full group cursor-pointer">
+<div class="h-48 border-b border-outline-variant">
+<img class="w-full h-full object-cover group-hover:opacity-95 transition-opacity" data-alt="A minimalist, evocative photograph depicting silence and contemplation. A vast, quiet landscape, perhaps a misty forest edge or an empty, austere church pew, emphasizing negative space and stillness. The lighting is low-key, cool, and subdued, utilizing a palette of soft greys, deep stone colors, and muted whites. The mood is highly introspective, calming, and reflective, fitting a high-end theological publication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpV9zZxtwvzkGE9swy_aQ6R8Klnl4hu5XIpBRZweOL7cKsg_7H9aL3b96OYIh9FkE-EOAWf0KLQGzaDgQcMVCTlOYgoVw12YVTDoLTTA4hYGH5e54W4RJhLMrJv_FSSOrin5qhfvADpBbjsvhsTWouQU_6dD4hlBSyFS_zYqrRm9jS6pdehU7tP4ZZAJHODrJSRshfjXi1GiPf9KiGxxV3RB9E5uFwtPPmHNJwEy-gnRox1jirsroC"/>
+</div>
+<div class="p-stack-sm flex flex-col flex-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-unit">Culture · 10 min read</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-unit group-hover:text-primary-container transition-colors">Finding Silence in a Loud World</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mt-auto">
+                            Reclaiming the lost art of quietness amidst the constant noise of modern digital existence.
+                        </p>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<!-- Active state applied to 'Profile' based on intent -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-20 bg-surface dark:bg-surface-dim px-margin-mobile md:hidden border-t border-outline-variant dark:border-outline">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Discover -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<!-- Library -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">menu_book</span>
+<span class="font-label-sm text-label-sm">Library</span>
+</a>
+<!-- Profile (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-secondary-container/30 rounded-full py-1 px-4 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-margin-mobile md:px-stack-lg flex flex-col items-center gap-stack-md bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant dark:border-outline mt-stack-lg hidden md:flex">
+<div class="font-display-lg text-headline-md text-primary dark:text-primary-fixed-dim">
+            GreatGod
+        </div>
+<div class="flex gap-stack-sm flex-wrap justify-center">
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">About</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Statement of Faith</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Newsletter</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface dark:text-on-surface-variant opacity-70 text-sm">
+            © 2024 GreatGod Publishing. All rights reserved.
+        </p>
+</footer>
+</body></html>

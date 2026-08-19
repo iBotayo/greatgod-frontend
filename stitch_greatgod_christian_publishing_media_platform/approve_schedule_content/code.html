@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sacred Editorial - Approve &amp; Schedule</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#554240",
+                      "surface": "#fbf9f4",
+                      "secondary-fixed": "#dbe5e0",
+                      "on-primary": "#ffffff",
+                      "surface-container": "#f0eee9",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "inverse-on-surface": "#f2f1ec",
+                      "surface-container-high": "#eae8e3",
+                      "outline": "#887270",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#410004",
+                      "secondary": "#57605d",
+                      "tertiary": "#735c00",
+                      "background": "#fbf9f4",
+                      "secondary-container": "#d8e2dd",
+                      "on-surface": "#1b1c19",
+                      "on-background": "#1b1c19",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#cca72f",
+                      "outline-variant": "#dbc0be",
+                      "surface-dim": "#dbdad5",
+                      "surface-variant": "#e4e2dd",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#ffe088",
+                      "on-primary-container": "#e27770",
+                      "on-secondary-fixed": "#141d1a",
+                      "on-tertiary-fixed": "#241a00",
+                      "error": "#ba1a1a",
+                      "inverse-surface": "#30312e",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "on-tertiary-container": "#4e3d00",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "primary-fixed": "#ffdad7",
+                      "primary": "#3e0003",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "on-error": "#ffffff",
+                      "surface-container-highest": "#e4e2dd",
+                      "primary-container": "#5d1212",
+                      "surface-tint": "#9c413d",
+                      "surface-bright": "#fbf9f4",
+                      "inverse-primary": "#ffb3ad",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#5b6561",
+                      "surface-container-low": "#f5f3ee"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-md": "32px",
+                      "gutter": "32px",
+                      "unit": "8px",
+                      "container-max": "1120px",
+                      "margin-mobile": "20px",
+                      "stack-sm": "16px",
+                      "stack-lg": "64px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-hidden relative">
+<!-- Blurred Background Workspace Simulator -->
+<div class="absolute inset-0 z-0 bg-surface blur-sm opacity-80 select-none pointer-events-none">
+<div class="max-w-container-max mx-auto px-gutter py-stack-lg">
+<div class="h-16 w-1/3 bg-surface-container-high rounded mb-8"></div>
+<div class="flex gap-gutter">
+<div class="w-3/4 space-y-4">
+<div class="h-8 bg-surface-container w-full rounded"></div>
+<div class="h-8 bg-surface-container w-5/6 rounded"></div>
+<div class="h-8 bg-surface-container w-4/6 rounded"></div>
+<div class="h-64 bg-surface-container-low w-full rounded mt-8"></div>
+</div>
+<div class="w-1/4">
+<div class="h-96 bg-surface-container-high rounded p-4">
+<div class="h-10 bg-surface-variant rounded mb-4"></div>
+<div class="h-10 bg-surface-variant rounded"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-margin-mobile bg-[#1b1c19]/60 backdrop-blur-sm transition-opacity duration-300">
+<!-- Modal Container -->
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-xl shadow-2xl overflow-hidden flex flex-col animate-[fadeInUp_0.4s_ease-out]">
+<!-- Modal Header -->
+<div class="px-8 py-6 border-b border-outline-variant bg-surface flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-on-surface">Approve &amp; Schedule</h2>
+<button class="text-secondary hover:text-primary transition-colors cursor-pointer p-2 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-8 overflow-y-auto space-y-8 flex-1">
+<!-- Publication Date/Time -->
+<section>
+<h3 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+                        Publication Schedule
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-surface-container-low p-6 rounded-lg border border-outline-variant/50">
+<!-- Date Picker -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2" for="publish-date">Date</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">event</span>
+<input class="w-full pl-10 pr-3 py-2 bg-surface-container-lowest border border-outline-variant rounded focus:ring-2 focus:ring-primary-container focus:border-primary-container font-body-md text-on-surface transition-shadow" id="publish-date" type="date" value="2024-05-15"/>
+</div>
+</div>
+<!-- Time Picker -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2" for="publish-time">Time (EST)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">schedule</span>
+<input class="w-full pl-10 pr-3 py-2 bg-surface-container-lowest border border-outline-variant rounded focus:ring-2 focus:ring-primary-container focus:border-primary-container font-body-md text-on-surface transition-shadow" id="publish-time" type="time" value="09:00"/>
+</div>
+</div>
+</div>
+</section>
+<hr class="border-outline-variant"/>
+<!-- Featured Status -->
+<section>
+<h3 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">star</span>
+                        Featured Status
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Standard -->
+<label class="relative flex cursor-pointer border border-outline-variant rounded-lg p-4 bg-surface-container-lowest hover:bg-surface transition-colors has-[:checked]:border-primary-container has-[:checked]:bg-primary-fixed/20 has-[:checked]:ring-1 has-[:checked]:ring-primary-container">
+<input checked="" class="peer sr-only" name="feature_status" type="radio" value="standard"/>
+<div class="flex flex-col items-center text-center w-full gap-2">
+<span class="material-symbols-outlined text-outline peer-checked:text-primary-container">article</span>
+<span class="font-label-sm text-label-sm text-on-surface">Standard</span>
+<span class="text-[12px] text-secondary leading-tight">Normal feed placement</span>
+</div>
+</label>
+<!-- Trending -->
+<label class="relative flex cursor-pointer border border-outline-variant rounded-lg p-4 bg-surface-container-lowest hover:bg-surface transition-colors has-[:checked]:border-primary-container has-[:checked]:bg-primary-fixed/20 has-[:checked]:ring-1 has-[:checked]:ring-primary-container">
+<input class="peer sr-only" name="feature_status" type="radio" value="trending"/>
+<div class="flex flex-col items-center text-center w-full gap-2">
+<span class="material-symbols-outlined text-outline peer-checked:text-primary-container">trending_up</span>
+<span class="font-label-sm text-label-sm text-on-surface">Trending</span>
+<span class="text-[12px] text-secondary leading-tight">Boosted visibility for 24h</span>
+</div>
+</label>
+<!-- Hero -->
+<label class="relative flex cursor-pointer border border-outline-variant rounded-lg p-4 bg-surface-container-lowest hover:bg-surface transition-colors has-[:checked]:border-primary-container has-[:checked]:bg-primary-fixed/20 has-[:checked]:ring-1 has-[:checked]:ring-primary-container">
+<input class="peer sr-only" name="feature_status" type="radio" value="hero"/>
+<div class="flex flex-col items-center text-center w-full gap-2">
+<span class="material-symbols-outlined text-outline peer-checked:text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface">Hero</span>
+<span class="text-[12px] text-secondary leading-tight">Pinned to homepage top</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Final Confirmation -->
+<section class="bg-surface-container p-6 rounded-lg border-l-4 border-primary-container">
+<label class="flex items-start gap-4 cursor-pointer group">
+<div class="relative flex items-center justify-center mt-1">
+<input class="peer h-5 w-5 appearance-none border-2 border-outline rounded bg-surface-container-lowest checked:bg-primary-container checked:border-primary-container transition-colors focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface-container" id="theological-verification" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-primary text-[16px] pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-on-surface font-semibold group-hover:text-primary-container transition-colors">I have verified all Scripture references and theological alignment.</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1">This action cannot be undone once published. The manuscript will be locked for further editing.</span>
+</div>
+</label>
+</section>
+</div>
+<!-- Modal Footer (Actions) -->
+<div class="px-8 py-5 bg-surface border-t border-outline-variant flex justify-end gap-4 items-center">
+<button class="font-label-sm text-label-sm text-secondary px-6 py-2.5 rounded hover:bg-surface-variant hover:text-on-surface transition-colors cursor-pointer border border-transparent" type="button">
+                    Cancel
+                </button>
+<button class="font-label-sm text-label-sm bg-primary-container text-on-primary px-8 py-2.5 rounded shadow-sm hover:bg-primary transition-colors cursor-pointer flex items-center gap-2 opacity-50 cursor-not-allowed" disabled="" id="confirm-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+                    Confirm &amp; Schedule
+                </button>
+</div>
+</div>
+</div>
+<style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+<script>
+        // Simple logic to enable/disable confirm button based on checkbox
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkbox = document.getElementById('theological-verification');
+            const confirmBtn = document.getElementById('confirm-btn');
+
+            checkbox.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    confirmBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    confirmBtn.classList.add('cursor-pointer');
+                    confirmBtn.removeAttribute('disabled');
+                } else {
+                    confirmBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                    confirmBtn.classList.remove('cursor-pointer');
+                    confirmBtn.setAttribute('disabled', 'true');
+                }
+            });
+        });
+    </script>
+</body></html>

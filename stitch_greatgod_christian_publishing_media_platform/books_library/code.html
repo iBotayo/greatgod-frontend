@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Books Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#ffb3ad",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "success-secure": "#2e4d41",
+                      "primary-fixed": "#ffdad7",
+                      "tertiary-container": "#c6a94e",
+                      "tertiary": "#735c00",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-error": "#ffffff",
+                      "secondary": "#57605d",
+                      "surface-container-low": "#fff0ef",
+                      "surface-tint": "#9c413d",
+                      "primary-container": "#5d1212",
+                      "inverse-primary": "#ffb3ad",
+                      "surface-container-highest": "#f8dcda",
+                      "on-secondary-fixed": "#151d1b",
+                      "surface-container-high": "#fee2df",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#e3c466",
+                      "on-secondary-container": "#5d6663",
+                      "on-secondary-fixed-variant": "#404946",
+                      "secondary-fixed-dim": "#bfc9c5",
+                      "surface-bright": "#fff8f7",
+                      "surface": "#fff8f7",
+                      "inverse-surface": "#3d2c2b",
+                      "surface-container": "#fceae8",
+                      "error": "#ba1a1a",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#ffedeb",
+                      "surface-linen": "#f5f3ee",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#231b00",
+                      "on-primary-container": "#e27770",
+                      "primary": "#3e0003",
+                      "secondary-fixed": "#dbe5e0",
+                      "on-background": "#261817",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#ffe085",
+                      "surface-container-lowest": "#ffffff",
+                      "background": "#fff8f7",
+                      "on-surface": "#261817",
+                      "on-error-container": "#93000a",
+                      "surface-variant": "#f8dcda",
+                      "outline-variant": "#dbc0be",
+                      "on-primary-fixed": "#410004",
+                      "surface-paper": "#fbf9f4",
+                      "on-surface-variant": "#554240",
+                      "outline": "#887270",
+                      "surface-dim": "#efd4d1",
+                      "secondary-container": "#dbe5e0",
+                      "on-tertiary-container": "#4e3e00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "gutter": "32px",
+                      "stack-md": "32px",
+                      "stack-sm": "16px",
+                      "container-max": "1120px",
+                      "stack-lg": "64px",
+                      "form-width": "560px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "label-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "donation-amount": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "donation-amount": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-paper text-on-surface font-body-md antialiased min-h-screen pb-safe pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface hidden md:block">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto border-b-0 shadow-sm">
+<button class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-headline-md text-headline-md tracking-widest text-primary dark:text-primary-fixed">GREATGOD</div>
+<div class="flex items-center gap-6">
+<!-- Nav Links for Desktop -->
+<nav class="flex gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-opacity" href="#">Home</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-opacity" href="#">Discover</a>
+<a class="font-label-sm text-label-sm text-primary dark:text-primary-fixed font-bold active:scale-95 duration-200" href="#">Library</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-opacity" href="#">Profile</a>
+</nav>
+<button class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Mobile Header Replacement for layout balance -->
+<div class="h-16 md:h-24 w-full bg-surface-paper md:hidden flex items-center justify-center pt-4">
+<div class="font-headline-md text-headline-md tracking-widest text-primary dark:text-primary-fixed">GREATGOD</div>
+</div>
+<main class="max-w-container-max mx-auto px-margin-mobile pt-stack-md pb-stack-lg md:pt-stack-lg">
+<!-- Featured Resource -->
+<section class="mb-stack-lg">
+<div class="bg-surface-linen border border-outline rounded-lg overflow-hidden flex flex-col md:flex-row shadow-sm">
+<div class="md:w-1/3 relative h-64 md:h-auto border-b md:border-b-0 md:border-r border-outline">
+<div class="bg-cover bg-center w-full h-full absolute inset-0" data-alt="A beautifully bound, classic theology book with a deep burgundy leather cover, gold embossed lettering, sitting on a polished oak table in a warmly lit, heritage-style library setting. The lighting is soft and contemplative, evoking scholarly clarity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3F2FTUNY1LUixHG96pTRzoVfXQfJVSKVzhvj6fFqrZzLweCXKLpP6y9HKar0xM0alwck5GNWHhKFvRoN-wEx-1Tq5E8HVt65sJDIkBXB-FXl1nbQ-7TTjVM6sItuiJOvevYRJrxtP_JFL1Lbc5Su3aYYKBIs_6X5cdUssLqTED3rle7cf2QXPfZSb9ZCoMEvhzgTL84SNjYzWdbnatMjNt5rGSjN66Fgh02fQIThVGfceYevlNdJ0')"></div>
+</div>
+<div class="p-gutter md:w-2/3 flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-2 block">Featured Resource</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-4">The Attributes of God</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">A profound exploration of the divine nature, combining rigorous theological inquiry with spiritual devotion. This seminal work offers timeless insights into the character of God.</p>
+<div class="flex flex-wrap gap-4 items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">By A.W. Pink</span>
+<div class="h-4 w-px bg-outline hidden md:block"></div>
+<div class="flex gap-2">
+<span class="px-2 py-1 border border-outline rounded font-label-sm text-label-sm text-secondary">PRINT</span>
+<span class="px-2 py-1 border border-outline rounded font-label-sm text-label-sm text-secondary">PDF</span>
+<span class="px-2 py-1 border border-outline rounded font-label-sm text-label-sm text-secondary">EPUB</span>
+</div>
+<button class="ml-auto bg-primary text-on-primary font-label-sm text-label-sm px-6 py-3 rounded-lg hover:bg-on-primary-fixed-variant transition-colors uppercase tracking-[0.08em]">View Details</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Library Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Filters Sidebar -->
+<aside class="md:col-span-3">
+<div class="sticky top-24">
+<h3 class="font-headline-md text-headline-md text-primary border-b border-outline pb-2 mb-4">Categories</h3>
+<ul class="space-y-3">
+<li><a class="font-label-lg text-label-lg text-primary hover:text-surface-tint flex items-center justify-between" href="#"><span class="border-l-2 border-primary pl-2">Theology</span> <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></a></li>
+<li><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors flex items-center justify-between" href="#"><span>Christian Living</span></a></li>
+<li><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors flex items-center justify-between" href="#"><span>Scripture Study</span></a></li>
+<li><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors flex items-center justify-between" href="#"><span>Church History</span></a></li>
+</ul>
+</div>
+</aside>
+<!-- Book Cards -->
+<div class="md:col-span-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Book Card 1 -->
+<article class="bg-surface-linen border border-outline rounded-lg overflow-hidden group hover:border-primary transition-colors duration-300">
+<div class="h-48 relative border-b border-outline overflow-hidden">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A close-up of a classic, cloth-bound book titled 'Knowing God' sitting on a reading desk. Soft, warm light highlights the textured linen cover, evoking a sense of calm scholarly study in a light-mode aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4AklYOJEQiuDW0YUQPXJ03LFxNvk6vvw-h6w0go7VNRyTfROjcxnajMPXxlzm8mYejkL_UOj8pcGpXLEk3ghL1Vl8s1bS3xITtamHFkaAo7Mk92yoOwiZj96CmOCggG3tHkXA8iMBAKQGW47yXTjCelosmI9qRonQtoGic2fFWrkYmxCRbxO5jqvF_VPS5h4FQ1KvzhfyImkdDKZ7h6FEq9J8EHRoUqU8Gve8xA3nrMfkDRKaCX-0')"></div>
+</div>
+<div class="p-4 flex flex-col h-[calc(100%-12rem)]">
+<h2 class="font-headline-md text-headline-md text-primary mb-1 line-clamp-2 leading-tight">Knowing God</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-4">J.I. Packer</p>
+<div class="mt-auto flex gap-2">
+<span class="px-2 py-1 border border-outline rounded text-[10px] font-semibold text-secondary uppercase tracking-widest bg-surface-paper">PRINT</span>
+<span class="px-2 py-1 border border-outline rounded text-[10px] font-semibold text-secondary uppercase tracking-widest bg-surface-paper">PDF</span>
+</div>
+</div>
+</article>
+<!-- Book Card 2 -->
+<article class="bg-surface-linen border border-outline rounded-lg overflow-hidden group hover:border-primary transition-colors duration-300">
+<div class="h-48 relative border-b border-outline overflow-hidden">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A vintage edition of 'The Pilgrim's Progress' resting on a wooden shelf next to an old, brass reading lamp. The scene is illuminated with a soft, heritage-inspired light, reflecting a trustworthy, classic academic setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBv_VqFWwnL4s8r1ZychB7PQC06ZB0wLXtHYsrU9IOpE2Y8ZJD8vct5z7zDeIKIVqC8vvvWTggMMpHu_TPdXSnneFRFfWe4fYhnpBnR55YglLb2Eb2jmm-O6BuFD8a1GSrBummDNuMBh24V8-YZIngDYdJo1wSha4Z3Gw5qlVdqJsYvXc-ILQWEv_T1jLBWUzWc3EbOeL9uEcpocU48w_KL7c7HMoDlnBvZD9f7u8eb--y0KlPOyyhv')"></div>
+</div>
+<div class="p-4 flex flex-col h-[calc(100%-12rem)]">
+<h2 class="font-headline-md text-headline-md text-primary mb-1 line-clamp-2 leading-tight">The Pilgrim's Progress</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-4">John Bunyan</p>
+<div class="mt-auto flex gap-2">
+<span class="px-2 py-1 border border-outline rounded text-[10px] font-semibold text-secondary uppercase tracking-widest bg-surface-paper">PRINT</span>
+<span class="px-2 py-1 border border-outline rounded text-[10px] font-semibold text-secondary uppercase tracking-widest bg-surface-paper">EPUB</span>
+</div>
+</div>
+</article>
+<!-- Book Card 3 -->
+<article class="bg-surface-linen border border-outline rounded-lg overflow-hidden group hover:border-primary transition-colors duration-300">
+<div class="h-48 relative border-b border-outline overflow-hidden">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="An elegant, modern minimalist layout of a scripture study guide on a pristine white desk. The book has a clean, subtle cover design, illuminated by bright, calm daylight, reflecting a disciplined and serene environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACx7QtAufnwseWX37HmX_qjyamCsdiRHBHvHufysjQNTtYZC0_fTF3HtjDLBu2mrsI_BNCuGubZxzhKWU-i3k-zT7qr1xXCh3Njsu_bVSY5FJRhTEgkHxJqRwKU7WdTj5UngM3MrDCVu__sasd39jOysYd2OV37snL2gDUluDB_bjUhgRVb0giT-rGXsF3CbUH_4YXgNtrXjNRvga4_JJoOYpWIdTq5R1RXu_CZEAGBiY2enfI4KmM')"></div>
+</div>
+<div class="p-4 flex flex-col h-[calc(100%-12rem)]">
+<h2 class="font-headline-md text-headline-md text-primary mb-1 line-clamp-2 leading-tight">Institutes of the Christian Religion</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-4">John Calvin</p>
+<div class="mt-auto flex gap-2">
+<span class="px-2 py-1 border border-outline rounded text-[10px] font-semibold text-secondary uppercase tracking-widest bg-surface-paper">PDF</span>
+<span class="px-2 py-1 border border-outline rounded text-[10px] font-semibold text-secondary uppercase tracking-widest bg-surface-paper">EPUB</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-2 px-margin-mobile pb-safe bg-surface-container-low dark:bg-surface-container-low border-t-0 z-50 md:hidden shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container opacity-70 hover:bg-surface-variant/50 transition-colors active:scale-90 duration-150 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-[10px] tracking-wider uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container opacity-70 hover:bg-surface-variant/50 transition-colors active:scale-90 duration-150 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-label-sm text-[10px] tracking-wider uppercase">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold hover:bg-surface-variant/50 transition-colors active:scale-90 duration-150 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="library_books" data-weight="fill" style="font-variation-settings: 'FILL' 1;">library_books</span>
+<span class="font-label-sm text-[10px] tracking-wider uppercase">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-container opacity-70 hover:bg-surface-variant/50 transition-colors active:scale-90 duration-150 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-[10px] tracking-wider uppercase">Profile</span>
+</a>
+</nav>
+</body></html>

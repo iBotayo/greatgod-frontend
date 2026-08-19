@@ -1,0 +1,352 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GreatGod - The Beauty of Grace in Everyday Trials</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Hanken+Grotesk:wght@400;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#887270",
+                      "on-secondary-fixed": "#141d1a",
+                      "tertiary": "#735c00",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#ffe088",
+                      "error-container": "#ffdad6",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-surface": "#1b1c19",
+                      "surface-variant": "#e4e2dd",
+                      "on-primary-container": "#e27770",
+                      "secondary": "#57605d",
+                      "inverse-primary": "#ffb3ad",
+                      "surface-dim": "#dbdad5",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed": "#410004",
+                      "on-secondary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "secondary-fixed": "#dbe5e0",
+                      "outline-variant": "#dbc0be",
+                      "surface-container-low": "#f5f3ee",
+                      "primary": "#3e0003",
+                      "surface-tint": "#9c413d",
+                      "secondary-container": "#d8e2dd",
+                      "inverse-surface": "#30312e",
+                      "surface-bright": "#fbf9f4",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "background": "#fbf9f4",
+                      "on-background": "#1b1c19",
+                      "on-tertiary-container": "#4e3d00",
+                      "tertiary-container": "#cca72f",
+                      "surface-container": "#f0eee9",
+                      "primary-fixed": "#ffdad7",
+                      "surface": "#fbf9f4",
+                      "on-error": "#ffffff",
+                      "on-surface-variant": "#554240",
+                      "surface-container-high": "#eae8e3",
+                      "surface-container-highest": "#e4e2dd",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "on-secondary-container": "#5b6561",
+                      "on-tertiary": "#ffffff",
+                      "inverse-on-surface": "#f2f1ec",
+                      "on-tertiary-fixed": "#241a00",
+                      "primary-container": "#5d1212"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "stack-lg": "64px",
+                      "stack-sm": "16px",
+                      "unit": "8px",
+                      "container-max": "1120px",
+                      "gutter": "32px",
+                      "stack-md": "32px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .symbol-filled {
+            font-variation-settings: 'FILL' 1;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased pt-16 pb-20 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline duration-200 ease-in-out">
+<button class="flex items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<a class="font-display-lg text-headline-lg-mobile text-primary dark:text-primary-fixed-dim tracking-tight" href="#">GreatGod</a>
+<a href="{{DATA:SCREEN:SCREEN_182}}" class="flex items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors p-2 rounded-full"><span class="material-symbols-outlined" data-icon="search">search</span></a>
+<!-- Desktop Nav Items (Hidden on Mobile) -->
+<nav class="hidden md:flex gap-6 absolute left-1/2 -translate-x-1/2">
+<a class="text-primary dark:text-primary-fixed-dim font-bold hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors px-3 py-2 rounded-md" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors px-3 py-2 rounded-md" href="#">Discover</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors px-3 py-2 rounded-md" href="#">Library</a>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-stack-md">
+<!-- Hero Section: Featured Article -->
+<section class="mb-stack-lg relative overflow-hidden rounded-xl border border-outline-variant/50 bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-gutter items-center">
+<div class="md:col-span-7 h-[400px] md:h-[600px] relative">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A warm, cinematic photograph of sunlight streaming through a large, classical arched window, illuminating dust motes in the air. The light falls onto a worn wooden table with an open, ancient leather-bound book. The mood is serene, reflective, and hopeful, embodying grace. The color palette is rich with deep earthy browns, soft creams, and golden morning light. Shot in a soft-focus editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeztJYJu2wWypMxYxFXLBrGQ4mWhClsfHIITwgD0qFkv9zpoJrYPrSj3n7EJWgtiUPS5dEtVSevEDf3qN39psXeerFO6Yra83g8pR6kDJCTIISwM1L9_X18o283wDyU16Qwd9RXfvF6pIq4KnzSCBfy2K9840vk7t3bEAh64-3MUpjKwUS1qBEtf4Zvnc6zNpy8KxeMs_YDcOhKJG9ADtjM0FZsfffPS2DdGzMTxUNxehHqItUKU73">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent md:hidden"></div>
+</div>
+<div class="md:col-span-5 p-stack-md md:pr-stack-lg relative z-10 -mt-12 md:mt-0 bg-surface-container-lowest md:bg-transparent mx-margin-mobile md:mx-0 rounded-t-xl md:rounded-none">
+<div class="flex items-center gap-2 mb-unit text-label-sm font-label-sm text-secondary uppercase tracking-widest">
+<span class="">Featured Essay</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="">6 min read</span>
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-headline-lg text-on-surface leading-tight mb-stack-sm">
+                        The Beauty of Grace in Everyday Trials
+                    </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md line-clamp-3 md:line-clamp-none">
+                        In the quiet moments of despair, grace rarely announces itself with a trumpet blast. Instead, it weaves through our mundane struggles, offering a soft resilience that transforms how we endure suffering.
+                    </p>
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a Black female author in her 30s, wearing a simple cream blouse. She has a warm, thoughtful expression. The background is a soft, out-of-focus library setting. Lighting is natural and soft, fitting a classical publishing editorial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA51YS2yNhFt7GPjsRVibYtMFB7UfRkbbUWVq7zp1DPLoXwlA_BfxzrU0ts-Wht8WMVcc4p_vKn85CCrgjnu2Z5Qn75NZJcdx0bByuGr7fs7CcGODXVbmwB2ojkTY8i87lByhLvpfy6JIIyS3oIZgBPVpHL4rEvykkpZUAYeFWPzAOpCQFrn9pApaibC1zYgxp5g6aJx-X4pD6AAHZBRMsxqZ-uXLt4IWbfuOyfyAPyp4Ctk7hCxELd">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface">Grace Adeyemi</p>
+<p class="font-label-sm text-xs text-secondary">Theologian &amp; Writer</p>
+</div>
+</div>
+<a class="inline-flex items-center justify-center mt-stack-md px-6 py-3 bg-primary-container text-on-primary font-label-sm text-label-sm rounded-DEFAULT hover:bg-primary transition-colors" href="{{DATA:SCREEN:SCREEN_180}}">
+                        Read Full Essay
+                    </a>
+</div>
+</div>
+</section>
+<!-- Scripture of the Day Callout -->
+<section class="mb-stack-lg max-w-[720px] mx-auto text-center px-stack-md py-stack-md border-y border-outline-variant relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background px-4 text-outline">
+<span class="material-symbols-outlined text-2xl">book_4</span>
+</div>
+<h2 class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-unit">Scripture of the Day</h2>
+<blockquote class="font-headline-md text-headline-md text-on-surface italic mb-stack-sm">
+                "But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.' Therefore I will boast all the more gladly about my weaknesses, so that Christ’s power may rest on me."
+            </blockquote>
+<cite class="font-label-sm text-label-sm text-on-surface-variant not-italic">— 2 Corinthians 12:9</cite>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-stack-lg">
+<!-- Left Column: Recent Articles (8 cols) -->
+<div class="md:col-span-8 space-y-stack-md">
+<div class="flex items-center justify-between border-b border-outline-variant pb-2 mb-stack-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">Recent Articles</h2>
+<a class="font-label-sm text-label-sm text-primary underline hover:no-underline" href="#">View All</a>
+</div>
+<!-- Article Item -->
+<article class="flex flex-col sm:flex-row gap-stack-sm items-start group">
+<div class="w-full sm:w-1/3 aspect-[4/3] rounded-lg overflow-hidden border border-outline-variant shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist composition of a ceramic bowl filled with water, sitting on a raw linen cloth. Soft morning light casts gentle shadows, evoking themes of washing, renewal, and simplicity. The color palette features pale stony grays, off-whites, and soft natural textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHzp-s6u3Ps4kL2mHfeWaC0khvUkHMgBwB0vc61UgeUEg8TfgE2LItIfzdCbCEDlgBMOTVu0gx_O68AJMPUKHAu8ouOWQ59sNfkWpj1o4Y8EbC6AkeIWQDp2WB_z_mZMv278_l44tyofX3wAZCug6TeUlwBlpShxk-Bpu55HvZYqo_235Rru-sTebFpXtOTPV3_8CXvln3CsVxV6L87C__unX8bCFMbiOzYV905MNykk2CRNGOeyjq">
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1 text-label-sm font-label-sm text-secondary uppercase tracking-widest">
+<span class="">Theology</span>
+</div>
+<h3 class="font-headline-md text-headline-lg-mobile text-on-surface mb-2 group-hover:text-primary-container transition-colors">The Sacrament of the Ordinary</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2 line-clamp-2">
+                            Finding divine presence not just in the cathedral, but in the kitchen sink. How the mundane tasks of life can become an altar of worship.
+                        </p>
+<div class="font-label-sm text-xs text-secondary">
+                            By David Chen · Oct 12 · 4 min read
+                        </div>
+</div>
+</article>
+<hr class="border-t border-outline-variant/30">
+<!-- Article Item -->
+<article class="flex flex-col sm:flex-row gap-stack-sm items-start group">
+<div class="w-full sm:w-1/3 aspect-[4/3] rounded-lg overflow-hidden border border-outline-variant shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An abstract, textured close-up of aged stone wall with subtle moss growing in the crevices. The lighting is moody and contemplative, highlighting the rough texture and endurance of the stone. Colors are muted slate, dark olive, and deep shadow. Evokes history and steadfast faith." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-Vaa2SNLfwoWnqTyV7-dbNb6-hVtG9cOvLFq6X8r8tMM3O7OAxZQbDKqpykvlIQiyG3QWDd-dArgpjXBs9rxRVE9SF7oi_oMbZkqPRc9PuCvBn09s7SPagy4aNBjV9hXsC9DwkH7ddO9cGLPxVnUkDXEXwJTpI0JdgLCSHBWXzrg_JWahp9-PH_d7E0NxJyLNCl2rrFzVnIunCnDj5FJJgi04ZEICFwcHeB3vYFJuylCSAzE0VPzY">
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1 text-label-sm font-label-sm text-secondary uppercase tracking-widest">
+<span class="">Church History</span>
+</div>
+<h3 class="font-headline-md text-headline-lg-mobile text-on-surface mb-2 group-hover:text-primary-container transition-colors">Echoes of the Desert Fathers</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2 line-clamp-2">
+                            What the ancient monastics can teach our hyper-connected, anxious modern culture about solitude, silence, and true communion with God.
+                        </p>
+<div class="font-label-sm text-xs text-secondary">
+                            By Sarah Jenkins · Oct 10 · 8 min read
+                        </div>
+</div>
+</article>
+</div>
+<!-- Right Column: Sidebar (4 cols) -->
+<div class="md:col-span-4 space-y-stack-md mt-stack-md md:mt-0">
+<!-- Daily Devotional Card (Prominent) -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-stack-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl">local_fire_department</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary-container text-sm symbol-filled">calendar_today</span>
+<span class="font-label-sm text-label-sm text-primary-container uppercase tracking-widest">Daily Devotional</span>
+</div>
+<h3 class="font-headline-md text-headline-lg-mobile text-on-surface mb-2">Resting in Sovereignty</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">
+                            When the storm rages, the truest test of faith is not attempting to calm the sea, but sleeping in the boat alongside the Savior.
+                        </p>
+<a class="inline-flex items-center justify-center w-full py-2 border border-outline text-on-surface font-label-sm text-label-sm rounded-DEFAULT hover:bg-surface-container-highest transition-colors" href="{{DATA:SCREEN:SCREEN_82}}">
+                            Read Today's Entry
+                        </a>
+</div>
+</div>
+<!-- Newsletter Signup -->
+<div class="bg-surface-container-highest border border-outline-variant rounded-xl p-stack-sm">
+<h3 class="font-headline-md text-headline-lg-mobile text-on-surface mb-1">The Weekly Sabbath</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">
+                        A curated digest of essays, liturgy, and art for your weekend reading.
+                    </p>
+<form class="space-y-3">
+<div>
+<label class="sr-only" for="email">Email address</label>
+<input class="w-full bg-surface-container-lowest border-outline text-on-surface font-body-md text-sm rounded-DEFAULT focus:ring-2 focus:ring-primary-container focus:border-primary-container focus:ring-offset-1" id="email" placeholder="Your email address" type="email">
+</div>
+<button class="w-full py-2 bg-on-surface text-surface font-label-sm text-label-sm rounded-DEFAULT hover:bg-inverse-surface transition-colors" type="button">
+                            Subscribe
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-20 bg-surface dark:bg-surface-dim px-margin-mobile md:hidden border-t border-outline-variant dark:border-outline">
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-secondary-container/30 rounded-full py-1 px-4 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined symbol-filled">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-sm text-label-sm">Library</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-margin-mobile md:px-stack-lg flex flex-col items-center gap-stack-md bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant dark:border-outline pb-24 md:pb-stack-lg">
+<a class="font-display-lg text-headline-md text-primary dark:text-primary-fixed-dim" href="#">GreatGod</a>
+<nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">About</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="{{DATA:SCREEN:SCREEN_155}}">Statement of Faith</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 ease-serif" href="{{DATA:SCREEN:SCREEN_42}}">Newsletter</a>
+</nav>
+<p class="font-body-md text-body-md text-on-surface dark:text-on-surface-variant opacity-70 text-sm text-center">
+            © 2024 GreatGod Publishing. All rights reserved.
+        </p>
+</footer>
+
+
+</body></html>

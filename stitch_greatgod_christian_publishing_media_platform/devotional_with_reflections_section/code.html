@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Devotional Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#f1dedc",
+                      "on-error-container": "#93000a",
+                      "on-surface": "#231918",
+                      "on-tertiary-container": "#4e3e00",
+                      "inverse-primary": "#ffb3ad",
+                      "surface-paper": "#fbf9f4",
+                      "secondary": "#57605d",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#ffdad7",
+                      "on-surface-variant": "#554240",
+                      "stone-outline": "#887270",
+                      "primary-container": "#5d1212",
+                      "surface-bright": "#fff8f7",
+                      "surface-container-low": "#fff0ef",
+                      "tertiary": "#735c00",
+                      "on-secondary-container": "#5d6663",
+                      "background": "#fff8f7",
+                      "tertiary-container": "#c6a94e",
+                      "on-secondary-fixed": "#151d1b",
+                      "surface-container-high": "#f6e4e2",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-primary-container": "#e27770",
+                      "outline-variant": "#dbc0be",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-surface": "#392e2d",
+                      "outline": "#887270",
+                      "surface-tint": "#9c413d",
+                      "on-primary-fixed": "#410004",
+                      "on-secondary-fixed-variant": "#404946",
+                      "on-background": "#231918",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#dbe5e0",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "on-error": "#ffffff",
+                      "surface-dim": "#e8d6d4",
+                      "tertiary-fixed": "#ffe085",
+                      "surface-linen": "#f5f3ee",
+                      "surface-container": "#fceae8",
+                      "inverse-on-surface": "#ffedeb",
+                      "primary": "#3e0003",
+                      "on-tertiary": "#ffffff",
+                      "success-secure": "#2e4d41",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "secondary-fixed-dim": "#bfc9c5",
+                      "on-tertiary-fixed": "#231b00",
+                      "surface-container-highest": "#f1dedc",
+                      "surface": "#fff8f7",
+                      "tertiary-fixed-dim": "#e3c466",
+                      "secondary-container": "#dbe5e0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-lg": "64px",
+                      "gutter": "32px",
+                      "form-width": "560px",
+                      "container-max": "1120px",
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "stack-sm": "16px",
+                      "stack-md": "32px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "donation-amount": [
+                              "EB Garamond"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "label-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "donation-amount": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background antialiased pb-24 md:pb-0 pt-16">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter h-16 bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline">
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">
+            GreatGod
+        </div>
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content Vessel -->
+<main class="max-w-[800px] mx-auto px-margin-mobile md:px-0 py-stack-lg flex flex-col space-y-stack-lg">
+<!-- Header Section -->
+<section class="text-center space-y-stack-sm pt-8">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Daily Devotional · October 24</p>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">The Faithfulness of Small Things</h1>
+<p class="font-body-md text-body-md text-secondary italic">Part 4 of the "Everyday Stewardship" Series</p>
+</section>
+<!-- Primary Scripture Callout -->
+<section class="bg-surface-linen border border-stone-outline p-stack-md rounded-lg text-center relative shadow-sm">
+<div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-surface-linen px-4 border border-stone-outline rounded-full">
+<span class="material-symbols-outlined text-primary text-sm">auto_stories</span>
+</div>
+<h2 class="font-label-lg text-label-lg text-primary mb-4">Luke 16:10 (NIV)</h2>
+<blockquote class="font-body-lg text-body-lg text-on-surface max-w-2xl mx-auto italic">
+                "Whoever can be trusted with very little can also be trusted with much, and whoever is dishonest with very little will also be dishonest with much."
+            </blockquote>
+</section>
+<!-- Devotional Content -->
+<article class="font-body-md text-body-md text-on-surface space-y-6 leading-relaxed">
+<p>
+                In a world that constantly celebrates the massive, the viral, and the explosive, it is deeply counter-cultural to focus on the small. We are conditioned to believe that significance is measured in scale—that unless our impact is broad, it isn't deep. Yet, the Kingdom of God operates on an entirely different economy.
+            </p>
+<p>
+                Jesus, in His teachings, frequently elevated the mundane to the sacred. A cup of cold water, a widow’s two small coins, a mustard seed—these were the currencies of His Kingdom. In Luke 16, He presents a profound principle of spiritual stewardship: faithfulness is not a switch we flip when the stakes are high; it is a muscle we build in the quiet, unseen moments of daily life.
+            </p>
+<!-- Pull Quote -->
+<div class="my-stack-md py-stack-sm border-l-2 border-primary pl-6">
+<p class="font-headline-md text-headline-md text-primary italic leading-snug">
+                    "Faithfulness is not a switch we flip when the stakes are high; it is a muscle we build in the quiet, unseen moments of daily life."
+                </p>
+</div>
+<p>
+                Consider your current responsibilities. Perhaps you are managing a small budget, leading a team of two, or simply trying to maintain peace in your household. It is tempting to look past these tasks, waiting for the "real" ministry or the "big" opportunity to arrive. But Jesus warns us that if we cannot be trusted with the little we have now, we will inevitably mishandle the abundance we crave.
+            </p>
+<p>
+                True stewardship begins exactly where you are. It asks: How are you managing the time you’ve been given today? Are you intentional with the resources at your disposal? Are you present with the people currently in your sphere of influence? The faithfulness of small things is the very foundation upon which God builds a life capable of carrying great weight.
+            </p>
+</article><section class="space-y-stack-md">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-md text-headline-md text-on-surface">Reflections</h2>
+<div class="h-px flex-grow bg-outline-variant"></div>
+</div>
+<!-- Reflection Prompt -->
+<div class="bg-surface-container-low p-stack-sm rounded-lg border border-outline-variant">
+<p class="font-body-md text-body-md text-on-surface mb-4">How is God calling you to be faithful in the 'small things' today?</p>
+<button class="w-full py-3 px-6 border border-stone-outline rounded-full font-label-lg text-label-lg text-primary hover:bg-surface-linen transition-colors">
+      Share your reflection
+    </button>
+</div>
+<!-- Pending State -->
+<div class="flex items-center gap-3 px-4 py-3 bg-primary-container/10 rounded-lg border border-primary/20">
+<span class="material-symbols-outlined text-primary text-sm">info</span>
+<p class="font-label-sm text-label-sm text-primary">Your reflection is being reviewed by our moderators.</p>
+</div>
+<!-- Comments List -->
+<div class="space-y-6">
+<!-- Comment 1 -->
+<div class="space-y-3">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-dim flex items-center justify-center text-primary font-label-lg">SJ</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Sarah Jenkins</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">2 hours ago</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">flag</span>
+<span class="font-label-sm text-label-sm">Report</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface pl-13">This really spoke to me. I often feel like my daily chores don't matter, but seeing them as 'currencies of the Kingdom' changes everything.</p>
+</div>
+<!-- Comment 2 -->
+<div class="space-y-3">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-dim flex items-center justify-center text-primary font-label-lg">MR</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Marcus Rivera</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">5 hours ago</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">flag</span>
+<span class="font-label-sm text-label-sm">Report</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface pl-13">The muscle analogy is perfect. Faithfulness is a practice, not just a feeling.</p>
+</div>
+</div>
+</section>
+<!-- Action Bar -->
+<section class="flex flex-col sm:flex-row items-center justify-center gap-4 py-8 border-t border-b border-outline-variant">
+<button class="flex items-center gap-2 px-6 py-3 border border-stone-outline rounded-full hover:bg-surface-container-low transition-colors w-full sm:w-auto justify-center group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="bookmark">bookmark</span>
+<span class="font-label-lg text-label-lg text-on-surface">Bookmark</span>
+</button>
+<button class="flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-full hover:bg-primary-container transition-colors w-full sm:w-auto justify-center group shadow-sm">
+<span class="material-symbols-outlined text-on-primary group-hover:scale-110 transition-transform" data-icon="check_circle">check_circle</span>
+<span class="font-label-lg text-label-lg text-on-primary">Mark as Read</span>
+</button>
+</section>
+<!-- Author Bio -->
+<section class="flex flex-col md:flex-row items-center md:items-start gap-6 bg-surface-container-lowest p-stack-sm rounded-lg border border-outline-variant">
+<div class="w-20 h-20 rounded-full overflow-hidden shrink-0 border border-stone-outline">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged author in a well-lit study, wearing a warm tweed jacket. The lighting is soft and natural, coming from a nearby window. The background features blurred bookshelves, creating an atmosphere of wisdom and heritage. The overall aesthetic is calm, trustworthy, and matches a high-end editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyMpccX-VVUH-eywZ6gwcF8mgRWYlAh5wP4LETVSYjxIKKxTEBgS8BTujn-GRLV-0PZ4lM03USf6e72JiziV8a_OSTXvePXsdwALMTz4jghOhh9vDsUjZz22BtDWvM0-bIQ4O1rkSqGygtXs_xsZruItgD0YFd1rvfkGPtnL5EWjLhi0cl3-eMADwdMUI-V6HxTCheIRNkTN6yAjZKgyo6_npjq5rjoHHM9V2khHgAvS1vkGaVh8nu"/>
+</div>
+<div class="text-center md:text-left space-y-2">
+<h3 class="font-label-lg text-label-lg text-on-surface">Dr. Thomas Chalmers</h3>
+<p class="font-label-sm text-label-sm text-secondary">Director of Theological Stewardship</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                    Dr. Chalmers has spent over two decades writing on the intersection of faith, daily work, and financial stewardship. He lives in Grand Rapids with his family.
+                </p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-gutter flex flex-col items-center space-y-stack-md bg-surface-container dark:bg-surface-container border-t border-outline-variant dark:border-outline pb-24 md:pb-stack-lg">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">
+            GreatGod
+        </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors underline duration-200" href="#">Statement of Faith</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors underline duration-200" href="#">Authors</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors underline duration-200" href="#">Submissions</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors underline duration-200" href="#">Privacy Policy</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 GreatGod Publishing. All rights reserved.</p>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center h-20 bg-surface/95 backdrop-blur-sm px-margin-mobile border-t border-outline-variant dark:border-outline">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-transform duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-on-primary-container bg-primary-container/10 dark:bg-primary-container rounded-full px-4 py-1 transition-transform duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-transform duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-sm text-label-sm">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-transform duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

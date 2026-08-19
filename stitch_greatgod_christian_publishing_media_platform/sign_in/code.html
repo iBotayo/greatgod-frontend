@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - Sign In</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&amp;family=Hanken+Grotesk:wght@400;600&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#231b00",
+                    "surface": "#fff8f7",
+                    "surface-container-highest": "#f1dedc",
+                    "on-primary-fixed": "#410004",
+                    "inverse-primary": "#ffb3ad",
+                    "on-surface": "#231918",
+                    "secondary": "#57605d",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#ffedeb",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "primary-container": "#5d1212",
+                    "tertiary": "#735c00",
+                    "on-primary-fixed-variant": "#7e2a27",
+                    "surface-variant": "#f1dedc",
+                    "surface-linen": "#f5f3ee",
+                    "on-secondary-fixed-variant": "#404946",
+                    "surface-tint": "#9c413d",
+                    "stone-outline": "#887270",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "secondary-fixed-dim": "#bfc9c5",
+                    "surface-container": "#fceae8",
+                    "outline": "#887270",
+                    "outline-variant": "#dbc0be",
+                    "on-primary-container": "#e27770",
+                    "on-secondary-container": "#5d6663",
+                    "on-secondary-fixed": "#151d1b",
+                    "secondary-fixed": "#dbe5e0",
+                    "success-secure": "#2e4d41",
+                    "surface-dim": "#e8d6d4",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#392e2d",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#554240",
+                    "tertiary-fixed": "#ffe085",
+                    "tertiary-container": "#c6a94e",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "background": "#fff8f7",
+                    "surface-bright": "#fff8f7",
+                    "secondary-container": "#dbe5e0",
+                    "surface-paper": "#fbf9f4",
+                    "on-background": "#231918",
+                    "surface-container-low": "#fff0ef",
+                    "primary": "#3e0003",
+                    "surface-container-high": "#f6e4e2",
+                    "primary-fixed": "#ffdad7",
+                    "on-tertiary-container": "#4e3e00",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#e3c466"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "stack-md": "32px",
+                    "margin-mobile": "20px",
+                    "gutter": "32px",
+                    "form-width": "560px",
+                    "container-max": "1120px",
+                    "stack-lg": "64px",
+                    "stack-sm": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "EB Garamond"
+                    ],
+                    "label-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-md": [
+                            "EB Garamond"
+                    ],
+                    "donation-amount": [
+                            "EB Garamond"
+                    ],
+                    "body-md": [
+                            "\"Source Serif 4\""
+                    ],
+                    "headline-lg": [
+                            "EB Garamond"
+                    ],
+                    "body-lg": [
+                            "\"Source Serif 4\""
+                    ],
+                    "label-sm": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "donation-amount": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "17px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "13px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.08em",
+                                    "fontWeight": "600"
+                            }
+                    }
+            }
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+        }
+        
+        .input-border-transition {
+            transition: border-color 0.2s ease-in-out, border-width 0.2s ease-in-out;
+        }
+        
+        .input-focus:focus-within {
+            border-color: #3e0003 !important; /* primary */
+            border-width: 2px !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface min-h-screen flex flex-col font-body-md text-on-surface antialiased">
+<!-- Top Navigation (Transactional, no tabs) -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 max-w-container-max mx-auto border-b border-outline-variant bg-surface">
+<button aria-label="Go Back" class="text-primary hover:bg-surface-container-low transition-colors rounded-full p-2 flex items-center justify-center group">
+<span class="material-symbols-outlined group-hover:opacity-80 transition-opacity duration-200">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md text-primary tracking-tight">GreatGod</div>
+<div class="w-[40px]"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center px-margin-mobile py-stack-lg">
+<!-- The "Giving Vessel" (Centered fixed grid) -->
+<div class="w-full max-w-form-width bg-surface-linen rounded-xl border border-stone-outline p-stack-md flex flex-col gap-stack-lg relative overflow-hidden">
+<!-- Subtle decorative texture/overlay (Optional, kept minimal) -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 50% 0%, #3e0003 0%, transparent 60%);"></div>
+<!-- Header -->
+<div class="text-center relative z-10">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-unit">Welcome Back</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Sign in to continue your stewardship journey.</p>
+</div>
+<!-- Form Area -->
+<form action="#" class="flex flex-col gap-stack-md relative z-10" method="POST">
+<!-- Inputs Container -->
+<div class="flex flex-col gap-stack-sm">
+<!-- Email Field -->
+<div class="flex flex-col gap-unit">
+<label class="font-label-sm text-label-sm text-secondary uppercase tracking-widest" for="email">Email Address</label>
+<div class="relative flex items-center border border-stone-outline rounded bg-surface-container-lowest input-focus input-border-transition overflow-hidden">
+<span class="material-symbols-outlined text-outline ml-3 absolute pointer-events-none">mail</span>
+<input class="w-full bg-transparent border-none py-3 pl-10 pr-3 font-body-md text-on-surface focus:ring-0 placeholder-outline-variant" id="email" name="email" placeholder="name@example.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-unit">
+<label class="font-label-sm text-label-sm text-secondary uppercase tracking-widest" for="password">Password</label>
+<div class="relative flex items-center border border-stone-outline rounded bg-surface-container-lowest input-focus input-border-transition overflow-hidden">
+<span class="material-symbols-outlined text-outline ml-3 absolute pointer-events-none">lock</span>
+<input class="w-full bg-transparent border-none py-3 pl-10 pr-3 font-body-md text-on-surface focus:ring-0 placeholder-outline-variant" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+</div>
+<!-- Form Options (Remember Me & Forgot Password) -->
+<div class="flex items-center justify-between mt-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-4 h-4 text-primary bg-surface-container-lowest border-stone-outline rounded focus:ring-primary focus:ring-2 focus:ring-offset-surface-linen cursor-pointer" name="remember" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-primary transition-colors">Remember me</span>
+</label>
+<a class="font-label-sm text-label-sm text-primary hover:text-on-primary-fixed underline decoration-transparent hover:decoration-primary transition-all" href="#">Forgot password?</a>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-4 rounded-lg hover:bg-on-primary-fixed transition-colors mt-unit shadow-sm flex items-center justify-center gap-2 group" type="submit">
+<span>Sign In</span>
+<span class="material-symbols-outlined text-on-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+<!-- Registration Link -->
+<div class="text-center border-t border-outline-variant pt-stack-sm relative z-10">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Don't have an account? 
+                    <a class="font-label-lg text-label-lg text-primary hover:text-on-primary-fixed underline transition-colors ml-1" href="#">Register</a>
+</p>
+</div>
+<!-- Trust Footer -->
+<div class="text-center pt-stack-sm border-t border-surface-dim mt-stack-sm flex flex-col items-center gap-1 opacity-80">
+<div class="flex items-center justify-center gap-1 text-success-secure">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-label-sm text-label-sm uppercase">Secure SSL Encrypted Connection</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Component from JSON -->
+<footer class="w-full py-stack-md px-margin-mobile text-center flex flex-col items-center gap-unit bg-surface-paper border-t border-surface-linen mt-stack-lg">
+<div class="font-label-lg text-label-lg text-primary">GreatGod</div>
+<p class="font-body-md text-body-md text-secondary">© 2024 GreatGod Media. All donations are tax-deductible.</p>
+<div class="flex flex-wrap justify-center gap-4 mt-2">
+<a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors" href="#">Secure SSL Encrypted</a>
+<a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors" href="#">Terms of Stewardship</a>
+</div>
+</footer>
+</body></html>

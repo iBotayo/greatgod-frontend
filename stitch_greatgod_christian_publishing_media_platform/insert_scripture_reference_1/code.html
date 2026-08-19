@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scripture Selector - GreatGod</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&amp;family=Hanken+Grotesk:wght@600&amp;family=Source+Serif+4:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#ffb3ad",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dbdad5",
+                        "background": "#fbf9f4",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#410004",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "inverse-on-surface": "#f2f1ec",
+                        "inverse-surface": "#30312e",
+                        "secondary-container": "#d8e2dd",
+                        "surface-container-high": "#eae8e3",
+                        "tertiary-fixed": "#ffe088",
+                        "outline": "#887270",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#4e3d00",
+                        "error": "#ba1a1a",
+                        "tertiary": "#735c00",
+                        "on-secondary-container": "#5b6561",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "secondary": "#57605d",
+                        "on-surface": "#1b1c19",
+                        "surface-container-low": "#f5f3ee",
+                        "on-tertiary-fixed": "#241a00",
+                        "primary-fixed": "#ffdad7",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-container": "#f0eee9",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "on-secondary-fixed": "#141d1a",
+                        "surface": "#fbf9f4",
+                        "surface-tint": "#9c413d",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-fixed": "#dbe5e0",
+                        "on-surface-variant": "#554240",
+                        "on-background": "#1b1c19",
+                        "primary-container": "#5d1212",
+                        "surface-bright": "#fbf9f4",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "surface-variant": "#e4e2dd",
+                        "tertiary-container": "#cca72f",
+                        "primary": "#3e0003",
+                        "on-primary-container": "#e27770",
+                        "outline-variant": "#dbc0be"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "stack-md": "32px",
+                        "gutter": "32px",
+                        "container-max": "1120px",
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["\"Source Serif 4\""],
+                        "headline-md": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+        }
+        .modal-backdrop {
+            background-color: rgba(27, 28, 25, 0.4);
+            backdrop-filter: blur(4px);
+        }
+        .stone-border {
+            border-color: #E5E0D8;
+        }
+        /* Custom scrollbar for subtle appearance */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant');
+            border-radius: theme('borderRadius.full');
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex items-center justify-center p-4">
+<!-- Background Context (simulating underlying editor page) -->
+<div class="fixed inset-0 z-0 flex flex-col pointer-events-none opacity-50">
+<header class="h-16 border-b stone-border px-8 flex items-center justify-between">
+<div class="font-display-lg text-headline-md text-primary tracking-tight">GreatGod</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high"></div>
+</header>
+<main class="flex-1 max-w-3xl mx-auto w-full pt-16 px-8">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-8">The Nature of Grace</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">In considering the depths of divine mercy, one must first confront the reality of human limitation...</p>
+<div class="h-4 w-3/4 bg-surface-container-high rounded mb-4"></div>
+<div class="h-4 w-full bg-surface-container-high rounded mb-4"></div>
+<div class="h-4 w-5/6 bg-surface-container-high rounded"></div>
+</main>
+</div>
+<!-- Modal Overlay -->
+<div aria-modal="true" class="modal-backdrop fixed inset-0 z-40 flex items-center justify-center p-4 sm:p-6" role="dialog">
+<!-- Modal Container -->
+<div class="bg-surface rounded-xl shadow-2xl w-full max-w-2xl max-h-[751px] flex flex-col overflow-hidden border stone-border">
+<!-- Header -->
+<div class="px-6 py-5 border-b stone-border flex items-center justify-between bg-surface-container-lowest">
+<h2 class="font-headline-md text-headline-md text-on-surface">Insert Scripture</h2>
+<button aria-label="Close modal" class="text-on-surface-variant hover:text-on-surface transition-colors p-2 -mr-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+</div>
+<!-- Search Area -->
+<div class="p-6 bg-surface-container-lowest pb-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">search</span>
+<input class="w-full bg-surface-container-low border stone-border text-on-surface font-body-md text-body-md py-4 pl-12 pr-24 focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface rounded-lg transition-all" placeholder="Book, Chapter, Verse (e.g., Psalm 23:1)" type="text" value="John 1:1"/>
+<!-- Version Toggle -->
+<div class="absolute right-2 top-1/2 -translate-y-1/2 flex bg-surface border stone-border rounded p-1">
+<button class="font-label-sm text-label-sm px-2 py-1 rounded bg-secondary-container text-on-secondary-container">ESV</button>
+<button class="font-label-sm text-label-sm px-2 py-1 rounded text-on-surface-variant hover:bg-surface-container-low">NIV</button>
+<button class="font-label-sm text-label-sm px-2 py-1 rounded text-on-surface-variant hover:bg-surface-container-low">KJV</button>
+</div>
+</div>
+</div>
+<!-- Content Area (Scrollable) -->
+<div class="flex-1 overflow-y-auto p-6 pt-2 bg-surface">
+<!-- Search Results (Active State based on input value) -->
+<div class="mb-8">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant opacity-70 mb-4 uppercase tracking-widest flex items-center">
+<span class="material-symbols-outlined text-[16px] mr-2" style="font-variation-settings: 'FILL' 0;">menu_book</span>
+                        Result
+                    </h3>
+<div class="bg-surface-container-lowest border stone-border rounded-lg p-5 group hover:border-outline-variant transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-[22px] leading-[28px] font-medium text-on-surface">John 1:1</h4>
+<span class="font-label-sm text-label-sm text-primary-container bg-surface-container-low px-2 py-1 rounded">ESV</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            "In the beginning was the Word, and the Word was with God, and the Word was God."
+                        </p>
+</div>
+</div>
+<!-- Recent References -->
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant opacity-70 mb-4 uppercase tracking-widest flex items-center">
+<span class="material-symbols-outlined text-[16px] mr-2" style="font-variation-settings: 'FILL' 0;">history</span>
+                        Recent References
+                    </h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Recent Item 1 -->
+<div class="border stone-border rounded p-4 flex flex-col hover:bg-surface-container-lowest transition-colors cursor-pointer">
+<span class="font-label-sm text-label-sm text-on-surface mb-1">Romans 8:28</span>
+<span class="font-body-md text-[15px] leading-snug text-on-surface-variant line-clamp-2">And we know that for those who love God all things work together for good...</span>
+</div>
+<!-- Recent Item 2 -->
+<div class="border stone-border rounded p-4 flex flex-col hover:bg-surface-container-lowest transition-colors cursor-pointer">
+<span class="font-label-sm text-label-sm text-on-surface mb-1">Psalm 23:1-2</span>
+<span class="font-body-md text-[15px] leading-snug text-on-surface-variant line-clamp-2">The LORD is my shepherd; I shall not want. He makes me lie down in green pastures.</span>
+</div>
+<!-- Recent Item 3 -->
+<div class="border stone-border rounded p-4 flex flex-col hover:bg-surface-container-lowest transition-colors cursor-pointer">
+<span class="font-label-sm text-label-sm text-on-surface mb-1">Isaiah 40:31</span>
+<span class="font-body-md text-[15px] leading-snug text-on-surface-variant line-clamp-2">but they who wait for the LORD shall renew their strength...</span>
+</div>
+<!-- Recent Item 4 -->
+<div class="border stone-border rounded p-4 flex flex-col hover:bg-surface-container-lowest transition-colors cursor-pointer">
+<span class="font-label-sm text-label-sm text-on-surface mb-1">Ephesians 2:8</span>
+<span class="font-body-md text-[15px] leading-snug text-on-surface-variant line-clamp-2">For by grace you have been saved through faith. And this is not your own doing...</span>
+</div>
+</div>
+</div>
+<!-- Browse Books (Collapsed state example) -->
+<div class="mt-8 pt-6 border-t stone-border">
+<button class="w-full flex items-center justify-between text-on-surface hover:text-primary transition-colors group">
+<span class="font-headline-md text-[20px] font-medium">Browse Books</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 0;">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="px-6 py-4 border-t stone-border bg-surface-container-lowest flex justify-end gap-3 items-center">
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-4 py-2 rounded transition-colors uppercase tracking-widest">
+                    Cancel
+                </button>
+<button class="font-label-sm text-label-sm bg-primary-container text-on-primary px-6 py-3 rounded hover:bg-primary-fixed-variant transition-colors flex items-center gap-2 uppercase tracking-widest">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">add</span>
+                    Insert into Draft
+                </button>
+</div>
+</div>
+</div>
+</body></html>

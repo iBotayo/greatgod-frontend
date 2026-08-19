@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod CMS - User Management</title>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffdad7",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#fbf9f4",
+                    "surface-variant": "#e4e2dd",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-background": "#1b1c19",
+                    "tertiary-container": "#cca72f",
+                    "secondary-container": "#d8e2dd",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#5b6561",
+                    "surface-container-high": "#eae8e3",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "surface-container-highest": "#e4e2dd",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#57605d",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#4e3d00",
+                    "surface": "#fbf9f4",
+                    "on-secondary-fixed-variant": "#3f4945",
+                    "tertiary-fixed": "#ffe088",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-surface": "#1b1c19",
+                    "on-surface-variant": "#554240",
+                    "outline": "#887270",
+                    "surface-dim": "#dbdad5",
+                    "secondary-fixed-dim": "#bfc9c4",
+                    "tertiary": "#735c00",
+                    "primary-container": "#5d1212",
+                    "surface-tint": "#9c413d",
+                    "on-primary-fixed": "#410004",
+                    "on-secondary-fixed": "#141d1a",
+                    "inverse-surface": "#30312e",
+                    "primary": "#3e0003",
+                    "inverse-primary": "#ffb3ad",
+                    "inverse-on-surface": "#f2f1ec",
+                    "on-primary-fixed-variant": "#7e2a27",
+                    "surface-container-low": "#f5f3ee",
+                    "background": "#fbf9f4",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#dbc0be",
+                    "on-primary-container": "#e27770",
+                    "secondary-fixed": "#dbe5e0",
+                    "surface-container": "#f0eee9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "container-max": "1120px",
+                    "stack-lg": "64px",
+                    "stack-md": "32px",
+                    "gutter": "32px",
+                    "margin-mobile": "20px",
+                    "stack-sm": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["EB Garamond", "serif"],
+                    "headline-lg-mobile": ["EB Garamond", "serif"],
+                    "body-md": ["Source Serif 4", "serif"],
+                    "display-lg": ["EB Garamond", "serif"],
+                    "headline-md": ["EB Garamond", "serif"],
+                    "label-sm": ["Hanken Grotesk", "sans-serif"],
+                    "body-lg": ["Source Serif 4", "serif"]
+            },
+            "fontSize": {
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "body-md": ["17px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                    "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                    "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      /* Custom Table Styling to match "Sacred Editorial" */
+      .editorial-table th {
+        font-family: 'Hanken Grotesk', sans-serif;
+        font-size: 13px;
+        line-height: 16px;
+        letter-spacing: 0.08em;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--color-on-surface-variant);
+        border-bottom: 1px solid var(--color-outline-variant);
+        padding: 16px;
+        text-align: left;
+      }
+      .editorial-table td {
+        font-family: 'Source Serif 4', serif;
+        font-size: 17px;
+        line-height: 28px;
+        font-weight: 400;
+        color: var(--color-on-surface);
+        padding: 16px;
+        border-bottom: 1px solid var(--color-outline-variant);
+      }
+      .editorial-table tr:last-child td {
+        border-bottom: none;
+      }
+      .status-badge {
+        font-family: 'Hanken Grotesk', sans-serif;
+        font-size: 11px;
+        line-height: 14px;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        border-radius: 9999px;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-full flex font-body-md">
+<!-- Shared Component: SideNavBar -->
+<nav class="bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant dark:border-outline h-screen w-64 fixed left-0 top-0 flex flex-col h-full py-unit px-4 z-50">
+<!-- Header -->
+<div class="mb-8 mt-4 px-2">
+<h1 class="font-headline-md text-headline-md font-medium text-primary dark:text-primary-fixed-dim">GreatGod</h1>
+<p class="font-label-sm text-label-sm text-secondary mt-1 uppercase tracking-widest">Editorial CMS</p>
+</div>
+<!-- CTA -->
+<div class="px-2 mb-8">
+<button class="w-full flex items-center justify-center gap-2 bg-primary-container text-on-primary py-2 px-4 rounded-lg font-label-sm text-label-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                New Publication
+            </button>
+</div>
+<!-- Navigation Links -->
+<ul class="flex-1 space-y-1">
+<!-- Dashboard (Inactive) -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-size: 20px;">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<!-- Content Manager (Inactive) -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories" style="font-size: 20px;">auto_stories</span>
+                    Content Manager
+                </a>
+</li>
+<!-- Sermon Library (Inactive) -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined" data-icon="mic_external_on" style="font-size: 20px;">mic_external_on</span>
+                    Sermon Library
+                </a>
+</li>
+<!-- User Roles (Active) -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-primary dark:text-primary-fixed-dim font-bold border-r-2 border-primary dark:border-primary-fixed-dim bg-surface-container-highest dark:bg-inverse-on-surface opacity-80 duration-150 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined" data-icon="manage_accounts" style="font-variation-settings: 'FILL' 1; font-size: 20px;">manage_accounts</span>
+                    User Roles
+                </a>
+</li>
+<!-- Settings (Inactive) -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined" data-icon="settings" style="font-size: 20px;">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+<!-- Footer Links -->
+<div class="mt-auto pt-4 border-t border-outline-variant dark:border-outline pb-4">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline" style="font-size: 20px;">help_outline</span>
+                        Support
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined" data-icon="logout" style="font-size: 20px;">logout</span>
+                        Sign Out
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen relative">
+<!-- Shared Component: TopNavBar -->
+<header class="bg-surface dark:bg-background docked full-width top-0 sticky z-40 border-b border-outline-variant dark:border-outline flex justify-between items-center w-full px-gutter h-16 max-w-full">
+<!-- Left: Navigation Links & Search -->
+<div class="flex items-center gap-6">
+<!-- In a real app, this search might expand or be a specialized component. For now, it's a simple icon button to represent "search_bar: on_left" -->
+<button class="text-secondary hover:text-primary transition-colors flex items-center justify-center p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<nav class="hidden md:flex gap-6">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-all font-label-sm text-label-sm" href="#">Recent</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-all font-label-sm text-label-sm" href="#">Drafts</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-all font-label-sm text-label-sm" href="#">Published</a>
+</nav>
+</div>
+<!-- Right: Actions & Profile -->
+<div class="flex items-center gap-4">
+<button class="text-secondary hover:text-primary transition-colors flex items-center justify-center p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors flex items-center justify-center p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<button class="font-label-sm text-label-sm bg-surface-container-high text-on-surface py-1.5 px-4 rounded border border-outline-variant hover:bg-surface-variant transition-colors ml-2 hidden sm:block">
+                    Publish Changes
+                </button>
+<div class="h-8 w-8 rounded-full bg-surface-variant border border-outline-variant overflow-hidden ml-2 cursor-pointer flex-shrink-0">
+<img alt="Administrator" class="w-full h-full object-cover" data-alt="A sophisticated black and white portrait of a scholarly individual, softly lit, exuding a calm and trustworthy administrative demeanor. Minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSG6iq_LUi2PVeM17idruvpiPJOyt5TKXGS4kbCKguhuWsJnlVygNm5DdhcLmCCkMlpfPjCfUTYnItdQnWiU3SZ-pEVkVnKrjmyep9_zYUc32dfDp77f-DCFArSuxGsx6a-iF5-s7sPt8UwkZlpaTBPtey4cCW8HuWQ8CFGof9NJEzk4Ksk1uDgyJ4pM5BzsiSoCk56LrlL8bGm-A4QaAJpaO1_3jwKSebY5FhehP_NwgL6TCefrgf"/>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<main class="flex-1 p-gutter max-w-container-max mx-auto w-full">
+<!-- Page Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-stack-md gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">User Management</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-2xl">
+                        Oversee editorial access, manage scholarly contributor roles, and monitor authentication statuses across the GreatGod platform.
+                    </p>
+</div>
+<div class="flex-shrink-0">
+<button class="bg-primary-container text-on-error font-label-sm text-label-sm py-2 px-6 rounded-lg flex items-center gap-2 hover:bg-primary transition-colors shadow-sm border border-transparent">
+<span class="material-symbols-outlined" style="font-size: 18px;">person_add</span>
+                        Invite New User
+                    </button>
+</div>
+</div>
+<!-- Toolbar / Filters -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 mb-6 flex flex-col sm:flex-row gap-4 items-center justify-between shadow-sm">
+<!-- Search Input -->
+<div class="relative w-full sm:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary" style="font-size: 20px;">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface rounded border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md text-body-md text-on-surface placeholder-secondary focus:outline-none transition-shadow" placeholder="Search by name or email..." type="text"/>
+</div>
+<!-- Filters -->
+<div class="flex gap-3 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0 hide-scrollbar">
+<select class="bg-surface border border-outline-variant rounded py-2 px-3 font-label-sm text-label-sm text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none">
+<option>All Roles</option>
+<option>Administrator</option>
+<option>Editor</option>
+<option>Author</option>
+<option>Moderator</option>
+</select>
+<select class="bg-surface border border-outline-variant rounded py-2 px-3 font-label-sm text-label-sm text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none">
+<option>All Statuses</option>
+<option>Active</option>
+<option>Suspended</option>
+</select>
+</div>
+</div>
+<!-- Data Table Container (Bento/Card Style) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full editorial-table whitespace-nowrap">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="w-12 pl-6"></th>
+<th>Name</th>
+<th>Email Address</th>
+<th>Assigned Role</th>
+<th>Verification</th>
+<th>Status</th>
+<th class="text-right pr-6">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant bg-surface-container-lowest">
+<!-- Row 1: Admin -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="pl-6 py-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A sepia-toned profile photo of a distinguished scholar with glasses, soft studio lighting, communicating deep knowledge." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBygGTEWm7aHb5Phdvk4P5B9MM03UQlChMuT6vgiQ-RZojcGAzolECRpdz9XVolmCmfyy6lumN8QzwleBidncf-bwPqXtSk8Op77teA7cUnMXMw3fpfvd8Yj7k0_WiNZyZY3Xr0P8B7JvzosIxjCbS_xvgJXNTMQ75LsaLNe74sOad3rs6KpdkNFrxm9x5qrxG6OFLuU7txnQJLcVYLXEVhi2OUdRzFNtzlwwrAHlx_Dyeg48saDA_Z"/>
+</div>
+</td>
+<td>
+<span class="font-medium text-on-surface">Dr. Elias Thorne</span>
+</td>
+<td>
+<span class="text-on-surface-variant text-[15px]">e.thorne@greatgod.org</span>
+</td>
+<td>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined" style="font-size: 14px;">admin_panel_settings</span>
+                                        Administrator
+                                    </span>
+</td>
+<td>
+<span class="status-badge bg-tertiary-container/20 text-tertiary border border-tertiary-container/30">Verified</span>
+</td>
+<td>
+<span class="status-badge bg-[#E8F5E9] text-[#2E7D32] border border-[#C8E6C9]">Active</span>
+</td>
+<td class="text-right pr-6">
+<button class="text-secondary hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined" style="font-size: 20px;">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Editor -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="pl-6 py-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant border border-outline-variant overflow-hidden flex items-center justify-center text-secondary font-headline-md text-[18px]">
+                                        SA
+                                    </div>
+</td>
+<td>
+<span class="font-medium text-on-surface">Sarah Al-Fayed</span>
+</td>
+<td>
+<span class="text-on-surface-variant text-[15px]">s.alfayed@greatgod.org</span>
+</td>
+<td>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm border border-outline-variant">
+<span class="material-symbols-outlined" style="font-size: 14px;">edit_document</span>
+                                        Editor
+                                    </span>
+</td>
+<td>
+<span class="status-badge bg-tertiary-container/20 text-tertiary border border-tertiary-container/30">Verified</span>
+</td>
+<td>
+<span class="status-badge bg-[#E8F5E9] text-[#2E7D32] border border-[#C8E6C9]">Active</span>
+</td>
+<td class="text-right pr-6">
+<button class="text-secondary hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined" style="font-size: 20px;">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Author (Unverified) -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="pl-6 py-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A warm, candid portrait of a female theologian in a library setting, natural window light, classical academic feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAZaFbnLp3c7sg8wCOe8hoiF9lv3RkpNPMSXfmXAAuJ9P96e6kH5hcuJW1mRDKnjtkcz--WW9eFaGqtvMsJ5dXKVme_aewoYknNJx_HpJrv4MEZ8bG0T6vL5-YHl9WAPjczfVd1a6qeD1DPRYKbtZEk_Poj9dlmEZOlWbEpOB1hUlC5oBqzPPiDkFLrz28a3WvqfpUgF-bCwVnJvtvONxioGlmQ8YZWNR8MUY38yF_meKjTMSVs1j9"/>
+</div>
+</td>
+<td>
+<span class="font-medium text-on-surface">Rev. Julianne Moore</span>
+</td>
+<td>
+<span class="text-on-surface-variant text-[15px]">j.moore@greatgod.org</span>
+</td>
+<td>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm border border-outline-variant">
+<span class="material-symbols-outlined" style="font-size: 14px;">ink_pen</span>
+                                        Author
+                                    </span>
+</td>
+<td>
+<span class="status-badge bg-surface-variant text-on-surface-variant border border-outline-variant">Unverified</span>
+</td>
+<td>
+<span class="status-badge bg-[#E8F5E9] text-[#2E7D32] border border-[#C8E6C9]">Active</span>
+</td>
+<td class="text-right pr-6">
+<button class="text-secondary hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined" style="font-size: 20px;">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Suspended User -->
+<tr class="hover:bg-surface-bright transition-colors group opacity-70">
+<td class="pl-6 py-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant border border-outline-variant overflow-hidden flex items-center justify-center text-secondary font-headline-md text-[18px]">
+                                        MB
+                                    </div>
+</td>
+<td>
+<span class="font-medium text-on-surface line-through decoration-outline">Marcus Black</span>
+</td>
+<td>
+<span class="text-on-surface-variant text-[15px]">m.black@external.org</span>
+</td>
+<td>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm border border-outline-variant">
+<span class="material-symbols-outlined" style="font-size: 14px;">forum</span>
+                                        Moderator
+                                    </span>
+</td>
+<td>
+<span class="status-badge bg-tertiary-container/20 text-tertiary border border-tertiary-container/30">Verified</span>
+</td>
+<td>
+<span class="status-badge bg-error-container text-on-error-container border border-error-container">Suspended</span>
+</td>
+<td class="text-right pr-6">
+<button class="text-secondary hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined" style="font-size: 20px;">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: Author -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="pl-6 py-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young male author with a beard, wearing a tweed jacket, lit by warm desk lamp light, calm and focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYkT5URZA32EW3qpLypzuv_aeVtfc1QLgzWRKgOTRmvTHCot1VyPFqcMjK-YLC-FyYT22hg_OiPrLjFM9votA-uzRIHPIRggj84y_Smb-r1SP7MLOxixdAoPkBXeLHFgZIK3595ft5q4g5vSUsmE9zsdofyfXMLtj1nilwzwh6nwyttxgy4LuiBeAgt8QuC5rd-ScZw5YzK09wOxV1P8X99brhlf0LI6xo_G6iasXLaW61fbtfWRNS"/>
+</div>
+</td>
+<td>
+<span class="font-medium text-on-surface">Thomas Kempis</span>
+</td>
+<td>
+<span class="text-on-surface-variant text-[15px]">t.kempis@greatgod.org</span>
+</td>
+<td>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm border border-outline-variant">
+<span class="material-symbols-outlined" style="font-size: 14px;">ink_pen</span>
+                                        Author
+                                    </span>
+</td>
+<td>
+<span class="status-badge bg-tertiary-container/20 text-tertiary border border-tertiary-container/30">Verified</span>
+</td>
+<td>
+<span class="status-badge bg-[#E8F5E9] text-[#2E7D32] border border-[#C8E6C9]">Active</span>
+</td>
+<td class="text-right pr-6">
+<button class="text-secondary hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined" style="font-size: 20px;">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="border-t border-outline-variant bg-surface-container-low px-6 py-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">Showing 1 to 5 of 42 users</span>
+<div class="flex gap-2">
+<button class="p-1 rounded text-secondary hover:text-primary hover:bg-surface-container disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined" style="font-size: 20px;">chevron_left</span>
+</button>
+<button class="p-1 rounded text-secondary hover:text-primary hover:bg-surface-container">
+<span class="material-symbols-outlined" style="font-size: 20px;">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom decorative spacing -->
+<div class="h-stack-lg w-full"></div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Platform Settings - Sacred Editorial</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#57605d",
+                    "on-primary-fixed": "#410004",
+                    "outline": "#887270",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#f0eee9",
+                    "tertiary": "#735c00",
+                    "primary-fixed": "#ffdad7",
+                    "primary": "#3e0003",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-primary-fixed-variant": "#7e2a27",
+                    "on-surface-variant": "#554240",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1b1c19",
+                    "surface-container-low": "#f5f3ee",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#241a00",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#cca72f",
+                    "outline-variant": "#dbc0be",
+                    "inverse-surface": "#30312e",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "on-primary-container": "#e27770",
+                    "primary-container": "#5d1212",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#ffb3ad",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-secondary-fixed-variant": "#3f4945",
+                    "on-secondary-fixed": "#141d1a",
+                    "background": "#fbf9f4",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#5b6561",
+                    "surface-bright": "#fbf9f4",
+                    "on-background": "#1b1c19",
+                    "surface-container-high": "#eae8e3",
+                    "tertiary-fixed": "#ffe088",
+                    "surface-dim": "#dbdad5",
+                    "secondary-fixed-dim": "#bfc9c4",
+                    "inverse-on-surface": "#f2f1ec",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#9c413d",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e4e2dd",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "secondary-container": "#d8e2dd",
+                    "secondary-fixed": "#dbe5e0",
+                    "surface": "#fbf9f4",
+                    "on-tertiary-container": "#4e3d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-lg": "64px",
+                    "stack-md": "32px",
+                    "gutter": "32px",
+                    "stack-sm": "16px",
+                    "unit": "8px",
+                    "container-max": "1120px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "label-sm": [
+                            "Hanken Grotesk"
+                    ],
+                    "display-lg": [
+                            "EB Garamond"
+                    ],
+                    "headline-lg-mobile": [
+                            "EB Garamond"
+                    ],
+                    "body-lg": [
+                            "\"Source Serif 4\""
+                    ],
+                    "headline-lg": [
+                            "EB Garamond"
+                    ],
+                    "body-md": [
+                            "\"Source Serif 4\""
+                    ],
+                    "headline-md": [
+                            "EB Garamond"
+                    ]
+            },
+            "fontSize": {
+                    "label-sm": [
+                            "13px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.08em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "17px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom Checkbox Style for Editorial Look */
+        input[type="checkbox"] {
+            border-radius: 2px;
+            border-color: #887270; /* outline */
+            background-color: transparent;
+        }
+        input[type="checkbox"]:checked {
+            background-color: #5d1212; /* primary-container */
+            border-color: #5d1212;
+        }
+        input[type="checkbox"]:focus {
+            --tw-ring-color: #dbc0be; /* outline-variant */
+            --tw-ring-offset-width: 2px;
+            --tw-ring-offset-color: #fbf9f4; /* surface */
+        }
+
+        /* Toggle Switch Styling */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #5d1212;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #5d1212;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased flex h-screen overflow-hidden selection:bg-primary selection:text-on-primary">
+<!-- SideNavBar (Shared Component) -->
+<nav class="bg-surface-container-low dark:bg-surface-container border-r border-outline-variant dark:border-outline h-screen w-64 fixed left-0 top-0 overflow-y-auto flex flex-col py-stack-sm px-4 gap-4 z-50">
+<!-- Header -->
+<div class="mb-6 px-2 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A sophisticated, minimalist logo for a scholarly theological publication. The mark features an abstract interpretation of an open book intersecting with a subtle gothic arch, rendered in deep burgundy ink on a textured cream parchment background. The style is classic, elegant, and academic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALY3qoxebt-ppdd3fO38PuSc9I9wl_cG2t02Kqwgo9xro1c753hdLEqQOHYuU572ArtJU4SC4QroCvVezU_zrL-jdBcGlOe774QWEmaGtOeL1g1HVkHB1qdtK-9sZzuQC_L8FupP0WCI7JDSeEmh_jeZD5Dw2-R_2bDes_NEkqS3xfvWoNkajEtkL8lRBmQGRFTKdnih7DEHIkEQvwJTSaMXzbo_9Z6TrW6gLu-VlUx1BTO9y0nskw"/>
+</div>
+<div>
+<h1 class="font-headline-md text-[20px] leading-snug text-primary dark:text-primary-fixed-dim">Editorial Admin</h1>
+<p class="font-label-sm text-[11px] text-secondary">Scholarly CMS</p>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider py-3 px-4 rounded-lg mb-2 flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">add</span> New Entry
+        </button>
+<!-- Main Navigation -->
+<ul class="flex flex-col gap-1 flex-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container scale-95 duration-150 transition-transform font-label-sm text-label-sm uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span> Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container scale-95 duration-150 transition-transform font-label-sm text-label-sm uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined text-[20px]">auto_stories</span> Content Manager
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container scale-95 duration-150 transition-transform font-label-sm text-label-sm uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span> Sermon Library
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container scale-95 duration-150 transition-transform font-label-sm text-label-sm uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined text-[20px]">group_work</span> User Roles
+                </a>
+</li>
+<!-- Active State -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-primary dark:text-primary-fixed-dim font-bold bg-surface-container-highest dark:bg-primary-container scale-95 duration-150 transition-transform font-label-sm text-label-sm uppercase tracking-wider relative after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:h-1/2 after:w-1 after:bg-primary after:rounded-r-sm" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">settings</span> Settings
+                </a>
+</li>
+</ul>
+<!-- Footer Navigation -->
+<div class="mt-auto border-t border-outline-variant pt-4">
+<ul class="flex flex-col gap-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-primary hover:bg-surface-container-high scale-95 duration-150 transition-transform font-label-sm text-label-sm uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span> Documentation
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:text-primary hover:bg-surface-container-high scale-95 duration-150 transition-transform font-label-sm text-label-sm uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined text-[20px]">contact_support</span> Support
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 h-screen overflow-y-auto bg-surface pb-32 relative">
+<!-- Subtle gradient flourish at top -->
+<div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-surface-container-low to-transparent pointer-events-none opacity-50"></div>
+<div class="max-w-[720px] mx-auto px-gutter relative z-10">
+<!-- Header Section -->
+<header class="pt-stack-lg pb-stack-md">
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight mb-4">Platform Directives</h1>
+<p class="font-body-lg text-body-lg text-secondary">Establish the underlying parameters governing philanthropic contributions and institutional communications.</p>
+<!-- Page-level Segments (Editorial Style Tabs) -->
+<div class="flex gap-8 mt-12 border-b border-outline-variant">
+<button class="pb-3 border-b border-primary font-label-sm text-label-sm text-primary uppercase tracking-wider transition-all" id="tab-donation" onclick="switchTab('donation')">Donation Configuration</button>
+<button class="pb-3 border-b border-transparent font-label-sm text-label-sm text-secondary hover:text-primary uppercase tracking-wider transition-all" id="tab-communication" onclick="switchTab('communication')">Communication Rules</button>
+</div>
+</header>
+<!-- Donation Settings Section -->
+<section class="space-y-stack-md fade-in" id="section-donation">
+<!-- Suggested Amounts Panel -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-outline-variant"></div>
+<div class="mb-6">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Suggested Tiers</h2>
+<p class="font-body-md text-body-md text-secondary max-w-prose">Define the default giving tiers presented to patrons. These values subtly guide philanthropic engagement.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="relative group">
+<label class="block font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-2">Tier I</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-secondary font-body-md">$</span>
+<input class="w-full pl-8 pr-4 py-3 bg-surface border border-outline-variant rounded focus:ring-1 focus:ring-primary focus:border-primary font-body-md text-body-md text-on-surface transition-shadow" type="number" value="25"/>
+</div>
+</div>
+<div class="relative group">
+<label class="block font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-2">Tier II</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-secondary font-body-md">$</span>
+<input class="w-full pl-8 pr-4 py-3 bg-surface border border-outline-variant rounded focus:ring-1 focus:ring-primary focus:border-primary font-body-md text-body-md text-on-surface transition-shadow" type="number" value="50"/>
+</div>
+</div>
+<div class="relative group">
+<label class="block font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-2">Tier III</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-secondary font-body-md">$</span>
+<input class="w-full pl-8 pr-4 py-3 bg-surface border border-outline-variant rounded focus:ring-1 focus:ring-primary focus:border-primary font-body-md text-body-md text-on-surface transition-shadow" type="number" value="100"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Currencies & Frequencies (Side by side) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Currencies -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm">
+<div class="flex items-center gap-3 mb-6 border-b border-outline-variant pb-4">
+<span class="material-symbols-outlined text-outline">payments</span>
+<h3 class="font-headline-md text-[22px] text-primary">Currencies</h3>
+</div>
+<div class="space-y-4">
+<label class="flex items-center gap-4 cursor-pointer group">
+<input checked="" class="w-5 h-5 text-primary focus:ring-primary cursor-pointer transition-colors" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">USD (United States Dollar)</span>
+</label>
+<label class="flex items-center gap-4 cursor-pointer group">
+<input checked="" class="w-5 h-5 text-primary focus:ring-primary cursor-pointer transition-colors" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">GBP (British Pound)</span>
+</label>
+<label class="flex items-center gap-4 cursor-pointer group">
+<input checked="" class="w-5 h-5 text-primary focus:ring-primary cursor-pointer transition-colors" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">EUR (Euro)</span>
+</label>
+</div>
+</div>
+<!-- Frequencies -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm">
+<div class="flex items-center gap-3 mb-6 border-b border-outline-variant pb-4">
+<span class="material-symbols-outlined text-outline">update</span>
+<h3 class="font-headline-md text-[22px] text-primary">Frequencies</h3>
+</div>
+<div class="space-y-4">
+<label class="flex items-center gap-4 cursor-pointer group">
+<input checked="" class="w-5 h-5 text-primary focus:ring-primary cursor-pointer transition-colors" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Monthly Commitment</span>
+</label>
+<label class="flex items-center gap-4 cursor-pointer group">
+<input checked="" class="w-5 h-5 text-primary focus:ring-primary cursor-pointer transition-colors" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Quarterly Contribution</span>
+</label>
+<label class="flex items-center gap-4 cursor-pointer group">
+<input checked="" class="w-5 h-5 text-primary focus:ring-primary cursor-pointer transition-colors" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Annual Stewardship</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Designated Funds Table -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="p-8 border-b border-outline-variant bg-surface-container-low flex justify-between items-center">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-1">Designated Funds</h2>
+<p class="font-body-md text-body-md text-secondary">Specific initiatives available for targeted allocation.</p>
+</div>
+<button class="bg-surface border border-outline-variant text-primary font-label-sm text-label-sm uppercase tracking-wider py-2 px-4 rounded hover:bg-surface-container-high transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span> Add Fund
+                        </button>
+</div>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface">
+<th class="py-4 px-8 font-label-sm text-label-sm text-secondary uppercase tracking-wider font-normal border-b border-outline-variant">Fund Title</th>
+<th class="py-4 px-8 font-label-sm text-label-sm text-secondary uppercase tracking-wider font-normal border-b border-outline-variant">Status</th>
+<th class="py-4 px-8 font-label-sm text-label-sm text-secondary uppercase tracking-wider font-normal text-right border-b border-outline-variant">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="py-5 px-8 font-body-md text-body-md text-on-surface">General Endowment</td>
+<td class="py-5 px-8">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm border border-outline-variant bg-surface text-secondary font-label-sm text-[11px] uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Active
+                                    </span>
+</td>
+<td class="py-5 px-8 text-right">
+<button class="text-outline hover:text-primary transition-colors opacity-0 group-hover:opacity-100"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="py-5 px-8 font-body-md text-body-md text-on-surface">Theological Scholarship Initiative</td>
+<td class="py-5 px-8">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm border border-outline-variant bg-surface text-secondary font-label-sm text-[11px] uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Active
+                                    </span>
+</td>
+<td class="py-5 px-8 text-right">
+<button class="text-outline hover:text-primary transition-colors opacity-0 group-hover:opacity-100"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer bg-surface-container-lowest opacity-75">
+<td class="py-5 px-8 font-body-md text-body-md text-outline">Building Restoration Fund (Concluded)</td>
+<td class="py-5 px-8">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm border border-outline-variant bg-surface text-outline font-label-sm text-[11px] uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span> Archived
+                                    </span>
+</td>
+<td class="py-5 px-8 text-right">
+<button class="text-outline hover:text-primary transition-colors opacity-0 group-hover:opacity-100"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Communication Settings Section (Initially Hidden) -->
+<section class="space-y-stack-md hidden fade-in" id="section-communication">
+<!-- Global Toggles -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm space-y-8">
+<div class="flex items-center justify-between border-b border-outline-variant pb-8">
+<div class="max-w-[480px]">
+<h3 class="font-headline-md text-[22px] text-primary mb-2">Global Newsletter Publication</h3>
+<p class="font-body-md text-body-md text-secondary">Enable the automated distribution of the weekly editorial digest to all subscribed patrons.</p>
+</div>
+<!-- Custom Toggle Switch -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-outline-variant z-10 top-0 left-0 transition-all duration-300" id="toggle-newsletter" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-high cursor-pointer transition-colors duration-300" for="toggle-newsletter"></label>
+</div>
+</div>
+<div class="flex items-start justify-between">
+<div class="max-w-[480px]">
+<h3 class="font-headline-md text-[22px] text-primary mb-2">Default Notification Channel</h3>
+<p class="font-body-md text-body-md text-secondary">Determine the primary method for delivering administrative alerts and receipt confirmations.</p>
+</div>
+<div class="flex flex-col gap-3">
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="text-primary focus:ring-primary border-outline-variant cursor-pointer" name="notification_pref" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface">Electronic Mail (Email)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="text-primary focus:ring-primary border-outline-variant cursor-pointer" name="notification_pref" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface">In-Application Alert</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Email Branding Form -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-outline-variant"></div>
+<div class="mb-8 border-b border-outline-variant pb-4">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Correspondence Branding</h2>
+<p class="font-body-md text-body-md text-secondary max-w-prose">Configure the identity presented in automated outgoing missives.</p>
+</div>
+<div class="space-y-6 max-w-[480px]">
+<div>
+<label class="block font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-2">Sender Moniker</label>
+<input class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:ring-1 focus:ring-primary focus:border-primary font-body-md text-body-md text-on-surface transition-shadow" type="text" value="The GreatGod Editorial Board"/>
+<p class="mt-2 text-[13px] font-body-md text-outline">The name that appears in the recipient's inbox.</p>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-2">Reply-To Address</label>
+<input class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:ring-1 focus:ring-primary focus:border-primary font-body-md text-body-md text-on-surface transition-shadow" type="email" value="editor@greatgod.org"/>
+</div>
+<div class="pt-4">
+<label class="block font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-2">Email Footer Boilerplate</label>
+<textarea class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:ring-1 focus:ring-primary focus:border-primary font-body-md text-body-md text-on-surface transition-shadow resize-none" rows="3">Sent from the desks of GreatGod.org. May grace attend your reading.</textarea>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Sticky Save Action Bar -->
+<div class="fixed bottom-0 left-64 right-0 bg-surface/95 backdrop-blur border-t border-outline-variant py-4 px-gutter flex justify-end gap-4 z-40 shadow-[0_-4px_20px_rgba(0,0,0,0.02)]">
+<button class="px-6 py-2.5 rounded font-label-sm text-label-sm text-secondary uppercase tracking-wider hover:bg-surface-container-low transition-colors">Discard Alterations</button>
+<button class="px-6 py-2.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm flex items-center gap-2">
+            Ratify Changes <span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+</div>
+<!-- Simple Tab Switching Logic -->
+<script>
+        function switchTab(tabId) {
+            // Hide all sections
+            document.getElementById('section-donation').classList.add('hidden');
+            document.getElementById('section-communication').classList.add('hidden');
+            
+            // Reset tab styles
+            document.getElementById('tab-donation').className = "pb-3 border-b border-transparent font-label-sm text-label-sm text-secondary hover:text-primary uppercase tracking-wider transition-all";
+            document.getElementById('tab-communication').className = "pb-3 border-b border-transparent font-label-sm text-label-sm text-secondary hover:text-primary uppercase tracking-wider transition-all";
+            
+            // Show selected section and activate tab
+            document.getElementById('section-' + tabId).classList.remove('hidden');
+            document.getElementById('tab-' + tabId).className = "pb-3 border-b border-primary font-label-sm text-label-sm text-primary uppercase tracking-wider transition-all";
+        }
+    </script>
+</body></html>

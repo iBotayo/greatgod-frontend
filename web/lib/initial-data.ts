@@ -1,0 +1,82 @@
+import { DatabaseState } from '../types';
+
+export const initialDbState: DatabaseState = {
+  users: [
+    {
+      id: 'user_admin',
+      name: 'Admin User',
+      email: 'admin@greatgod.com',
+      roles: ['ADMIN', 'READER'],
+    },
+    {
+      id: 'user_editor',
+      name: 'Thomas Kent',
+      email: 'editor@greatgod.com',
+      roles: ['EDITOR', 'AUTHOR', 'READER'],
+    },
+    {
+      id: 'user_author',
+      name: 'Grace Adeyemi',
+      email: 'grace@greatgod.com',
+      roles: ['AUTHOR', 'READER'],
+      isDonor: true,
+    },
+    {
+      id: 'user_moderator',
+      name: 'Sarah Jenkins',
+      email: 'mod@greatgod.com',
+      roles: ['MODERATOR', 'READER'],
+    },
+    {
+      id: 'user_reader',
+      name: 'Faith Reader',
+      email: 'reader@example.com',
+      roles: ['READER'],
+    },
+  ],
+  articles: [
+    {
+      id: 'art_1',
+      title: 'The Beauty of Grace in Everyday Trials',
+      excerpt: 'Finding the sacred in the mundane is not an exercise in optimism...',
+      content: '<p>Grace is found in the quietest corners of our routine.</p>',
+      authorId: 'user_author',
+      status: 'PUBLISHED',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      publishedAt: new Date().toISOString(),
+      tags: ['Theology', 'Grace'],
+      readTime: 6,
+    },
+    {
+      id: 'art_2',
+      title: 'Understanding the Early Church Fathers',
+      excerpt: 'Their writings provide a foundational lens through which to view modern doctrinal disputes.',
+      content: '<p>Early church fathers...</p>',
+      authorId: 'user_editor',
+      status: 'PUBLISHED',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      publishedAt: new Date().toISOString(),
+      tags: ['History', 'Theology'],
+      readTime: 12,
+    },
+    {
+      id: 'art_3',
+      title: 'Cultivating a Garden of the Mind',
+      excerpt: 'How the discipline of what we consume mentally shapes our spiritual vitality.',
+      content: '<p>Discipline of the mind...</p>',
+      authorId: 'user_moderator',
+      status: 'IN_REVIEW',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      tags: ['Christian Living'],
+      readTime: 5,
+    }
+  ],
+  comments: [],
+  donations: [],
+  notifications: [],
+  bookmarks: [],
+  readingHistory: [],
+};

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod Media Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#ffe088",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "surface-container-high": "#eae8e3",
+                      "primary": "#3e0003",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#5d1212",
+                      "surface-dim": "#dbdad5",
+                      "tertiary-container": "#cca72f",
+                      "outline": "#887270",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "error-container": "#ffdad6",
+                      "on-surface": "#1b1c19",
+                      "surface-container-low": "#f5f3ee",
+                      "inverse-on-surface": "#f2f1ec",
+                      "on-secondary-container": "#5b6561",
+                      "on-secondary": "#ffffff",
+                      "on-primary-container": "#e27770",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#dbc0be",
+                      "surface-container": "#f0eee9",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#57605d",
+                      "secondary-fixed": "#dbe5e0",
+                      "surface": "#fbf9f4",
+                      "inverse-primary": "#ffb3ad",
+                      "surface-bright": "#fbf9f4",
+                      "inverse-surface": "#30312e",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "on-secondary-fixed": "#141d1a",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "background": "#fbf9f4",
+                      "primary-fixed": "#ffdad7",
+                      "surface-container-highest": "#e4e2dd",
+                      "surface-variant": "#e4e2dd",
+                      "on-surface-variant": "#554240",
+                      "on-tertiary-container": "#4e3d00",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "tertiary": "#735c00",
+                      "on-primary-fixed": "#410004",
+                      "on-background": "#1b1c19",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#d8e2dd",
+                      "surface-tint": "#9c413d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "stack-sm": "16px",
+                      "stack-lg": "64px",
+                      "stack-md": "32px",
+                      "gutter": "32px",
+                      "container-max": "1120px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface text-primary border-b border-outline-variant fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-stack-lg h-16">
+<div class="flex items-center gap-stack-sm">
+<button aria-label="Menu" class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-display-lg text-headline-lg-mobile text-primary tracking-tight">GreatGod</div>
+</div>
+<div class="flex items-center gap-stack-sm hidden md:flex">
+<nav class="flex gap-stack-md">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-low transition-colors px-3 py-2 rounded-full duration-200 ease-in-out" href="#">Home</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-low transition-colors px-3 py-2 rounded-full duration-200 ease-in-out" href="#">Discover</a>
+<a class="font-label-sm text-label-sm text-primary font-bold hover:bg-surface-container-low transition-colors px-3 py-2 rounded-full duration-200 ease-in-out" href="#">Library</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-low transition-colors px-3 py-2 rounded-full duration-200 ease-in-out" href="#">Profile</a>
+</nav>
+</div>
+<div class="flex items-center">
+<button aria-label="Search" class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 mt-16 pb-20 md:pb-0 flex flex-col md:flex-row relative">
+<!-- Media Grid Area -->
+<div class="flex-1 p-margin-mobile md:p-stack-md overflow-y-auto w-full transition-all duration-300" id="media-grid-container">
+<div class="flex justify-between items-center mb-stack-md">
+<h1 class="font-headline-lg text-headline-lg text-primary">Media Library</h1>
+<button class="bg-primary-container text-on-primary font-label-sm text-label-sm py-2 px-4 rounded-full hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">upload</span>
+                    Upload New
+                </button>
+</div>
+<!-- Bento Grid layout for media -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-unit">
+<!-- Selected Item -->
+<div class="relative group cursor-pointer aspect-square rounded-DEFAULT overflow-hidden border-2 border-primary-container" onclick="toggleSidebar(true)">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A serene landscape photograph of a misty valley at dawn. Soft, warm morning light filters through ancient trees, illuminating a small wooden chapel in the distance. The color palette is composed of muted greens, soft greys, and pale golds, fitting a calm, trustworthy, and sacred editorial aesthetic. The image is highly detailed with a subtle atmospheric depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8ULPz7msEOOTcKB2ADGQ6fpRMBFrRU8nqEQiSOl0XIEVYv3c8BkxTys4rDb2q8a-p--zBm2qW8_REuXWqBmVnAutF1I8WEv9KM_bayr8deQy6DKmw3jiuLV9cfYgLGHHXLGu1c7FBnXb87ZBxzO_hPcjy6yljL923cLhWxYOjyR6PObqH5SsWh7fRr8fHpuLD7fei8y_OempXqxDIpcWcFkB2qPLhwpdJ2YKUlgnsLK72mYxW6bnl"/>
+<div class="absolute inset-0 bg-primary/10 transition-opacity duration-300"></div>
+<div class="absolute top-2 left-2 bg-primary-container text-on-primary rounded-full p-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Unselected Items -->
+<div class="relative group cursor-pointer aspect-square rounded-DEFAULT overflow-hidden border border-outline-variant bg-surface-container-low hover:border-outline transition-colors" onclick="toggleSidebar(true)">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A close-up shot of an ancient, leather-bound book resting on a textured wooden table. A single shaft of warm sunlight highlights the embossed gold lettering on the cover. The lighting is dramatic yet warm, emphasizing the tactile quality of the leather and wood. The color palette revolves around rich browns, deep shadows, and warm golden highlights, conveying a sense of timeless wisdom and classical publishing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBtOlr8JUIrgUHBiUtGcn-VP0KrLyYJrMEpzPIWklY0FAKiyVE7UwlEtsNN66LV2pR3UsQra2HpSN6HHhf0_fjJ7AlxzM7Ib7sCFUpqkw9DZSRRFZ214MfrH2l5oHEKh__vOicawFDl_Mdx3nyGKz3w4_wA7dZ1P54avwJWT3nZHoBfK4Q-51jkZINdKz8Eoit45-JzvRPpVORTs6hs4v6arEeQaEUrTx8fmhy_VjnYSycTuQGy_IY"/>
+<div class="absolute inset-0 bg-surface/0 group-hover:bg-surface/20 transition-opacity duration-300"></div>
+</div>
+<div class="relative group cursor-pointer aspect-[4/3] col-span-2 rounded-DEFAULT overflow-hidden border border-outline-variant bg-surface-container-low hover:border-outline transition-colors" onclick="toggleSidebar(true)">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An expansive architectural photograph of a modern yet classical library interior. Tall arched windows let in soft, diffused daylight that washes over rows of oak bookshelves and long reading tables. The space feels open, calm, and intentionally designed for deep reflection. The color palette is dominated by warm neutrals, light creams, and natural wood tones, reflecting a minimalist-classical design movement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGR4rhHErvyEEUYA5w8D-76a8rEzyUdkyGcD0zpgPNv4KZ3ZIaa1SHFiDVXCYM1AP-2yQgbGZnW5Y5s9CKVE2DO_ZUl_czphAk9NKJxBJIUyJTdmQma4zLdXKU4yBpYXXzQYpcKY65vFTIjAZa9Bm-UzU2OfKCg8_ROhltasaBMbl2mi9dMt27OQM7a89WU0WHlT9QvdoBGN8xUa4PD7ku5lSWXTHEgVSbyind0QJrl-6Zqz4SgbQ8"/>
+<div class="absolute inset-0 bg-surface/0 group-hover:bg-surface/20 transition-opacity duration-300"></div>
+</div>
+<div class="relative group cursor-pointer aspect-square rounded-DEFAULT overflow-hidden border border-outline-variant bg-surface-container-low hover:border-outline transition-colors" onclick="toggleSidebar(true)">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A minimalist illustration of a solitary dove in mid-flight against a pale cream background. The linework is delicate and precise, drawn in a deep burgundy hue. The style is modern, restrained, and elegant, functioning as a quiet visual anchor. The overall mood is peaceful and symbolic, suitable for a refined editorial layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChcFIV5BmU3XjXTTUTjBwfGvwNoDNCoUghohrettLZfN_3euliCF7BjoI81YeyTqq367ZId85CfLDiwBm_Zrc3Z_ym5p5IcNn4VlMn2g8Lh20fPyV-57hkFwCPR_w60XgFosRI3ICL9z15cAzx9jIVhAvJ4utRtZPhd0J0XufgHfn3Ox1iX3NpuaMWX4w0vInfLY3pXBK74ay2Zno7DqKUmuCu5z2yno9oEKtuB0OdHGdhjKVBwyVe"/>
+<div class="absolute inset-0 bg-surface/0 group-hover:bg-surface/20 transition-opacity duration-300"></div>
+</div>
+<div class="relative group cursor-pointer aspect-square rounded-DEFAULT overflow-hidden border border-outline-variant bg-surface-container-low hover:border-outline transition-colors" onclick="toggleSidebar(true)">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A portrait-oriented photograph of a quiet corner in a study room. A ceramic mug of tea sits beside a neatly stacked pile of handwritten journals. The light is soft and directional, coming from an unseen window, casting gentle shadows. The palette consists of warm stone colors, soft whites, and earthy tones, evoking a sense of human connection and intentional pause." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsERLuGyP4PqojQilJRA5OT2PEn9xHJsjd1QO5DEVNcIe984RKmDEttnxO7R2dmX8Eoco2832LZ1PFk4yFY5YMtbWOkpttcj0DIcfb_AsQjgN4accgJHv9AUtnvgx790uCPwe7QMicDbpQ1YpoaWdDkpLJmCMt8EKAKzHakoYiyqjJnYqWoyFMNzChtuJtNsW99E0Py5ObtgRVzX59HR3XYjXWR0y9RAfdI4Lb31us8m56bWR2XgCW"/>
+<div class="absolute inset-0 bg-surface/0 group-hover:bg-surface/20 transition-opacity duration-300"></div>
+</div>
+<div class="relative group cursor-pointer aspect-square rounded-DEFAULT overflow-hidden border border-outline-variant bg-surface-container-low hover:border-outline transition-colors" onclick="toggleSidebar(true)">
+<div class="w-full h-full flex flex-col items-center justify-center text-on-surface-variant/50 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[32px] mb-2">description</span>
+<span class="font-label-sm text-label-sm">PDF Document</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Detail Sidebar (Initially visible for demonstration) -->
+<aside class="w-full md:w-[360px] lg:w-[420px] bg-surface-container-low border-l border-outline-variant flex-shrink-0 transition-transform duration-300 ease-in-out md:translate-x-0 h-[calc(100vh-64px)] overflow-y-auto fixed md:sticky top-16 right-0 z-40 transform translate-x-full" id="media-sidebar">
+<div class="p-stack-sm flex flex-col gap-stack-sm h-full">
+<div class="flex justify-between items-center border-b border-outline-variant pb-2">
+<h2 class="font-headline-md text-headline-md text-primary">Asset Details</h2>
+<button aria-label="Close details" class="text-on-surface-variant hover:bg-surface-container p-1 rounded-full transition-colors" onclick="toggleSidebar(false)">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Preview Image -->
+<div class="w-full aspect-video bg-surface rounded-DEFAULT border border-outline-variant overflow-hidden mt-2">
+<img class="w-full h-full object-cover" data-alt="A serene landscape photograph of a misty valley at dawn. Soft, warm morning light filters through ancient trees, illuminating a small wooden chapel in the distance. The color palette is composed of muted greens, soft greys, and pale golds, fitting a calm, trustworthy, and sacred editorial aesthetic. The image is highly detailed with a subtle atmospheric depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPLLhHnLIFJ-iPKx9RLAwGTFdCrWi64AQW4xOQhnIuB8-flPJcMLKp_gUhm7wo1T7oQipgk6hJTVmiRLzUDvF4uD7ojLtpJ8tfGz-aHnEh5cg1OloGYoQxHs1sO-nCbNLe_vD4El-54fQq3gYr-rX7FhOfm7Qu_Y673f04S0tWwAGYY6P9LgCYIiIaSQamgJpxTIs9r27ym_OH3i6OUnYiizEwxngdfyuqHd21nCleVwgaztQpRTwt"/>
+</div>
+<!-- Metadata List -->
+<div class="flex flex-col gap-2 py-4 border-b border-outline-variant">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">File name</span>
+<span class="text-on-surface truncate max-w-[200px]" title="misty_valley_dawn_v2.jpg">misty_valley_dawn_v2.jpg</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Date uploaded</span>
+<span class="text-on-surface">Oct 24, 2023</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Dimensions</span>
+<span class="text-on-surface">2400 × 1600 px</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">File size</span>
+<span class="text-on-surface">1.2 MB</span>
+</div>
+</div>
+<!-- Editable Forms -->
+<form class="flex flex-col gap-stack-sm flex-1">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface" for="alt-text">Alt Text <span class="text-error">*</span></label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface-container-low focus:border-transparent transition-all outline-none resize-none" id="alt-text" placeholder="Describe the image for screen readers..." required="" rows="3">A serene landscape photograph of a misty valley at dawn with a small wooden chapel in the distance.</textarea>
+<span class="font-label-sm text-[11px] text-on-surface-variant mt-1">Required for accessibility. Be descriptive.</span>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface" for="caption">Caption</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface-container-low focus:border-transparent transition-all outline-none resize-none" id="caption" placeholder="Caption displayed below the image..." rows="2">Morning mist in the lower valley.</textarea>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface" for="credit">Credit / Copyright</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface-container-low focus:border-transparent transition-all outline-none" id="credit" type="text" value="GreatGod Archives"/>
+</div>
+<div class="mt-auto pt-stack-sm pb-4 flex justify-end gap-3">
+<button class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors py-2 px-4 border border-outline hover:border-primary rounded-full" type="button">
+                            Delete
+                        </button>
+<button class="bg-primary-container text-on-primary font-label-sm text-label-sm py-2 px-6 rounded-full hover:opacity-90 transition-opacity" type="submit">
+                            Save Changes
+                        </button>
+</div>
+</form>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-20 bg-surface border-t border-outline-variant px-margin-mobile md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-secondary-container/30 rounded-full py-1 px-4 scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-label-sm text-label-sm">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Basic Sidebar Toggle Logic -->
+<script>
+        // Force sidebar open initially for visual demonstration of the state requested
+        setTimeout(() => {
+            toggleSidebar(true);
+        }, 100);
+
+        function toggleSidebar(show) {
+            const sidebar = document.getElementById('media-sidebar');
+            const grid = document.getElementById('media-grid-container');
+            
+            if (show) {
+                sidebar.classList.remove('translate-x-full');
+                // Adjust grid width on desktop when sidebar opens
+                if(window.innerWidth >= 768) {
+                    grid.style.marginRight = '0';
+                }
+            } else {
+                sidebar.classList.add('translate-x-full');
+            }
+        }
+    </script>
+</body></html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background dark:bg-background" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sacred Editorial - Version Comparison</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#554240",
+                      "surface": "#fbf9f4",
+                      "secondary-fixed": "#dbe5e0",
+                      "on-primary": "#ffffff",
+                      "surface-container": "#f0eee9",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "inverse-on-surface": "#f2f1ec",
+                      "surface-container-high": "#eae8e3",
+                      "outline": "#887270",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#410004",
+                      "secondary": "#57605d",
+                      "tertiary": "#735c00",
+                      "background": "#fbf9f4",
+                      "secondary-container": "#d8e2dd",
+                      "on-surface": "#1b1c19",
+                      "on-background": "#1b1c19",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#cca72f",
+                      "outline-variant": "#dbc0be",
+                      "surface-dim": "#dbdad5",
+                      "surface-variant": "#e4e2dd",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#ffe088",
+                      "on-primary-container": "#e27770",
+                      "on-secondary-fixed": "#141d1a",
+                      "on-tertiary-fixed": "#241a00",
+                      "error": "#ba1a1a",
+                      "inverse-surface": "#30312e",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "on-tertiary-container": "#4e3d00",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "primary-fixed": "#ffdad7",
+                      "primary": "#3e0003",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "on-error": "#ffffff",
+                      "surface-container-highest": "#e4e2dd",
+                      "primary-container": "#5d1212",
+                      "surface-tint": "#9c413d",
+                      "surface-bright": "#fbf9f4",
+                      "inverse-primary": "#ffb3ad",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#5b6561",
+                      "surface-container-low": "#f5f3ee"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-md": "32px",
+                      "gutter": "32px",
+                      "unit": "8px",
+                      "container-max": "1120px",
+                      "margin-mobile": "20px",
+                      "stack-sm": "16px",
+                      "stack-lg": "64px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .diff-remove {
+            background-color: #ffdad6; /* error-container */
+            color: #93000a; /* on-error-container */
+            text-decoration: line-through;
+        }
+        .diff-add {
+            background-color: #dbe5e0; /* secondary-fixed */
+            color: #141d1a; /* on-secondary-fixed */
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background h-full flex flex-col font-body-md overflow-hidden">
+<!-- Top Action Bar for Transactional/Focused Screen -->
+<header class="w-full top-0 sticky bg-surface-container-low border-b border-outline-variant flex justify-between items-center px-margin-mobile md:px-gutter h-16 max-w-container-max mx-auto shrink-0 z-10">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-secondary hover:text-primary transition-colors duration-200 cursor-pointer active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+<span class="font-label-sm text-label-sm">Back to Editor</span>
+</button>
+<div class="h-6 w-px bg-outline-variant hidden md:block"></div>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight hidden md:block truncate">The Theology of Rest</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary-container text-on-primary font-label-sm text-label-sm px-4 py-2 rounded flex items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">history</span>
+                Restore v1.1
+            </button>
+</div>
+</header>
+<!-- Main Comparison Area -->
+<main class="flex-1 overflow-hidden flex flex-col md:flex-row max-w-[1600px] w-full mx-auto">
+<!-- Left Panel: Previous Version (v1.1) -->
+<section class="flex-1 flex flex-col min-w-0 border-r border-outline-variant">
+<!-- Metadata Header -->
+<div class="bg-surface-container py-4 px-margin-mobile md:px-gutter shrink-0 border-b border-outline-variant">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="bg-surface-variant text-on-surface-variant px-2 py-1 rounded font-label-sm text-[11px] tracking-wider uppercase">Previous Version</span>
+<h2 class="font-headline-md text-headline-md-mobile text-on-surface">v1.1</h2>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2 text-secondary opacity-70 font-label-sm text-label-sm">
+<span>Oct 24, 2023</span>
+<span>·</span>
+<span>14:30 EST</span>
+<span>·</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">person</span> Eleanor Vance</span>
+</div>
+</div>
+<!-- Content Canvas -->
+<div class="flex-1 overflow-y-auto px-margin-mobile md:px-gutter py-stack-md bg-surface">
+<article class="max-w-[720px] mx-auto space-y-stack-sm">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-on-surface">The Theology of Rest</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        In our hyper-connected modern world, the concept of rest is often relegated to mere <span class="diff-remove">recovery from work. We treat sleep as a biological necessity to ensure productivity the next day.</span> However, the classical theological understanding of rest, particularly as rooted in the Sabbath, suggests something far more profound.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Rest is not merely the absence of labor; it is the presence of divine communion. <span class="diff-remove">When we cease our striving, we acknowledge our limitations and our dependence on a creator.</span> It is a deliberate act of trust, a laying down of our tools and our anxieties.
+                    </p>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-stack-md mb-4">The Illusion of Perpetual Motion</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        The industrial revolution, and subsequently the digital revolution, enshrined the idea of perpetual motion as a virtue. The machine never sleeps, and increasingly, neither do we. This relentless pace <span class="diff-remove">is fundamentally at odds with human flourishing.</span>
+</p>
+<div class="my-stack-md p-6 bg-surface-container-low border border-outline-variant rounded-DEFAULT">
+<p class="font-body-md text-body-md italic text-on-surface-variant">
+                             "True rest is not a luxury, but a vital discipline of letting go." - <span class="diff-remove">Author Unknown</span>
+</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        To reclaim a theology of rest, we must first dismantle the idol of constant availability. <span class="diff-remove">We must learn to silence the notifications and embrace the quiet.</span> Only then can we begin to hear the still, small voice that speaks in the spaces between our obligations.
+                    </p>
+</article>
+</div>
+</section>
+<!-- Right Panel: Current Version (v1.2) -->
+<section class="flex-1 flex flex-col min-w-0 bg-background">
+<!-- Metadata Header -->
+<div class="bg-surface-container py-4 px-margin-mobile md:px-gutter shrink-0 border-b border-outline-variant">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="bg-primary-container text-on-primary px-2 py-1 rounded font-label-sm text-[11px] tracking-wider uppercase">Current Version</span>
+<h2 class="font-headline-md text-headline-md-mobile text-on-surface">v1.2</h2>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2 text-secondary opacity-70 font-label-sm text-label-sm">
+<span>Oct 26, 2023</span>
+<span>·</span>
+<span>09:15 EST</span>
+<span>·</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">person</span> Julian Black</span>
+</div>
+</div>
+<!-- Content Canvas -->
+<div class="flex-1 overflow-y-auto px-margin-mobile md:px-gutter py-stack-md bg-surface-bright">
+<article class="max-w-[720px] mx-auto space-y-stack-sm">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-on-surface">The Theology of Rest</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        In our hyper-connected modern world, the concept of rest is often relegated to mere <span class="diff-add">utility. We treat sleep as a transactional necessity—a biological required charging period to ensure optimal productivity the next morning.</span> However, the classical theological understanding of rest, particularly as rooted in the Sabbath, suggests something far more profound.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Rest is not merely the absence of labor; it is the presence of divine communion. <span class="diff-add">As theologian Walter Brueggemann argues, when we cease our striving, we engage in an act of resistance against the anxieties of a production-obsessed culture, acknowledging our inherent limitations.</span> It is a deliberate act of trust, a laying down of our tools and our anxieties.
+                    </p>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-stack-md mb-4">The Illusion of Perpetual Motion</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        The industrial revolution, and subsequently the digital revolution, enshrined the idea of perpetual motion as a virtue. The machine never sleeps, and increasingly, neither do we. This relentless pace <span class="diff-add">fractures our attention and alienates us from the rhythms of grace essential for deep human flourishing.</span>
+</p>
+<div class="my-stack-md p-6 bg-surface-container-low border border-outline-variant rounded-DEFAULT">
+<p class="font-body-md text-body-md italic text-on-surface-variant">
+                             "True rest is not a luxury, but a vital discipline of letting go." - <span class="diff-add">Dr. Sarah Jenkins, <em>The Quiet Discipline</em></span>
+</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        To reclaim a theology of rest, we must first dismantle the idol of constant availability. <span class="diff-add">We must intentionally cultivate practices of detachment—silencing the relentless notifications, guarding our margins, and embracing the discomfort of unstructured quiet.</span> Only then can we begin to hear the still, small voice that speaks in the spaces between our obligations.
+                    </p>
+</article>
+</div>
+</section>
+</main>
+<script>
+        // Simple synchronized scrolling for the two panels
+        document.addEventListener('DOMContentLoaded', () => {
+            const leftPanel = document.querySelector('section:first-child .overflow-y-auto');
+            const rightPanel = document.querySelector('section:last-child .overflow-y-auto');
+            
+            let isSyncingLeftScroll = false;
+            let isSyncingRightScroll = false;
+
+            leftPanel.addEventListener('scroll', function(e) {
+                if (!isSyncingLeftScroll) {
+                    isSyncingRightScroll = true;
+                    rightPanel.scrollTop = this.scrollTop;
+                }
+                isSyncingLeftScroll = false;
+            });
+
+            rightPanel.addEventListener('scroll', function(e) {
+                if (!isSyncingRightScroll) {
+                    isSyncingLeftScroll = true;
+                    leftPanel.scrollTop = this.scrollTop;
+                }
+                isSyncingRightScroll = false;
+            });
+        });
+    </script>
+</body></html>

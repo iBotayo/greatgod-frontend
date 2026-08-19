@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreatGod - The Architecture of Faith</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&amp;family=Hanken+Grotesk:wght@400;600;700&amp;family=Source+Serif+4:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#ffb3ad",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "success-secure": "#2e4d41",
+                      "primary-fixed": "#ffdad7",
+                      "tertiary-container": "#c6a94e",
+                      "tertiary": "#735c00",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-error": "#ffffff",
+                      "secondary": "#57605d",
+                      "surface-container-low": "#fff0ef",
+                      "surface-tint": "#9c413d",
+                      "primary-container": "#5d1212",
+                      "inverse-primary": "#ffb3ad",
+                      "surface-container-highest": "#f8dcda",
+                      "on-secondary-fixed": "#151d1b",
+                      "surface-container-high": "#fee2df",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#e3c466",
+                      "on-secondary-container": "#5d6663",
+                      "on-secondary-fixed-variant": "#404946",
+                      "secondary-fixed-dim": "#bfc9c5",
+                      "surface-bright": "#fff8f7",
+                      "surface": "#fff8f7",
+                      "inverse-surface": "#3d2c2b",
+                      "surface-container": "#fceae8",
+                      "error": "#ba1a1a",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#ffedeb",
+                      "surface-linen": "#f5f3ee",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#231b00",
+                      "on-primary-container": "#e27770",
+                      "primary": "#3e0003",
+                      "secondary-fixed": "#dbe5e0",
+                      "on-background": "#261817",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#ffe085",
+                      "surface-container-lowest": "#ffffff",
+                      "background": "#fff8f7",
+                      "on-surface": "#261817",
+                      "on-error-container": "#93000a",
+                      "surface-variant": "#f8dcda",
+                      "outline-variant": "#dbc0be",
+                      "on-primary-fixed": "#410004",
+                      "surface-paper": "#fbf9f4",
+                      "on-surface-variant": "#554240",
+                      "outline": "#887270",
+                      "surface-dim": "#efd4d1",
+                      "secondary-container": "#dbe5e0",
+                      "on-tertiary-container": "#4e3e00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "gutter": "32px",
+                      "stack-md": "32px",
+                      "stack-sm": "16px",
+                      "container-max": "1120px",
+                      "stack-lg": "64px",
+                      "form-width": "560px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["EB Garamond"],
+                      "headline-lg": ["EB Garamond"],
+                      "headline-md": ["EB Garamond"],
+                      "label-lg": ["Hanken Grotesk"],
+                      "body-lg": ["\"Source Serif 4\""],
+                      "donation-amount": ["EB Garamond"],
+                      "label-sm": ["Hanken Grotesk"],
+                      "body-md": ["\"Source Serif 4\""]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                      "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "500"}],
+                      "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                      "label-lg": ["16px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                      "donation-amount": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                      "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                      "body-md": ["17px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased pt-16 pb-24 md:pb-8">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface flat no shadows">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="arrow_back" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md tracking-widest text-primary dark:text-primary-fixed">
+                GREATGOD
+            </div>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="search" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile pt-stack-md">
+<!-- Book Detail Header / Intro -->
+<article class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-stack-lg">
+<!-- Book Cover Vessel -->
+<div class="md:col-span-5 flex justify-center md:justify-start">
+<div class="bg-surface-linen p-4 border border-outline w-full max-w-sm rounded">
+<img class="w-full h-auto object-cover rounded-sm shadow-sm" data-alt="A dignified, classical book cover titled 'The Architecture of Faith' by Grace Adeyemi. The cover features elegant, minimal serif typography on a deep burgundy background, reminiscent of heritage publishing. Subtle architectural line drawings of arches decorate the background. The mood is calm, trustworthy, and scholarly, fitting a minimalist-classical digital archive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpXpTRStj8hTNjxYsV5VvhpdoIOvU8cbiM5KXVamx1CgnJimH_Fa-jD5I_SL7YJ1YwCMV0e9GvukOymVHpfhsxPRaujyoTpl9Q64jvLSciJkIHstF1UXJ1v0TAA9-x0fhATFr9ogbTTALY8QCdseeh-jtEj5ZhPNhbQ9990A3pCG-dZVTroDqc-eRkNp72ynFICi6Vx_H0LQnxpNpwcww-1V4GPgU2fpvOHyZHf4hlgKxfWWLKR6y1"/>
+</div>
+</div>
+<!-- Content Area -->
+<div class="md:col-span-7 flex flex-col justify-center">
+<div class="mb-stack-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-2">Theology &amp; Form Series</span>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">The Architecture of Faith</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic">by Grace Adeyemi</p>
+</div>
+<div class="prose prose-stone font-body-md text-body-md text-on-surface mb-stack-md max-w-none">
+<p>In this profound exploration, Grace Adeyemi examines the physical and conceptual structures that house human devotion. Bridging historical theology with modern structural philosophy, *The Architecture of Faith* offers a contemplative journey through sanctuaries, altars, and the quiet spaces we construct internally to comprehend the divine.</p>
+</div>
+<!-- Action Area -->
+<div class="flex flex-col sm:flex-row gap-4 mb-stack-lg">
+<button class="bg-primary text-white font-label-sm text-label-sm uppercase tracking-widest py-3 px-6 rounded hover:opacity-90 transition-opacity active:scale-95 border border-primary flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_cart" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+                        Purchase Print Copy
+                    </button>
+<button class="bg-transparent text-primary border border-outline font-label-sm text-label-sm uppercase tracking-widest py-3 px-6 rounded hover:bg-surface-linen transition-colors active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="download" style="font-variation-settings: 'FILL' 0;">download</span>
+                        Digital Resource
+                    </button>
+</div>
+<!-- Metadata Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-outline-variant pt-stack-sm">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1">PAGES</span>
+<span class="font-body-md text-body-md text-primary">342</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1">PUBLISHED</span>
+<span class="font-body-md text-body-md text-primary">Oct 2023</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1">FORMAT</span>
+<span class="font-body-md text-body-md text-primary">Hardcover</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1">ISBN</span>
+<span class="font-body-md text-body-md text-primary">978-0-123-45</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Related Content -->
+<section class="border-t border-outline-variant pt-stack-md">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-sm">Related Content</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-gutter">
+<!-- Related Item 1 -->
+<a class="group block bg-surface-linen border border-outline rounded p-4 hover:border-primary hover:shadow-sm transition-all" href="#">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-2 block group-hover:text-primary transition-colors">ARTICLE</span>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-2">The Silence of the Sanctuary</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">An essay on the role of quiet contemplation in historical religious spaces.</p>
+</a>
+<!-- Related Item 2 -->
+<a class="group block bg-surface-linen border border-outline rounded p-4 hover:border-primary hover:shadow-sm transition-all" href="#">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-2 block group-hover:text-primary transition-colors">LECTURE SERIES</span>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-2">Form and Devotion</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Audio recordings from Dr. Adeyemi's symposium on structural theology.</p>
+</a>
+<!-- Related Item 3 -->
+<a class="group block bg-surface-linen border border-outline rounded p-4 hover:border-primary hover:shadow-sm transition-all" href="#">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-2 block group-hover:text-primary transition-colors">BOOK</span>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-2">Foundations</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">The preceding volume exploring the history of early monastic architecture.</p>
+</a>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Hidden on md and up, as this is a detail page, it shouldn't ideally show the nav shell per instructions, but the instruction asks to implement it as a blueprint if applicable. Given 'The Destination Rule', a detail page is a 'dead end', so suppressing the bottom nav is the correct protocol. However, I will include it hidden, or omit it entirely based on "Automatic Suppression". I will omit it to follow the "Task-Focused" rule). -->
+</body></html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Request Revision or Reject Manuscript - Sacred Editorial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#554240",
+                      "surface": "#fbf9f4",
+                      "secondary-fixed": "#dbe5e0",
+                      "on-primary": "#ffffff",
+                      "surface-container": "#f0eee9",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "inverse-on-surface": "#f2f1ec",
+                      "surface-container-high": "#eae8e3",
+                      "outline": "#887270",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#410004",
+                      "secondary": "#57605d",
+                      "tertiary": "#735c00",
+                      "background": "#fbf9f4",
+                      "secondary-container": "#d8e2dd",
+                      "on-surface": "#1b1c19",
+                      "on-background": "#1b1c19",
+                      "primary-fixed-dim": "#ffb3ad",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#cca72f",
+                      "outline-variant": "#dbc0be",
+                      "surface-dim": "#dbdad5",
+                      "surface-variant": "#e4e2dd",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#ffe088",
+                      "on-primary-container": "#e27770",
+                      "on-secondary-fixed": "#141d1a",
+                      "on-tertiary-fixed": "#241a00",
+                      "error": "#ba1a1a",
+                      "inverse-surface": "#30312e",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed-variant": "#7e2a27",
+                      "on-tertiary-container": "#4e3d00",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-secondary-fixed-variant": "#3f4945",
+                      "primary-fixed": "#ffdad7",
+                      "primary": "#3e0003",
+                      "secondary-fixed-dim": "#bfc9c4",
+                      "on-error": "#ffffff",
+                      "surface-container-highest": "#e4e2dd",
+                      "primary-container": "#5d1212",
+                      "surface-tint": "#9c413d",
+                      "surface-bright": "#fbf9f4",
+                      "inverse-primary": "#ffb3ad",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#5b6561",
+                      "surface-container-low": "#f5f3ee"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-md": "32px",
+                      "gutter": "32px",
+                      "unit": "8px",
+                      "container-max": "1120px",
+                      "margin-mobile": "20px",
+                      "stack-sm": "16px",
+                      "stack-lg": "64px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "headline-md": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar (Suppressed for Contextual Focus/Dead End screen - Reviewing a manuscript is a highly focused task. Hiding nav to prioritize canvas.) -->
+<header class="bg-surface-container-low border-b border-outline-variant py-4 px-margin-mobile md:px-gutter flex items-center justify-between sticky top-0 z-10 w-full shadow-sm">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-xl group-hover:-translate-x-1 transition-transform">arrow_back</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Back to Review Queue</span>
+</button>
+</div>
+<div class="font-headline-md text-headline-md text-primary tracking-tight">Sacred Editorial</div>
+<div class="w-[120px]"></div> <!-- Spacer for flex balance -->
+</header>
+<main class="flex-grow flex flex-col lg:flex-row w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-md gap-gutter">
+<!-- Left Column: Context & Summary -->
+<aside class="w-full lg:w-[320px] flex flex-col gap-stack-sm flex-shrink-0">
+<!-- Manuscript Metadata Card -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-6 shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary opacity-80 block mb-2">Manuscript Under Review</span>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">The Architecture of Silence: Monasticism in the Modern Age</h2>
+<div class="flex flex-col gap-1 mt-4 border-t border-outline-variant pt-4">
+<p class="font-body-md text-body-md text-on-surface-variant"><span class="font-bold text-on-background">Author:</span> Dr. Elias Thorne</p>
+<p class="font-body-md text-body-md text-on-surface-variant"><span class="font-bold text-on-background">Submission ID:</span> #492-SE-2024</p>
+<p class="font-body-md text-body-md text-on-surface-variant"><span class="font-bold text-on-background">Received:</span> Oct 12, 2024</p>
+</div>
+</div>
+<!-- Consequence Info -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded p-6 shadow-sm mt-stack-sm">
+<h3 class="font-headline-md text-body-lg text-inverse-primary mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">info</span>
+                     Action Outcomes
+                 </h3>
+<div class="space-y-4">
+<div>
+<p class="font-label-sm text-label-sm uppercase text-secondary-fixed opacity-70 mb-1 border-b border-on-surface-variant pb-1">Request Changes</p>
+<p class="font-body-md text-[15px] leading-relaxed text-inverse-on-surface opacity-90">Moves manuscript to "Awaiting Author Revision" state. The author will be notified via email with your notes and requested action items. They will have 30 days to resubmit.</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm uppercase text-error-container opacity-70 mb-1 border-b border-on-surface-variant pb-1">Reject Submission</p>
+<p class="font-body-md text-[15px] leading-relaxed text-inverse-on-surface opacity-90">Closes the submission permanently. A polite notification email will be sent to the author based on your provided rationale. This action cannot be easily undone.</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Column: Action Form -->
+<div class="w-full flex-grow flex flex-col">
+<div class="bg-surface border border-outline-variant rounded shadow-sm p-6 md:p-10 flex flex-col flex-grow">
+<div class="mb-stack-md border-b border-outline-variant pb-6">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Editorial Decision</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Detail your rationale for requesting revisions or rejecting this manuscript. This feedback is critical for our editorial integrity and the author's development.</p>
+</div>
+<form action="#" class="flex flex-col flex-grow gap-stack-md" method="POST">
+<!-- Text Area Section -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-background flex items-center justify-between" for="editorial_reason">
+<span>Editorial Rationale <span class="text-error">*</span></span>
+<span class="text-secondary opacity-60 normal-case font-normal text-xs">Required for both actions</span>
+</label>
+<p class="font-body-md text-[14px] leading-tight text-on-surface-variant mb-2">Provide detailed feedback. If requesting changes, outline exactly what is needed. If rejecting, provide a respectful explanation.</p>
+<div class="relative group">
+<textarea class="w-full bg-surface-container-lowest border-outline-variant text-on-background font-body-md focus:ring-2 focus:ring-primary-container focus:border-primary-container rounded shadow-inner resize-y p-4 transition-shadow" id="editorial_reason" name="editorial_reason" placeholder="Begin your editorial notes here..." rows="12"></textarea>
+</div>
+</div>
+<!-- Action Items Categorization (More relevant for Revisions, but good to have contextually) -->
+<div class="flex flex-col gap-4 pt-4 border-t border-outline-variant">
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-label-sm text-label-sm uppercase tracking-wider text-on-background">Key Action Areas for Author</h3>
+<span class="font-body-md text-xs text-secondary italic">Select primary areas requiring attention</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Category 1 -->
+<label class="flex items-start gap-3 p-4 border border-outline-variant rounded bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 text-primary-container bg-surface-container-lowest border-outline-variant rounded focus:ring-primary focus:ring-2 focus:ring-offset-1 focus:ring-offset-surface" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-background group-hover:text-primary transition-colors">Theological Clarity</span>
+<span class="font-body-md text-[13px] leading-tight text-on-surface-variant mt-1">Issues with doctrinal precision or clarity of argumentation.</span>
+</div>
+</label>
+<!-- Category 2 -->
+<label class="flex items-start gap-3 p-4 border border-outline-variant rounded bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 text-primary-container bg-surface-container-lowest border-outline-variant rounded focus:ring-primary focus:ring-2 focus:ring-offset-1 focus:ring-offset-surface" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-background group-hover:text-primary transition-colors">Structural Edit</span>
+<span class="font-body-md text-[13px] leading-tight text-on-surface-variant mt-1">Significant reorganization of chapters, pacing, or flow required.</span>
+</div>
+</label>
+<!-- Category 3 -->
+<label class="flex items-start gap-3 p-4 border border-outline-variant rounded bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 text-primary-container bg-surface-container-lowest border-outline-variant rounded focus:ring-primary focus:ring-2 focus:ring-offset-1 focus:ring-offset-surface" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-background group-hover:text-primary transition-colors">Citation Format</span>
+<span class="font-body-md text-[13px] leading-tight text-on-surface-variant mt-1">Inconsistencies or errors in academic formatting or referencing.</span>
+</div>
+</label>
+<!-- Category 4 -->
+<label class="flex items-start gap-3 p-4 border border-outline-variant rounded bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 text-primary-container bg-surface-container-lowest border-outline-variant rounded focus:ring-primary focus:ring-2 focus:ring-offset-1 focus:ring-offset-surface" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-background group-hover:text-primary transition-colors">Tone &amp; Style</span>
+<span class="font-body-md text-[13px] leading-tight text-on-surface-variant mt-1">Adjustments needed to match the 'Sacred Editorial' aesthetic.</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-auto pt-stack-md border-t border-outline-variant flex flex-col sm:flex-row justify-end items-center gap-6">
+<button class="w-full sm:w-auto px-6 py-3 font-label-sm text-label-sm uppercase tracking-widest text-error border border-error rounded hover:bg-error-container hover:text-on-error-container transition-colors duration-200 flex items-center justify-center gap-2 group" type="button">
+<span class="material-symbols-outlined text-[18px] group-hover:scale-110 transition-transform">close</span>
+                            Reject Submission
+                        </button>
+<button class="w-full sm:w-auto px-8 py-3 font-label-sm text-label-sm uppercase tracking-widest text-on-primary bg-primary-container rounded shadow-sm hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">send</span>
+                            Request Changes
+                        </button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface border-t border-outline-variant w-full py-stack-sm mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-gutter w-full max-w-container-max mx-auto gap-4">
+<div class="text-label-sm font-label-sm font-bold text-primary">Sacred Editorial</div>
+<div class="flex gap-6">
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim opacity-70 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim opacity-70 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim opacity-70 hover:opacity-100 transition-opacity" href="#">Ethical Standards</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant text-center md:text-right">
+                © 2024 Sacred Editorial Management. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Session Expired</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&amp;family=Hanken+Grotesk:wght@600&amp;family=Source+Serif+4:wght@400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#231b00",
+                    "surface": "#fff8f7",
+                    "surface-container-highest": "#f1dedc",
+                    "on-primary-fixed": "#410004",
+                    "inverse-primary": "#ffb3ad",
+                    "on-surface": "#231918",
+                    "secondary": "#57605d",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#ffedeb",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "primary-container": "#5d1212",
+                    "tertiary": "#735c00",
+                    "on-primary-fixed-variant": "#7e2a27",
+                    "surface-variant": "#f1dedc",
+                    "surface-linen": "#f5f3ee",
+                    "on-secondary-fixed-variant": "#404946",
+                    "surface-tint": "#9c413d",
+                    "stone-outline": "#887270",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "secondary-fixed-dim": "#bfc9c5",
+                    "surface-container": "#fceae8",
+                    "outline": "#887270",
+                    "outline-variant": "#dbc0be",
+                    "on-primary-container": "#e27770",
+                    "on-secondary-container": "#5d6663",
+                    "on-secondary-fixed": "#151d1b",
+                    "secondary-fixed": "#dbe5e0",
+                    "success-secure": "#2e4d41",
+                    "surface-dim": "#e8d6d4",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#392e2d",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#554240",
+                    "tertiary-fixed": "#ffe085",
+                    "tertiary-container": "#c6a94e",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "background": "#fff8f7",
+                    "surface-bright": "#fff8f7",
+                    "secondary-container": "#dbe5e0",
+                    "surface-paper": "#fbf9f4",
+                    "on-background": "#231918",
+                    "surface-container-low": "#fff0ef",
+                    "primary": "#3e0003",
+                    "surface-container-high": "#f6e4e2",
+                    "primary-fixed": "#ffdad7",
+                    "on-tertiary-container": "#4e3e00",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#e3c466"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "stack-md": "32px",
+                    "margin-mobile": "20px",
+                    "gutter": "32px",
+                    "form-width": "560px",
+                    "container-max": "1120px",
+                    "stack-lg": "64px",
+                    "stack-sm": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "EB Garamond"
+                    ],
+                    "label-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-md": [
+                            "EB Garamond"
+                    ],
+                    "donation-amount": [
+                            "EB Garamond"
+                    ],
+                    "body-md": [
+                            "\"Source Serif 4\""
+                    ],
+                    "headline-lg": [
+                            "EB Garamond"
+                    ],
+                    "body-lg": [
+                            "\"Source Serif 4\""
+                    ],
+                    "label-sm": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "donation-amount": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "17px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "13px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.08em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface min-h-screen flex items-center justify-center p-margin-mobile">
+<!-- The Giving Vessel Layout Principle applied to a focused dead-end screen -->
+<main class="w-full max-w-form-width bg-surface-linen border border-outline-variant rounded-DEFAULT flex flex-col items-center justify-center p-stack-lg text-center relative overflow-hidden">
+<!-- Subtle tonal layering element for texture (optional aesthetic touch based on brand) -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-container to-transparent opacity-20"></div>
+<!-- High-Trust Cue: Security Icon -->
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-stack-md border border-outline-variant shadow-sm">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<!-- Typography Context -->
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight mb-stack-sm">
+            Session Expired
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[400px] mb-stack-lg mx-auto">
+            For your security, you have been signed out due to inactivity.
+        </p>
+<!-- Actions -->
+<div class="w-full flex flex-col items-center gap-stack-sm">
+<!-- Primary Action Button -->
+<button class="w-full max-w-[280px] bg-primary text-on-primary font-label-sm text-label-sm uppercase py-4 px-6 rounded-DEFAULT transition-opacity hover:opacity-90">
+                Sign In Again
+            </button>
+<!-- Secondary Link -->
+<a class="font-label-sm text-label-sm text-primary underline hover:text-on-primary-fixed-variant transition-colors mt-unit" href="#">
+                Return Home
+            </a>
+</div>
+</main>
+</body></html>

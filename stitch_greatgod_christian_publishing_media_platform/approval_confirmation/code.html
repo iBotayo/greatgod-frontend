@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sacred Editorial - Manuscript Approved</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&amp;family=Hanken+Grotesk:wght@400;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#f0eee9",
+                        "outline-variant": "#dbc0be",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ffdad7",
+                        "background": "#fbf9f4",
+                        "on-primary-container": "#e27770",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#5d1212",
+                        "primary": "#3e0003",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#bfc9c4",
+                        "secondary-container": "#d8e2dd",
+                        "on-surface-variant": "#554240",
+                        "surface": "#fbf9f4",
+                        "on-secondary-container": "#5b6561",
+                        "on-tertiary-container": "#4e3d00",
+                        "on-primary-fixed-variant": "#7e2a27",
+                        "inverse-primary": "#ffb3ad",
+                        "surface-dim": "#dbdad5",
+                        "on-secondary-fixed-variant": "#3f4945",
+                        "tertiary": "#735c00",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-primary-fixed": "#410004",
+                        "surface-bright": "#fbf9f4",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-surface": "#1b1c19",
+                        "surface-container-high": "#eae8e3",
+                        "surface-variant": "#e4e2dd",
+                        "secondary": "#57605d",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#30312e",
+                        "on-background": "#1b1c19",
+                        "surface-container-low": "#f5f3ee",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "outline": "#887270",
+                        "tertiary-container": "#cca72f",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#9c413d",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#141d1a",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary-fixed": "#dbe5e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "unit": "8px",
+                        "stack-md": "32px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "64px",
+                        "container-max": "1120px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["EB Garamond"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "display-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .success-circle-draw {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: drawCircle 1s ease-out forwards;
+        }
+        
+        .success-check-draw {
+            stroke-dasharray: 50;
+            stroke-dashoffset: 50;
+            animation: drawCheck 0.5s ease-out 0.6s forwards;
+        }
+        
+        @keyframes drawCircle {
+            to { stroke-dashoffset: 0; }
+        }
+        
+        @keyframes drawCheck {
+            to { stroke-dashoffset: 0; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-fixed selection:text-primary">
+<!-- Main Content Canvas (Transactional - No Navigation Shell) -->
+<main class="flex-grow flex items-center justify-center p-margin-mobile md:p-gutter">
+<div class="max-w-2xl w-full mx-auto">
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-8 md:p-12 text-center shadow-[0_4px_24px_rgba(0,0,0,0.02)] fade-in-up">
+<!-- Animated Success Icon -->
+<div class="flex justify-center mb-8 fade-in-up delay-1">
+<svg class="w-24 h-24 text-primary-container" fill="none" viewbox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+<circle class="success-circle-draw" cx="26" cy="26" r="24" stroke="currentColor" stroke-linecap="round" stroke-width="2"></circle>
+<path class="success-check-draw" d="M16 26L23 33L36 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<!-- Text Content -->
+<div class="space-y-4 mb-10 fade-in-up delay-2">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight">
+                        Manuscript Approved
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto">
+                        Ready for taxonomy assignment and scheduling. The author has been notified of this milestone.
+                    </p>
+</div>
+<!-- Divider Flourish -->
+<div class="flex items-center justify-center mb-10 fade-in-up delay-3">
+<div class="h-px bg-gradient-to-r from-transparent via-outline-variant to-transparent w-48"></div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in-up delay-4">
+<button class="w-full sm:w-auto bg-primary-container hover:bg-primary text-on-primary font-label-sm text-label-sm py-3 px-8 rounded flex items-center justify-center gap-2 transition-colors duration-200">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">account_tree</span>
+                        Assign Taxonomy
+                    </button>
+<button class="w-full sm:w-auto border border-outline hover:border-primary text-on-surface font-label-sm text-label-sm py-3 px-8 rounded flex items-center justify-center gap-2 transition-colors duration-200 hover:text-primary hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">queue_play_next</span>
+                        Return to Queue
+                    </button>
+</div>
+</div>
+<!-- Contextual Metadata -->
+<div class="mt-8 text-center fade-in-up delay-4">
+<p class="font-label-sm text-label-sm text-secondary opacity-70 flex items-center justify-center gap-2">
+<span>Manuscript ID: 1042-X</span>
+<span class="text-outline-variant">|</span>
+<span>Approved by Managing Editor</span>
+</p>
+</div>
+</div>
+</main>
+</body></html>
