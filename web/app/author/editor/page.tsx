@@ -7,7 +7,7 @@ import { useDb } from '../../../components/provider/db-provider';
 
 export default function EditorPage() {
   const { currentUser } = useAuth();
-  const { db } = useDb();
+  const { db, setDb } = useDb();
   const searchParams = useSearchParams();
   const router = useRouter();
   
@@ -48,15 +48,77 @@ export default function EditorPage() {
   };
 
   const handleSave = () => {
-    // Mock save
-    console.log('Saved draft', { title, excerpt, content, tags });
-    alert('Draft saved (Mock)');
+    if (!currentUser) return;
+    const isNew = !draftId;
+    const newId = isNew ? `art_${Date.now()}` : draftId;
+    
+    setDb(prev => {
+      const existing = isNew ? null : prev.articles.find(a => a.id === draftId);
+      const updatedArticle = {
+        id: newId,
+        title: title || 'Untitled Draft',
+        excerpt,
+        content,
+        tags: [tags],
+        authorId: currentUser.id,
+        status: 'DRAFT' as const,
+        readTime: Math.max(1, Math.ceil(wordCount / 200)),
+        createdAt: existing?.createdAt || new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      };
+
+      return {
+        ...prev,
+        articles: isNew 
+          ? [updatedArticle, ...prev.articles]
+          : prev.articles.map(a => a.id === draftId ? updatedArticle : a)
+      };
+    });
+    
+    if (isNew) {
+      router.replace(`/author/editor?id=${newId}`);
+    }
   };
 
   const handleSubmit = () => {
-    // Mock submit
-    console.log('Submitted for review', { title, excerpt, content, tags });
-    alert('Submitted for review (Mock)');
+    if (!currentUser) return;
+    const isNew = !draftId;
+    const targetId = isNew ? `art_${Date.now()}` : draftId;
+    
+    setDb(prev => {
+      const existing = isNew ? null : prev.articles.find(a => a.id === targetId);
+      const updatedArticle = {
+        id: targetId,
+        title: title || 'Untitled Draft',
+        excerpt,
+        content,
+        tags: [tags],
+        authorId: currentUser.id,
+        status: 'IN_REVIEW' as const,
+        readTime: Math.max(1, Math.ceil(wordCount / 200)),
+        createdAt: existing?.createdAt || new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      };
+
+      const newAuditLog = {
+        id: `audit_${Date.now()}`,
+        actorId: currentUser.id,
+        action: 'ARTICLE_SUBMITTED',
+        targetType: 'ARTICLE',
+        targetId,
+        timestamp: new Date().toISOString(),
+        description: `Author ${currentUser.name} submitted an article for review.`
+      };
+
+      return {
+        ...prev,
+        articles: isNew 
+          ? [updatedArticle, ...prev.articles]
+          : prev.articles.map(a => a.id === targetId ? updatedArticle : a),
+        auditLogs: [newAuditLog, ...prev.auditLogs]
+      };
+    });
+
     router.push('/author');
   };
 

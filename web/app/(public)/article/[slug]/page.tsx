@@ -3,11 +3,14 @@
 import React, { useEffect, useState, use } from 'react';
 import Link from 'next/link';
 import { useDb } from '../../../../components/provider/db-provider';
+import { useAuth } from '../../../../components/provider/auth-provider';
 
 export default function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = use(params);
-  const { db } = useDb();
+  const { db, setDb } = useDb();
+  const { currentUser, isAuthReady } = useAuth();
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [newComment, setNewComment] = useState('');
 
   const article = db.articles.find(a => a.id === resolvedParams.slug) || db.articles[0]; // fallback to first for prototype
   const author = db.users.find(u => u.id === article?.authorId);
@@ -27,6 +30,38 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
   if (!article) {
     return <div className="p-stack-lg text-center mt-24">Article not found</div>;
   }
+
+  // Filter comments for this article
+  const articleComments = db.comments.filter(c => c.articleId === article.id);
+  // Show approved comments, OR pending/rejected comments if they belong to the current user
+  const visibleComments = articleComments.filter(c => 
+    c.status === 'APPROVED' || (currentUser && c.userId === currentUser.id)
+  ).sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+
+  const handleCommentSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newComment.trim() || !currentUser) return;
+
+    const commentId = `cmt_${Date.now()}`;
+    const ts = new Date().toISOString();
+
+    setDb(prev => ({
+      ...prev,
+      comments: [
+        {
+          id: commentId,
+          articleId: article.id,
+          userId: currentUser.id,
+          content: newComment.trim(),
+          status: 'PENDING',
+          createdAt: ts
+        },
+        ...prev.comments
+      ]
+    }));
+
+    setNewComment('');
+  };
 
   return (
     <>
@@ -164,6 +199,86 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
                 </div>
               </Link>
             ))}
+          </div>
+        </section>
+
+        {/* Comment Section */}
+        <section className="mt-stack-lg pt-stack-md border-t border-outline-variant max-w-3xl mx-auto">
+          <h2 className="font-display-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6">Discussion</h2>
+          
+          {/* Comment Form */}
+          <div className="mb-stack-md">
+            {isAuthReady && currentUser ? (
+              <form onSubmit={handleCommentSubmit} className="bg-surface-container-low p-6 rounded-lg border border-outline-variant">
+                <h3 className="font-headline-sm text-on-surface mb-4">Leave a comment</h3>
+                <textarea
+                  value={newComment}
+                  onChange={(e) => setNewComment(e.target.value)}
+                  className="w-full bg-surface-container-lowest border border-outline-variant rounded p-3 mb-4 font-body-md text-on-surface focus:ring-2 focus:ring-primary-container focus:outline-none min-h-[100px] resize-y"
+                  placeholder="Share your thoughts on this article..."
+                  required
+                />
+                <div className="flex justify-end">
+                  <button 
+                    type="submit" 
+                    className="bg-primary text-on-primary px-6 py-2 rounded font-label-sm tracking-wider uppercase hover:bg-primary-container transition-colors disabled:opacity-50"
+                    disabled={!newComment.trim()}
+                  >
+                    Post Comment
+                  </button>
+                </div>
+              </form>
+            ) : (
+              <div className="bg-surface-container-low p-6 rounded-lg border border-outline-variant text-center">
+                <p className="font-body-md text-on-surface-variant mb-4">Sign in to join the conversation.</p>
+                <Link href="/sign-in" className="inline-block bg-primary-container text-on-primary px-6 py-2 rounded font-label-sm tracking-wider uppercase hover:opacity-90 transition-opacity">
+                  Sign In
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Comments List */}
+          <div className="flex flex-col gap-6">
+            {visibleComments.length === 0 ? (
+              <p className="text-secondary font-body-md italic text-center py-8">No comments yet. Be the first to share your thoughts!</p>
+            ) : (
+              visibleComments.map(comment => {
+                const commentUser = db.users.find(u => u.id === comment.userId);
+                return (
+                  <div key={comment.id} className="flex gap-4">
+                    <div className="w-10 h-10 shrink-0 rounded-full bg-surface-variant flex items-center justify-center font-bold text-secondary border border-outline-variant overflow-hidden">
+                      {commentUser?.avatarUrl ? (
+                        <img src={commentUser.avatarUrl} alt={commentUser.name} className="w-full h-full object-cover" />
+                      ) : (
+                        commentUser?.name.charAt(0) || 'U'
+                      )}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-baseline gap-2 mb-1">
+                        <span className="font-headline-sm text-on-surface">{commentUser?.name || 'Unknown User'}</span>
+                        <span className="font-label-sm text-secondary opacity-70 text-[12px]">
+                          {new Date(comment.createdAt).toLocaleDateString()}
+                        </span>
+                        {comment.status === 'PENDING' && (
+                          <span className="font-label-sm text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary border border-tertiary-container ml-2">
+                            Awaiting Moderation
+                          </span>
+                        )}
+                        {comment.status === 'REJECTED' && (
+                          <span className="font-label-sm text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-error-container/50 text-on-error-container border border-error-container ml-2">
+                            Rejected
+                          </span>
+                        )}
+                      </div>
+                      <p className="font-body-md text-on-surface-variant leading-relaxed text-[15px]">
+                        {comment.content}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })
+            )}
           </div>
         </section>
       </div>
