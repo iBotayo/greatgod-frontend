@@ -2,12 +2,40 @@ export type Role = 'GUEST' | 'READER' | 'AUTHOR' | 'EDITOR' | 'MODERATOR' | 'ADM
 
 export interface User {
   id: string;
-  name: string;
+  name: string; // Used as display name/full name fallback
   email: string;
   password?: string; // For mock auth prototyping
   roles: Role[]; // Array since roles are not mutually exclusive
   avatarUrl?: string;
   isDonor?: boolean;
+  createdAt?: string;
+  
+  // Profile Extensions
+  firstName?: string;
+  lastName?: string;
+  displayName?: string;
+  
+  // Personal Info
+  dateOfBirth?: string;
+  gender?: string;
+  country?: string;
+  state?: string;
+  city?: string;
+  address?: string;
+  
+  // About
+  bio?: string;
+  
+  // Preferences
+  notificationPreferences?: {
+    email?: boolean;
+    push?: boolean;
+  };
+  newsletterPreferences?: {
+    weekly?: boolean;
+    updates?: boolean;
+  };
+  contentInterests?: string[];
 }
 
 export type ArticleStatus = 'DRAFT' | 'IN_REVIEW' | 'CHANGES_REQUESTED' | 'APPROVED' | 'SCHEDULED' | 'PUBLISHED' | 'ARCHIVED';

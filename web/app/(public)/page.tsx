@@ -1,12 +1,22 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useDb } from '../../components/provider/db-provider';
 import { NewsletterForm } from '../../components/newsletter/newsletter-form';
 
 export default function HomePage() {
   const { db } = useDb();
+  const router = useRouter();
+  const [homeSearch, setHomeSearch] = useState('');
+  
+  const handleHomeSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (homeSearch.trim()) {
+      router.push(`/search?q=${encodeURIComponent(homeSearch.trim())}`);
+    }
+  };
   
   // Get featured article (e.g., most recently published)
   const publishedArticles = db.articles.filter(a => a.status === 'PUBLISHED');
@@ -66,6 +76,20 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      {/* Prominent Homepage Search */}
+      <section className="mb-stack-lg max-w-3xl mx-auto">
+        <form onSubmit={handleHomeSearch} className="relative w-full">
+          <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+          <input 
+            value={homeSearch}
+            onChange={(e) => setHomeSearch(e.target.value)}
+            className="w-full bg-surface-container-lowest border-2 border-outline-variant rounded-xl py-4 pl-12 pr-4 font-body-md text-body-md text-on-surface placeholder:text-outline-variant focus:border-primary-container focus:ring-0 focus:outline-none transition-colors" 
+            placeholder="Search articles, theology, scripture..." 
+            type="text"
+          />
+        </form>
+      </section>
 
       {/* Scripture of the Day Callout */}
       <section className="mb-stack-lg max-w-[720px] mx-auto text-center px-stack-md py-stack-md border-y border-outline-variant relative">

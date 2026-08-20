@@ -16,7 +16,7 @@ export default function CheckoutPage() {
   
   const [step, setStep] = useState<CheckoutStep>('type');
   
-  const [donationType, setDonationType] = useState<'ONETIME' | 'RECURRING'>('ONETIME');
+  const [donationType, setDonationType] = useState<'ONETIME' | 'RECURRING' | null>(null);
   const [fund, setFund] = useState('General Fund');
   const [amount, setAmount] = useState<number>(50);
   const [frequency, setFrequency] = useState<'ONETIME' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY' | 'ANNUALLY'>('ONETIME');
@@ -59,21 +59,35 @@ export default function CheckoutPage() {
       <div className="flex gap-[16px] flex-col md:flex-row">
         <button 
           onClick={() => { setDonationType('ONETIME'); setFrequency('ONETIME'); }}
-          className={`flex-1 py-[32px] px-[20px] rounded-lg border-2 transition-all flex flex-col items-center gap-[8px] ${donationType === 'ONETIME' ? 'border-primary bg-surface-paper' : 'border-stone-outline bg-surface-bright hover:bg-surface-paper'}`}
+          className={`flex-1 py-[32px] px-[20px] rounded-xl border-2 transition-all flex flex-col items-center gap-[8px] relative overflow-hidden focus:outline-none focus:ring-4 focus:ring-primary/20 ${donationType === 'ONETIME' ? 'border-primary bg-primary-container/10 shadow-sm' : 'border-outline-variant bg-surface-bright hover:border-outline hover:bg-surface-paper opacity-80 hover:opacity-100'}`}
         >
-          <span className={`material-symbols-outlined text-[32px] ${donationType === 'ONETIME' ? 'text-primary' : 'text-on-surface'}`}>volunteer_activism</span>
-          <span className={`font-label-lg text-label-lg ${donationType === 'ONETIME' ? 'text-primary' : 'text-on-surface'}`}>One-time Gift</span>
+          {donationType === 'ONETIME' && (
+            <div className="absolute top-3 right-3 text-primary bg-primary-container rounded-full flex items-center justify-center p-1">
+              <span className="material-symbols-outlined text-[16px]">check</span>
+            </div>
+          )}
+          <span className={`material-symbols-outlined text-[32px] ${donationType === 'ONETIME' ? 'text-primary' : 'text-on-surface-variant'}`}>volunteer_activism</span>
+          <span className={`font-headline-sm text-headline-sm ${donationType === 'ONETIME' ? 'text-primary' : 'text-on-surface'}`}>One-time Gift</span>
         </button>
         <button 
           onClick={() => setDonationType('RECURRING')}
-          className={`flex-1 py-[32px] px-[20px] rounded-lg border-2 transition-all flex flex-col items-center gap-[8px] ${donationType === 'RECURRING' ? 'border-primary bg-surface-paper' : 'border-stone-outline bg-surface-bright hover:bg-surface-paper'}`}
+          className={`flex-1 py-[32px] px-[20px] rounded-xl border-2 transition-all flex flex-col items-center gap-[8px] relative overflow-hidden focus:outline-none focus:ring-4 focus:ring-primary/20 ${donationType === 'RECURRING' ? 'border-primary bg-primary-container/10 shadow-sm' : 'border-outline-variant bg-surface-bright hover:border-outline hover:bg-surface-paper opacity-80 hover:opacity-100'}`}
         >
-          <span className={`material-symbols-outlined text-[32px] ${donationType === 'RECURRING' ? 'text-primary' : 'text-on-surface'}`}>all_inclusive</span>
-          <span className={`font-label-lg text-label-lg ${donationType === 'RECURRING' ? 'text-primary' : 'text-on-surface'}`}>Recurring Gift</span>
+          {donationType === 'RECURRING' && (
+            <div className="absolute top-3 right-3 text-primary bg-primary-container rounded-full flex items-center justify-center p-1">
+              <span className="material-symbols-outlined text-[16px]">check</span>
+            </div>
+          )}
+          <span className={`material-symbols-outlined text-[32px] ${donationType === 'RECURRING' ? 'text-primary' : 'text-on-surface-variant'}`}>all_inclusive</span>
+          <span className={`font-headline-sm text-headline-sm ${donationType === 'RECURRING' ? 'text-primary' : 'text-on-surface'}`}>Recurring Gift</span>
         </button>
       </div>
       <div className="flex justify-end mt-[32px]">
-        <button onClick={() => setStep('fund')} className="w-full sm:w-auto bg-primary text-on-primary px-8 py-3 font-label-sm text-label-sm uppercase tracking-wider rounded-md hover:bg-primary-fixed-variant transition-colors flex items-center justify-center gap-2">
+        <button 
+          onClick={() => setStep('fund')} 
+          disabled={!donationType}
+          className="w-full sm:w-auto bg-primary text-on-primary px-8 py-3 font-label-sm text-label-sm uppercase tracking-wider rounded-md hover:bg-primary-fixed-variant transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
           Continue <span className="material-symbols-outlined text-sm">arrow_forward</span>
         </button>
       </div>
@@ -91,9 +105,15 @@ export default function CheckoutPage() {
         {['General Fund', 'Missions', 'Building Fund'].map(f => (
           <label key={f} className="block relative cursor-pointer group">
             <input type="radio" name="fund" value={f} checked={fund === f} onChange={() => setFund(f)} className="sr-only custom-radio" />
-            <div className={`w-full border-2 rounded-md p-4 flex items-center justify-between transition-colors ${fund === f ? 'border-primary bg-surface-paper' : 'border-stone-outline bg-white hover:border-primary group-hover:bg-surface-bright'}`}>
-              <span className={`font-label-lg text-label-lg ${fund === f ? 'text-primary' : 'text-on-surface'}`}>{f}</span>
-              {fund === f && <span className="material-symbols-outlined text-primary">check_circle</span>}
+            <div className={`w-full border-2 rounded-xl p-5 flex items-center justify-between transition-colors focus-within:ring-4 focus-within:ring-primary/20 ${fund === f ? 'border-primary bg-primary-container/10 shadow-sm' : 'border-outline-variant bg-surface-bright hover:border-outline group-hover:bg-surface-paper'}`}>
+              <span className={`font-headline-sm text-headline-sm ${fund === f ? 'text-primary' : 'text-on-surface'}`}>{f}</span>
+              {fund === f ? (
+                <div className="text-primary bg-primary-container rounded-full flex items-center justify-center p-1">
+                  <span className="material-symbols-outlined text-[16px]">check</span>
+                </div>
+              ) : (
+                <div className="w-[24px] h-[24px] rounded-full border-2 border-outline-variant"></div>
+              )}
             </div>
           </label>
         ))}
@@ -121,10 +141,14 @@ export default function CheckoutPage() {
           <button 
             key={amt}
             onClick={() => setAmount(amt)}
-            className={`flex items-center justify-center py-4 border-2 rounded-lg transition-all relative ${amount === amt ? 'border-primary bg-surface-paper' : 'border-stone-outline bg-surface-bright hover:bg-surface-paper'}`}
+            className={`flex items-center justify-center py-4 border-2 rounded-xl transition-all relative focus:outline-none focus:ring-4 focus:ring-primary/20 ${amount === amt ? 'border-primary bg-primary-container/10 shadow-sm' : 'border-outline-variant bg-surface-bright hover:border-outline hover:bg-surface-paper opacity-90'}`}
           >
-            <span className={`font-label-lg text-label-lg ${amount === amt ? 'text-primary' : 'text-on-surface'}`}>${amt}</span>
-            {amount === amt && <span className="material-symbols-outlined absolute top-1 right-1 text-[12px] text-primary">check_circle</span>}
+            <span className={`font-headline-sm text-headline-sm ${amount === amt ? 'text-primary' : 'text-on-surface'}`}>${amt}</span>
+            {amount === amt && (
+              <div className="absolute -top-2 -right-2 text-primary bg-primary-container rounded-full flex items-center justify-center p-0.5 shadow-sm border-2 border-surface-paper">
+                <span className="material-symbols-outlined text-[12px]">check</span>
+              </div>
+            )}
           </button>
         ))}
       </div>
@@ -165,9 +189,15 @@ export default function CheckoutPage() {
         {(['WEEKLY', 'MONTHLY', 'QUARTERLY', 'ANNUALLY'] as const).map(f => (
           <label key={f} className="block relative cursor-pointer group">
             <input type="radio" name="freq" value={f} checked={frequency === f} onChange={() => setFrequency(f)} className="sr-only custom-radio" />
-            <div className={`w-full border-2 rounded-md p-4 flex items-center justify-between transition-colors ${frequency === f ? 'border-primary bg-surface-paper' : 'border-stone-outline bg-white hover:border-primary group-hover:bg-surface-bright'}`}>
-              <span className={`font-label-lg text-label-lg capitalize ${frequency === f ? 'text-primary' : 'text-on-surface'}`}>{f.toLowerCase()}</span>
-              {frequency === f && <span className="material-symbols-outlined text-primary">check_circle</span>}
+            <div className={`w-full border-2 rounded-xl p-5 flex items-center justify-between transition-colors focus-within:ring-4 focus-within:ring-primary/20 ${frequency === f ? 'border-primary bg-primary-container/10 shadow-sm' : 'border-outline-variant bg-surface-bright hover:border-outline group-hover:bg-surface-paper'}`}>
+              <span className={`font-headline-sm text-headline-sm capitalize ${frequency === f ? 'text-primary' : 'text-on-surface'}`}>{f.toLowerCase()}</span>
+              {frequency === f ? (
+                <div className="text-primary bg-primary-container rounded-full flex items-center justify-center p-1">
+                  <span className="material-symbols-outlined text-[16px]">check</span>
+                </div>
+              ) : (
+                <div className="w-[24px] h-[24px] rounded-full border-2 border-outline-variant"></div>
+              )}
             </div>
           </label>
         ))}

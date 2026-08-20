@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { useDb } from '../../../components/provider/db-provider';
 import { Role, User } from '../../../types';
 
@@ -9,6 +9,81 @@ export default function AdminUsersPage() {
   
   const [searchQuery, setSearchQuery] = useState('');
   const [roleFilter, setRoleFilter] = useState<string>('All Roles');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [newName, setNewName] = useState('');
+  const [newEmail, setNewEmail] = useState('');
+  const [newRole, setNewRole] = useState<Role>('READER');
+  const [newPassword, setNewPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
+  
+  const handleInviteSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMsg('');
+    setSuccessMsg('');
+    
+    if (!newName || !newEmail || !newPassword) {
+      setErrorMsg('All fields are required.');
+      return;
+    }
+    
+    const existing = db.users.find(u => u.email.toLowerCase() === newEmail.toLowerCase());
+    if (existing) {
+      setErrorMsg('A user with this email already exists.');
+      return;
+    }
+    
+    const userId = `user_${Date.now()}`;
+    const ts = new Date().toISOString();
+    
+    // Admin uses existing role + READER
+    const roles: Role[] = newRole === 'READER' ? ['READER'] : [newRole, 'READER'];
+    
+    setDb(prev => ({
+      ...prev,
+      users: [
+        {
+          id: userId,
+          name: newName,
+          email: newEmail,
+          roles: roles,
+          password: newPassword, // Password stored for prototype mock auth
+          createdAt: ts
+        },
+        ...prev.users
+      ],
+      auditLogs: [
+        {
+          id: `audit_${Date.now()}`,
+          actorId: 'user_admin',
+          action: 'USER_CREATED',
+          targetType: 'USER',
+          targetId: userId,
+          timestamp: ts,
+          description: `Created new user ${newEmail} with role ${newRole}`
+        },
+        ...prev.auditLogs
+      ]
+    }));
+    
+    setSuccessMsg('User created successfully.');
+    setTimeout(() => {
+      setIsModalOpen(false);
+      setNewName('');
+      setNewEmail('');
+      setNewPassword('');
+      setNewRole('READER');
+      setSuccessMsg('');
+    }, 1500);
+  };
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsModalOpen(false);
+    };
+    if (isModalOpen) window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [isModalOpen]);
 
   // Derive highest role for display
   const getDisplayRole = (roles: Role[]) => {
@@ -78,7 +153,7 @@ export default function AdminUsersPage() {
           </p>
         </div>
         <div className="flex-shrink-0">
-          <button className="bg-primary-container text-on-error font-label-sm text-label-sm py-2 px-6 rounded-lg flex items-center gap-2 hover:bg-primary transition-colors shadow-sm border border-transparent">
+          <button onClick={() => setIsModalOpen(true)} className="bg-primary-container text-on-error font-label-sm text-label-sm py-2 px-6 rounded-lg flex items-center gap-2 hover:bg-primary transition-colors shadow-sm border border-transparent">
             <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>person_add</span>
             Invite New User
           </button>
@@ -207,6 +282,84 @@ export default function AdminUsersPage() {
           </span>
         </div>
       </div>
+
+      {/* Invite User Modal */}
+      {isModalOpen && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div 
+            className="bg-surface rounded-xl p-6 w-full max-w-md shadow-xl border border-outline-variant relative overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-6 border-b border-outline-variant pb-4">
+              <h3 className="font-headline-md text-primary">Invite New User</h3>
+              <button 
+                type="button" 
+                onClick={() => setIsModalOpen(false)}
+                className="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low p-2 rounded-full transition-colors flex items-center justify-center"
+                aria-label="Close modal"
+              >
+                <span className="material-symbols-outlined text-[20px]">close</span>
+              </button>
+            </div>
+            {errorMsg && <div className="mb-4 p-3 bg-error-container text-on-error-container rounded text-sm">{errorMsg}</div>}
+            {successMsg && <div className="mb-4 p-3 bg-tertiary-container text-on-tertiary-container rounded text-sm">{successMsg}</div>}
+            <form onSubmit={handleInviteSubmit} className="flex flex-col gap-4">
+              <div>
+                <label className="block font-label-sm text-outline mb-1">Full Name</label>
+                <input 
+                  type="text" 
+                  value={newName} 
+                  onChange={e => setNewName(e.target.value)}
+                  className="w-full p-2 bg-surface-bright border border-outline rounded"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block font-label-sm text-outline mb-1">Email Address</label>
+                <input 
+                  type="email" 
+                  value={newEmail} 
+                  onChange={e => setNewEmail(e.target.value)}
+                  className="w-full p-2 bg-surface-bright border border-outline rounded"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block font-label-sm text-outline mb-1">Initial Password</label>
+                <input 
+                  type="password" 
+                  value={newPassword} 
+                  onChange={e => setNewPassword(e.target.value)}
+                  className="w-full p-2 bg-surface-bright border border-outline rounded"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block font-label-sm text-outline mb-1">Primary Role</label>
+                <select 
+                  value={newRole} 
+                  onChange={e => setNewRole(e.target.value as Role)}
+                  className="w-full p-2 bg-surface-bright border border-outline rounded"
+                  required
+                >
+                  <option value="READER">Reader</option>
+                  <option value="AUTHOR">Author</option>
+                  <option value="MODERATOR">Moderator</option>
+                  <option value="EDITOR">Editor</option>
+                  <option value="ADMIN">Administrator</option>
+                </select>
+              </div>
+              <div className="flex justify-end gap-3 mt-6 pt-4 border-t border-outline-variant">
+                <button type="button" onClick={() => setIsModalOpen(false)} className="px-6 py-2 font-label-sm text-secondary border border-outline hover:bg-surface-container rounded-lg transition-colors">Cancel</button>
+                <button type="submit" className="px-6 py-2 font-label-sm bg-primary text-on-primary rounded-lg hover:bg-primary-fixed-variant transition-colors shadow-sm">Invite</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

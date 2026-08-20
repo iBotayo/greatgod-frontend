@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { useDb } from '../../../components/provider/db-provider';
 import { useAuth } from '../../../components/provider/auth-provider';
 import { ArticleStatus, Role, Notification } from '../../../types';
@@ -11,6 +11,68 @@ export default function AdminContentPage() {
   
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('All Statuses');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [newTitle, setNewTitle] = useState('');
+  const [newExcerpt, setNewExcerpt] = useState('');
+  const [newAuthorId, setNewAuthorId] = useState('');
+  
+  const handleCreateSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newTitle || !newExcerpt || !newAuthorId) return;
+    
+    const ts = new Date().toISOString();
+    const articleId = `art_${Date.now()}`;
+    const uid = Math.random().toString(36).substring(2, 9);
+    
+    setDb(prev => ({
+      ...prev,
+      articles: [
+        {
+          id: articleId,
+          title: newTitle,
+          excerpt: newExcerpt,
+          content: '<p>Content goes here...</p>',
+          authorId: newAuthorId,
+          status: 'DRAFT',
+          createdAt: ts,
+          updatedAt: ts,
+          tags: [],
+          readTime: 5,
+        },
+        ...prev.articles
+      ],
+      auditLogs: [
+        {
+          id: `audit_${uid}`,
+          actorId: currentUser?.id || 'unknown',
+          action: 'ARTICLE_CREATED',
+          targetType: 'ARTICLE',
+          targetId: articleId,
+          timestamp: ts,
+          description: `Created new publication "${newTitle}"`
+        },
+        ...prev.auditLogs
+      ]
+    }));
+    
+    setNewTitle('');
+    setNewExcerpt('');
+    setNewAuthorId('');
+    setNewTitle('');
+    setNewExcerpt('');
+    setNewAuthorId('');
+    setIsModalOpen(false);
+  };
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsModalOpen(false);
+    };
+    if (isModalOpen) {
+      window.addEventListener('keydown', handleEsc);
+    }
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [isModalOpen]);
 
   const filteredArticles = useMemo(() => {
     return db.articles.filter(article => {
@@ -92,6 +154,12 @@ export default function AdminContentPage() {
           <p className="font-body-md text-body-md text-on-surface-variant mt-2 max-w-2xl">
             Review submissions, manage the editorial pipeline, and publish content to the platform.
           </p>
+        </div>
+        <div className="flex-shrink-0">
+          <button onClick={() => setIsModalOpen(true)} className="bg-primary-container text-on-error font-label-sm text-label-sm py-2 px-6 rounded-lg flex items-center gap-2 hover:bg-primary transition-colors shadow-sm border border-transparent">
+            <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>add</span>
+            Add New Publication
+          </button>
         </div>
       </div>
 
@@ -201,6 +269,71 @@ export default function AdminContentPage() {
           </table>
         </div>
       </div>
+
+      {/* Add Publication Modal */}
+      {isModalOpen && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div 
+            className="bg-surface rounded-xl p-6 w-full max-w-md shadow-xl border border-outline-variant relative overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-6 border-b border-outline-variant pb-4">
+              <h3 className="font-headline-md text-primary">Add New Publication</h3>
+              <button 
+                type="button" 
+                onClick={() => setIsModalOpen(false)}
+                className="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low p-2 rounded-full transition-colors flex items-center justify-center"
+                aria-label="Close modal"
+              >
+                <span className="material-symbols-outlined text-[20px]">close</span>
+              </button>
+            </div>
+            <form onSubmit={handleCreateSubmit} className="flex flex-col gap-4">
+              <div>
+                <label className="block font-label-sm text-outline mb-1">Title</label>
+                <input 
+                  type="text" 
+                  value={newTitle} 
+                  onChange={e => setNewTitle(e.target.value)}
+                  className="w-full p-2 bg-surface-bright border border-outline rounded"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block font-label-sm text-outline mb-1">Excerpt</label>
+                <textarea 
+                  value={newExcerpt} 
+                  onChange={e => setNewExcerpt(e.target.value)}
+                  className="w-full p-2 bg-surface-bright border border-outline rounded"
+                  rows={3}
+                  required
+                />
+              </div>
+              <div>
+                <label className="block font-label-sm text-outline mb-1">Author</label>
+                <select 
+                  value={newAuthorId} 
+                  onChange={e => setNewAuthorId(e.target.value)}
+                  className="w-full p-2 bg-surface-bright border border-outline rounded"
+                  required
+                >
+                  <option value="">Select an Author</option>
+                  {db.users.filter(u => u.roles.includes('AUTHOR') || u.roles.includes('EDITOR') || u.roles.includes('ADMIN')).map(u => (
+                    <option key={u.id} value={u.id}>{u.name}</option>
+                  ))}
+                </select>
+              </div>
+              <div className="flex justify-end gap-3 mt-6 pt-4 border-t border-outline-variant">
+                <button type="button" onClick={() => setIsModalOpen(false)} className="px-6 py-2 font-label-sm text-secondary border border-outline hover:bg-surface-container rounded-lg transition-colors">Cancel</button>
+                <button type="submit" className="px-6 py-2 font-label-sm bg-primary text-on-primary rounded-lg hover:bg-primary-fixed-variant transition-colors shadow-sm">Create</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

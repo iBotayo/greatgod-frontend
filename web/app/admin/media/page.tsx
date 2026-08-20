@@ -1,10 +1,62 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDb } from '../../../components/provider/db-provider';
 
 export default function AdminMediaPage() {
-  const { db } = useDb();
+  const { db, setDb } = useDb();
+  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [altText, setAltText] = useState('');
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  
+  const handleUploadSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!selectedFile) return;
+    
+    // Mock upload by creating an object URL
+    const objectUrl = URL.createObjectURL(selectedFile);
+    const mediaId = `media_${Date.now()}`;
+    const ts = new Date().toISOString();
+    
+    setDb(prev => ({
+      ...prev,
+      media: [
+        {
+          id: mediaId,
+          url: objectUrl,
+          altText: altText || selectedFile.name,
+          uploaderId: 'user_admin',
+          uploadedAt: ts
+        },
+        ...prev.media
+      ],
+      auditLogs: [
+        {
+          id: `audit_${Date.now()}`,
+          actorId: 'user_admin',
+          action: 'MEDIA_UPLOADED',
+          targetType: 'MEDIA',
+          targetId: mediaId,
+          timestamp: ts,
+          description: `Uploaded media ${selectedFile.name}`
+        },
+        ...prev.auditLogs
+      ]
+    }));
+    
+    setIsModalOpen(false);
+    setAltText('');
+    setSelectedFile(null);
+  };
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsModalOpen(false);
+    };
+    if (isModalOpen) window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [isModalOpen]);
 
   return (
     <div className="flex-1 w-full">
@@ -17,7 +69,7 @@ export default function AdminMediaPage() {
           </p>
         </div>
         <div className="flex-shrink-0">
-          <button className="bg-primary-container text-on-error font-label-sm text-label-sm py-2 px-6 rounded-lg flex items-center gap-2 hover:bg-primary transition-colors shadow-sm border border-transparent">
+          <button onClick={() => setIsModalOpen(true)} className="bg-primary-container text-on-error font-label-sm text-label-sm py-2 px-6 rounded-lg flex items-center gap-2 hover:bg-primary transition-colors shadow-sm border border-transparent">
             <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>upload</span>
             Upload Media
           </button>
@@ -81,6 +133,57 @@ export default function AdminMediaPage() {
           })
         )}
       </div>
+
+      {/* Upload Media Modal */}
+      {isModalOpen && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div 
+            className="bg-surface rounded-xl p-6 w-full max-w-md shadow-xl border border-outline-variant relative overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-6 border-b border-outline-variant pb-4">
+              <h3 className="font-headline-md text-primary">Upload Media</h3>
+              <button 
+                type="button" 
+                onClick={() => setIsModalOpen(false)}
+                className="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low p-2 rounded-full transition-colors flex items-center justify-center"
+                aria-label="Close modal"
+              >
+                <span className="material-symbols-outlined text-[20px]">close</span>
+              </button>
+            </div>
+            <form onSubmit={handleUploadSubmit} className="flex flex-col gap-4">
+              <div>
+                <label className="block font-label-sm text-outline mb-1">Select File</label>
+                <input 
+                  type="file" 
+                  accept="image/*"
+                  onChange={e => setSelectedFile(e.target.files?.[0] || null)}
+                  className="w-full p-2 bg-surface-bright border border-outline rounded text-sm"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block font-label-sm text-outline mb-1">Alt Text (Optional)</label>
+                <input 
+                  type="text" 
+                  value={altText} 
+                  onChange={e => setAltText(e.target.value)}
+                  placeholder="Describe the image for accessibility"
+                  className="w-full p-2 bg-surface-bright border border-outline rounded"
+                />
+              </div>
+              <div className="flex justify-end gap-3 mt-6 pt-4 border-t border-outline-variant">
+                <button type="button" onClick={() => setIsModalOpen(false)} className="px-6 py-2 font-label-sm text-secondary border border-outline hover:bg-surface-container rounded-lg transition-colors">Cancel</button>
+                <button type="submit" className="px-6 py-2 font-label-sm bg-primary text-on-primary rounded-lg hover:bg-primary-fixed-variant transition-colors shadow-sm" disabled={!selectedFile}>Upload</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

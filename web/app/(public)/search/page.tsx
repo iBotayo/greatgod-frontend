@@ -4,6 +4,7 @@ import React, { useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useDb } from '../../../components/provider/db-provider';
+import { performGlobalSearch } from '../../../lib/search';
 
 function SearchResults() {
   const searchParams = useSearchParams();
@@ -24,17 +25,11 @@ function SearchResults() {
   };
 
   const normalizedQuery = initialQuery.toLowerCase().trim();
-  const articles = db.articles.filter(article => {
-    if (!normalizedQuery) return false;
-    return (
-      article.title.toLowerCase().includes(normalizedQuery) ||
-      article.excerpt.toLowerCase().includes(normalizedQuery) ||
-      article.tags.some(tag => tag.toLowerCase().includes(normalizedQuery))
-    );
-  });
-  const taxonomy = db.taxonomy.filter(item => item.name.toLowerCase().includes(normalizedQuery));
+  const searchResults = performGlobalSearch(db, normalizedQuery);
+  const articles = searchResults.filter(r => r.type === 'article');
+  const taxonomy = searchResults.filter(r => r.type === 'taxonomy');
   const isSearching = normalizedQuery.length > 0;
-  const hasResults = articles.length > 0 || taxonomy.length > 0;
+  const hasResults = searchResults.length > 0;
 
   return (
     <div className="flex-grow w-full max-w-[800px] mx-auto px-[20px] py-[48px] flex flex-col gap-[32px]">
@@ -81,9 +76,9 @@ function SearchResults() {
               <h2 className="font-headline-md text-primary">Topics &amp; Tags</h2>
               <div className="flex flex-wrap gap-2">
                 {taxonomy.map(item => (
-                  <div key={item.id} className="bg-surface-container-low border border-outline-variant px-4 py-2 rounded-full font-label-md text-on-surface flex items-center gap-2 hover:bg-surface-container transition-colors">
-                    <span className="material-symbols-outlined text-[18px] text-primary">{item.type === 'category' ? 'category' : 'tag'}</span>
-                    {item.name}
+                  <div key={item.id} className="bg-surface-container-low border border-outline-variant px-4 py-2 rounded-full font-label-md text-on-surface flex items-center gap-2 hover:bg-surface-container transition-colors cursor-pointer" onClick={() => router.push(item.url)}>
+                    <span className="material-symbols-outlined text-[18px] text-primary">{item.tags?.[0] === 'category' ? 'category' : 'tag'}</span>
+                    {item.title}
                   </div>
                 ))}
               </div>
@@ -93,12 +88,14 @@ function SearchResults() {
             <div className="flex flex-col gap-4">
               <h2 className="font-headline-md text-primary">Content</h2>
               <div className="flex flex-col gap-4">
-                {articles.map(article => (
-                  <Link href={`/reader/article/${article.id}`} key={article.id} className="group">
+                {articles.map(article => {
+                  const dbArticle = db.articles.find(a => a.id === article.id);
+                  return (
+                  <Link href={`/article/${article.id}`} key={article.id} className="group">
                     <div className="bg-surface-paper border border-outline-variant p-4 md:p-6 rounded-xl hover:shadow-md transition-shadow flex flex-col md:flex-row gap-4">
-                      {article.coverImage ? (
+                      {dbArticle?.coverImage ? (
                         <div className="w-full md:w-[200px] h-[140px] flex-shrink-0 bg-surface-variant rounded-lg overflow-hidden">
-                          <img src={article.coverImage} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                          <img src={dbArticle.coverImage} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                         </div>
                       ) : (
                         <div className="w-full md:w-[200px] h-[140px] flex-shrink-0 bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center">
@@ -106,14 +103,15 @@ function SearchResults() {
                         </div>
                       )}
                       <div className="flex flex-col gap-2 flex-grow">
-                        <div className="flex items-center gap-2"><span className="bg-surface-bright border border-stone-outline px-2 py-1 rounded text-xs font-label-sm uppercase text-on-surface">Article</span><span className="text-xs text-outline">{new Date(article.createdAt).toLocaleDateString()}</span></div>
+                        <div className="flex items-center gap-2"><span className="bg-surface-bright border border-stone-outline px-2 py-1 rounded text-xs font-label-sm uppercase text-on-surface">Article</span><span className="text-xs text-outline">{new Date(dbArticle?.createdAt || '').toLocaleDateString()}</span></div>
                         <h3 className="font-headline-sm text-primary group-hover:text-primary-fixed-variant transition-colors">{article.title}</h3>
                         <p className="font-body-md text-on-surface-variant line-clamp-2">{article.excerpt}</p>
-                        {article.tags.length > 0 && <div className="flex items-center gap-2 mt-auto pt-2">{article.tags.map(tag => <span key={tag} className="text-xs text-primary bg-primary-container/20 px-2 py-1 rounded-sm">{tag}</span>)}</div>}
+                        {(article.tags && article.tags.length > 0) && <div className="flex items-center gap-2 mt-auto pt-2">{article.tags.map(tag => <span key={tag} className="text-xs text-primary bg-primary-container/20 px-2 py-1 rounded-sm">{tag}</span>)}</div>}
                       </div>
                     </div>
                   </Link>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}

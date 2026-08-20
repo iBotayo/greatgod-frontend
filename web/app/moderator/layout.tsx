@@ -20,7 +20,7 @@ export default function ModeratorLayout({ children }: { children: React.ReactNod
   if (!isAuthReady || !currentUser || !isModerator) return null;
 
   return (
-    <div className="flex flex-1 overflow-hidden pt-16 bg-background text-on-background min-h-screen">
+    <div className="flex flex-1 overflow-hidden bg-background text-on-background min-h-screen">
       {/* SideNavBar (Desktop Only) */}
       <aside className="hidden md:flex flex-col p-4 gap-2 h-[calc(100vh-64px)] w-64 fixed bg-surface-container-low border-r border-outline-variant z-40 overflow-y-auto">
         <div className="mb-stack-md px-4 pt-4 flex flex-col items-center border-b border-outline-variant pb-8">
